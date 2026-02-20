@@ -462,14 +462,41 @@ export function Wizard({ onClose }: { onClose: () => void }) {
           )}
 
           {step === 2 && (
-            <StepContainer
-              title="Quel est le profil du salarié ?"
-              subtitle="Cela détermine si une attestation ANAPEC est nécessaire et les frais associés."
-            >
-              <OptionCard value="standard" label="Profil standard" desc="Métier courant disponible sur le marché : annonce ANAPEC obligatoire (20 jours, 5 000 Dhs)." icon={<User className="w-5 h-5" />} selected={data.profil === 'standard'} onSelect={() => setData({ ...data, profil: 'standard' })} />
-              <OptionCard value="rare" label="Profil rare / haut niveau" desc="Compétences pointues figurant sur les listes A1 ou A2 de l'ANAPEC — procédure simplifiée (48h, 1 500 Dhs)." icon={<Star className="w-5 h-5" />} selected={data.profil === 'rare'} onSelect={() => setData({ ...data, profil: 'rare' })} />
-              <OptionCard value="exempt" label="Catégorie dispensée" desc="Époux(se) de marocain(e), salarié détaché, propriétaire/gérant/actionnaire, personnel offshoring..." icon={<CheckCircle className="w-5 h-5" />} selected={data.profil === 'exempt'} onSelect={() => setData({ ...data, profil: 'exempt' })} />
-            </StepContainer>
+            <div>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Quelle situation décrit le mieux ce recrutement ?</h3>
+              <p className="text-slate-500 text-sm mb-5 leading-relaxed">
+                Pas besoin de connaître les catégories administratives — choisissez simplement ce qui correspond à votre cas.
+              </p>
+              <div className="space-y-3">
+                <OptionCard
+                  value="standard"
+                  label="Le poste est un métier courant"
+                  desc="Ex : développeur, comptable, ingénieur, commercial, RH, chef de projet… Ce type de profil pourrait potentiellement se trouver sur le marché marocain."
+                  icon={<User className="w-5 h-5" />}
+                  selected={data.profil === 'standard'}
+                  onSelect={() => setData({ ...data, profil: 'standard' })}
+                />
+                <OptionCard
+                  value="rare"
+                  label="C'est une compétence très rare ou un expert pointu"
+                  desc="Ex : spécialiste technique introuvable localement, expert international, haut dirigeant (DG, DSI, CTO)… Ce profil est difficile à trouver au Maroc."
+                  icon={<Star className="w-5 h-5" />}
+                  selected={data.profil === 'rare'}
+                  onSelect={() => setData({ ...data, profil: 'rare' })}
+                />
+                <OptionCard
+                  value="exempt"
+                  label="Le salarié a un lien particulier avec l'entreprise ou le Maroc"
+                  desc="Ex : conjoint(e) d'un(e) ressortissant(e) marocain(e), associé(e) ou actionnaire de l'entreprise, gérant(e) ou mandataire social, salarié détaché par une filiale étrangère, cadre en offshoring."
+                  icon={<CheckCircle className="w-5 h-5" />}
+                  selected={data.profil === 'exempt'}
+                  onSelect={() => setData({ ...data, profil: 'exempt' })}
+                />
+              </div>
+              <p className="mt-4 text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2 border border-slate-100">
+                💡 En cas de doute entre la 1ère et la 2ème option, choisissez la 1ère — l'ANAPEC évaluera la rareté du profil lors du traitement.
+              </p>
+            </div>
           )}
 
           {step === 3 && (
