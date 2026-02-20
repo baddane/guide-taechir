@@ -51,4 +51,60 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog — Page listing -->
+  <url>
+    <loc>https://guide-taechir.org/blog</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog — Article 1 : Guide complet recruter un salarié étranger au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/guide-recruter-salarie-etranger-maroc-2026</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 2 : Attestation ANAPEC frais délais procédure -->
+  <url>
+    <loc>https://guide-taechir.org/blog/attestation-anapec-frais-delais-procedure</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 3 : Profils rares listes A1 A2 ANAPEC Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/profils-rares-listes-a1-a2-anapec-maroc</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 4 : Dispense attestation ANAPEC catégories exemptées -->
+  <url>
+    <loc>https://guide-taechir.org/blog/dispense-anapec-categories-exemptees-maroc</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 5 : Renouvellement contrat travail étranger Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/renouvellement-contrat-travail-etranger-maroc</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 6 : Erreurs Taechir visa travail Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/erreurs-taechir-visa-travail-maroc</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
