@@ -63,7 +63,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Globe className="w-6 h-6 text-indigo-600" />
-            <span className="font-bold text-xl tracking-tight text-slate-900">Guide-<span className="text-indigo-600">Taechir.com</span></span>
+            <span className="font-bold text-xl tracking-tight text-slate-900">Guide-<span className="text-indigo-600">Taechir.org</span></span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
             <button onClick={() => setShowWizard(true)} className="flex items-center gap-1.5 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
@@ -426,7 +426,7 @@ export default function App() {
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <Globe className="w-8 h-8 text-slate-600 mx-auto mb-4" />
-          <p className="font-semibold text-slate-300 mb-1">Guide-Taechir.com</p>
+          <p className="font-semibold text-slate-300 mb-1">Guide-Taechir.org</p>
           <p className="mb-2">Ce site est un guide informatif basé sur la procédure officielle du Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences du Maroc.</p>
           <p>Pour les démarches officielles, veuillez visiter <a href="https://taechir.travail.gov.ma" className="text-indigo-400 hover:underline">taechir.travail.gov.ma</a></p>
         </div>

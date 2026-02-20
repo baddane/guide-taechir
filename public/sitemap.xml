@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Page principale -->
+  <url>
+    <loc>https://guide-taechir.org/</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://guide-taechir.org/" />
+  </url>
+
+  <!-- Section : Programme Taechir — Conditions et Étapes -->
+  <url>
+    <loc>https://guide-taechir.org/#procedure</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Section : Calculateur d'Estimations (frais ANAPEC, délais) -->
+  <url>
+    <loc>https://guide-taechir.org/#calculateur</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section : Attestation d'Activité ANAPEC -->
+  <url>
+    <loc>https://guide-taechir.org/#anapec</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Section : Dossier de Demande — Visa Taechir -->
+  <url>
+    <loc>https://guide-taechir.org/#documents</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section : FAQ — Recrutement Étranger Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/#faq</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

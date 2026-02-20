@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://guide-taechir.org/sitemap.xml
+
+# Bloquer les ressources inutiles pour les crawlers
+Disallow: /src/
