@@ -1,4 +1,5 @@
 import { useState, ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2 } from 'lucide-react';
 import { Wizard } from './Wizard';
 import { Chatbot } from './Chatbot';
@@ -74,6 +75,7 @@ export default function App() {
             <a href="#anapec" className="hover:text-indigo-600 transition-colors">Attestation ANAPEC</a>
             <a href="#documents" className="hover:text-indigo-600 transition-colors">Documents Requis</a>
             <a href="#faq" className="hover:text-indigo-600 transition-colors">FAQ</a>
+            <Link to="/blog" className="hover:text-indigo-600 transition-colors font-semibold">Blog</Link>
           </div>
         </div>
       </nav>
