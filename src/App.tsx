@@ -1,5 +1,7 @@
 import { useState, ReactNode } from 'react';
-import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Info } from 'lucide-react';
+import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2 } from 'lucide-react';
+import { Wizard } from './Wizard';
+import { Chatbot } from './Chatbot';
 
 function AccordionItem({ title, children, defaultOpen = false }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -22,6 +24,9 @@ function AccordionItem({ title, children, defaultOpen = false }: { title: string
 }
 
 export default function App() {
+  // Wizard State
+  const [showWizard, setShowWizard] = useState(false);
+
   // Calculator State
   const [calcCount, setCalcCount] = useState(1);
   const [calcProfile, setCalcProfile] = useState('standard');
@@ -51,14 +56,19 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+      {showWizard && <Wizard onClose={() => setShowWizard(false)} />}
+      <Chatbot />
       {/* Navigation */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Globe className="w-6 h-6 text-indigo-600" />
-            <span className="font-bold text-xl tracking-tight text-slate-900">Taechir<span className="text-indigo-600">Guide</span></span>
+            <span className="font-bold text-xl tracking-tight text-slate-900">Guide-<span className="text-indigo-600">Taechir.org</span></span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+            <button onClick={() => setShowWizard(true)} className="flex items-center gap-1.5 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+              <Wand2 className="w-4 h-4" /> Assistant
+            </button>
             <a href="#procedure" className="hover:text-indigo-600 transition-colors">La Procédure</a>
             <a href="#calculateur" className="hover:text-indigo-600 transition-colors">Calculateur</a>
             <a href="#anapec" className="hover:text-indigo-600 transition-colors">Attestation ANAPEC</a>
@@ -83,12 +93,16 @@ export default function App() {
             Le guide complet pour le <strong>recrutement de travailleurs étrangers au Maroc</strong>. Découvrez les démarches pour obtenir le <strong>visa emploi Maroc entreprise</strong> et profitez de la <strong>facilitation du recrutement international au Maroc</strong> via le programme TAECHIR.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#calculateur" className="px-8 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+            <button
+              onClick={() => setShowWizard(true)}
+              className="px-8 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+            >
+              <Wand2 className="w-5 h-5" />
+              Démarrer l'assistant guidé
+            </button>
+            <a href="#calculateur" className="px-8 py-3.5 rounded-xl bg-white text-slate-700 font-semibold border border-slate-200 shadow-sm hover:bg-slate-50 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
               <Calculator className="w-5 h-5" />
-              Estimer les coûts et délais
-            </a>
-            <a href="https://taechir.travail.gov.ma" target="_blank" rel="noreferrer" className="px-8 py-3.5 rounded-xl bg-white text-slate-700 font-semibold border border-slate-200 shadow-sm hover:bg-slate-50 transition-all">
-              Accéder à Taechir.gov.ma
+              Estimer les coûts
             </a>
           </div>
         </div>
@@ -412,6 +426,7 @@ export default function App() {
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <Globe className="w-8 h-8 text-slate-600 mx-auto mb-4" />
+          <p className="font-semibold text-slate-300 mb-1">Guide-Taechir.org</p>
           <p className="mb-2">Ce site est un guide informatif basé sur la procédure officielle du Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences du Maroc.</p>
           <p>Pour les démarches officielles, veuillez visiter <a href="https://taechir.travail.gov.ma" className="text-indigo-400 hover:underline">taechir.travail.gov.ma</a></p>
         </div>
