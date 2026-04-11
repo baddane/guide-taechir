@@ -51,6 +51,38 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Page : À propos -->
+  <url>
+    <loc>https://guide-taechir.org/a-propos</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Page : Contact -->
+  <url>
+    <loc>https://guide-taechir.org/contact</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Page : Politique de Confidentialité -->
+  <url>
+    <loc>https://guide-taechir.org/politique-de-confidentialite</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Page : Mentions Légales -->
+  <url>
+    <loc>https://guide-taechir.org/mentions-legales</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- Blog — Page listing -->
   <url>
     <loc>https://guide-taechir.org/blog</loc>

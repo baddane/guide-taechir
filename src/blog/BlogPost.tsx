@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2 } from 'lucide-react';
+import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User } from 'lucide-react';
 import { getArticleBySlug, articles } from './articles';
+import { Footer } from '../components/Footer';
 
 const categoryColors: Record<string, string> = {
   'Guide':      'bg-indigo-50 text-indigo-700',
@@ -17,10 +18,20 @@ export function BlogPost() {
 
   useEffect(() => {
     if (article) {
-      document.title = `${article.title} — Guide-Taechir.org`;
+      document.title = `${article.title} \u2014 Guide-Taechir.org`;
+      // Update meta description for SEO
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', article.description);
+      // Update canonical URL
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', `https://guide-taechir.org/blog/${article.slug}`);
     }
     return () => {
-      document.title = 'Guide-Taechir.org';
+      document.title = 'Programme Taechir Maroc \u2013 Guide Complet Recrutement Salari\u00e9 \u00c9tranger';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', 'Guide complet du programme Taechir : proc\u00e9dure pas \u00e0 pas, d\u00e9lais, frais ANAPEC, documents requis et simulateur pour recruter un salari\u00e9 \u00e9tranger au Maroc.');
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', 'https://guide-taechir.org/');
     };
   }, [article]);
 
@@ -80,9 +91,20 @@ export function BlogPost() {
           </h1>
 
           {/* Description */}
-          <p className="text-base text-slate-500 leading-relaxed">
+          <p className="text-base text-slate-500 leading-relaxed mb-5">
             {article.description}
           </p>
+
+          {/* Author info (E-E-A-T) */}
+          <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+            <div className="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+              <User className="w-5 h-5" />
+            </div>
+            <div className="text-left">
+              <p className="text-sm font-semibold text-slate-800">\u00c9quipe \u00e9ditoriale Guide-Taechir</p>
+              <p className="text-xs text-slate-500">Sp\u00e9cialistes en droit du travail et recrutement international au Maroc</p>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -148,14 +170,7 @@ export function BlogPost() {
         </section>
       )}
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-10 text-center text-sm border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <Globe className="w-7 h-7 text-slate-600 mx-auto mb-3" />
-          <p className="font-semibold text-slate-300 mb-1">Guide-Taechir.org</p>
-          <p>Guide informatif basé sur la procédure officielle du Ministère de l'Inclusion Économique.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
