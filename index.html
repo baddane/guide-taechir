@@ -3,6 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══ Google Consent Mode v2 (défaut = refusé, mis à jour après choix utilisateur) ═══ -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      // Consentement par défaut : tout refusé (privacy-first, conforme RGPD/CNDP)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+
+      // Restaure le choix précédent (si l'utilisateur a déjà répondu)
+      try {
+        var saved = localStorage.getItem('gt_consent_v1');
+        if (saved) {
+          var c = JSON.parse(saved);
+          gtag('consent', 'update', {
+            'ad_storage':           c.ads ? 'granted' : 'denied',
+            'ad_user_data':         c.ads ? 'granted' : 'denied',
+            'ad_personalization':   c.ads ? 'granted' : 'denied',
+            'analytics_storage':    c.analytics ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+    </script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1436679935240248"
      crossorigin="anonymous"></script>
 

@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { articles } from './articles';
+import { Footer } from '../components/Footer';
 
 const categoryColors: Record<string, string> = {
   'Guide':      'bg-indigo-50 text-indigo-700 border-indigo-100',
@@ -11,6 +13,10 @@ const categoryColors: Record<string, string> = {
 };
 
 export function BlogList() {
+  useEffect(() => {
+    document.title = 'Blog — Recrutement étranger au Maroc | Guide-Taechir.org';
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       {/* Nav */}
@@ -94,14 +100,7 @@ export function BlogList() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-10 text-center text-sm border-t border-slate-800 mt-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <Globe className="w-7 h-7 text-slate-600 mx-auto mb-3" />
-          <p className="font-semibold text-slate-300 mb-1">Guide-Taechir.org</p>
-          <p>Guide informatif basé sur la procédure officielle du Ministère de l'Inclusion Économique.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
