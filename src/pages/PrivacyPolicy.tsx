@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Globe, ArrowLeft, Shield } from 'lucide-react';
+import { Globe, ArrowLeft, Shield, Cookie } from 'lucide-react';
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
+import { openCookiePreferences } from '../lib/consent';
 
 export function PrivacyPolicy() {
   useEffect(() => {
@@ -75,6 +76,35 @@ export function PrivacyPolicy() {
               <li>Afficher des publicités pertinentes via Google AdSense.</li>
               <li>Répondre à vos demandes de contact, le cas échéant.</li>
             </ul>
+          </section>
+
+          <section className="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Cookie className="w-5 h-5 text-indigo-600" />
+              <h2 className="text-2xl font-bold text-slate-900">Gestion des cookies</h2>
+            </div>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              À votre première visite, une bannière vous permet d'accepter, refuser ou personnaliser l'utilisation des cookies. Votre choix est conservé localement (navigateur) pendant 13 mois maximum, conformément aux recommandations de la CNIL et de la CNDP marocaine.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Nous utilisons <strong>Google Consent Mode v2</strong> : par défaut, tous les cookies non essentiels sont <strong>refusés</strong> et ne se déclenchent qu'après votre consentement explicite.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Trois catégories de cookies sont distinguées :
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-5">
+              <li><strong>Cookies strictement nécessaires</strong> (toujours actifs) : fonctionnement du site, sécurité.</li>
+              <li><strong>Cookies publicitaires</strong> (optionnels) : Google AdSense — cookies <code className="text-xs bg-white px-1.5 py-0.5 rounded">__gads</code>, <code className="text-xs bg-white px-1.5 py-0.5 rounded">__gpi</code>, cookie DART — pour personnaliser les annonces et mesurer leur performance.</li>
+              <li><strong>Cookies de mesure d'audience</strong> (optionnels) : statistiques de fréquentation anonymisées pour améliorer le contenu.</li>
+            </ul>
+            <button
+              type="button"
+              onClick={openCookiePreferences}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors text-sm shadow-sm"
+            >
+              <Cookie className="w-4 h-4" />
+              Modifier mes préférences cookies
+            </button>
           </section>
 
           <section>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Globe } from 'lucide-react';
+import { openCookiePreferences } from '../lib/consent';
 
 export function Footer() {
   return (
@@ -37,6 +38,15 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link to="/mentions-legales" className="hover:text-indigo-400 transition-colors">Mentions légales</Link></li>
               <li><Link to="/politique-de-confidentialite" className="hover:text-indigo-400 transition-colors">Politique de confidentialité</Link></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={openCookiePreferences}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Gérer mes cookies
+                </button>
+              </li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Nous contacter</Link></li>
             </ul>
             <div className="mt-4 pt-4 border-t border-slate-800">
