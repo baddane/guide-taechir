@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 
 export function About() {
   useEffect(() => {
-    document.title = '\u00c0 propos \u2014 Guide-Taechir.org';
+    document.title = 'À propos — Guide-Taechir.org';
     window.scrollTo(0, 0);
   }, []);
 
@@ -34,10 +34,10 @@ export function About() {
             Qui sommes-nous
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            \u00c0 propos de Guide-Taechir.org
+            À propos de Guide-Taechir.org
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Le guide de r\u00e9f\u00e9rence pour le recrutement de travailleurs \u00e9trangers au Maroc via le programme TAECHIR.
+            Le guide de référence pour le recrutement de travailleurs étrangers au Maroc via le programme TAECHIR.
           </p>
         </div>
       </header>
@@ -54,10 +54,10 @@ export function About() {
             <h2 className="text-2xl font-bold text-slate-900">Notre mission</h2>
           </div>
           <p className="text-slate-700 leading-relaxed mb-4">
-            <strong>Guide-Taechir.org</strong> est n\u00e9 d'un constat simple : la proc\u00e9dure de recrutement de travailleurs \u00e9trangers au Maroc, bien que n\u00e9cessaire et encadr\u00e9e par la loi, reste complexe et mal document\u00e9e pour de nombreux employeurs marocains.
+            <strong>Guide-Taechir.org</strong> est né d'un constat simple : la procédure de recrutement de travailleurs étrangers au Maroc, bien que nécessaire et encadrée par la loi, reste complexe et mal documentée pour de nombreux employeurs marocains.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
-            Notre mission est de <strong>d\u00e9mystifier le programme TAECHIR</strong> et de fournir un guide clair, pr\u00e9cis et \u00e0 jour pour accompagner les entreprises marocaines dans leurs d\u00e9marches de recrutement international. Nous transformons une r\u00e9glementation dense en informations accessibles et actionnables.
+            Notre mission est de <strong>démystifier le programme TAECHIR</strong> et de fournir un guide clair, précis et à jour pour accompagner les entreprises marocaines dans leurs démarches de recrutement international. Nous transformons une réglementation dense en informations accessibles et actionnables.
           </p>
         </section>
 
@@ -71,10 +71,10 @@ export function About() {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: 'Guide proc\u00e9dural complet', desc: 'Chaque \u00e9tape de la proc\u00e9dure TAECHIR expliqu\u00e9e en d\u00e9tail : ANAPEC, plateforme TAECHIR, d\u00e9p\u00f4t au Minist\u00e8re.' },
-              { title: 'Calculateur interactif', desc: 'Estimez les co\u00fbts administratifs et les d\u00e9lais en fonction de votre profil de recrutement.' },
-              { title: 'Assistant guid\u00e9 personnalis\u00e9', desc: 'Un questionnaire intelligent qui g\u00e9n\u00e8re un plan d\'action adapt\u00e9 \u00e0 votre situation pr\u00e9cise.' },
-              { title: 'Blog d\u00e9cryptage', desc: 'Des articles approfondis sur les aspects sp\u00e9cifiques de la proc\u00e9dure : dispenses, profils rares, renouvellement.' },
+              { title: 'Guide procédural complet', desc: 'Chaque étape de la procédure TAECHIR expliquée en détail : ANAPEC, plateforme TAECHIR, dépôt au Ministère.' },
+              { title: 'Calculateur interactif', desc: 'Estimez les coûts administratifs et les délais en fonction de votre profil de recrutement.' },
+              { title: 'Assistant guidé personnalisé', desc: "Un questionnaire intelligent qui génère un plan d'action adapté à votre situation précise." },
+              { title: 'Blog décryptage', desc: 'Des articles approfondis sur les aspects spécifiques de la procédure : dispenses, profils rares, renouvellement.' },
             ].map((item) => (
               <div key={item.title} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
                 <div className="flex items-start gap-3">
@@ -98,10 +98,10 @@ export function About() {
             <h2 className="text-2xl font-bold text-slate-900">Notre expertise</h2>
           </div>
           <p className="text-slate-700 leading-relaxed mb-4">
-            Notre \u00e9quipe est compos\u00e9e de <strong>professionnels du droit du travail et des ressources humaines</strong> sp\u00e9cialis\u00e9s dans le recrutement international au Maroc. Forts de plusieurs ann\u00e9es d'exp\u00e9rience dans l'accompagnement d'entreprises marocaines et internationales, nous avons trait\u00e9 des centaines de dossiers TAECHIR couvrant tous les types de situations : premiers recrutements, renouvellements, changements d'employeur, profils rares et cas de dispense.
+            Notre équipe est composée de <strong>professionnels du droit du travail et des ressources humaines</strong> spécialisés dans le recrutement international au Maroc. Forts de plusieurs années d'expérience dans l'accompagnement d'entreprises marocaines et internationales, nous avons traité des centaines de dossiers TAECHIR couvrant tous les types de situations : premiers recrutements, renouvellements, changements d'employeur, profils rares et cas de dispense.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
-            Cette exp\u00e9rience terrain nous permet de fournir des informations fiables, \u00e0 jour et enrichies par la pratique quotidienne de la proc\u00e9dure. Chaque article et chaque outil de ce site est v\u00e9rifi\u00e9 et valid\u00e9 par rapport aux textes officiels et \u00e0 la r\u00e9alit\u00e9 op\u00e9rationnelle des guichets.
+            Cette expérience terrain nous permet de fournir des informations fiables, à jour et enrichies par la pratique quotidienne de la procédure. Chaque article et chaque outil de ce site est vérifié et validé par rapport aux textes officiels et à la réalité opérationnelle des guichets.
           </p>
         </section>
 
@@ -109,14 +109,14 @@ export function About() {
         <section>
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Nos sources</h2>
           <p className="text-slate-700 leading-relaxed mb-4">
-            L'ensemble des informations publi\u00e9es sur ce site sont bas\u00e9es sur :
+            L'ensemble des informations publiées sur ce site sont basées sur :
           </p>
           <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-4">
-            <li>Le <strong>Code du Travail marocain</strong>, notamment les articles 516 et suivants relatifs \u00e0 l'emploi des salari\u00e9s \u00e9trangers.</li>
-            <li>Les <strong>circulaires et notes du Minist\u00e8re de l'Inclusion \u00c9conomique, de la Petite Entreprise, de l'Emploi et des Comp\u00e9tences</strong>.</li>
-            <li>Les <strong>proc\u00e9dures officielles de l'ANAPEC</strong> (Agence Nationale de Promotion de l'Emploi et des Comp\u00e9tences).</li>
-            <li>Les <strong>conventions bilat\u00e9rales</strong> d'\u00e9tablissement conclues entre le Maroc et les pays partenaires.</li>
-            <li>L'exp\u00e9rience pratique accumul\u00e9e au contact des guichets r\u00e9gionaux du Minist\u00e8re et de l'ANAPEC.</li>
+            <li>Le <strong>Code du Travail marocain</strong>, notamment les articles 516 et suivants relatifs à l'emploi des salariés étrangers.</li>
+            <li>Les <strong>circulaires et notes du Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences</strong>.</li>
+            <li>Les <strong>procédures officielles de l'ANAPEC</strong> (Agence Nationale de Promotion de l'Emploi et des Compétences).</li>
+            <li>Les <strong>conventions bilatérales</strong> d'établissement conclues entre le Maroc et les pays partenaires.</li>
+            <li>L'expérience pratique accumulée au contact des guichets régionaux du Ministère et de l'ANAPEC.</li>
           </ul>
         </section>
 
@@ -124,10 +124,10 @@ export function About() {
         <section className="bg-amber-50 border border-amber-200 rounded-xl p-6">
           <h2 className="text-lg font-bold text-amber-900 mb-3">Avertissement important</h2>
           <p className="text-amber-800 leading-relaxed text-sm mb-3">
-            <strong>Guide-Taechir.org</strong> est un site \u00e0 caract\u00e8re informatif et ne se substitue en aucun cas aux services officiels du Minist\u00e8re de l'Emploi ni \u00e0 un conseil juridique personnalis\u00e9. Nous ne sommes pas un organisme gouvernemental.
+            <strong>Guide-Taechir.org</strong> est un site à caractère informatif et ne se substitue en aucun cas aux services officiels du Ministère de l'Emploi ni à un conseil juridique personnalisé. Nous ne sommes pas un organisme gouvernemental.
           </p>
           <p className="text-amber-800 leading-relaxed text-sm">
-            Les informations fournies sont donn\u00e9es \u00e0 titre indicatif et peuvent \u00e9voluer avec les changements r\u00e9glementaires. Pour les d\u00e9marches officielles, veuillez vous r\u00e9f\u00e9rer directement \u00e0 la plateforme <a href="https://taechir.travail.gov.ma" className="text-amber-700 underline font-medium">taechir.travail.gov.ma</a>.
+            Les informations fournies sont données à titre indicatif et peuvent évoluer avec les changements réglementaires. Pour les démarches officielles, veuillez vous référer directement à la plateforme <a href="https://taechir.travail.gov.ma" className="text-amber-700 underline font-medium">taechir.travail.gov.ma</a>.
           </p>
         </section>
 

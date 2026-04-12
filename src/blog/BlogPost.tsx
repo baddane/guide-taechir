@@ -27,9 +27,9 @@ export function BlogPost() {
       if (canonical) canonical.setAttribute('href', `https://guide-taechir.org/blog/${article.slug}`);
     }
     return () => {
-      document.title = 'Programme Taechir Maroc \u2013 Guide Complet Recrutement Salari\u00e9 \u00c9tranger';
+      document.title = 'Programme Taechir Maroc – Guide Complet Recrutement Salarié Étranger';
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', 'Guide complet du programme Taechir : proc\u00e9dure pas \u00e0 pas, d\u00e9lais, frais ANAPEC, documents requis et simulateur pour recruter un salari\u00e9 \u00e9tranger au Maroc.');
+      if (metaDesc) metaDesc.setAttribute('content', 'Guide complet du programme Taechir : procédure pas à pas, délais, frais ANAPEC, documents requis et simulateur pour recruter un salarié étranger au Maroc.');
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) canonical.setAttribute('href', 'https://guide-taechir.org/');
     };
@@ -101,8 +101,8 @@ export function BlogPost() {
               <User className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold text-slate-800">\u00c9quipe \u00e9ditoriale Guide-Taechir</p>
-              <p className="text-xs text-slate-500">Sp\u00e9cialistes en droit du travail et recrutement international au Maroc</p>
+              <p className="text-sm font-semibold text-slate-800">Équipe éditoriale Guide-Taechir</p>
+              <p className="text-xs text-slate-500">Spécialistes en droit du travail et recrutement international au Maroc</p>
             </div>
           </div>
         </div>

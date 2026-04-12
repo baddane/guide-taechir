@@ -14,7 +14,7 @@ const categoryColors: Record<string, string> = {
 
 export function BlogList() {
   useEffect(() => {
-    document.title = 'Blog — Recrutement \u00e9tranger au Maroc | Guide-Taechir.org';
+    document.title = 'Blog — Recrutement étranger au Maroc | Guide-Taechir.org';
   }, []);
 
   return (

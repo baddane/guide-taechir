@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 
 export function Contact() {
   useEffect(() => {
-    document.title = 'Contact \u2014 Guide-Taechir.org';
+    document.title = 'Contact — Guide-Taechir.org';
     window.scrollTo(0, 0);
   }, []);
 
@@ -37,7 +37,7 @@ export function Contact() {
             Contactez-nous
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Une question sur le contenu du site, une suggestion d'am\u00e9lioration ou une demande particuli\u00e8re ? N'h\u00e9sitez pas \u00e0 nous \u00e9crire.
+            Une question sur le contenu du site, une suggestion d'amélioration ou une demande particulière ? N'hésitez pas à nous écrire.
           </p>
         </div>
       </header>
@@ -53,7 +53,7 @@ export function Contact() {
             </div>
             <h2 className="text-xl font-bold text-slate-900 mb-3">Par e-mail</h2>
             <p className="text-slate-600 text-sm leading-relaxed mb-4">
-              Pour toute question g\u00e9n\u00e9rale, suggestion de contenu, signalement d'erreur ou demande de partenariat :
+              Pour toute question générale, suggestion de contenu, signalement d'erreur ou demande de partenariat :
             </p>
             <a
               href="mailto:contact@guide-taechir.org"
@@ -71,13 +71,13 @@ export function Contact() {
             </div>
             <h2 className="text-xl font-bold text-slate-900 mb-3">Assistant en ligne</h2>
             <p className="text-slate-600 text-sm leading-relaxed mb-4">
-              Pour une r\u00e9ponse imm\u00e9diate \u00e0 vos questions sur la proc\u00e9dure TAECHIR, utilisez notre assistant en ligne disponible sur la page d'accueil.
+              Pour une réponse immédiate à vos questions sur la procédure TAECHIR, utilisez notre assistant en ligne disponible sur la page d'accueil.
             </p>
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
             >
-              Acc\u00e9der \u00e0 l'assistant
+              Accéder à l'assistant
               <ExternalLink className="w-4 h-4" />
             </Link>
           </div>
@@ -90,9 +90,9 @@ export function Contact() {
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 mb-2">D\u00e9lai de r\u00e9ponse</h3>
+              <h3 className="font-bold text-slate-900 mb-2">Délai de réponse</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Nous nous effor\u00e7ons de r\u00e9pondre \u00e0 toutes les demandes dans un d\u00e9lai de <strong>48 heures ouvr\u00e9es</strong>. Les demandes relatives \u00e0 la protection des donn\u00e9es personnelles sont trait\u00e9es en priorit\u00e9.
+                Nous nous efforçons de répondre à toutes les demandes dans un délai de <strong>48 heures ouvrées</strong>. Les demandes relatives à la protection des données personnelles sont traitées en priorité.
               </p>
             </div>
           </div>
@@ -102,10 +102,10 @@ export function Contact() {
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
           <h3 className="text-lg font-bold text-amber-900 mb-3">Remarque importante</h3>
           <p className="text-amber-800 leading-relaxed text-sm mb-3">
-            <strong>Guide-Taechir.org</strong> est un site informatif ind\u00e9pendant. Nous ne sommes pas un organisme gouvernemental et ne pouvons pas traiter directement vos dossiers TAECHIR, ANAPEC ou Minist\u00e8re du Travail.
+            <strong>Guide-Taechir.org</strong> est un site informatif indépendant. Nous ne sommes pas un organisme gouvernemental et ne pouvons pas traiter directement vos dossiers TAECHIR, ANAPEC ou Ministère du Travail.
           </p>
           <p className="text-amber-800 leading-relaxed text-sm">
-            Pour vos d\u00e9marches officielles, veuillez vous adresser directement aux guichets comp\u00e9tents ou \u00e0 la plateforme officielle <a href="https://taechir.travail.gov.ma" className="text-amber-700 underline font-medium">taechir.travail.gov.ma</a>.
+            Pour vos démarches officielles, veuillez vous adresser directement aux guichets compétents ou à la plateforme officielle <a href="https://taechir.travail.gov.ma" className="text-amber-700 underline font-medium">taechir.travail.gov.ma</a>.
           </p>
         </div>
       </main>
