@@ -5,7 +5,7 @@
   <!-- Page principale -->
   <url>
     <loc>https://guide-taechir.org/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr-MA" href="https://guide-taechir.org/" />
@@ -14,7 +14,7 @@
   <!-- Section : Programme Taechir — Conditions et Étapes -->
   <url>
     <loc>https://guide-taechir.org/#procedure</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -22,7 +22,7 @@
   <!-- Section : Calculateur d'Estimations (frais ANAPEC, délais) -->
   <url>
     <loc>https://guide-taechir.org/#calculateur</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,7 +30,7 @@
   <!-- Section : Attestation d'Activité ANAPEC -->
   <url>
     <loc>https://guide-taechir.org/#anapec</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -38,7 +38,15 @@
   <!-- Section : Dossier de Demande — Visa Taechir -->
   <url>
     <loc>https://guide-taechir.org/#documents</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section : Cadre Juridique -->
+  <url>
+    <loc>https://guide-taechir.org/#cadre-juridique</loc>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,7 +54,7 @@
   <!-- Section : FAQ — Recrutement Étranger Maroc -->
   <url>
     <loc>https://guide-taechir.org/#faq</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,7 +62,7 @@
   <!-- Page : À propos -->
   <url>
     <loc>https://guide-taechir.org/a-propos</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -62,15 +70,23 @@
   <!-- Page : Contact -->
   <url>
     <loc>https://guide-taechir.org/contact</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- Page : Glossaire -->
+  <url>
+    <loc>https://guide-taechir.org/glossaire</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Page : Politique de Confidentialité -->
   <url>
     <loc>https://guide-taechir.org/politique-de-confidentialite</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -78,7 +94,7 @@
   <!-- Page : Mentions Légales -->
   <url>
     <loc>https://guide-taechir.org/mentions-legales</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -86,7 +102,7 @@
   <!-- Blog — Page listing -->
   <url>
     <loc>https://guide-taechir.org/blog</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -135,6 +151,54 @@
   <url>
     <loc>https://guide-taechir.org/blog/erreurs-taechir-visa-travail-maroc</loc>
     <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 7 : Détachement salariés étrangers Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/detachement-salaries-etrangers-maroc-procedure</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 8 : Guide CNSS employeurs salariés étrangers -->
+  <url>
+    <loc>https://guide-taechir.org/blog/guide-cnss-employeurs-salaries-etrangers-maroc</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 9 : Carte de séjour travailleurs étrangers DGSN -->
+  <url>
+    <loc>https://guide-taechir.org/blog/carte-sejour-maroc-travailleurs-etrangers-dgsn</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 10 : Offshoring Maroc avantages procédure -->
+  <url>
+    <loc>https://guide-taechir.org/blog/recrutement-offshoring-maroc-avantages-procedure</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 11 : Article 516 Code du Travail obligations sanctions -->
+  <url>
+    <loc>https://guide-taechir.org/blog/article-516-code-travail-marocain-obligations-sanctions</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 12 : Checklist dossier Taechir préparation -->
+  <url>
+    <loc>https://guide-taechir.org/blog/checklist-complete-dossier-taechir-preparation</loc>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

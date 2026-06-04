@@ -76,8 +76,10 @@ export default function App() {
             <a href="#calculateur" className="hover:text-indigo-600 transition-colors">Calculateur</a>
             <a href="#anapec" className="hover:text-indigo-600 transition-colors">Attestation ANAPEC</a>
             <a href="#documents" className="hover:text-indigo-600 transition-colors">Documents Requis</a>
+            <a href="#cadre-juridique" className="hover:text-indigo-600 transition-colors">Cadre Juridique</a>
             <a href="#faq" className="hover:text-indigo-600 transition-colors">FAQ</a>
             <Link to="/blog" className="hover:text-indigo-600 transition-colors font-semibold">Blog</Link>
+            <Link to="/glossaire" className="hover:text-indigo-600 transition-colors">Glossaire</Link>
           </div>
           {/* Mobile hamburger */}
           <button
@@ -101,8 +103,10 @@ export default function App() {
             <a href="#calculateur" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Calculateur</a>
             <a href="#anapec" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Attestation ANAPEC</a>
             <a href="#documents" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Documents Requis</a>
+            <a href="#cadre-juridique" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Cadre Juridique</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">FAQ</a>
             <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 transition-colors text-sm">Blog</Link>
+            <Link to="/glossaire" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Glossaire</Link>
             <div className="border-t border-slate-100 mt-2 pt-2">
               <Link to="/a-propos" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-500 hover:bg-slate-50 transition-colors text-sm">À propos</Link>
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-500 hover:bg-slate-50 transition-colors text-sm">Contact</Link>
@@ -406,6 +410,64 @@ export default function App() {
           </div>
         </section>
 
+        {/* Legal Framework Section */}
+        <section id="cadre-juridique" className="scroll-mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Cadre Juridique du Recrutement d'Étrangers au Maroc</h2>
+            <p className="text-slate-600 max-w-3xl mx-auto">Comprendre les fondements légaux de la procédure TAECHIR permet de mieux anticiper les exigences administratives et de sécuriser vos recrutements internationaux.</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-indigo-600" />
+                L'article 516 du Code du Travail marocain
+              </h3>
+              <p className="text-slate-700 leading-relaxed mb-4">
+                Le fondement juridique de toute la procédure de recrutement international au Maroc repose sur l'<strong>article 516 du Code du Travail</strong>. Ce texte pose le principe essentiel de la <strong>priorité nationale à l'emploi</strong> : tout employeur souhaitant recruter un salarié étranger doit préalablement obtenir une autorisation du Ministère chargé du Travail, matérialisée par l'apposition d'un visa sur le contrat de travail.
+              </p>
+              <p className="text-slate-700 leading-relaxed mb-4">
+                Ce visa n'est délivré qu'après vérification que le poste ne peut être pourvu par un candidat marocain possédant les qualifications requises. Cette vérification est assurée par l'ANAPEC à travers la procédure d'attestation d'activité, sauf pour les catégories explicitement dispensées.
+              </p>
+              <p className="text-slate-700 leading-relaxed">
+                En cas de non-respect de ces dispositions, l'employeur s'expose à des <strong>sanctions administratives et pénales</strong> prévues par le Code du Travail, incluant des amendes et, dans les cas graves, la fermeture temporaire de l'établissement. La date du visa constitue la date de prise d'effet du contrat : aucune relation de travail ne peut légalement débuter avant cette date.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Protection de la main-d'œuvre nationale</h3>
+                <p className="text-slate-700 leading-relaxed mb-3">
+                  Le système marocain protège le marché de l'emploi national tout en restant ouvert aux compétences internationales nécessaires au développement économique. L'ANAPEC joue un rôle de régulateur en évaluant objectivement la disponibilité locale des compétences recherchées.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  Cette approche équilibrée permet aux entreprises d'accéder aux talents internationaux lorsque le marché local ne peut répondre à leurs besoins, tout en garantissant que les opportunités d'emploi sont d'abord proposées aux citoyens marocains qualifiés.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Conventions internationales applicables</h3>
+                <p className="text-slate-700 leading-relaxed mb-3">
+                  Le Maroc a conclu des <strong>conventions bilatérales d'établissement</strong> avec plusieurs pays, notamment l'Algérie, la Tunisie et le Sénégal. Ces accords facilitent la mobilité professionnelle des ressortissants de ces pays en les dispensant de certaines formalités, conformément au principe de réciprocité.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  Par ailleurs, le Maroc est signataire de plusieurs conventions de l'Organisation Internationale du Travail (OIT) relatives aux droits des travailleurs migrants, ce qui garantit un cadre protecteur pour les salariés étrangers recrutés légalement.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">Le rôle du Ministère de l'Emploi</h3>
+              <p className="text-slate-700 leading-relaxed mb-3">
+                Le <strong>Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences</strong> est l'autorité centrale en charge de la délivrance des visas de contrat de travail pour les salariés étrangers. Il supervise la plateforme TAECHIR et opère à travers un réseau de guichets régionaux répartis sur l'ensemble du territoire national.
+              </p>
+              <p className="text-slate-700 leading-relaxed">
+                Chaque dossier est examiné individuellement par les services du Ministère, qui vérifient la conformité des documents, la légitimité du besoin de recrutement international et le respect des conditions légales. Le Ministère peut demander des pièces complémentaires et se réserve le droit de refuser une demande s'il estime que les conditions ne sont pas réunies.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-12">
@@ -449,6 +511,38 @@ export default function App() {
             </AccordionItem>
             <AccordionItem title="Les listes A1 (Haut niveau) et A2 (Profils pointus rares) sont-elles fixes ?">
               <p>Non, ces listes sont mises à jour régulièrement par l'ANAPEC en concertation avec le Ministère chargé du Travail, en fonction de l'évolution et des besoins réels du marché de l'emploi au Maroc.</p>
+            </AccordionItem>
+            <AccordionItem title="Quels sont les documents de l'employeur à fournir pour une personne morale (SARL, SA, SAS) ?">
+              <p>Pour une personne morale (société), le dossier de l'employeur doit comporter :</p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li><strong>Les statuts de la société</strong> (version en vigueur, incluant toute modification ultérieure).</li>
+                <li><strong>Le Registre de Commerce (modèle 7)</strong> — document récent, attestant de l'existence juridique de la société.</li>
+                <li><strong>Le procès-verbal (PV) de création</strong> de la société ou le PV de nomination du gérant ou du directeur général en exercice.</li>
+              </ul>
+              <p className="mt-2">Pour une personne physique (auto-entrepreneur, commerçant individuel), un Registre de Commerce ou une Taxe Professionnelle en cours de validité suffit.</p>
+            </AccordionItem>
+            <AccordionItem title="Le salarié étranger doit-il être présent physiquement au Maroc pour déposer le dossier ?">
+              <p>Non, la présence physique du salarié n'est pas requise lors du dépôt du dossier au guichet du Ministère. C'est l'<strong>employeur</strong> (ou son représentant légal) qui dépose le dossier complet. Le salarié étranger devra cependant être présent au Maroc pour la suite des démarches : légalisation des signatures, obtention de la carte de séjour auprès de la DGSN, et bien entendu pour commencer à travailler une fois le visa apposé.</p>
+            </AccordionItem>
+            <AccordionItem title="Peut-on recruter un étranger pour un CDD (contrat à durée déterminée) ?">
+              <p>Oui. Le contrat de travail généré via TAECHIR peut être un <strong>CDD ou un CDI</strong>. Le visa est apposé sur le contrat tel qu'il est formulé. En cas de CDD, le renouvellement du contrat nécessitera une nouvelle procédure de visa. La durée du contrat influe sur la durée de la carte de séjour délivrée par la DGSN.</p>
+            </AccordionItem>
+            <AccordionItem title="Que faire si le dossier est incomplet lors du dépôt au guichet ?">
+              <p>Si le dossier déposé au guichet du Ministère est incomplet, l'administration vous notifiera les pièces manquantes. Le traitement du dossier est suspendu jusqu'à la régularisation. Dans les faits, un dossier incomplet peut retarder la procédure de plusieurs semaines, car le délai de 10 jours ne court qu'à partir du moment où le dossier est considéré comme complet. Il est donc impératif de vérifier minutieusement la complétude du dossier avant de se déplacer au guichet.</p>
+            </AccordionItem>
+            <AccordionItem title="La légalisation des documents étrangers est-elle obligatoire ?">
+              <p>Oui. Tout document émis à l'étranger (diplômes, certificats de travail, etc.) doit être <strong>légalisé</strong> pour être recevable au Maroc. Deux voies de légalisation existent :</p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li><strong>L'apostille</strong> — pour les pays signataires de la Convention de La Haye (procédure simplifiée).</li>
+                <li><strong>La légalisation consulaire</strong> — pour les pays non signataires, via le consulat marocain dans le pays d'émission.</li>
+              </ul>
+              <p className="mt-2">De plus, si le document est rédigé dans une langue autre que le français ou l'arabe, une <strong>traduction assermentée</strong> est exigée.</p>
+            </AccordionItem>
+            <AccordionItem title="Existe-t-il un quota maximum d'employés étrangers par entreprise ?">
+              <p>Le Code du Travail marocain ne fixe pas de quota strict en pourcentage de l'effectif total. Cependant, le principe de <strong>priorité nationale à l'emploi</strong> (article 516) implique que chaque recrutement d'étranger doit être justifié par l'absence de compétences locales équivalentes. En pratique, l'ANAPEC et le Ministère évaluent chaque demande individuellement. Pour un même emploi-métier, l'ANAPEC limite à <strong>5 dossiers par an</strong>.</p>
+            </AccordionItem>
+            <AccordionItem title="Comment fonctionne la procédure pour les zones franches et les zones d'accélération industrielle ?">
+              <p>Les entreprises installées dans les <strong>zones franches d'exportation</strong> et les <strong>zones d'accélération industrielle</strong> (Tanger Med, Atlantic Free Zone, Kénitra, etc.) suivent la même procédure TAECHIR que les entreprises classiques. Cependant, elles peuvent bénéficier d'un traitement accéléré en raison de leur régime fiscal spécial et de l'importance stratégique de leurs activités. Il est recommandé de contacter directement le guichet régional du Ministère pour connaître les éventuelles facilités disponibles.</p>
             </AccordionItem>
           </div>
         </section>

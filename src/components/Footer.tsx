@@ -27,6 +27,7 @@ export function Footer() {
               <li><Link to="/#procedure" className="hover:text-indigo-400 transition-colors">La Procédure</Link></li>
               <li><Link to="/#calculateur" className="hover:text-indigo-400 transition-colors">Calculateur</Link></li>
               <li><Link to="/blog" className="hover:text-indigo-400 transition-colors">Blog</Link></li>
+              <li><Link to="/glossaire" className="hover:text-indigo-400 transition-colors">Glossaire</Link></li>
               <li><Link to="/a-propos" className="hover:text-indigo-400 transition-colors">À propos</Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link></li>
             </ul>
