@@ -78,6 +78,7 @@ export default function App() {
             <a href="#documents" className="hover:text-indigo-600 transition-colors">Documents Requis</a>
             <a href="#faq" className="hover:text-indigo-600 transition-colors">FAQ</a>
             <Link to="/blog" className="hover:text-indigo-600 transition-colors font-semibold">Blog</Link>
+            <Link to="/contact" className="hover:text-indigo-600 transition-colors font-semibold">Contact</Link>
           </div>
           {/* Mobile hamburger */}
           <button
