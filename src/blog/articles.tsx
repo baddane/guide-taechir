@@ -822,6 +822,877 @@ function Article6Content() {
   );
 }
 
+/* ─── Article 7 ─────────────────────────────────────────────────────────── */
+
+function Article7Content() {
+  return (
+    <>
+      <Lead>
+        Une fois le visa de travail obtenu auprès du Ministère, le salarié étranger doit impérativement
+        obtenir une carte de séjour auprès de la Direction Générale de la Sûreté Nationale (DGSN).
+        Ce titre de séjour, distinct du visa de travail, est indispensable pour résider légalement
+        au Maroc. Voici tout ce qu'il faut savoir pour l'obtenir et le renouveler.
+      </Lead>
+
+      <H2>Carte de séjour et visa de travail : deux documents, deux administrations</H2>
+      <P>
+        La confusion entre ces deux documents est l'une des erreurs les plus fréquentes dans le
+        recrutement international au Maroc. Il est essentiel de comprendre la distinction :
+      </P>
+      <Table
+        rows={[
+          ['Caractéristique', 'Visa de travail', 'Carte de séjour'],
+          ['Administration', 'Ministère du Travail', 'DGSN (Ministère de l\'Intérieur)'],
+          ['Objet', 'Autorisation d\'exercer une activité professionnelle', 'Autorisation de résider sur le territoire'],
+          ['Base légale', 'Code du Travail (art. 516)', 'Loi n° 02-03 relative à l\'entrée et au séjour des étrangers'],
+          ['Validité', 'Durée du contrat de travail', '1 an renouvelable, puis 10 ans'],
+          ['Délai d\'obtention', '10 jours max', '2 à 6 semaines'],
+        ]}
+      />
+      <Warning>
+        Sans carte de séjour valide, un salarié étranger est en situation irrégulière au regard du
+        droit des étrangers, même s'il dispose d'un contrat de travail visé par le Ministère.
+        Les deux documents sont complémentaires et obligatoires.
+      </Warning>
+
+      <H2>Qui doit demander la carte de séjour ?</H2>
+      <P>
+        Tout ressortissant étranger séjournant au Maroc pour une durée supérieure à 90 jours doit
+        demander une carte d'immatriculation (carte de séjour). Cela inclut les salariés étrangers
+        titulaires d'un visa de travail, les conjoints de marocains, les étudiants étrangers, les
+        investisseurs et les retraités étrangers résidant au Maroc.
+      </P>
+      <P>
+        Pour les salariés, la demande est généralement initiée dès réception du contrat de travail
+        visé par le Ministère. Le salarié lui-même effectue la démarche, bien que l'employeur
+        soit souvent impliqué dans la préparation des pièces justificatives.
+      </P>
+
+      <H2>Documents requis pour la première demande</H2>
+      <P>
+        Le dossier de première demande de carte de séjour pour un salarié étranger comprend :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Formulaire de demande</strong> rempli et signé (disponible au guichet DGSN ou en préfecture)</li>
+        <li><strong>Contrat de travail visé</strong> par le Ministère du Travail (original + copie)</li>
+        <li><strong>Passeport en cours de validité</strong> (original + copie des pages d'identité et du tampon d'entrée)</li>
+        <li><strong>4 photos d'identité</strong> récentes aux normes marocaines (fond blanc)</li>
+        <li><strong>Justificatif de domicile au Maroc</strong> : contrat de bail légalisé, attestation d'hébergement ou certificat de résidence</li>
+        <li><strong>Extrait de casier judiciaire</strong> du pays d'origine, légalisé et traduit</li>
+        <li><strong>Certificat médical</strong> délivré par un médecin agréé au Maroc</li>
+        <li><strong>Timbre fiscal</strong> de 100 Dhs</li>
+      </ul>
+      <Info>
+        La liste exacte des pièces peut varier selon les préfectures et les situations particulières.
+        Il est recommandé de contacter le service des étrangers de votre préfecture de résidence
+        avant de constituer le dossier pour obtenir la liste à jour.
+      </Info>
+
+      <H2>La procédure pas à pas</H2>
+      <H3>Étape 1 : préparer le dossier complet</H3>
+      <P>
+        Rassemblez l'ensemble des pièces listées ci-dessus. Les documents étrangers doivent être
+        légalisés (apostille ou légalisation consulaire) et traduits en arabe ou en français par
+        un traducteur assermenté. Prévoyez des copies supplémentaires de chaque document.
+      </P>
+      <H3>Étape 2 : déposer le dossier au service des étrangers</H3>
+      <P>
+        Le dépôt se fait auprès du service des étrangers de la préfecture de police ou de la
+        Sûreté nationale du lieu de résidence du salarié. Un récépissé de dépôt est délivré,
+        servant de justificatif provisoire de séjour le temps du traitement.
+      </P>
+      <H3>Étape 3 : relevé des empreintes biométriques</H3>
+      <P>
+        Lors du dépôt ou à une convocation ultérieure, le salarié doit se présenter en personne
+        pour le relevé de ses empreintes digitales. Cette étape est obligatoire et ne peut pas
+        être effectuée par un mandataire.
+      </P>
+      <H3>Étape 4 : retrait de la carte</H3>
+      <P>
+        Le délai de traitement varie de 2 à 6 semaines selon les préfectures et la période.
+        La carte est retirée en personne sur présentation du récépissé de dépôt et d'une
+        pièce d'identité.
+      </P>
+
+      <H2>Renouvellement de la carte de séjour</H2>
+      <P>
+        La carte de séjour doit être renouvelée avant sa date d'expiration. Le renouvellement
+        suit une procédure similaire à la première demande, avec quelques différences :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Le contrat de travail visé en cours de validité (nouveau contrat si renouvellement)</li>
+        <li>L'ancienne carte de séjour (originale)</li>
+        <li>Les 3 derniers bulletins de paie ou attestation CNSS récente</li>
+        <li>Le justificatif de domicile actuel</li>
+        <li>Les photos d'identité récentes</li>
+      </ul>
+      <Tip>
+        Lancez la démarche de renouvellement au moins 2 mois avant l'expiration de la carte.
+        Un retard peut entraîner des complications administratives et rendre le salarié
+        temporairement en situation irrégulière, même si le contrat de travail est en cours.
+      </Tip>
+
+      <H2>La carte de séjour de 10 ans</H2>
+      <P>
+        Après avoir résidé légalement au Maroc pendant une période continue (généralement 4 ans
+        pour les salariés), le ressortissant étranger peut demander une carte de résidence de
+        10 ans. Cette carte offre une stabilité administrative considérable et simplifie les
+        formalités de renouvellement.
+      </P>
+      <P>
+        Les conditions d'éligibilité incluent : la régularité du séjour sur toute la période,
+        l'absence d'antécédents judiciaires, la stabilité professionnelle et la justification
+        de ressources suffisantes. L'appréciation reste à la discrétion de l'administration.
+      </P>
+
+      <Divider />
+
+      <H2>Erreurs fréquentes à éviter</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Confondre récépissé et carte de séjour.</strong> Le récépissé est un document
+          provisoire qui ne remplace pas la carte de séjour définitive. Certains services
+          (banques, location) peuvent exiger la carte définitive.
+        </li>
+        <li>
+          <strong>Négliger le délai de renouvellement.</strong> Une carte expirée place le salarié
+          en situation irrégulière, ce qui peut compliquer le renouvellement du visa de travail.
+        </li>
+        <li>
+          <strong>Oublier de signaler un changement d'adresse.</strong> Tout déménagement doit
+          être signalé au service des étrangers dans un délai de 30 jours.
+        </li>
+      </ul>
+    </>
+  );
+}
+
+/* ─── Article 8 ─────────────────────────────────────────────────────────── */
+
+function Article8Content() {
+  return (
+    <>
+      <Lead>
+        La déclaration à la Caisse Nationale de Sécurité Sociale (CNSS) est une obligation légale
+        dès le premier jour du contrat de travail visé. Pour un salarié étranger, cette déclaration
+        présente des particularités qu'il est essentiel de maîtriser pour éviter les pénalités
+        et garantir les droits sociaux du travailleur.
+      </Lead>
+
+      <H2>L'obligation légale : déclarer dès la date du visa</H2>
+      <P>
+        Le Code du Travail et la législation sur la sécurité sociale sont formels : tout salarié,
+        quelle que soit sa nationalité, doit être déclaré à la CNSS dès le premier jour de sa
+        relation de travail. Pour un salarié étranger recruté via TAECHIR, la date de prise
+        d'effet du contrat est la date d'apposition du visa par le Ministère.
+      </P>
+      <P>
+        Cette obligation s'applique sans exception, que le salarié soit physiquement présent
+        au Maroc ou non à cette date. L'employeur ne peut pas conditionner la déclaration à
+        l'arrivée effective du salarié ou au début de ses fonctions opérationnelles.
+      </P>
+      <Warning>
+        Tout retard de déclaration CNSS génère des majorations de retard calculées rétroactivement
+        depuis la date du visa. Plus le retard s'accumule, plus la régularisation est coûteuse.
+        Les pénalités peuvent atteindre 3,5 % du montant des cotisations par mois de retard.
+      </Warning>
+
+      <H2>La procédure d'affiliation du salarié étranger</H2>
+      <H3>Étape 1 : l'immatriculation de l'employeur</H3>
+      <P>
+        Si l'entreprise n'est pas encore affiliée à la CNSS (cas rare pour une entreprise
+        établie), cette immatriculation doit être effectuée préalablement. La grande majorité
+        des employeurs marocains disposent déjà d'un numéro d'affiliation CNSS.
+      </P>
+      <H3>Étape 2 : la déclaration d'entrée du salarié</H3>
+      <P>
+        L'employeur doit déclarer le salarié étranger via le portail en ligne DAMANCOM ou
+        directement auprès de l'agence CNSS de rattachement. Les informations requises sont :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Identité complète du salarié (nom, prénom, date de naissance, nationalité)</li>
+        <li>Numéro de passeport et copie du passeport</li>
+        <li>Copie du contrat de travail visé par le Ministère</li>
+        <li>Date d'effet de l'embauche (= date du visa)</li>
+        <li>Salaire brut mensuel convenu</li>
+        <li>Poste occupé et qualification</li>
+      </ul>
+      <Info>
+        Le salarié étranger reçoit un numéro d'immatriculation CNSS personnel, identique dans
+        son format à celui d'un salarié marocain. Ce numéro le suivra tout au long de sa carrière
+        au Maroc, même en cas de changement d'employeur.
+      </Info>
+
+      <H3>Étape 3 : les déclarations mensuelles</H3>
+      <P>
+        Chaque mois, l'employeur doit déclarer le salaire brut versé au salarié étranger dans
+        le cadre de la Déclaration Nominative des Salaires (DNS). Cette déclaration inclut le
+        salarié étranger au même titre que les salariés marocains, sans distinction.
+      </P>
+      <P>
+        Les taux de cotisation applicables sont identiques à ceux des salariés marocains :
+      </P>
+      <Table
+        rows={[
+          ['Branche', 'Part patronale', 'Part salariale', 'Total'],
+          ['Prestations sociales', '8,98 %', '0,52 %', '9,50 %'],
+          ['Assurance Maladie Obligatoire (AMO)', '4,11 %', '2,26 %', '6,37 %'],
+          ['Allocations familiales', '6,40 %', '0 %', '6,40 %'],
+          ['Formation professionnelle', '1,60 %', '0 %', '1,60 %'],
+        ]}
+      />
+
+      <H2>Les droits sociaux du salarié étranger au Maroc</H2>
+      <P>
+        Contrairement à une idée reçue, le salarié étranger déclaré à la CNSS bénéficie des
+        mêmes prestations sociales qu'un salarié marocain. Ces droits comprennent :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>L'Assurance Maladie Obligatoire (AMO)</strong> : couverture médicale pour le salarié et ses ayants droit résidant au Maroc</li>
+        <li><strong>Les indemnités journalières</strong> : en cas de maladie ou d'accident du travail</li>
+        <li><strong>Les allocations familiales</strong> : pour les enfants résidant au Maroc</li>
+        <li><strong>La pension de retraite</strong> : calculée sur la base des cotisations versées (sous réserve de conventions bilatérales)</li>
+        <li><strong>L'indemnité pour perte d'emploi (IPE)</strong> : sous conditions d'éligibilité</li>
+      </ul>
+
+      <H2>Les conventions bilatérales de sécurité sociale</H2>
+      <P>
+        Le Maroc a conclu des conventions bilatérales de sécurité sociale avec plusieurs pays,
+        notamment la France, la Belgique, l'Espagne, les Pays-Bas, le Canada, la Tunisie et
+        l'Allemagne. Ces conventions permettent :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>La <strong>totalisation des périodes d'assurance</strong> : les périodes cotisées dans chaque pays sont cumulées pour le calcul des droits à pension</li>
+        <li>L'<strong>exportation des prestations</strong> : le salarié peut percevoir sa pension marocaine dans son pays d'origine</li>
+        <li>L'<strong>exemption de double cotisation</strong> pour les salariés détachés temporairement</li>
+      </ul>
+      <Tip>
+        Pour un salarié originaire d'un pays ayant une convention avec le Maroc, il est recommandé
+        de se renseigner auprès de la CNSS sur les modalités de totalisation. Cela peut avoir
+        un impact significatif sur les droits à la retraite du salarié.
+      </Tip>
+
+      <H2>Pénalités en cas de non-déclaration ou de retard</H2>
+      <P>
+        Les conséquences d'un défaut de déclaration CNSS sont multiples et sérieuses :
+      </P>
+      <Table
+        rows={[
+          ['Infraction', 'Sanction'],
+          ['Retard de déclaration', 'Majorations de 3,5 % par mois de retard'],
+          ['Non-déclaration d\'un salarié', 'Amende de 5 000 à 10 000 Dhs par salarié'],
+          ['Sous-déclaration de salaire', 'Régularisation + majorations + sanctions'],
+          ['Non-paiement des cotisations', 'Poursuites judiciaires possibles'],
+        ]}
+      />
+      <P>
+        Au-delà des sanctions financières, une situation CNSS non régulière bloque également
+        toute future demande ANAPEC et TAECHIR. L'employeur qui ne déclare pas ses salariés
+        étrangers se prive de facto de la possibilité de recruter de nouveaux travailleurs
+        étrangers tant que la situation n'est pas régularisée.
+      </P>
+
+      <Divider />
+
+      <P>
+        La déclaration CNSS d'un salarié étranger n'est ni plus compliquée ni plus coûteuse que
+        celle d'un salarié marocain. Elle obéit aux mêmes règles, aux mêmes taux et aux mêmes
+        échéances. Le point critique est le timing : déclarer dès la date du visa, sans attendre
+        l'arrivée physique ou la prise de poste effective du salarié.
+      </P>
+    </>
+  );
+}
+
+/* ─── Article 9 ─────────────────────────────────────────────────────────── */
+
+function Article9Content() {
+  return (
+    <>
+      <Lead>
+        La légalisation des documents étrangers est une étape souvent sous-estimée dans la
+        procédure TAECHIR. Pourtant, un diplôme non légalisé ou une traduction non assermentée
+        entraîne systématiquement le rejet du dossier. Ce guide détaille les deux systèmes
+        en vigueur — apostille et légalisation consulaire — et vous donne un plan d'action
+        concret pour chaque pays d'origine.
+      </Lead>
+
+      <H2>Légalisation et apostille : quelle différence ?</H2>
+      <P>
+        La légalisation est le processus par lequel un document officiel émis dans un pays est
+        authentifié pour être reconnu dans un autre pays. Deux systèmes coexistent au niveau
+        international :
+      </P>
+      <Table
+        rows={[
+          ['Système', 'Base légale', 'Procédure'],
+          ['Apostille', 'Convention de La Haye (1961)', 'Tampon unique délivré par l\'autorité compétente du pays d\'émission'],
+          ['Légalisation consulaire', 'Droit international coutumier', 'Chaîne de légalisation : autorité locale → MAE → consulat du Maroc'],
+        ]}
+      />
+
+      <H2>Le Maroc et la Convention de La Haye</H2>
+      <P>
+        Le Maroc a adhéré à la Convention de La Haye supprimant l'exigence de la légalisation
+        des actes publics étrangers. Cela signifie que pour les documents émis dans un pays
+        également membre de cette convention, une simple apostille suffit. L'apostille est un
+        tampon ou un certificat standardisé apposé par l'autorité compétente du pays d'émission.
+      </P>
+      <P>
+        Parmi les pays signataires les plus fréquemment concernés dans le cadre du recrutement
+        TAECHIR : la France, l'Espagne, l'Allemagne, l'Italie, les Pays-Bas, le Portugal,
+        la Belgique, le Royaume-Uni, les États-Unis, le Canada (pour certaines provinces),
+        le Japon et la Corée du Sud.
+      </P>
+      <Info>
+        La liste complète des pays signataires est disponible sur le site de la Conférence de
+        La Haye de droit international privé. Elle évolue régulièrement — vérifiez toujours
+        le statut du pays d'origine avant de constituer le dossier.
+      </Info>
+
+      <H2>Procédure d'apostille (pays signataires)</H2>
+      <H3>Étape 1 : identifier l'autorité compétente</H3>
+      <P>
+        L'autorité qui délivre l'apostille varie selon les pays. En France, c'est la Cour
+        d'appel du lieu de résidence ou du lieu d'émission du document. En Espagne, le Ministerio
+        de Justicia. Aux États-Unis, le Secretary of State de l'État fédéré concerné.
+      </P>
+      <H3>Étape 2 : soumettre le document original</H3>
+      <P>
+        Le document original (diplôme, certificat de travail, extrait de casier judiciaire)
+        est présenté à l'autorité compétente. L'apostille est apposée directement sur le document
+        ou sur une feuille annexée (allonge).
+      </P>
+      <H3>Étape 3 : délai et coût</H3>
+      <P>
+        Le délai d'obtention de l'apostille varie de quelques jours à 2-3 semaines selon les
+        pays et les périodes. Le coût est généralement modique (10 à 50 euros selon les pays).
+        En France, l'apostille est gratuite auprès de la Cour d'appel.
+      </P>
+
+      <H2>Procédure de légalisation consulaire (pays non signataires)</H2>
+      <P>
+        Pour les documents émis dans des pays non signataires de la Convention de La Haye —
+        notamment certains pays d'Afrique subsaharienne, du Moyen-Orient et d'Asie — la
+        procédure est plus longue et plus complexe :
+      </P>
+      <ol className="list-decimal pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Authentification par l'autorité locale</strong> : le document est d'abord
+          certifié par l'autorité qui l'a émis (université, tribunal, administration).
+        </li>
+        <li>
+          <strong>Légalisation par le Ministère des Affaires Étrangères</strong> du pays
+          d'émission : le MAE authentifie la signature de l'autorité locale.
+        </li>
+        <li>
+          <strong>Légalisation par le consulat ou l'ambassade du Maroc</strong> dans le
+          pays d'émission : le consulat authentifie la signature du MAE.
+        </li>
+      </ol>
+      <Warning>
+        Cette chaîne de légalisation peut prendre 2 à 6 semaines selon les pays et la
+        disponibilité des services consulaires marocains. Dans certains pays, le consulat
+        du Maroc n'est présent que dans la capitale, ce qui ajoute des délais logistiques.
+        Anticipez cette étape le plus tôt possible.
+      </Warning>
+
+      <H2>La traduction assermentée : quand et comment ?</H2>
+      <P>
+        Tout document rédigé dans une langue autre que l'arabe ou le français doit être traduit
+        par un traducteur assermenté. Cette obligation s'applique quel que soit le système de
+        légalisation utilisé (apostille ou consulaire).
+      </P>
+      <P>Points importants concernant la traduction :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>La traduction doit être effectuée par un <strong>traducteur assermenté</strong> inscrit auprès d'une cour d'appel (au Maroc ou dans le pays d'origine)</li>
+        <li>La traduction elle-même doit être <strong>légalisée</strong> (signature du traducteur légalisée)</li>
+        <li>Il est recommandé de faire traduire au Maroc par un traducteur assermenté marocain pour éviter tout problème de reconnaissance</li>
+        <li>Les documents en <strong>anglais</strong> sont parfois acceptés sans traduction dans certains guichets, mais ce n'est pas garanti — la traduction reste recommandée</li>
+      </ul>
+
+      <H2>Quels documents doivent être légalisés ?</H2>
+      <Table
+        rows={[
+          ['Document', 'Légalisation requise', 'Traduction requise'],
+          ['Diplômes universitaires', 'Oui (apostille ou consulaire)', 'Oui, si non francophone/arabophone'],
+          ['Certificats de travail', 'Oui', 'Oui, si non francophone/arabophone'],
+          ['Extrait de casier judiciaire', 'Oui', 'Oui'],
+          ['Acte de mariage (si dispense)', 'Oui', 'Oui'],
+          ['Passeport', 'Non (copie certifiée conforme suffit)', 'Non'],
+          ['Contrat TAECHIR', 'Légalisation au Maroc uniquement', 'Non (généré en français)'],
+        ]}
+      />
+
+      <H2>Conseils pratiques par pays d'origine</H2>
+      <H3>France</H3>
+      <P>
+        Apostille gratuite auprès de la Cour d'appel (délai 5-10 jours). Les diplômes français
+        sont reconnus sans traduction. Les certificats de travail doivent être récents.
+      </P>
+      <H3>Pays d'Afrique francophone</H3>
+      <P>
+        Légalisation consulaire nécessaire dans la plupart des cas. Les documents sont
+        généralement en français, ce qui évite la traduction. Prévoir 3-4 semaines pour la
+        chaîne de légalisation complète.
+      </P>
+      <H3>Pays anglophones (UK, USA, Canada)</H3>
+      <P>
+        Apostille disponible (pays signataires). Traduction assermentée obligatoire de tous les
+        documents. Prévoir un budget de 200 à 500 Dhs par page traduite au Maroc.
+      </P>
+      <Tip>
+        Commencez la légalisation et la traduction dès que la décision de recruter est prise,
+        sans attendre le lancement de la procédure ANAPEC. Ces démarches peuvent se faire en
+        parallèle et constituent souvent le goulot d'étranglement du calendrier global.
+      </Tip>
+    </>
+  );
+}
+
+/* ─── Article 10 ────────────────────────────────────────────────────────── */
+
+function Article10Content() {
+  return (
+    <>
+      <Lead>
+        Le secteur de l'offshoring — centres d'appels, BPO, ITO, KPO — est l'un des piliers de
+        la stratégie d'attractivité économique du Maroc. Pour les entreprises de ce secteur,
+        le recrutement de talents étrangers obéit à des règles spécifiques qui s'écartent
+        parfois sensiblement du régime général. Voici le cadre complet à maîtriser.
+      </Lead>
+
+      <H2>L'offshoring au Maroc : un secteur stratégique sous statut spécial</H2>
+      <P>
+        Le secteur de l'offshoring marocain recouvre plusieurs activités : les centres de relation
+        client (CRC), les activités de traitement de processus métier (BPO — Business Process
+        Outsourcing), les services informatiques externalisés (ITO — IT Outsourcing), et les
+        prestations intellectuelles à haute valeur ajoutée (KPO — Knowledge Process Outsourcing).
+        Ces activités sont regroupées sous l'appellation générique "offshoring" dans la politique
+        industrielle marocaine, notamment le Plan d'Accélération Industrielle.
+      </P>
+      <P>
+        Pour exercer en tant qu'opérateur d'offshoring, les entreprises doivent être enregistrées
+        auprès de la Commission des Investissements ou de l'AMDIE (Agence Marocaine de Développement
+        des Investissements et des Exportations), et sont souvent implantées dans des zones
+        dédiées telles que Casablanca Nearshore, Rabat Technopolis, Fès Shore, Marrakech Shore
+        ou Oujda Shore.
+      </P>
+      <Info>
+        Le statut d'opérateur d'offshoring reconnu ouvre des avantages fiscaux spécifiques
+        (IS réduit à 15 % après exonération de 5 ans, exonération de droits de douane sur
+        équipements, etc.) mais aussi des facilitations administratives pour le recrutement
+        international qui sont distinctes du régime CFC.
+      </Info>
+
+      <H2>Statut CFC vs statut offshoring : deux régimes à ne pas confondre</H2>
+      <P>
+        La confusion la plus fréquente oppose le statut Casablanca Finance City (CFC) et le
+        statut offshoring. Ces deux régimes coexistent mais s'appliquent à des réalités
+        différentes.
+      </P>
+      <H3>Le statut CFC</H3>
+      <P>
+        Casablanca Finance City est une plateforme financière internationale localisée à
+        Casablanca qui accueille des sièges régionaux, des sociétés de gestion d'actifs, des
+        banques d'investissement et des prestataires de services aux entreprises multinationales.
+        Les entreprises bénéficiant du statut CFC jouissent d'un régime dérogatoire explicitement
+        prévu par la loi : leurs salariés étrangers sont <strong>totalement dispensés de
+        l'attestation ANAPEC</strong> et bénéficient d'un traitement accéléré de leurs dossiers
+        TAECHIR. Ce traitement préférentiel est inscrit dans les textes réglementaires encadrant
+        CFC.
+      </P>
+      <H3>Le statut offshoring "classique"</H3>
+      <P>
+        Pour les opérateurs d'offshoring hors CFC — ce qui représente l'immense majorité des
+        centres d'appels et BPO implantés en zones shore —, la dispense totale d'ANAPEC
+        n'est pas automatique. En revanche, plusieurs mécanismes facilitent le recrutement
+        international.
+      </P>
+      <Table
+        rows={[
+          ['Critère', 'Statut CFC', 'Offshoring hors CFC'],
+          ['Dispense ANAPEC automatique', 'Oui, pour tout le personnel', 'Non (sauf catégories générales)'],
+          ['Procédure allégée encadrement', 'Oui', 'Oui (listes A1/A2 applicables)'],
+          ['Zones dédiées', 'Casablanca Finance City', 'Zones shore (Nearshore, Technopolis…)'],
+          ['Secteurs couverts', 'Finance, conseil, holdings', 'BPO, ITO, centres d\'appels, KPO'],
+          ['Base réglementaire', 'Textes CFC spécifiques', 'Code du Travail + circulaires ANAPEC'],
+        ]}
+      />
+
+      <H2>Les facilitations spécifiques pour l'encadrement des entreprises d'offshoring</H2>
+      <P>
+        Si les opérateurs d'offshoring hors CFC ne bénéficient pas d'une dispense générale,
+        le personnel d'encadrement et de direction peut très souvent bénéficier de la procédure
+        allégée via les <strong>listes A1 et A2</strong> de l'ANAPEC. En pratique, une grande
+        partie des profils seniors de l'offshoring — directeurs de site, responsables qualité
+        internationaux, chefs de projet bilingues avec expertise sectorielle — entre dans les
+        critères A1 (séniorité) ou A2 (spécialité pointue).
+      </P>
+      <P>
+        Le traitement ANAPEC pour ces profils se limite alors à <strong>48 heures et 1 500 Dhs</strong>,
+        sans obligation de publier une annonce. Cela rend le recrutement international de
+        cadres d'offshoring beaucoup plus fluide qu'il n'y paraît au premier abord.
+      </P>
+      <Tip>
+        Avant de lancer un dossier ANAPEC standard pour un cadre supérieur de votre centre
+        d'offshoring, vérifiez systématiquement si le profil relève des listes A1 ou A2.
+        Un directeur des opérations bilingue avec plus de 8 ans d'expérience en management
+        de BPO a toutes les chances de relever de la liste A1.
+      </Tip>
+
+      <H2>Les profils opérationnels : agents et superviseurs étrangers</H2>
+      <P>
+        La situation est différente pour les profils opérationnels — agents de centres d'appels,
+        chargés de relation client, superviseurs d'équipe juniors. Ces postes ne relèvent
+        généralement ni des listes A1/A2 ni d'une catégorie dispensée. Ils nécessitent donc
+        a priori une attestation ANAPEC standard (20 jours, 5 000 Dhs pour le premier dossier).
+      </P>
+      <P>
+        Toutefois, en pratique, les entreprises d'offshoring qui recrutent des profils
+        étrangers pour des compétences linguistiques spécifiques — locuteurs natifs d'une
+        langue peu représentée au Maroc (néerlandais, scandinaves, flamand, etc.) —
+        peuvent argumenter que le profil est rare du fait de la langue requise. Cette
+        argumentation, si elle est bien documentée, peut permettre d'obtenir un traitement
+        accéléré ou de basculer sur une procédure A2.
+      </P>
+      <Warning>
+        Le seul critère linguistique n'est pas formellement suffisant pour qualifier un profil
+        de rare au sens strict des listes A1/A2. La décision reste à la discrétion de l'agence
+        ANAPEC régionale. Une démarche préalable auprès de l'agence pour présenter le besoin
+        est fortement recommandée avant de déposer un dossier.
+      </Warning>
+
+      <H2>Le traitement ANAPEC régional pour les zones offshoring</H2>
+      <P>
+        Les dossiers des entreprises implantées dans les zones shore sont traités par l'agence
+        ANAPEC régionale compétente selon la localisation géographique du site. Casablanca
+        Nearshore relève de l'agence ANAPEC de Casablanca, Rabat Technopolis de celle de Rabat,
+        etc. Il n'existe pas d'agence ANAPEC dédiée aux opérateurs d'offshoring, contrairement
+        à ce que certains employeurs supposent.
+      </P>
+      <P>
+        Cette réalité a une conséquence pratique importante : la connaissance du secteur
+        offshoring et la sensibilité aux enjeux de recrutement international varient selon
+        les agences. Certaines agences régionales ont développé une expertise spécifique du
+        secteur et traitent les dossiers d'opérateurs d'offshoring avec plus d'efficacité.
+        Il est utile d'établir un contact préalable avec l'agence régionale pour présenter
+        le profil de votre entreprise et vos besoins en recrutement international.
+      </P>
+
+      <H2>La procédure TAECHIR pour les opérateurs d'offshoring</H2>
+      <P>
+        Sur la plateforme TAECHIR elle-même, les entreprises d'offshoring hors CFC suivent
+        la procédure standard. Il n'existe pas de tunnel dédié ni de traitement prioritaire
+        au niveau de la plateforme. La différenciation intervient en amont (au niveau de
+        l'ANAPEC) et en aval (au niveau du Ministère).
+      </P>
+      <H3>La mention de la zone shore dans le dossier</H3>
+      <P>
+        Il est recommandé de mentionner explicitement dans le dossier TAECHIR que l'entreprise
+        est un opérateur d'offshoring implanté dans une zone shore, et de joindre les
+        justificatifs correspondants (convention d'implantation, attestation de la zone, etc.).
+        Ces éléments contextualisent la demande et peuvent faciliter le traitement par les
+        agents du Ministère.
+      </P>
+      <H3>Le contrat de travail TAECHIR pour l'offshoring</H3>
+      <P>
+        Le contrat généré sur TAECHIR ne comporte pas de mention spécifique au secteur
+        de l'offshoring. Il suit le format standard du Code du Travail marocain. Veillez
+        à ce que l'intitulé du poste corresponde aux appellations reconnues dans la
+        nomenclature des emplois de l'ANAPEC. "Agent de relation client" ou "Superviseur
+        centre de relation client" sont des intitulés généralement bien reconnus.
+      </P>
+
+      <Divider />
+
+      <H2>Guide pratique : quelle procédure selon le profil ?</H2>
+      <Table
+        rows={[
+          ['Profil', 'Statut', 'Procédure recommandée', 'Délai estimé'],
+          ['Directeur de site ou DG', 'Liste A1', 'ANAPEC 48h + TAECHIR standard', '2–3 semaines'],
+          ['Responsable IT / CTO offshore', 'Liste A1 ou A2', 'ANAPEC 48h + TAECHIR standard', '2–3 semaines'],
+          ['Expert sectoriel senior (KPO)', 'Liste A2', 'ANAPEC 48h + TAECHIR standard', '2–3 semaines'],
+          ['Agent langue rare (néerlandais, etc.)', 'À qualifier avec ANAPEC', 'Démarche préalable ANAPEC recommandée', '3–5 semaines'],
+          ['Agent langue courante (français, anglais)', 'Procédure standard', 'ANAPEC 20j + TAECHIR standard', '5–7 semaines'],
+          ['Personnel CFC (finance, conseil)', 'Dispensé ANAPEC', 'TAECHIR direct', '1–2 semaines'],
+        ]}
+      />
+      <P>
+        La clé pour les entreprises d'offshoring est de <strong>qualifier correctement chaque
+        profil en amont</strong>, avant d'engager les démarches administratives. Un mauvais
+        classement peut coûter plusieurs semaines et plusieurs milliers de dirhams de frais
+        inutiles. Un avocat spécialisé en droit du travail marocain ou un consultant en
+        immigration d'entreprise peut apporter une valeur réelle à ce stade de qualification.
+      </P>
+      <Tip>
+        Les entreprises d'offshoring qui recrutent régulièrement à l'international ont intérêt
+        à négocier un "profil type entreprise" avec leur agence ANAPEC régionale. Cela permet
+        d'établir en amont quels types de postes relèvent de quelle procédure, et d'accélérer
+        sensiblement les dossiers futurs.
+      </Tip>
+    </>
+  );
+}
+
+/* ─── Article 11 ────────────────────────────────────────────────────────── */
+
+function Article11Content() {
+  return (
+    <>
+      <Lead>
+        Recruter un salarié étranger au Maroc entraîne des coûts souvent sous-estimés par les
+        employeurs. Au-delà des frais ANAPEC bien connus, une série de dépenses annexes — légalisation,
+        traductions, notaire, DGSN, déplacements — s'accumulent rapidement. Voici le budget
+        détaillé et honnête pour 2026, par profil de recrutement.
+      </Lead>
+
+      <H2>Vue d'ensemble : les postes de coût à anticiper</H2>
+      <P>
+        Un recrutement étranger via le programme TAECHIR mobilise plusieurs types de dépenses
+        qui interviennent à des étapes différentes de la procédure. Certains sont obligatoires
+        dans tous les cas, d'autres dépendent du profil du salarié ou de la nature du dossier.
+      </P>
+      <P>On distingue six grandes familles de coûts :</P>
+      <ol className="list-decimal pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Les frais ANAPEC (attestation d'activité)</li>
+        <li>Les frais de légalisation des documents</li>
+        <li>Les frais de traduction assermentée</li>
+        <li>Les honoraires de notaire ou d'adoul</li>
+        <li>Les frais DGSN pour la carte de séjour</li>
+        <li>Les coûts de déplacement et le temps administratif interne</li>
+      </ol>
+      <Info>
+        Ces coûts sont à la charge de l'employeur dans leur quasi-totalité. Mettre ces dépenses
+        à la charge du salarié étranger serait non seulement contraire à l'éthique du recrutement
+        international, mais potentiellement problématique sur le plan juridique.
+      </Info>
+
+      <H2>1. Les frais ANAPEC</H2>
+      <P>
+        C'est le poste le plus connu et le mieux documenté. Il varie selon le type de dossier :
+      </P>
+      <Table
+        rows={[
+          ['Type de dossier', 'Montant HT', 'Notes'],
+          ['1er dossier standard (profil nouveau)', '5 000 Dhs', 'Annonce obligatoire, 20 jours ouvrables'],
+          ['Dossier supplémentaire (même métier, même année)', '1 500 Dhs', 'Jusqu\'à 5 dossiers/an par métier'],
+          ['Profil rare (liste A1 ou A2)', '1 500 Dhs', 'Traitement 48h, pas d\'annonce'],
+          ['Renouvellement chez même employeur', '1 500 Dhs', 'Traitement accéléré'],
+          ['Catégorie dispensée (CFC, conventions, etc.)', '0 Dhs', 'Aucune démarche ANAPEC'],
+        ]}
+      />
+      <P>
+        La TVA marocaine (20 %) s'applique sur les frais ANAPEC, portant le premier dossier
+        standard à <strong>6 000 Dhs TTC</strong>. Les entreprises assujetties à la TVA peuvent
+        récupérer cette TVA dans leurs déclarations. Les structures non assujetties la supportent
+        définitivement.
+      </P>
+
+      <H2>2. Les frais de légalisation des documents</H2>
+      <P>
+        La légalisation des signatures est une étape incontournable : le contrat de travail
+        TAECHIR doit être imprimé en trois exemplaires et légalisé (signature du salarié ET
+        de l'employeur). Les diplômes étrangers doivent parfois également être légalisés.
+      </P>
+      <H3>Légalisation au Maroc</H3>
+      <P>
+        La légalisation d'une signature au Maroc s'effectue auprès d'un adoul ou d'un notaire,
+        ou dans certains cas auprès de l'autorité locale (caïd). Le coût par document est
+        faible — généralement entre <strong>20 et 50 Dhs par signature légalisée</strong> —
+        mais le délai peut varier selon la localité et l'affluence. Comptez une journée pour
+        légaliser les trois exemplaires du contrat.
+      </P>
+      <H3>Légalisation à l'étranger (apostille)</H3>
+      <P>
+        Pour les diplômes obtenus dans un pays ayant ratifié la Convention de La Haye de 1961,
+        une apostille suffit. Son coût dépend du pays émetteur et varie de <strong>30 à 150 euros</strong>
+        {' '}selon les administrations. Pour les pays non membres de la Convention de La Haye,
+        une légalisation consulaire en chaîne (pays d'origine → ambassade marocaine locale)
+        est nécessaire et peut coûter entre <strong>100 et 300 euros</strong>, avec des délais
+        parfois supérieurs à 3 semaines.
+      </P>
+      <Warning>
+        La légalisation consulaire en chaîne est l'étape la plus imprévisible en termes de
+        délai. Certaines ambassades marocaines n'ont pas de rendez-vous disponibles avant
+        plusieurs semaines. Anticipez cette démarche dès que vous avez identifié le candidat,
+        bien avant de déposer le dossier au Ministère.
+      </Warning>
+
+      <H2>3. Les frais de traduction assermentée</H2>
+      <P>
+        Tous les documents étrangers doivent être traduits en langue arabe par un traducteur
+        assermenté auprès des tribunaux marocains. Les documents concernés incluent typiquement :
+        diplômes, relevés de notes, certificats de travail, extrait de casier judiciaire (parfois
+        demandé), acte de mariage (pour les conjoints de marocains).
+      </P>
+      <P>
+        Les tarifs des traducteurs assermentés au Maroc varient selon la langue source et la
+        complexité du document. Voici une fourchette réaliste pour 2026 :
+      </P>
+      <Table
+        rows={[
+          ['Type de document', 'Tarif indicatif (Dhs HT)', 'Notes'],
+          ['Diplôme ou relevé de notes (français → arabe)', '200–350 Dhs/page', 'Plus économique, langue courante'],
+          ['Diplôme ou relevé de notes (anglais → arabe)', '300–500 Dhs/page', 'Disponibilité large'],
+          ['Certificat de travail (anglais/français → arabe)', '200–400 Dhs', 'Document court'],
+          ['Diplôme (langue rare : néerlandais, polonais, etc.)', '600–1 200 Dhs/page', 'Traducteurs rares, délais plus longs'],
+          ['Acte de mariage étranger traduit et certifié', '400–700 Dhs', 'Selon pays d\'origine'],
+        ]}
+      />
+      <P>
+        Pour un dossier standard comprenant 1 diplôme (2 pages) et 1 certificat de travail,
+        comptez entre <strong>700 et 1 500 Dhs</strong> de traductions selon la langue. Pour
+        des profils avec plusieurs diplômes ou des documents complexes, la facture peut dépasser
+        <strong>3 000 Dhs</strong>.
+      </P>
+
+      <H2>4. Les honoraires de notaire ou d'adoul</H2>
+      <P>
+        La légalisation des trois exemplaires du contrat TAECHIR peut s'effectuer chez un
+        adoul (légalisation de droit coutumier) ou chez un notaire (légalisation de droit
+        civil). Les honoraires sont modestes dans les deux cas mais méritent d'être budgétés.
+      </P>
+      <P>
+        Chez un adoul : <strong>100 à 200 Dhs</strong> pour les trois légalisations du contrat,
+        avec généralement un délai d'une heure à une journée. Chez un notaire, les tarifs
+        peuvent être légèrement supérieurs (200 à 400 Dhs) mais la procédure est identique.
+      </P>
+      <Tip>
+        Certaines entreprises passent par un prestataire de services administratifs (conciergerie
+        juridique ou bureau de légalisation privé) qui prend en charge l'ensemble des légalisations
+        moyennant des honoraires de service de 300 à 800 Dhs. C'est une solution qui peut valoir
+        son prix si vos équipes internes n'ont pas le temps de gérer ces démarches physiques.
+      </Tip>
+
+      <H2>5. Les frais DGSN pour la carte de séjour</H2>
+      <P>
+        La carte d'immatriculation (carte de séjour) est délivrée par la Direction Générale
+        de la Sûreté Nationale (DGSN), indépendamment du visa de travail du Ministère. Elle
+        constitue le titre de séjour officiel du salarié étranger au Maroc et est renouvelable
+        annuellement.
+      </P>
+      <P>
+        Les droits de timbre et frais administratifs pour la carte de séjour s'élèvent à environ
+        <strong>200 à 500 Dhs</strong> selon le type et la durée. La visite médicale auprès
+        du médecin agréé de la DGSN, obligatoire pour tout primo-demandeur, coûte entre
+        <strong>200 et 400 Dhs</strong>. Des photos d'identité aux normes biométriques sont
+        également nécessaires (coût négligeable : 30 à 60 Dhs).
+      </P>
+      <P>
+        Au total, la procédure carte de séjour représente environ <strong>500 à 1 000 Dhs</strong>
+        {' '}de frais directs hors déplacements. Elle mobilise en outre une ou plusieurs demi-journées
+        du salarié pour se présenter physiquement au service d'immigration.
+      </P>
+
+      <H2>6. Coûts de déplacement et temps administratif</H2>
+      <P>
+        Ces coûts sont souvent oubliés dans les estimations, mais ils peuvent représenter
+        une part significative du budget total, notamment pour des recrutements internationaux
+        avec entretiens en présentiel ou pour des dossiers physiques à déposer dans plusieurs
+        administrations.
+      </P>
+      <H3>Déplacements du salarié</H3>
+      <P>
+        Si le recrutement implique que le candidat vienne au Maroc avant l'obtention de son
+        visa de travail pour signer le contrat, les frais de voyage international sont à
+        anticiper. Selon l'origine, un aller-retour peut coûter entre <strong>300 et 1 500 euros</strong>.
+        Certains employeurs gèrent ce point en faisant signer le contrat à l'étranger et en
+        le faisant légaliser auprès du consulat marocain compétent, mais cette approche ajoute
+        de la complexité.
+      </P>
+      <H3>Temps administratif interne</H3>
+      <P>
+        La gestion d'un dossier TAECHIR complet représente, pour une équipe RH ou juridique,
+        entre <strong>4 et 12 heures de travail</strong> selon la complexité du profil et
+        l'expérience de l'équipe. Pour un premier dossier sans expérience préalable, le temps
+        de prise en main et les éventuelles erreurs à corriger peuvent doubler cette estimation.
+        En valorisant ce temps au coût horaire moyen d'un chargé RH ou d'un office manager
+        (50 à 100 Dhs/heure), le coût interne représente entre <strong>200 et 1 200 Dhs</strong>.
+      </P>
+
+      <Divider />
+
+      <H2>Tableau comparatif : budget total par profil en 2026</H2>
+      <Table
+        rows={[
+          ['Poste de coût', 'Profil standard', 'Profil rare (A1/A2)', 'Profil dispensé (ex. CFC)'],
+          ['Frais ANAPEC TTC', '6 000 Dhs (1er dossier)', '1 800 Dhs', '0 Dhs'],
+          ['Légalisation contrat (adoul/notaire)', '150–400 Dhs', '150–400 Dhs', '150–400 Dhs'],
+          ['Traductions assermentées', '700–3 000 Dhs', '700–3 000 Dhs', '700–3 000 Dhs'],
+          ['Légalisation diplômes (pays Convention)', '100–400 Dhs (apostille)', '100–400 Dhs', '100–400 Dhs'],
+          ['Frais DGSN carte de séjour', '500–1 000 Dhs', '500–1 000 Dhs', '500–1 000 Dhs'],
+          ['Temps administratif interne', '500–1 200 Dhs', '300–800 Dhs', '200–500 Dhs'],
+          ['TOTAL estimé (hors déplacements)', '7 950–12 000 Dhs', '3 550–6 600 Dhs', '1 650–5 300 Dhs'],
+        ]}
+      />
+      <P>
+        Ces estimations excluent les éventuels honoraires de conseil juridique externe et les
+        frais de déplacement international du salarié. Pour les entreprises faisant appel à un
+        avocat spécialisé ou un cabinet de conseil en immigration, il faut ajouter entre
+        <strong>3 000 et 8 000 Dhs</strong> d'honoraires selon la complexité du dossier et le
+        cabinet retenu.
+      </P>
+
+      <H2>Les coûts cachés que les employeurs oublient</H2>
+      <H3>La mise à jour annuelle de la carte de séjour</H3>
+      <P>
+        La carte de séjour est renouvelable annuellement. Chaque renouvellement engendre les
+        mêmes frais DGSN (500 à 1 000 Dhs) ainsi qu'une nouvelle visite médicale lors des
+        premières années. Sur 3 ans, ce poste représente 1 500 à 3 000 Dhs supplémentaires.
+      </P>
+      <H3>Le coût du renouvellement du visa de travail</H3>
+      <P>
+        Le contrat de travail TAECHIR est en général conclu pour un an et doit être renouvelé.
+        Les frais ANAPEC de renouvellement s'élèvent à 1 500 Dhs (traitement accéléré 48h),
+        auxquels s'ajoutent les frais de légalisation du nouveau contrat et le temps administratif.
+        Sur la durée de vie d'un salarié étranger dans votre entreprise, ce poste est récurrent.
+      </P>
+      <H3>Le coût d'opportunité des délais</H3>
+      <P>
+        Pour un profil standard, les 20 jours ouvrables d'attente ANAPEC représentent environ
+        un mois calendaire pendant lequel le poste reste vacant. Si le profil génère une valeur
+        mensuelle estimée à 50 000 Dhs, le coût d'opportunité du délai atteint cette somme.
+        Ce coût invisible n'apparaît dans aucune facture mais est bien réel. C'est une raison
+        supplémentaire de tout faire pour qualifier le profil en A1/A2 lorsque c'est possible.
+      </P>
+
+      <H2>Conseils pour optimiser le budget</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Mutualiser les dossiers ANAPEC.</strong> Si vous recrutez plusieurs étrangers
+          pour le même type de poste dans l'année, le 2e dossier et suivants n'ont que 1 500 Dhs
+          de frais (au lieu de 5 000 Dhs). Regroupez vos recrutements dans une même année
+          civile pour maximiser cet avantage.
+        </li>
+        <li>
+          <strong>Anticiper les traductions et légalisations.</strong> Demandez au candidat
+          de faire légaliser et apostiller ses diplômes dès le début du processus de sélection,
+          avant même d'être certain de le retenir. Le gain de temps est significatif.
+        </li>
+        <li>
+          <strong>Vérifier la qualification A1/A2 avant de payer.</strong> Les 5 000 Dhs du
+          premier dossier standard sont économisés en totalité si le profil relève de la liste
+          A1 ou A2. Cette vérification préalable ne coûte rien et peut éviter une dépense importante.
+        </li>
+        <li>
+          <strong>Constituer un dossier type réutilisable.</strong> Les documents juridiques
+          de l'entreprise (statuts, RC, ICE, attestation CNSS) sont les mêmes pour tous les
+          dossiers. Maintenez à jour un "kit entreprise" prêt à l'emploi pour éviter de refaire
+          ces démarches à chaque recrutement.
+        </li>
+      </ul>
+      <Tip>
+        Pour une entreprise qui recrute régulièrement à l'international (3 salariés étrangers
+        ou plus par an), l'investissement dans une formation interne ou dans un prestataire
+        spécialisé se rentabilise rapidement. Le gain en temps et en erreurs évitées dépasse
+        généralement le coût de l'accompagnement dès la deuxième ou troisième procédure.
+      </Tip>
+    </>
+  );
+}
+
+
 /* ─── Article registry ───────────────────────────────────────────────────── */
 
 export const articles: Article[] = [
@@ -884,6 +1755,56 @@ export const articles: Article[] = [
     category: 'Conseils',
     excerpt: 'Faire commencer le salarié avant le visa, confondre carte de séjour et visa de travail, négliger la légalisation des diplômes... Ces erreurs reviennent sans cesse dans les dossiers Taechir. Voici comment les éviter.',
     Content: Article6Content,
+  },
+  {
+    slug: 'carte-sejour-etranger-maroc-dgsn',
+    title: 'Carte de séjour au Maroc : guide complet pour les salariés étrangers',
+    description: 'Tout savoir sur la carte de séjour au Maroc pour les salariés étrangers : documents requis, procédure DGSN, renouvellement, carte de 10 ans et erreurs à éviter.',
+    date: '26 février 2026',
+    readTime: 7,
+    category: 'Procédure',
+    excerpt: 'Visa de travail et carte de séjour sont deux titres distincts et complémentaires. Ce guide détaille la procédure DGSN pas à pas, les documents requis et les pièges à éviter.',
+    Content: Article7Content,
+  },
+  {
+    slug: 'cnss-salarie-etranger-maroc-declaration',
+    title: 'Déclaration CNSS d\'un salarié étranger au Maroc : obligations et procédure',
+    description: 'Comment déclarer un salarié étranger à la CNSS au Maroc : obligation légale, procédure DAMANCOM, taux de cotisation, droits sociaux et conventions bilatérales.',
+    date: '5 mars 2026',
+    readTime: 6,
+    category: 'Obligations',
+    excerpt: 'La déclaration CNSS doit intervenir dès la date du visa. Procédure d\'affiliation, taux de cotisation, droits sociaux, conventions bilatérales et pénalités en cas de retard.',
+    Content: Article8Content,
+  },
+  {
+    slug: 'legalisation-documents-etrangers-maroc-apostille',
+    title: 'Légalisation et apostille des documents étrangers pour le Maroc',
+    description: 'Guide complet de la légalisation des documents étrangers pour le dossier TAECHIR : apostille, légalisation consulaire, traduction assermentée et conseils par pays.',
+    date: '12 mars 2026',
+    readTime: 7,
+    category: 'Documents',
+    excerpt: 'Apostille ou légalisation consulaire ? Convention de La Haye ou chaîne consulaire ? Ce guide détaille les deux systèmes et donne des conseils pratiques par pays d\'origine.',
+    Content: Article9Content,
+  },
+  {
+    slug: 'offshoring-maroc-recrutement-etranger',
+    title: 'Recrutement d\'étrangers dans l\'offshoring au Maroc : cadre spécifique',
+    description: 'Le cadre légal et pratique pour recruter des salariés étrangers dans le secteur de l\'offshoring marocain : BPO, ITO, centres d\'appels, statut CFC vs offshoring, traitement ANAPEC et TAECHIR.',
+    date: '19 mars 2026',
+    readTime: 6,
+    category: 'Secteurs',
+    excerpt: 'Offshoring, CFC, profils rares : le recrutement international dans les zones shore obéit à des règles particulières que tout opérateur doit maîtriser.',
+    Content: Article10Content,
+  },
+  {
+    slug: 'cout-total-recrutement-etranger-maroc-2026',
+    title: 'Coût total du recrutement d\'un étranger au Maroc en 2026 : budget détaillé',
+    description: 'Tous les coûts réels d\'un recrutement étranger au Maroc en 2026 : frais ANAPEC, légalisation, traductions assermentées, carte de séjour DGSN, temps administratif et coûts cachés.',
+    date: '26 mars 2026',
+    readTime: 8,
+    category: 'Coûts',
+    excerpt: 'Au-delà des 5 000 Dhs ANAPEC, combien coûte vraiment le recrutement d\'un salarié étranger au Maroc ? Le budget complet avec tableau comparatif par profil.',
+    Content: Article11Content,
   },
 ];
 

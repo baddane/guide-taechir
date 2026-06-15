@@ -139,4 +139,44 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 7 : Carte de séjour au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/carte-sejour-etranger-maroc-dgsn</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 8 : Déclaration CNSS salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/cnss-salarie-etranger-maroc-declaration</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 9 : Légalisation et apostille documents -->
+  <url>
+    <loc>https://guide-taechir.org/blog/legalisation-documents-etrangers-maroc-apostille</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 10 : Offshoring et recrutement étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/offshoring-maroc-recrutement-etranger</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 11 : Coût total recrutement étranger 2026 -->
+  <url>
+    <loc>https://guide-taechir.org/blog/cout-total-recrutement-etranger-maroc-2026</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

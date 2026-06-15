@@ -1,9 +1,10 @@
 import { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2, Menu, X } from 'lucide-react';
+import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2, Menu, X, BookOpen, ArrowRight } from 'lucide-react';
 import { Wizard } from './Wizard';
 import { Chatbot } from './Chatbot';
 import { Footer } from './components/Footer';
+import { articles } from './blog/articles';
 
 function AccordionItem({ title, children, defaultOpen = false }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -180,6 +181,41 @@ export default function App() {
                 <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Guichets régionaux</li>
                 <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-slate-400"/> Délai max : 10 jours</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Comprendre le programme TAECHIR */}
+        <section id="comprendre" className="scroll-mt-24">
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-10 lg:p-14">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Comprendre le programme TAECHIR et le cadre juridique du recrutement international au Maroc</h2>
+
+              <div className="prose prose-slate max-w-none space-y-5 text-slate-700 leading-relaxed">
+                <p>
+                  <strong>TAECHIR</strong> (Traitement Automatisé de l'Emploi des Citoyens et Habitants Internationaux Résidents) est la plateforme numérique officielle mise en place par le <strong>Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences</strong> pour gérer l'ensemble du processus de visa de contrat de travail des salariés étrangers au Maroc. Ce système a été conçu pour dématérialiser et accélérer une procédure historiquement lente et opaque, tout en maintenant les contrôles nécessaires à la protection du marché de l'emploi national.
+                </p>
+
+                <h3 className="text-xl font-semibold text-slate-900 pt-2">Fondement juridique : l'article 516 du Code du Travail</h3>
+                <p>
+                  Le recrutement de travailleurs étrangers au Maroc est régi principalement par les <strong>articles 516 à 521 du Code du Travail marocain</strong> (loi n° 65-99). L'article 516 pose le principe fondamental : tout employeur souhaitant recruter un salarié de nationalité étrangère doit obtenir une autorisation préalable sous forme de visa apposé sur le contrat de travail, délivrée par l'autorité gouvernementale chargée du travail. Ce visa constitue la condition sine qua non pour que le salarié étranger puisse exercer légalement une activité salariée sur le territoire marocain. L'article 521 prévoit des sanctions pénales en cas de non-respect de cette obligation, pouvant aller jusqu'à une amende de 2000 à 5000 dirhams par salarié employé irrégulièrement.
+                </p>
+
+                <h3 className="text-xl font-semibold text-slate-900 pt-2">Le rôle de l'ANAPEC dans la protection de l'emploi national</h3>
+                <p>
+                  L'<strong>Agence Nationale de Promotion de l'Emploi et des Compétences (ANAPEC)</strong> joue un rôle central dans la procédure en vérifiant qu'aucun profil marocain correspondant au poste proposé n'est disponible sur le marché du travail. Cette vérification se matérialise par la publication d'une offre d'emploi sur la plateforme de l'ANAPEC pendant une durée de 10 jours ouvrables pour les profils standards. Si aucune candidature nationale adéquate n'est identifiée, l'ANAPEC délivre une <strong>attestation d'activité</strong> qui autorise l'employeur à poursuivre la procédure de recrutement international. Ce mécanisme de protection, dit de «&nbsp;préférence nationale&nbsp;», est conforme aux recommandations de l'Organisation Internationale du Travail (OIT) et se retrouve dans la législation de nombreux pays.
+                </p>
+
+                <h3 className="text-xl font-semibold text-slate-900 pt-2">Modernisation et évolution de la plateforme</h3>
+                <p>
+                  Depuis son lancement, la plateforme TAECHIR a connu plusieurs évolutions majeures. La digitalisation a permis de réduire considérablement les délais de traitement : le visa du Ministère, autrefois obtenu en plusieurs semaines, est désormais délivré en <strong>10 jours ouvrables maximum</strong>. La plateforme a intégré un système de génération automatique du contrat de travail type, conforme aux exigences réglementaires, et permet un suivi en temps réel de l'état d'avancement de chaque dossier. Le Maroc a enregistré une augmentation significative des demandes de visa de travail ces dernières années, notamment dans les secteurs de la technologie, de l'industrie automobile, de l'offshoring et du BTP, reflétant le dynamisme économique du pays et son attractivité croissante pour les talents internationaux.
+                </p>
+
+                <h3 className="text-xl font-semibold text-slate-900 pt-2">Chiffres clés et contexte économique</h3>
+                <p>
+                  Le Maroc accueille des travailleurs étrangers originaires de plus de <strong>100 nationalités différentes</strong>, avec une prédominance des ressortissants français, sénégalais, tunisiens, ivoiriens et camerounais. Les secteurs les plus demandeurs incluent les services aux entreprises, l'industrie, l'enseignement et le BTP. La procédure standard (ANAPEC + visa Ministère) représente un investissement de <strong>5000 à 6500 Dhs HT</strong> et un délai de <strong>30 jours ouvrables</strong> en moyenne, un coût raisonnable au regard des qualifications recherchées et de la sécurité juridique apportée par le visa officiel.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -455,6 +491,56 @@ export default function App() {
         </section>
 
       </main>
+
+      {/* Derniers articles du blog */}
+      <section className="bg-white border-t border-slate-200 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Nos derniers articles</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">Analyses approfondies, décryptages juridiques et conseils pratiques pour réussir vos démarches de recrutement international au Maroc.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {articles.slice(0, 3).map((article) => (
+              <Link
+                key={article.slug}
+                to={`/blog/${article.slug}`}
+                className="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+              >
+                <div className="p-7">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold border border-indigo-100">
+                      {article.category}
+                    </span>
+                    <span className="text-xs text-slate-400 flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" /> {article.readTime} min
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors leading-snug">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-5 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:gap-2.5 transition-all">
+                    Lire l'article <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all"
+            >
+              <BookOpen className="w-5 h-5" />
+              Voir tous les articles
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

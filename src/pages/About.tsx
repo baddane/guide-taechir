@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Globe, ArrowLeft, Users, Target, BookOpen, Shield, CheckCircle } from 'lucide-react';
+import { Globe, ArrowLeft, Users, Target, BookOpen, Shield, CheckCircle, FileText, BarChart3 } from 'lucide-react';
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
 
@@ -103,6 +103,99 @@ export function About() {
           <p className="text-slate-700 leading-relaxed mb-4">
             Cette expérience terrain nous permet de fournir des informations fiables, à jour et enrichies par la pratique quotidienne de la procédure. Chaque article et chaque outil de ce site est vérifié et validé par rapport aux textes officiels et à la réalité opérationnelle des guichets.
           </p>
+          <p className="text-slate-700 leading-relaxed mb-4">
+            Nous couvrons <strong>l'ensemble des cas de figure</strong> rencontrés dans la procédure TAECHIR : premier recrutement d'un salarié étranger, renouvellement d'attestation, changement d'employeur, recrutement de profils rares relevant des catégories A1 et A2, procédures de Contrat de Formation-Compétences (CFC) et cas de détachement de salariés étrangers.
+          </p>
+          <p className="text-slate-700 leading-relaxed mb-4">
+            Notre expertise s'étend à de <strong>nombreux secteurs d'activité</strong> : BTP et travaux publics, technologies de l'information et offshoring, industrie automobile, agroalimentaire, hôtellerie et tourisme, ainsi que les services financiers. Chaque secteur présente des spécificités réglementaires que nous maîtrisons et documentons.
+          </p>
+          <p className="text-slate-700 leading-relaxed mb-4">
+            Nous traitons également les <strong>situations complexes</strong> : déploiements multi-sites nécessitant plusieurs attestations, gestion des quotas d'emploi de travailleurs étrangers, recrutements urgents avec procédures accélérées et coordination avec les différents guichets régionaux du Ministère de l'Emploi.
+          </p>
+        </section>
+
+        {/* Notre approche éditoriale */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-3 bg-violet-100 text-violet-600 rounded-lg">
+              <FileText className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">Notre approche éditoriale</h2>
+          </div>
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Chaque article publié sur Guide-Taechir.org suit un <strong>processus de recherche rigoureux</strong>. Nos contenus sont rédigés en s'appuyant directement sur les textes officiels : le Code du Travail marocain (articles 516 à 521), les circulaires de l'ANAPEC, les notes ministérielles et les conventions bilatérales d'établissement.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Avant publication, chaque information est <strong>vérifiée par recoupement</strong> avec au moins deux sources : le texte juridique de référence et la pratique constatée auprès des guichets. Cette double vérification garantit que nos contenus reflètent à la fois la lettre de la loi et la réalité opérationnelle.
+            </p>
+            <p className="text-slate-700 leading-relaxed">
+              Lorsqu'une <strong>modification réglementaire</strong> intervient — nouvelle circulaire, mise à jour de la plateforme TAECHIR, changement de procédure — nous mettons à jour nos articles dans les meilleurs délais et signalons clairement les changements apportés. Une veille réglementaire continue nous permet de maintenir l'exactitude de l'ensemble du site.
+            </p>
+          </div>
+        </section>
+
+        {/* Chiffres clés */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-3 bg-teal-100 text-teal-600 rounded-lg">
+              <BarChart3 className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">Chiffres clés</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { value: '6+', label: 'articles approfondis' },
+              { value: '50+', label: 'questions traitées (FAQ + chatbot)' },
+              { value: '3', label: 'outils interactifs (calculateur, wizard, chatbot)' },
+              { value: 'Continu', label: 'Mise à jour (veille réglementaire)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
+                <div className="text-3xl font-extrabold text-indigo-600">{item.value}</div>
+                <div className="text-sm text-slate-600 mt-1">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Nos engagements */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-3 bg-blue-100 text-blue-600 rounded-lg">
+              <Shield className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">Nos engagements</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                title: 'Indépendance éditoriale',
+                desc: 'Guide-Taechir.org est un site indépendant. Nos contenus ne sont influencés par aucun organisme gouvernemental, cabinet de conseil ou prestataire de services. Nous privilégions toujours l\'intérêt de l\'utilisateur.',
+              },
+              {
+                title: 'Exactitude juridique',
+                desc: 'Chaque information est vérifiée par rapport aux textes officiels en vigueur : Code du Travail, circulaires ministérielles et procédures ANAPEC. Nous citons systématiquement les références juridiques applicables.',
+              },
+              {
+                title: 'Accessibilité',
+                desc: 'Nous traduisons la complexité juridique en langage clair et proposons des outils pratiques (calculateur, assistant guidé, chatbot) pour rendre la procédure compréhensible par tous, y compris les non-juristes.',
+              },
+              {
+                title: 'Transparence',
+                desc: 'Toutes nos sources sont citées et vérifiables. Nous expliquons clairement les limites de nos informations et rappelons que ce site ne remplace pas un conseil juridique personnalisé ni les services officiels.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-indigo-500 mt-0.5 shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Sources */}
