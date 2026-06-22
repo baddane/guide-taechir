@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User } from 'lucide-react';
+import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle } from 'lucide-react';
 import { getArticleBySlug, articles } from './articles';
 import { Footer } from '../components/Footer';
 
@@ -10,6 +10,10 @@ const categoryColors: Record<string, string> = {
   'Exemptions': 'bg-purple-50 text-purple-700',
   'Procédure':  'bg-emerald-50 text-emerald-700',
   'Conseils':   'bg-amber-50 text-amber-700',
+  'Obligations': 'bg-red-50 text-red-700',
+  'Documents':  'bg-orange-50 text-orange-700',
+  'Secteurs':   'bg-cyan-50 text-cyan-700',
+  'Coûts':      'bg-teal-50 text-teal-700',
 };
 
 export function BlogPost() {
@@ -18,13 +22,47 @@ export function BlogPost() {
 
   useEffect(() => {
     if (article) {
-      document.title = `${article.title} \u2014 Guide-Taechir.org`;
-      // Update meta description for SEO
+      document.title = `${article.title} — Guide-Taechir.org`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute('content', article.description);
-      // Update canonical URL
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) canonical.setAttribute('href', `https://guide-taechir.org/blog/${article.slug}`);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', article.description);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', article.title);
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute('content', `https://guide-taechir.org/blog/${article.slug}`);
+
+      const existingLd = document.getElementById('article-jsonld');
+      if (existingLd) existingLd.remove();
+      const script = document.createElement('script');
+      script.id = 'article-jsonld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.description,
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+          '@type': 'Organization',
+          name: 'Guide-Taechir.org',
+          url: 'https://guide-taechir.org/a-propos',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Guide-Taechir.org',
+          url: 'https://guide-taechir.org',
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://guide-taechir.org/blog/${article.slug}`,
+        },
+        inLanguage: 'fr',
+      });
+      document.head.appendChild(script);
     }
     return () => {
       document.title = 'Programme Taechir Maroc – Guide Complet Recrutement Salarié Étranger';
@@ -32,6 +70,8 @@ export function BlogPost() {
       if (metaDesc) metaDesc.setAttribute('content', 'Guide complet du programme Taechir : procédure pas à pas, délais, frais ANAPEC, documents requis et simulateur pour recruter un salarié étranger au Maroc.');
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) canonical.setAttribute('href', 'https://guide-taechir.org/');
+      const existingLd = document.getElementById('article-jsonld');
+      if (existingLd) existingLd.remove();
     };
   }, [article]);
 
@@ -55,6 +95,7 @@ export function BlogPost() {
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
             <Link to="/" className="hover:text-indigo-600 transition-colors">Guide pratique</Link>
             <Link to="/blog" className="text-indigo-600 font-semibold">Blog</Link>
+            <Link to="/contact" className="hover:text-indigo-600 transition-colors">Contact</Link>
           </div>
         </div>
       </nav>
@@ -101,8 +142,8 @@ export function BlogPost() {
               <User className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold text-slate-800">Équipe éditoriale Guide-Taechir</p>
-              <p className="text-xs text-slate-500">Spécialistes en droit du travail et recrutement international au Maroc</p>
+              <p className="text-sm font-semibold text-slate-800">{'É'}quipe {'é'}ditoriale Guide-Taechir</p>
+              <p className="text-xs text-slate-500">Sp{'é'}cialistes en droit du travail et recrutement international au Maroc {'—'} v{'é'}rifi{'é'} selon le Code du Travail (art. 516-521) et les circulaires ANAPEC</p>
             </div>
           </div>
         </div>
@@ -114,13 +155,27 @@ export function BlogPost() {
           <article.Content />
         </article>
 
+        {/* Disclaimer */}
+        <div className="mt-12 bg-amber-50 border border-amber-200 rounded-xl p-6 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
+          <div>
+            <h4 className="font-bold text-amber-900 mb-2">Avertissement</h4>
+            <p className="text-amber-800 text-sm leading-relaxed mb-2">
+              Cet article est publi{'é'} {'à'} titre informatif par <strong>Guide-Taechir.org</strong>, un site ind{'é'}pendant non affili{'é'} au Minist{'è'}re du Travail ni {'à'} l'ANAPEC. Il ne constitue pas un conseil juridique personnalis{'é'}.
+            </p>
+            <p className="text-amber-800 text-sm leading-relaxed">
+              Les informations sont v{'é'}rifi{'é'}es selon les textes en vigueur mais peuvent {'é'}voluer. Pour vos d{'é'}marches officielles, consultez <a href="https://taechir.travail.gov.ma" className="text-amber-700 underline font-medium">taechir.travail.gov.ma</a>.
+            </p>
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="mt-16 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-2xl p-8 text-white text-center shadow-xl shadow-indigo-100">
+        <div className="mt-10 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-2xl p-8 text-white text-center shadow-xl shadow-indigo-100">
           <Wand2 className="w-10 h-10 mx-auto mb-4 opacity-90" />
-          <h3 className="text-2xl font-bold mb-3">Prêt à lancer votre recrutement ?</h3>
+          <h3 className="text-2xl font-bold mb-3">Pr{'ê'}t {'à'} lancer votre recrutement ?</h3>
           <p className="text-indigo-100 mb-6 max-w-md mx-auto leading-relaxed">
-            Notre assistant guidé analyse votre situation et génère un plan d'action
-            personnalisé en quelques minutes.
+            Notre assistant guid{'é'} analyse votre situation et g{'é'}n{'è'}re un plan d'action
+            personnalis{'é'} en quelques minutes.
           </p>
           <Link
             to="/"
@@ -146,7 +201,7 @@ export function BlogPost() {
       {otherArticles.length > 0 && (
         <section className="bg-white border-t border-slate-200 py-14">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 className="text-xl font-bold text-slate-900 mb-8">À lire également</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-8">{'À'} lire {'é'}galement</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {otherArticles.map((a) => (
                 <Link

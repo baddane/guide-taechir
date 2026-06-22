@@ -6,7 +6,7 @@ import { Chatbot } from './Chatbot';
 import { Footer } from './components/Footer';
 import { articles } from './blog/articles';
 
-function AccordionItem({ title, children, defaultOpen = false }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
+function AccordionItem({ title, children, defaultOpen = true }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   return (
     <div className="border border-slate-200 rounded-xl mb-4 overflow-hidden bg-white shadow-sm">

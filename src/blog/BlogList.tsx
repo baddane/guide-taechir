@@ -5,11 +5,15 @@ import { articles } from './articles';
 import { Footer } from '../components/Footer';
 
 const categoryColors: Record<string, string> = {
-  'Guide':      'bg-indigo-50 text-indigo-700 border-indigo-100',
-  'ANAPEC':     'bg-blue-50 text-blue-700 border-blue-100',
-  'Exemptions': 'bg-purple-50 text-purple-700 border-purple-100',
-  'Procédure':  'bg-emerald-50 text-emerald-700 border-emerald-100',
-  'Conseils':   'bg-amber-50 text-amber-700 border-amber-100',
+  'Guide':       'bg-indigo-50 text-indigo-700 border-indigo-100',
+  'ANAPEC':      'bg-blue-50 text-blue-700 border-blue-100',
+  'Exemptions':  'bg-purple-50 text-purple-700 border-purple-100',
+  'Procédure':   'bg-emerald-50 text-emerald-700 border-emerald-100',
+  'Conseils':    'bg-amber-50 text-amber-700 border-amber-100',
+  'Obligations': 'bg-red-50 text-red-700 border-red-100',
+  'Documents':   'bg-orange-50 text-orange-700 border-orange-100',
+  'Secteurs':    'bg-cyan-50 text-cyan-700 border-cyan-100',
+  'Coûts':       'bg-teal-50 text-teal-700 border-teal-100',
 };
 
 export function BlogList() {

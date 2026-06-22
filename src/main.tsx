@@ -8,6 +8,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy.tsx';
 import { About } from './pages/About.tsx';
 import { Contact } from './pages/Contact.tsx';
 import { MentionsLegales } from './pages/MentionsLegales.tsx';
+import { NotFound } from './pages/NotFound.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
 import './index.css';
 
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/a-propos" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />
     </BrowserRouter>
