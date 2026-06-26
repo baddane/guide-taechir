@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Mail, MessageSquare, Clock, ExternalLink, Send, CheckCircle2, AlertTriangle, User, AtSign, FileText } from 'lucide-react';
 import { useEffect, useState, FormEvent } from 'react';
 import { Footer } from '../components/Footer';
+import { supabase } from '../lib/supabase';
 
 export function Contact() {
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -25,6 +26,16 @@ export function Contact() {
     e.preventDefault();
     setFormState('sending');
 
+    // 1) Stockage durable dans Supabase (consultable depuis /admin)
+    const { error: dbError } = await supabase.from('contact_messages').insert({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    });
+
+    // 2) Notification e-mail (best-effort, ne bloque pas si elle échoue)
+    let mailOk = false;
     try {
       const response = await fetch('https://formsubmit.co/ajax/r.baddane@gmail.com', {
         method: 'POST',
@@ -41,14 +52,16 @@ export function Contact() {
           _template: 'table',
         }),
       });
-
-      if (response.ok) {
-        setFormState('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setFormState('error');
-      }
+      mailOk = response.ok;
     } catch {
+      mailOk = false;
+    }
+
+    // Succès si l'enregistrement OU l'e-mail a fonctionné
+    if (!dbError || mailOk) {
+      setFormState('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
       setFormState('error');
     }
   };

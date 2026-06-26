@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Download, CheckCircle2, AlertTriangle, AtSign, User, FileText, ListChecks } from 'lucide-react';
 import { useEffect, useState, FormEvent } from 'react';
 import { Footer } from '../components/Footer';
+import { supabase } from '../lib/supabase';
 
 const PDF_URL = '/checklist-taechir-2026.pdf';
 
@@ -31,6 +32,16 @@ export function Checklist() {
     e.preventDefault();
     setFormState('sending');
 
+    // 1) Stockage du lead dans Supabase (consultable depuis /admin)
+    const { error: dbError } = await supabase.from('leads').insert({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      source: 'checklist',
+    });
+
+    // 2) Notification e-mail (best-effort)
+    let mailOk = false;
     try {
       const response = await fetch('https://formsubmit.co/ajax/r.baddane@gmail.com', {
         method: 'POST',
@@ -43,13 +54,15 @@ export function Checklist() {
           _template: 'table',
         }),
       });
-
-      if (response.ok) {
-        setFormState('success');
-      } else {
-        setFormState('error');
-      }
+      mailOk = response.ok;
     } catch {
+      mailOk = false;
+    }
+
+    // On délivre la checklist dès que l'enregistrement OU l'e-mail a réussi
+    if (!dbError || mailOk) {
+      setFormState('success');
+    } else {
       setFormState('error');
     }
   };

@@ -7,3 +7,6 @@ Sitemap: https://guide-taechir.org/sitemap.xml
 # Bloquer les ressources inutiles pour les crawlers
 Disallow: /src/
 Disallow: /dist/
+
+# Espace d'administration (non indexable)
+Disallow: /admin
