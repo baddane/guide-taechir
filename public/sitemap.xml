@@ -179,4 +179,52 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 12 : Assurance santé expatrié Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/assurance-sante-expatrie-maroc</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 13 : Ouvrir un compte bancaire étranger Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/ouvrir-compte-bancaire-etranger-maroc</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 14 : Transfert d'argent vers et depuis le Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/transfert-argent-maroc-etranger</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 15 : Domiciliation d'entreprise au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/domiciliation-entreprise-maroc</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 16 : Casablanca Finance City avantages éligibilité -->
+  <url>
+    <loc>https://guide-taechir.org/blog/casablanca-finance-city-avantages-eligibilite</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 17 : Cabinet RH vs démarche en direct -->
+  <url>
+    <loc>https://guide-taechir.org/blog/recruter-cabinet-rh-vs-direct-maroc</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

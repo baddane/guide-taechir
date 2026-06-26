@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 export interface Article {
   slug: string;
@@ -72,6 +73,93 @@ function Table({ rows }: { rows: string[][] }) {
 }
 function Divider() {
   return <hr className="my-12 border-slate-200" />;
+}
+
+/* ─── Monetization primitives ───────────────────────────────────────────── */
+
+/*
+ * Liens partenaires (affiliation).
+ * Remplacez chaque `url` par VOTRE lien de tracking d'affiliation une fois
+ * inscrit au programme correspondant (le paramètre d'identifiant partenaire
+ * vous est fourni par la plateforme : Awin, Kwanko, programme propre, etc.).
+ * Tant qu'aucun lien de tracking n'est en place, ces URL pointent simplement
+ * vers le site officiel du partenaire — aucune commission n'est perçue.
+ */
+export const affiliates: Record<string, { url: string; partner: string }> = {
+  assuranceExpat: { url: 'https://www.april-international.com/fr', partner: 'April International' },
+  banqueMulti:    { url: 'https://wise.com/fr/', partner: 'Wise' },
+  transfert:      { url: 'https://wise.com/fr/send-money/', partner: 'Wise' },
+};
+
+// Petite mention de transparence à placer en tête d'un article monétisé.
+function AffDisclosure() {
+  return (
+    <p className="text-xs text-slate-400 italic mb-6">
+      Transparence : cet article contient des liens vers des partenaires. Si vous
+      souscrivez via l'un d'eux, nous pouvons percevoir une commission, sans surcoût
+      pour vous. Cela n'influence ni nos recommandations ni le contenu de ce guide.
+    </p>
+  );
+}
+
+// Encart d'affiliation (lien externe sponsorisé, balisé rel="sponsored").
+function AffiliateBox({
+  title, children, cta, href,
+}: { title: string; children: ReactNode; cta: string; href: string }) {
+  return (
+    <div className="my-8 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm">
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-indigo-500">Notre recommandation</span>
+        <span className="text-[10px] font-medium text-slate-400 border border-slate-200 rounded-full px-2 py-0.5">Lien sponsorisé</span>
+      </div>
+      <h4 className="text-lg font-bold text-slate-900 mb-2">{title}</h4>
+      <div className="text-slate-600 text-sm leading-relaxed mb-5">{children}</div>
+      <a
+        href={href}
+        target="_blank"
+        rel="sponsored noopener noreferrer"
+        className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
+      >
+        {cta} <span aria-hidden>↗</span>
+      </a>
+    </div>
+  );
+}
+
+// Encart de génération de leads (CTA interne vers la page Contact).
+function LeadBox({
+  title, children, cta,
+}: { title: string; children: ReactNode; cta: string }) {
+  return (
+    <div className="my-8 rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+      <span className="text-[11px] font-semibold uppercase tracking-wide text-emerald-600">Accompagnement</span>
+      <h4 className="text-lg font-bold text-slate-900 mt-2 mb-2">{title}</h4>
+      <div className="text-slate-600 text-sm leading-relaxed mb-5">{children}</div>
+      <Link
+        to="/contact"
+        className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-700 transition-colors"
+      >
+        {cta} <span aria-hidden>→</span>
+      </Link>
+    </div>
+  );
+}
+
+// FAQ repliable (favorise le rich snippet FAQ et le temps de lecture).
+function FAQ({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div className="my-10 space-y-4">
+      {items.map((it, i) => (
+        <details key={i} className="group rounded-xl border border-slate-200 bg-white p-5">
+          <summary className="cursor-pointer font-semibold text-slate-800 list-none flex justify-between items-center gap-4">
+            {it.q}
+            <span className="text-indigo-400 text-lg leading-none group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p className="text-slate-600 text-sm leading-relaxed mt-3">{it.a}</p>
+        </details>
+      ))}
+    </div>
+  );
 }
 
 /* ─── Article 1 ─────────────────────────────────────────────────────────── */
@@ -1751,6 +1839,470 @@ function Article11Content() {
 
 /* ─── Article registry ───────────────────────────────────────────────────── */
 
+/* ─── Article 12 — Assurance santé expatrié (affiliation) ───────────────── */
+
+function Article12Content() {
+  return (
+    <>
+      <Lead>
+        Vous venez de décrocher un contrat au Maroc, ou vous y faites venir un salarié étranger,
+        et la question de la couverture santé revient toujours au même moment : la CNSS suffit-elle,
+        ou faut-il une assurance privée ? Je vais être direct avec vous — pour un expatrié,
+        la réponse est presque toujours « les deux ».
+      </Lead>
+      <AffDisclosure />
+
+      <H2>La CNSS, c'est bien, mais ce n'est pas suffisant</H2>
+      <P>
+        Dès qu'un salarié étranger a son visa de travail, il est déclaré à la CNSS comme n'importe
+        quel salarié marocain. Bonne nouvelle : il a accès à l'AMO (assurance maladie obligatoire).
+        Mauvaise nouvelle : l'AMO rembourse sur la base de tarifs de référence souvent très en
+        dessous du coût réel dans les cliniques privées où vont la plupart des expatriés.
+      </P>
+      <P>
+        Concrètement, une consultation chez un spécialiste à Casablanca, une hospitalisation dans
+        une clinique privée, des soins dentaires ou une évacuation sanitaire : l'AMO ne couvre
+        qu'une fraction, parfois 20 à 40 % de la facture réelle. Le reste est à votre charge.
+      </P>
+      <Info>
+        L'erreur classique : croire que la carte CNSS du salarié couvre aussi sa famille restée
+        à l'étranger ou ses soins hors du Maroc. Ce n'est pas le cas. Pour une couverture
+        internationale, il faut une assurance santé dédiée.
+      </Info>
+
+      <H2>Assurance locale ou assurance internationale ?</H2>
+      <P>
+        Deux familles de produits existent, et le bon choix dépend vraiment de votre profil.
+      </P>
+      <Table
+        rows={[
+          ['Critère', 'Assurance locale (Maroc)', 'Assurance internationale'],
+          ['Prix', 'Plus économique', 'Plus élevé'],
+          ['Soins hors Maroc', 'Limités ou exclus', 'Couverts (selon zone)'],
+          ['Rapatriement', 'Souvent en option', 'Généralement inclus'],
+          ['Famille restée au pays', 'Non', 'Oui (formules famille)'],
+          ['Idéal pour', 'Expatrié installé durablement', 'Cadre mobile, dirigeant, famille'],
+        ]}
+      />
+      <P>
+        Si vous restez au Maroc plusieurs années et que votre vie est ici, une bonne complémentaire
+        locale par-dessus la CNSS peut suffire. Si vous voyagez beaucoup, si votre famille est
+        répartie sur plusieurs pays, ou si vous voulez pouvoir vous faire soigner en Europe,
+        l'assurance santé internationale est plus adaptée.
+      </P>
+
+      <AffiliateBox
+        title="Comparer les assurances santé internationales pour le Maroc"
+        cta="Obtenir un devis gratuit"
+        href={affiliates.assuranceExpat.url}
+      >
+        <p>
+          Des assureurs spécialisés expatriés comme <strong>{affiliates.assuranceExpat.partner}</strong>{' '}
+          proposent des formules modulables (Maroc seul, Afrique, monde entier), avec ou sans
+          rapatriement, et la possibilité d'inclure le conjoint et les enfants. Le devis est
+          gratuit et sans engagement — c'est le meilleur moyen de comparer avant de signer.
+        </p>
+      </AffiliateBox>
+
+      <H2>Ce qu'il faut vérifier avant de signer</H2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>La zone de couverture.</strong> « Monde sauf USA » est souvent bien moins cher que « Monde entier » — inutile de payer pour les États-Unis si vous n'y allez jamais.</li>
+        <li><strong>Le rapatriement sanitaire.</strong> Vérifiez qu'il est inclus, pas en option payante.</li>
+        <li><strong>Les délais de carence.</strong> Certains soins (maternité, dentaire) ne sont couverts qu'après plusieurs mois.</li>
+        <li><strong>Le tiers payant.</strong> Pouvez-vous être soigné sans avancer les frais, ou faut-il payer puis se faire rembourser ?</li>
+      </ul>
+      <Tip>
+        Pour un salarié que vous recrutez, proposer une assurance santé internationale est un
+        vrai argument d'attractivité. Beaucoup d'entreprises l'intègrent au package — c'est
+        déductible et ça fait souvent la différence pour convaincre un profil rare.
+      </Tip>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger a-t-il droit à la CNSS au Maroc ?', a: 'Oui. Dès la date du visa de travail, il est déclaré à la CNSS et bénéficie de l\'AMO comme tout salarié. Mais les remboursements restent partiels, d\'où l\'intérêt d\'une couverture complémentaire.' },
+          { q: 'Une assurance internationale est-elle obligatoire ?', a: 'Non, elle n\'est pas obligatoire légalement. Elle est fortement recommandée pour les soins à l\'étranger, le rapatriement et la couverture de la famille.' },
+          { q: 'Peut-on couvrir sa famille restée dans le pays d\'origine ?', a: 'Avec une assurance internationale famille, oui. Les formules locales marocaines, non.' },
+        ]}
+      />
+    </>
+  );
+}
+
+/* ─── Article 13 — Compte bancaire étranger (affiliation) ───────────────── */
+
+function Article13Content() {
+  return (
+    <>
+      <Lead>
+        Recevoir son salaire, payer son loyer, mettre en place des prélèvements : sans compte
+        bancaire marocain, la vie d'un salarié étranger se complique vite. La bonne nouvelle,
+        c'est que c'est faisable. La moins bonne, c'est qu'il y a deux statuts bien différents
+        et qu'on se trompe souvent au début.
+      </Lead>
+      <AffDisclosure />
+
+      <H2>Compte en dirhams convertibles ou compte « résident » ?</H2>
+      <P>
+        C'est LE point que personne ne vous explique clairement. Au Maroc, un étranger peut ouvrir :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Un compte en dirhams convertibles</strong> tant qu'il n'est pas considéré comme résident. Il permet de rapatrier librement des fonds depuis l'étranger et de les reconvertir en devises à la sortie.</li>
+        <li><strong>Un compte en dirhams « résident »</strong> une fois installé durablement (généralement dès qu'on travaille et qu'on a sa carte de séjour). C'est le compte classique sur lequel tombe le salaire.</li>
+      </ul>
+      <Warning>
+        L'erreur fréquente : verser un salaire marocain sur un compte convertible, ou vouloir
+        transférer librement vers l'étranger depuis un compte résident. L'Office des Changes
+        encadre strictement ces mouvements. Posez la question à votre banque dès l'ouverture.
+      </Warning>
+
+      <H2>Les documents qu'on vous demandera</H2>
+      <P>
+        D'une banque à l'autre ça varie un peu, mais préparez au minimum :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Passeport en cours de validité</li>
+        <li>Carte de séjour (ou récépissé de demande) pour un compte résident</li>
+        <li>Contrat de travail visé / attestation de l'employeur</li>
+        <li>Justificatif de domicile au Maroc (bail, facture, attestation d'hébergement)</li>
+      </ul>
+      <Tip>
+        Si vous venez tout juste d'arriver et que vous n'avez pas encore la carte de séjour,
+        certaines banques ouvrent un compte convertible en attendant, puis le basculent en
+        compte résident une fois la carte obtenue. Demandez cette bascule pour ne pas avoir
+        à tout recommencer.
+      </Tip>
+
+      <H2>En attendant : un compte multi-devises pour ne pas être bloqué</H2>
+      <P>
+        Entre l'arrivée et l'ouverture du compte local, il s'écoule souvent plusieurs semaines.
+        Pendant cette période, un compte multi-devises en ligne permet de recevoir des fonds,
+        d'avoir une carte utilisable immédiatement et de changer des devises à un taux bien plus
+        juste que les bureaux de change.
+      </P>
+
+      <AffiliateBox
+        title="Une carte multi-devises utilisable dès l'arrivée au Maroc"
+        cta="Découvrir le compte"
+        href={affiliates.banqueMulti.url}
+      >
+        <p>
+          <strong>{affiliates.banqueMulti.partner}</strong> permet d'ouvrir un compte en quelques
+          minutes, de détenir plusieurs devises (EUR, USD, MAD à l'usage) et de payer au taux réel
+          du marché, sans les marges de change des banques classiques. Pratique le temps que votre
+          compte marocain soit opérationnel.
+        </p>
+      </AffiliateBox>
+
+      <FAQ
+        items={[
+          { q: 'Un étranger peut-il ouvrir un compte bancaire au Maroc sans carte de séjour ?', a: 'Oui, généralement un compte en dirhams convertibles, qui sera ensuite basculé en compte résident une fois la carte de séjour obtenue.' },
+          { q: 'Peut-on transférer son salaire marocain vers l\'étranger ?', a: 'Les transferts depuis un compte résident sont encadrés par l\'Office des Changes. Une partie du revenu peut être transférée sous conditions ; renseignez-vous auprès de votre banque.' },
+          { q: 'Quelle banque choisir ?', a: 'Les grandes banques marocaines ont toutes des offres pour étrangers. Comparez surtout les frais de tenue de compte, les frais à l\'international et la qualité du service en agence.' },
+        ]}
+      />
+    </>
+  );
+}
+
+/* ─── Article 14 — Transfert d'argent (affiliation) ─────────────────────── */
+
+function Article14Content() {
+  return (
+    <>
+      <Lead>
+        Envoyer de l'argent vers le Maroc, ou en envoyer depuis le Maroc vers sa famille à
+        l'étranger : c'est une opération qu'on fait souvent, et où l'on perd beaucoup d'argent
+        sans s'en rendre compte. Le coût, ce n'est presque jamais les « frais affichés » —
+        c'est le taux de change.
+      </Lead>
+      <AffDisclosure />
+
+      <H2>Le vrai coût d'un transfert, c'est le taux de change caché</H2>
+      <P>
+        La plupart des services affichent « 0 € de frais » ou « 1,99 € de commission » — et vous
+        croyez payer presque rien. En réalité, ils se rémunèrent sur la marge de change : ils vous
+        appliquent un taux moins avantageux que le taux réel du marché. Sur 1 000 €, cette marge
+        cachée peut représenter 30 à 50 € qui disparaissent silencieusement.
+      </P>
+      <Info>
+        La règle d'or : comparez toujours le <strong>montant final reçu</strong>, pas les frais
+        affichés. C'est le seul chiffre qui compte. Deux services peuvent annoncer « sans frais »
+        et pourtant l'un vous fait recevoir nettement plus que l'autre.
+      </Info>
+
+      <H2>Les différentes options, du plus cher au moins cher</H2>
+      <Table
+        rows={[
+          ['Méthode', 'Vitesse', 'Coût réel'],
+          ['Virement bancaire international classique', 'Lent (2-5 j)', 'Élevé (frais + marge de change)'],
+          ['Bureaux de transfert physiques', 'Rapide', 'Élevé (marge importante)'],
+          ['Services de transfert en ligne', 'Rapide', 'Faible (taux proche du réel)'],
+        ]}
+      />
+      <P>
+        Pour les transferts récurrents — un expatrié qui aide sa famille, ou une entreprise qui
+        verse des honoraires à l'étranger — les services en ligne spécialisés sont presque
+        toujours les plus avantageux, parce qu'ils appliquent le taux interbancaire réel et
+        facturent une commission transparente.
+      </P>
+
+      <AffiliateBox
+        title="Transférer au taux réel, sans marge cachée"
+        cta="Comparer le montant reçu"
+        href={affiliates.transfert.url}
+      >
+        <p>
+          <strong>{affiliates.transfert.partner}</strong> applique le taux de change réel du marché
+          (le même que celui que vous voyez sur Google) et affiche une commission claire avant
+          l'envoi. Vous voyez exactement combien le destinataire recevra. Faites une simulation
+          et comparez avec votre banque : l'écart surprend souvent.
+        </p>
+      </AffiliateBox>
+
+      <Warning>
+        Attention à la réglementation des changes : depuis le Maroc, les transferts de dirhams vers
+        l'étranger sont encadrés par l'Office des Changes et soumis à des plafonds. Les transferts
+        <em> vers </em> le Maroc, en revanche, sont libres.
+      </Warning>
+
+      <FAQ
+        items={[
+          { q: 'Quel est le moyen le moins cher pour envoyer de l\'argent au Maroc ?', a: 'En général les services de transfert en ligne qui appliquent le taux de change réel, car l\'essentiel du coût se cache dans la marge de change, pas dans les frais affichés.' },
+          { q: 'Peut-on envoyer de l\'argent depuis le Maroc vers l\'étranger ?', a: 'Oui, mais c\'est encadré par l\'Office des Changes avec des plafonds selon le motif (études, soins, voyage, etc.). Les transferts entrants vers le Maroc sont libres.' },
+          { q: 'Comment comparer deux services ?', a: 'Regardez uniquement le montant final reçu par le destinataire pour une même somme envoyée. C\'est le seul indicateur fiable.' },
+        ]}
+      />
+    </>
+  );
+}
+
+/* ─── Article 15 — Domiciliation d'entreprise (lead-gen) ────────────────── */
+
+function Article15Content() {
+  return (
+    <>
+      <Lead>
+        Vous voulez créer ou implanter une société au Maroc mais vous n'avez pas (encore) de
+        bureau ? La domiciliation est la solution la plus simple et la plus économique pour
+        démarrer avec une adresse professionnelle légale. Voici comment ça marche, et combien
+        ça coûte réellement en 2026.
+      </Lead>
+
+      <H2>La domiciliation, c'est quoi exactement ?</H2>
+      <P>
+        Domicilier son entreprise, c'est utiliser l'adresse d'un prestataire agréé comme siège
+        social, sans y louer de bureau physique. C'est parfaitement légal et très courant pour
+        les sociétés qui démarrent, les filiales étrangères ou les activités de conseil qui
+        n'ont pas besoin de locaux.
+      </P>
+      <Info>
+        Depuis la loi 89-17, l'activité de domiciliation est réglementée : le domiciliataire doit
+        être inscrit sur un registre spécial et tenir un répertoire des sociétés domiciliées.
+        Vérifiez toujours que votre prestataire est en règle — sinon votre siège social peut
+        être contesté.
+      </Info>
+
+      <H2>Combien ça coûte ?</H2>
+      <Table
+        rows={[
+          ['Formule', 'Inclus', 'Prix indicatif / mois'],
+          ['Domiciliation simple', 'Adresse + réception courrier', '200 – 500 Dhs'],
+          ['Domiciliation + secrétariat', 'Courrier + appels + scan', '500 – 1 200 Dhs'],
+          ['Bureau partagé / coworking', 'Adresse + poste de travail', '1 500 – 3 500 Dhs'],
+        ]}
+      />
+      <P>
+        À comparer avec un bail commercial classique à Casablanca ou Rabat, où le moindre
+        plateau dépasse vite plusieurs milliers de dirhams par mois, sans compter la caution
+        et les charges. Pour une société qui démarre, la domiciliation divise les coûts fixes
+        par dix.
+      </P>
+
+      <H2>Domiciliation et recrutement de salariés étrangers</H2>
+      <P>
+        Un point que beaucoup d'entrepreneurs étrangers négligent : pour recruter via TAECHIR,
+        votre société doit être <strong>en règle administrativement</strong> — registre de
+        commerce, modèle 7, déclarations CNSS à jour. Une domiciliation propre et un prestataire
+        sérieux facilitent grandement ces démarches, car c'est lui qui réceptionne et trie tout
+        votre courrier officiel (Ministère, CNSS, impôts).
+      </P>
+
+      <LeadBox
+        title="Besoin d'être mis en relation avec un domiciliataire fiable ?"
+        cta="Demander une recommandation"
+      >
+        <p>
+          Nous pouvons vous orienter vers des prestataires de domiciliation agréés à Casablanca,
+          Rabat et Tanger, et vous aider à articuler création de société et recrutement de
+          salariés étrangers. Décrivez votre projet, nous vous recontactons rapidement.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'La domiciliation est-elle légale au Maroc ?', a: 'Oui, elle est encadrée par la loi 89-17. Le domiciliataire doit être agréé et tenir un registre des sociétés domiciliées.' },
+          { q: 'Peut-on recruter un salarié étranger avec une société domiciliée ?', a: 'Oui, à condition que la société soit régulièrement immatriculée et à jour de ses obligations (CNSS, registre de commerce). La domiciliation n\'est pas un obstacle au recrutement via TAECHIR.' },
+          { q: 'Combien de temps pour mettre en place une domiciliation ?', a: 'Quelques jours en général : signature du contrat de domiciliation, puis utilisation de l\'adresse pour l\'immatriculation ou le transfert de siège.' },
+        ]}
+      />
+    </>
+  );
+}
+
+/* ─── Article 16 — Casablanca Finance City (lead-gen) ───────────────────── */
+
+function Article16Content() {
+  return (
+    <>
+      <Lead>
+        Casablanca Finance City (CFC) est sans doute le statut le plus avantageux pour une
+        entreprise internationale qui s'implante au Maroc — y compris quand il s'agit de recruter
+        des cadres étrangers. Voici à quoi vous avez droit, qui peut en bénéficier, et le lien
+        souvent méconnu avec la procédure TAECHIR.
+      </Lead>
+
+      <H2>CFC, c'est quoi ?</H2>
+      <P>
+        CFC est un hub financier et de services qui octroie un statut spécial aux entreprises
+        tournées vers l'international : sièges régionaux, sociétés de services, holdings, fintechs,
+        etc. L'idée : faire de Casablanca une porte d'entrée vers l'Afrique pour les groupes
+        internationaux.
+      </P>
+
+      <H2>Les avantages concrets</H2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Fiscalité attractive</strong> sur les bénéfices à l'export et un régime avantageux pour les salariés.</li>
+        <li><strong>Facilités de change</strong> pour les opérations internationales.</li>
+        <li><strong>Guichet facilité</strong> pour l'installation et les démarches administratives.</li>
+        <li><strong>Recrutement international simplifié</strong> — et c'est le point qui nous intéresse le plus ici.</li>
+      </ul>
+
+      <H2>CFC et recrutement d'étrangers : la dispense ANAPEC</H2>
+      <P>
+        Voici l'élément clé que beaucoup ignorent : le personnel étranger d'une entreprise
+        titulaire du statut CFC bénéficie généralement d'une <strong>dispense de l'attestation
+        ANAPEC</strong>. Autrement dit, on saute l'étape la plus longue et la plus coûteuse de la
+        procédure (les fameux 20 jours et 5 000 Dhs).
+      </P>
+      <Info>
+        Concrètement, pour un cadre étranger recruté par une société CFC, le dossier TAECHIR se
+        monte directement, sans passer par l'annonce ANAPEC. Le gain de temps est considérable —
+        souvent plusieurs semaines.
+      </Info>
+      <Warning>
+        Attention : la dispense découle du statut CFC de l'entreprise et des justificatifs à
+        fournir au Ministère. Elle n'est pas automatique « parce qu'on est à Casablanca » —
+        il faut bien produire les pièces prouvant l'éligibilité.
+      </Warning>
+
+      <H2>Qui peut prétendre au statut ?</H2>
+      <P>
+        Les entreprises à vocation régionale ou internationale dans la finance, les services aux
+        entreprises, les holdings et certaines activités de support. L'éligibilité s'apprécie au
+        cas par cas selon l'activité, la substance et l'orientation à l'export.
+      </P>
+
+      <LeadBox
+        title="Vérifier votre éligibilité CFC et son impact sur vos recrutements"
+        cta="Être recontacté"
+      >
+        <p>
+          Le statut CFC peut transformer votre fiscalité et simplifier radicalement vos
+          recrutements internationaux. Nous pouvons vous mettre en relation avec des conseils
+          spécialisés pour évaluer votre éligibilité et structurer votre implantation. Parlez-nous
+          de votre projet.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Le statut CFC dispense-t-il de l\'ANAPEC ?', a: 'Oui, le personnel étranger d\'une entreprise CFC bénéficie généralement d\'une dispense de l\'attestation ANAPEC, ce qui accélère fortement la procédure TAECHIR.' },
+          { q: 'Quelles entreprises peuvent obtenir le statut CFC ?', a: 'Les sociétés à vocation régionale ou internationale (finance, services aux entreprises, holdings, sièges régionaux). L\'éligibilité dépend de l\'activité et de l\'orientation à l\'export.' },
+          { q: 'Le statut CFC est-il réservé à Casablanca ?', a: 'Le statut est délivré dans le cadre de la place financière de Casablanca, mais il concerne l\'orientation de l\'activité plus que l\'implantation physique exacte.' },
+        ]}
+      />
+    </>
+  );
+}
+
+/* ─── Article 17 — Cabinet RH vs direct (lead-gen) ──────────────────────── */
+
+function Article17Content() {
+  return (
+    <>
+      <Lead>
+        Faut-il monter soi-même son dossier TAECHIR ou passer par un cabinet spécialisé ? J'ai vu
+        les deux approches réussir — et échouer. La vraie réponse dépend de votre temps, de votre
+        tolérance au risque administratif et du profil que vous recrutez. Faisons le point
+        honnêtement.
+      </Lead>
+
+      <H2>Faire en direct : pour qui ?</H2>
+      <P>
+        Si vous avez déjà recruté des étrangers, que votre société est parfaitement en règle et
+        que vous avez quelqu'un en interne qui maîtrise les démarches, faire en direct vous fait
+        économiser des honoraires. C'est tout à fait jouable pour un profil standard, sans
+        urgence particulière.
+      </P>
+      <P>Les points de friction quand on fait seul :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Le passage ANAPEC, chronophage et parfois déroutant la première fois</li>
+        <li>La légalisation et la traduction assermentée des diplômes étrangers</li>
+        <li>Les allers-retours au guichet régional du Ministère</li>
+        <li>La synchronisation visa de travail / carte de séjour / CNSS</li>
+      </ul>
+
+      <H2>Passer par un cabinet : pour qui ?</H2>
+      <P>
+        Un cabinet (RH, juridique ou spécialisé mobilité internationale) prend du sens quand :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>C'est votre <strong>premier recrutement</strong> d'étranger et vous ne voulez pas tâtonner</li>
+        <li>Le poste est <strong>urgent</strong> et chaque semaine perdue coûte cher</li>
+        <li>Vous recrutez <strong>plusieurs profils</strong> et voulez industrialiser le process</li>
+        <li>Le dossier est <strong>complexe</strong> : nationalité sensible, diplômes difficiles à légaliser, situation particulière</li>
+      </ul>
+
+      <H2>Combien ça coûte, et est-ce rentable ?</H2>
+      <Table
+        rows={[
+          ['Approche', 'Coût indicatif', 'Quand c\'est rentable'],
+          ['En direct', 'Frais officiels seuls', 'Profil standard, équipe rodée, pas d\'urgence'],
+          ['Cabinet (à la mission)', '8 000 – 25 000 Dhs / dossier', 'Premier dossier, urgence, profil complexe'],
+        ]}
+      />
+      <P>
+        Le calcul est simple : si un retard de 3 semaines vous fait perdre un candidat rare ou
+        décale un projet, les honoraires d'un cabinet sont vite amortis. Pour du volume ou du
+        récurrent, beaucoup négocient un forfait au dossier.
+      </P>
+      <Tip>
+        Quel que soit votre choix, commencez par vérifier que votre société est à jour (CNSS,
+        modèle 7). C'est la première chose qu'un bon cabinet contrôlera — autant gagner du temps.
+      </Tip>
+
+      <LeadBox
+        title="Vous voulez un accompagnement pour votre dossier TAECHIR ?"
+        cta="Demander à être mis en relation"
+      >
+        <p>
+          Selon votre situation, nous pouvons vous orienter vers des cabinets RH et juridiques
+          fiables, habitués aux dossiers de recrutement étranger au Maroc. Décrivez votre besoin
+          (profil, nationalité, délai) et nous vous mettons en relation avec le bon interlocuteur.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Est-il obligatoire de passer par un cabinet pour TAECHIR ?', a: 'Non, une entreprise peut monter son dossier elle-même. Le recours à un cabinet est un choix de confort, de rapidité et de sécurité, surtout pour un premier dossier ou un cas complexe.' },
+          { q: 'Combien coûte l\'accompagnement d\'un cabinet ?', a: 'Selon la complexité et la région, comptez généralement de 8 000 à 25 000 Dhs par dossier, parfois en forfait dégressif pour plusieurs recrutements.' },
+          { q: 'Un cabinet peut-il accélérer la procédure ?', a: 'Il ne raccourcit pas les délais légaux, mais il évite les erreurs et les allers-retours qui, eux, font perdre des semaines. Sur un profil rare ou dispensé d\'ANAPEC, le gain est réel.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -1861,6 +2413,66 @@ export const articles: Article[] = [
     category: 'Coûts',
     excerpt: 'Au-delà des 5 000 Dhs ANAPEC, combien coûte vraiment le recrutement d\'un salarié étranger au Maroc ? Le budget complet avec tableau comparatif par profil.',
     Content: Article11Content,
+  },
+  {
+    slug: 'assurance-sante-expatrie-maroc',
+    title: 'Assurance santé pour expatrié au Maroc : bien choisir en 2026',
+    description: 'CNSS, complémentaire locale ou assurance santé internationale : comment couvrir efficacement un salarié étranger ou un expatrié au Maroc, et ce qu\'il faut vérifier avant de signer.',
+    date: '2 avril 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'La CNSS ne couvre qu\'une fraction des soins en clinique privée. Assurance locale ou internationale, rapatriement, famille restée au pays : le guide complet pour bien se couvrir au Maroc.',
+    Content: Article12Content,
+  },
+  {
+    slug: 'ouvrir-compte-bancaire-etranger-maroc',
+    title: 'Ouvrir un compte bancaire au Maroc quand on est étranger',
+    description: 'Compte en dirhams convertibles ou compte résident, documents requis, lien avec la carte de séjour et solution multi-devises en attendant : tout pour bancariser un salarié étranger au Maroc.',
+    date: '9 avril 2026',
+    readTime: 6,
+    category: 'Expatrié',
+    excerpt: 'Compte convertible ou compte résident ? La distinction que personne n\'explique clairement, les documents à fournir et comment ne pas rester bloqué à l\'arrivée.',
+    Content: Article13Content,
+  },
+  {
+    slug: 'transfert-argent-maroc-etranger',
+    title: 'Transférer son argent vers et depuis le Maroc sans se ruiner en frais',
+    description: 'Le vrai coût d\'un transfert d\'argent est la marge de change cachée, pas les frais affichés. Comparatif des méthodes et règles de l\'Office des Changes pour transférer vers et depuis le Maroc.',
+    date: '16 avril 2026',
+    readTime: 6,
+    category: 'Expatrié',
+    excerpt: 'Les « 0 € de frais » cachent une marge de change qui peut coûter 30 à 50 € sur 1 000 €. Comment comparer intelligemment et garder le maximum à l\'arrivée.',
+    Content: Article14Content,
+  },
+  {
+    slug: 'domiciliation-entreprise-maroc',
+    title: 'Domicilier son entreprise au Maroc : guide complet et coûts 2026',
+    description: 'Domiciliation d\'entreprise au Maroc : cadre légal (loi 89-17), coûts par formule, avantages pour une société qui démarre et lien avec le recrutement de salariés étrangers via TAECHIR.',
+    date: '23 avril 2026',
+    readTime: 6,
+    category: 'Entreprise',
+    excerpt: 'Une adresse professionnelle légale sans louer de bureau : combien ça coûte vraiment, ce que dit la loi 89-17 et pourquoi c\'est utile pour recruter des étrangers.',
+    Content: Article15Content,
+  },
+  {
+    slug: 'casablanca-finance-city-avantages-eligibilite',
+    title: 'Casablanca Finance City : avantages, éligibilité et recrutement international',
+    description: 'Le statut CFC : avantages fiscaux et de change, éligibilité, et surtout la dispense d\'attestation ANAPEC pour le personnel étranger qui accélère fortement la procédure TAECHIR.',
+    date: '30 avril 2026',
+    readTime: 7,
+    category: 'Finance',
+    excerpt: 'Le statut CFC dispense souvent le personnel étranger de l\'attestation ANAPEC — soit plusieurs semaines de gagnées sur la procédure. Avantages, éligibilité et points de vigilance.',
+    Content: Article16Content,
+  },
+  {
+    slug: 'recruter-cabinet-rh-vs-direct-maroc',
+    title: 'Recruter un étranger au Maroc : cabinet RH ou démarche en direct ?',
+    description: 'Faire son dossier TAECHIR seul ou passer par un cabinet spécialisé : avantages, coûts indicatifs et critères de décision selon le profil recruté, l\'urgence et la complexité du dossier.',
+    date: '7 mai 2026',
+    readTime: 7,
+    category: 'RH',
+    excerpt: 'En direct on économise des honoraires ; via un cabinet on gagne du temps et on évite les erreurs. Le comparatif honnête pour décider selon votre situation.',
+    Content: Article17Content,
   },
 ];
 
