@@ -145,6 +145,27 @@ function LeadBox({
   );
 }
 
+// Encart de téléchargement de la checklist (lead magnet → page /checklist).
+function ChecklistBox() {
+  return (
+    <div className="my-8 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
+      <div className="flex-1">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-indigo-500">Ressource gratuite</span>
+        <h4 className="text-lg font-bold text-slate-900 mt-1 mb-1">La checklist complète du dossier TAECHIR</h4>
+        <p className="text-slate-600 text-sm leading-relaxed">
+          Toutes les étapes et toutes les pièces à réunir, dans un PDF imprimable de 2 pages.
+        </p>
+      </div>
+      <Link
+        to="/checklist"
+        className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-colors shrink-0"
+      >
+        Télécharger le PDF <span aria-hidden>↓</span>
+      </Link>
+    </div>
+  );
+}
+
 // FAQ repliable (favorise le rich snippet FAQ et le temps de lecture).
 function FAQ({ items }: { items: { q: string; a: string }[] }) {
   return (
@@ -173,6 +194,8 @@ function Article1Content() {
         de fois — et je vais vous éviter les semaines de galère que j'ai vécues sur mes premiers dossiers.
         Voici comment ça se passe concrètement, du début à la fin.
       </Lead>
+
+      <ChecklistBox />
 
       <H2>D'abord, votre entreprise est-elle en règle ?</H2>
       <P>

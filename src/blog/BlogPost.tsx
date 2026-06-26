@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle } from 'lucide-react';
+import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle, Download } from 'lucide-react';
 import { getArticleBySlug, articles } from './articles';
 import { Footer } from '../components/Footer';
 
@@ -173,8 +173,27 @@ export function BlogPost() {
           </div>
         </div>
 
+        {/* Lead magnet — checklist download */}
+        <div className="mt-10 bg-white border border-indigo-100 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          <div className="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
+            <Download className="w-6 h-6" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-bold text-slate-900 mb-1">Checklist gratuite du dossier TAECHIR</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Toutes les {'é'}tapes et pi{'è'}ces {'à'} r{'é'}unir, dans un PDF imprimable de 2 pages.
+            </p>
+          </div>
+          <Link
+            to="/checklist"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-colors shrink-0"
+          >
+            <Download className="w-4 h-4" /> T{'é'}l{'é'}charger
+          </Link>
+        </div>
+
         {/* CTA */}
-        <div className="mt-10 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-2xl p-8 text-white text-center shadow-xl shadow-indigo-100">
+        <div className="mt-6 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-2xl p-8 text-white text-center shadow-xl shadow-indigo-100">
           <Wand2 className="w-10 h-10 mx-auto mb-4 opacity-90" />
           <h3 className="text-2xl font-bold mb-3">Pr{'ê'}t {'à'} lancer votre recrutement ?</h3>
           <p className="text-indigo-100 mb-6 max-w-md mx-auto leading-relaxed">

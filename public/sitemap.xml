@@ -83,6 +83,14 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- Page : Checklist gratuite (lead magnet) -->
+  <url>
+    <loc>https://guide-taechir.org/checklist</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog — Page listing -->
   <url>
     <loc>https://guide-taechir.org/blog</loc>

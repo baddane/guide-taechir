@@ -7,6 +7,7 @@ import { BlogPost } from './blog/BlogPost.tsx';
 import { PrivacyPolicy } from './pages/PrivacyPolicy.tsx';
 import { About } from './pages/About.tsx';
 import { Contact } from './pages/Contact.tsx';
+import { Checklist } from './pages/Checklist.tsx';
 import { MentionsLegales } from './pages/MentionsLegales.tsx';
 import { NotFound } from './pages/NotFound.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/checklist" element={<Checklist />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
