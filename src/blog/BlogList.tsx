@@ -14,6 +14,10 @@ const categoryColors: Record<string, string> = {
   'Documents':   'bg-orange-50 text-orange-700 border-orange-100',
   'Secteurs':    'bg-cyan-50 text-cyan-700 border-cyan-100',
   'Coûts':       'bg-teal-50 text-teal-700 border-teal-100',
+  'Expatrié':    'bg-rose-50 text-rose-700 border-rose-100',
+  'Entreprise':  'bg-violet-50 text-violet-700 border-violet-100',
+  'Finance':     'bg-sky-50 text-sky-700 border-sky-100',
+  'RH':          'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100',
 };
 
 export function BlogList() {
