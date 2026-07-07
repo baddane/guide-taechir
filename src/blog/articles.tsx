@@ -2326,6 +2326,137 @@ function Article17Content() {
   );
 }
 
+/* ─── Article 18 ─────────────────────────────────────────────────────────── */
+
+function Article18Content() {
+  return (
+    <>
+      <Lead>
+        Un dossier TAECHIR qui revient refusé, c'est un coup dur — surtout quand le candidat
+        attend et que le poste reste vacant. Mais dans la grande majorité des cas que j'ai vus,
+        un refus n'est pas une impasse : c'est un dossier à corriger, ou un motif à contester.
+        Voici comment identifier ce qui a coincé et ce qu'on peut vraiment faire ensuite.
+      </Lead>
+
+      <H2>D'abord, comprendre où le refus s'est produit</H2>
+      <P>
+        « Mon dossier TAECHIR est refusé » recouvre en réalité deux situations très différentes,
+        et la marche à suivre n'est pas la même. Le blocage peut venir de l'ANAPEC, en amont,
+        ou du guichet du Ministère du Travail, en aval. La première chose à faire est de
+        déterminer précisément à quelle étape ça s'est arrêté.
+      </P>
+      <Info>
+        Le réflexe à avoir : demandez systématiquement le motif par écrit, même s'il vous a été
+        donné oralement au guichet. Sans motif clair et daté, impossible de savoir si on corrige
+        et redépose, ou si on conteste.
+      </Info>
+
+      <H2>Refus côté ANAPEC : les cas les plus fréquents</H2>
+      <Table
+        rows={[
+          ['Motif', 'Ce qui se passe', 'Solution la plus courante'],
+          ['Candidat marocain jugé apte trouvé', 'L\'annonce a fait remonter un profil compatible', 'Entretien obligatoire ; si le poste reste non pourvu, possibilité de relancer'],
+          ['Mauvaise catégorie choisie', 'Profil déclaré rare (A1/A2) mais requalifié en standard', 'Redépôt en catégorie standard, délai ANAPEC repart à 20 jours'],
+          ['Intitulé de poste flou', 'Le poste ne correspond à aucun métier reconnu de la nomenclature', 'Reformuler le poste avec un intitulé et des missions clairement identifiables'],
+          ['Annonce mal diffusée ou incomplète', 'Vice de forme sur la publication du poste', 'Nouvelle annonce, généralement sans repartir de zéro sur les frais déjà réglés'],
+        ]}
+      />
+      <P>
+        Le cas le plus mal vécu reste le premier : un candidat marocain « apte » a été identifié
+        pendant les 20 jours d'annonce. J'ai accompagné une PME à Salé qui recrutait un chef de
+        chantier tunisien — deux candidatures marocaines sont arrivées la dernière semaine. La loi
+        oblige à recevoir ces candidats en entretien. Ça ne veut pas dire que le recrutement de
+        l'étranger tombe automatiquement à l'eau : si le profil marocain ne correspond finalement
+        pas au poste (expérience, disponibilité, prétentions), le dossier peut repartir avec les
+        justificatifs de ces entretiens.
+      </P>
+
+      <H2>Refus ou blocage côté Ministère du Travail</H2>
+      <P>
+        Une fois l'attestation ANAPEC en poche, le dossier peut encore être bloqué au guichet
+        régional — ce n'est pas toujours un « refus » formel, souvent c'est un rejet provisoire
+        pour pièce manquante ou incohérence.
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Entreprise non à jour CNSS ou modèle 7.</strong> Le motif de blocage le plus courant, et le plus facile à anticiper.</li>
+        <li><strong>Documents non légalisés ou traduction manquante.</strong> Diplômes, casier judiciaire, certificats de travail — un document non conforme suffit à faire échouer le dépôt.</li>
+        <li><strong>Incohérence contrat / attestation ANAPEC.</strong> Le poste, le salaire ou la durée déclarés sur TAECHIR ne correspondent pas exactement à ce qui a été validé par l'ANAPEC.</li>
+        <li><strong>Salaire jugé non conforme.</strong> Un salaire trop proche du SMIG pour un poste qualifié fait parfois l'objet d'une demande de justification.</li>
+      </ul>
+      <Warning>
+        Un rejet provisoire pour pièce manquante n'est pas un refus définitif — mais si vous ne
+        redéposez pas dans un délai raisonnable, le dossier est classé sans suite et il faut
+        recommencer depuis le dépôt physique, parfois même reprendre l'attestation ANAPEC
+        si elle a expiré entre-temps.
+      </Warning>
+
+      <H2>Les voies de recours quand le désaccord persiste</H2>
+      <P>
+        Si vous estimez que le refus n'est pas justifié — un motif contestable, une erreur
+        d'appréciation de l'administration — deux voies existent, à ne pas confondre.
+      </P>
+      <Table
+        rows={[
+          ['Voie de recours', 'À qui s\'adresser', 'Délai à connaître'],
+          ['Recours gracieux (hiérarchique)', 'Courrier motivé à la direction régionale, puis au Ministère du Travail', 'Pas de délai légal strict, mais à faire rapidement pendant que le dossier est « chaud »'],
+          ['Recours contentieux', 'Tribunal administratif compétent', 'Le silence de l\'administration pendant 60 jours vaut décision implicite de rejet ; le recours doit ensuite être introduit dans les 60 jours'],
+        ]}
+      />
+      <P>
+        Dans la pratique, le recours gracieux — une simple lettre bien argumentée, avec les
+        pièces justificatives — règle la grande majorité des situations, surtout quand le motif
+        du refus repose sur une pièce mal interprétée ou un malentendu administratif. Le recours
+        contentieux devant le tribunal administratif reste l'exception : on y a recours quand
+        l'entreprise est certaine d'être dans son bon droit et que le dialogue avec l'administration
+        n'a rien donné.
+      </P>
+      <Tip>
+        Gardez une trace écrite de tout : accusé de dépôt, courrier de refus, échanges avec le
+        guichet. En cas de recours, c'est ce dossier de preuves qui fait la différence — pas
+        seulement l'argument oral.
+      </Tip>
+
+      <H2>Combien de temps un refus fait-il vraiment perdre ?</H2>
+      <Table
+        rows={[
+          ['Situation', 'Retard estimé', 'Repartir de zéro ?'],
+          ['Pièce manquante, redépôt rapide', '1 à 2 semaines', 'Non — complément de dossier'],
+          ['Requalification de catégorie ANAPEC', '3 à 4 semaines', 'Partiellement — nouvelle annonce si standard'],
+          ['Candidat marocain à recevoir en entretien', '2 à 3 semaines', 'Non, sauf si le poste est finalement pourvu localement'],
+          ['Recours gracieux abouti', '3 à 6 semaines', 'Non'],
+          ['Recours contentieux', 'Plusieurs mois', 'Dépend de la décision du tribunal'],
+        ]}
+      />
+      <P>
+        Dans l'immense majorité des dossiers que j'ai vus refusés, la cause était une pièce
+        manquante ou une incohérence facilement corrigible — pas un vrai désaccord de fond.
+        Avant d'envisager un recours, il vaut presque toujours la peine de vérifier une dernière
+        fois chaque document, chaque champ du formulaire TAECHIR, et de redéposer proprement.
+      </P>
+
+      <LeadBox
+        title="Un dossier TAECHIR refusé et vous ne savez pas comment réagir ?"
+        cta="Demander un avis sur mon dossier"
+      >
+        <p>
+          Décrivez-nous le motif de refus reçu (ANAPEC ou Ministère) et nous pouvons vous
+          orienter vers la bonne démarche : correction et redépôt, recours gracieux, ou mise
+          en relation avec un cabinet juridique pour un recours contentieux si nécessaire.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Peut-on redéposer un dossier TAECHIR après un refus ?', a: 'Oui, dans la grande majorité des cas. Un dossier corrigé (pièce ajoutée, catégorie rectifiée, poste reformulé) peut être redéposé sans repartir totalement de zéro, sauf si l\'attestation ANAPEC a expiré entre-temps.' },
+          { q: 'Un refus ANAPEC empêche-t-il définitivement le recrutement de l\'étranger ?', a: 'Non. Même si un candidat marocain est identifié pendant l\'annonce, l\'entreprise doit simplement le recevoir en entretien. Si ce profil ne correspond pas réellement au poste, le recrutement de l\'étranger peut se poursuivre avec les justificatifs de cet entretien.' },
+          { q: 'Quel délai pour contester un refus du Ministère du Travail ?', a: 'Le silence de l\'administration pendant 60 jours vaut rejet implicite. Un recours contentieux devant le tribunal administratif doit ensuite être introduit dans un délai de 60 jours à compter de cette décision implicite ou du refus explicite notifié.' },
+          { q: 'Faut-il un avocat pour contester un refus TAECHIR ?', a: 'Pour un recours gracieux (courrier à l\'administration), non, ce n\'est pas nécessaire. Pour un recours contentieux devant le tribunal administratif, l\'accompagnement par un avocat ou un cabinet spécialisé est fortement recommandé.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2496,6 +2627,16 @@ export const articles: Article[] = [
     category: 'RH',
     excerpt: 'En direct on économise des honoraires ; via un cabinet on gagne du temps et on évite les erreurs. Le comparatif honnête pour décider selon votre situation.',
     Content: Article17Content,
+  },
+  {
+    slug: 'refus-visa-taechir-recours-maroc',
+    title: 'Refus de visa TAECHIR : motifs fréquents et voies de recours',
+    description: 'Que faire quand un dossier TAECHIR est refusé par l\'ANAPEC ou le Ministère du Travail : motifs les plus courants, recours gracieux, recours contentieux et délais à connaître.',
+    date: '2 juillet 2026',
+    readTime: 7,
+    category: 'Recours',
+    excerpt: 'ANAPEC défavorable, dossier rejeté au guichet du Ministère : pourquoi ça arrive, ce qu\'on peut faire dans la foulée, et quand envisager un vrai recours.',
+    Content: Article18Content,
   },
 ];
 

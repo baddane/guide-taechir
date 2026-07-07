@@ -18,6 +18,7 @@ const categoryColors: Record<string, string> = {
   'Entreprise': 'bg-violet-50 text-violet-700',
   'Finance':    'bg-sky-50 text-sky-700',
   'RH':         'bg-fuchsia-50 text-fuchsia-700',
+  'Recours':    'bg-lime-50 text-lime-700',
 };
 
 export function BlogPost() {
