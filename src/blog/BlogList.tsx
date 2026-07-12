@@ -19,6 +19,7 @@ const categoryColors: Record<string, string> = {
   'Finance':     'bg-sky-50 text-sky-700 border-sky-100',
   'RH':          'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100',
   'Recours':     'bg-lime-50 text-lime-700 border-lime-100',
+  'Fiscalité':   'bg-green-50 text-green-700 border-green-100',
 };
 
 export function BlogList() {

@@ -2457,6 +2457,157 @@ function Article18Content() {
   );
 }
 
+/* ─── Article 19 — Fiscalité du salarié étranger (lead-gen) ─────────────── */
+
+function Article19Content() {
+  return (
+    <>
+      <Lead>
+        On me pose la question dans presque chaque accompagnement, souvent bien après le visa :
+        "et niveau impôts, ça se passe comment pour lui ?". La réponse dépend d'un seul point de
+        départ — la résidence fiscale — que beaucoup d'employeurs et de salariés confondent avec
+        la carte de séjour. Ce ne sont pas la même chose, et l'erreur peut coûter cher aux deux.
+      </Lead>
+
+      <H2>Résident fiscal ou pas : la question qui change tout</H2>
+      <P>
+        La carte de séjour dit que votre salarié a le droit de vivre au Maroc. Elle ne dit rien
+        sur où il doit payer ses impôts. Le Code Général des Impôts (article 23) retient trois
+        critères, et un seul suffit pour être considéré résident fiscal marocain :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Un foyer d'habitation permanent au Maroc</strong> — un logement dont il dispose de façon durable, pas une chambre d'hôtel.</li>
+        <li><strong>Un séjour de plus de 183 jours</strong> au Maroc sur une période de 365 jours, consécutifs ou non.</li>
+        <li><strong>Le centre de ses intérêts économiques au Maroc</strong> — en clair, c'est là qu'il tire l'essentiel de ses revenus et gère l'essentiel de son patrimoine.</li>
+      </ul>
+      <Info>
+        Un salarié en CDI sous TAECHIR qui s'installe avec sa famille coche presque toujours au
+        moins deux de ces critères dès les premiers mois. Dans l'immense majorité des dossiers
+        que j'accompagne, la résidence fiscale marocaine s'impose rapidement — même si le salarié
+        garde un logement dans son pays d'origine.
+      </Info>
+
+      <H2>Le barème de l'IR sur salaire, en vigueur depuis 2024</H2>
+      <P>
+        Une fois résident fiscal, le salarié étranger est imposé exactement comme un salarié
+        marocain — même barème, aucune distinction de nationalité. C'est l'Impôt sur le Revenu
+        (IR), calculé sur le salaire net imposable annuel :
+      </P>
+      <Table
+        rows={[
+          ['Tranche de revenu annuel', 'Taux', 'Ce que ça représente en mensuel'],
+          ['0 à 40 000 Dhs', '0 %', 'Jusqu\'à environ 3 333 Dhs/mois'],
+          ['40 001 à 60 000 Dhs', '10 %', 'Environ 3 334 à 5 000 Dhs/mois'],
+          ['60 001 à 80 000 Dhs', '20 %', 'Environ 5 001 à 6 667 Dhs/mois'],
+          ['80 001 à 100 000 Dhs', '30 %', 'Environ 6 668 à 8 333 Dhs/mois'],
+          ['100 001 à 180 000 Dhs', '34 %', 'Environ 8 334 à 15 000 Dhs/mois'],
+          ['Au-delà de 180 000 Dhs', '37 %', 'Au-delà de 15 000 Dhs/mois'],
+        ]}
+      />
+      <P>
+        Ce barème progressif s'applique par tranches, pas sur la totalité du revenu — un salaire
+        qui atteint la tranche à 34 % ne voit pas tout son revenu taxé à ce taux, seule la part
+        qui dépasse 100 000 Dhs l'est. Beaucoup de salariés étrangers découvrent ce mécanisme
+        avec surprise en comparant avec la fiscalité de leur pays d'origine.
+      </P>
+
+      <H2>Qui retient l'impôt ? C'est vous, l'employeur</H2>
+      <P>
+        Pour un salarié — marocain ou étranger, résident fiscal — l'IR fonctionne en retenue à la
+        source. C'est l'employeur qui calcule, prélève et reverse l'impôt chaque mois à la
+        Direction Générale des Impôts, en même temps que la paie. Le salarié n'a rien à déclarer
+        lui-même pour ce revenu salarial, sauf s'il a d'autres sources de revenus au Maroc.
+      </P>
+      <Warning>
+        Un salarié non-résident (par exemple en mission courte, avant que la résidence fiscale ne
+        s'installe) n'échappe pas à l'impôt pour autant : les revenus de source marocaine restent
+        imposables au Maroc, avec des règles de retenue spécifiques. Ne partez jamais du principe
+        qu'un salarié étranger "de passage" est hors du champ de l'IR — vérifiez sa situation au
+        cas par cas avec votre comptable.
+      </Warning>
+
+      <H2>Les conventions de non double imposition</H2>
+      <P>
+        Le Maroc a signé des conventions fiscales bilatérales avec une cinquantaine de pays, dont
+        la France, la Belgique, l'Espagne, l'Allemagne, le Canada et plusieurs pays d'Afrique de
+        l'Ouest. L'objectif est simple : éviter qu'un même revenu soit taxé deux fois, une fois
+        au Maroc et une fois dans le pays d'origine du salarié.
+      </P>
+      <P>
+        En pratique, pour un salarié résident fiscal marocain qui travaille effectivement au
+        Maroc, le salaire est en général imposé au Maroc uniquement, et le pays d'origine
+        applique un mécanisme d'exonération ou de crédit d'impôt pour neutraliser toute double
+        taxation. Mais les modalités précises varient d'une convention à l'autre — la convention
+        franco-marocaine ne fonctionne pas exactement comme la convention belgo-marocaine.
+      </P>
+      <Tip>
+        Avant le départ, faites vérifier la convention applicable par un fiscaliste des deux
+        côtés — au Maroc et dans le pays d'origine. C'est le genre de démarche qui prend deux
+        rendez-vous et qui évite des mauvaises surprises l'année suivante, quand le salarié
+        remplit sa déclaration dans son pays d'origine.
+      </Tip>
+
+      <H2>Le cas particulier des cadres sous statut CFC</H2>
+      <P>
+        Casablanca Finance City a longtemps proposé un régime fiscal incitatif pour les cadres
+        étrangers employés par des sociétés à statut CFC, avec un taux d'IR réduit pendant les
+        premières années d'activité. Les réformes fiscales successives ont progressivement
+        rapproché ce régime du droit commun applicable à tous les salariés.
+      </P>
+      <Warning>
+        Ne vous fiez pas à ce qu'un collègue vous dit avoir obtenu "il y a deux ou trois ans" en
+        matière d'avantage fiscal CFC — les règles évoluent. Vérifiez toujours le régime en
+        vigueur au moment de l'embauche auprès de CFC ou de votre expert-comptable, pas sur la
+        base d'un souvenir.
+      </Warning>
+
+      <H2>Les erreurs que je vois revenir</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Confondre carte de séjour et résidence fiscale.</strong> Un salarié peut avoir
+          sa carte de séjour depuis un an et ne pas encore être résident fiscal, ou l'inverse —
+          être résident fiscal dès les premiers mois alors que sa carte de séjour est encore en
+          cours de traitement. Les deux dossiers avancent indépendamment.
+        </li>
+        <li>
+          <strong>Oublier de déclarer les avantages en nature.</strong> Logement de fonction,
+          véhicule, billets d'avion pris en charge par l'employeur — tout ça entre dans le
+          salaire imposable. J'ai vu une entreprise à Casablanca redresser sa paie sur un cadre
+          européen parce que le loyer de son appartement, payé directement par la société,
+          n'avait jamais été intégré au calcul de l'IR.
+        </li>
+        <li>
+          <strong>Ne pas anticiper le premier exercice fiscal du salarié.</strong> L'année de
+          l'arrivée, le calcul peut être partiel (prorata temporis) selon la date d'installation.
+          C'est un point que le service paie doit paramétrer correctement dès le départ, pas
+          régulariser en fin d'année.
+        </li>
+      </ul>
+
+      <LeadBox
+        title="Besoin d'y voir clair sur la fiscalité d'un salarié étranger ?"
+        cta="Être mis en relation avec un expert-comptable"
+      >
+        <p>
+          Résidence fiscale, retenue à la source, convention applicable au pays d'origine de
+          votre salarié : ce sont des questions qui méritent un avis chiffré, pas une réponse
+          générique. Nous pouvons vous orienter vers un expert-comptable habitué aux dossiers
+          de salariés étrangers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger paie-t-il plus d\'impôts qu\'un salarié marocain ?', a: 'Non. Une fois résident fiscal, il est soumis exactement au même barème progressif de l\'IR, sans aucune majoration ni distinction liée à la nationalité.' },
+          { q: 'La carte de séjour rend-elle automatiquement résident fiscal ?', a: 'Non, ce sont deux statuts distincts régis par des textes différents. La résidence fiscale dépend des critères de l\'article 23 du Code Général des Impôts (foyer permanent, séjour de plus de 183 jours, centre des intérêts économiques), indépendamment de la carte de séjour.' },
+          { q: 'Qui déclare et paie l\'impôt sur le salaire d\'un étranger ?', a: 'L\'employeur, via la retenue à la source mensuelle reversée à la Direction Générale des Impôts. Le salarié n\'a rien à déclarer lui-même pour ce revenu salarial, sauf s\'il perçoit d\'autres revenus de source marocaine.' },
+          { q: 'Que se passe-t-il si le salarié est imposé dans son pays d\'origine en plus du Maroc ?', a: 'C\'est précisément ce que les conventions fiscales bilatérales cherchent à éviter, via un mécanisme d\'exonération ou de crédit d\'impôt. Les modalités varient selon le pays d\'origine — il faut vérifier la convention applicable au cas par cas.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2637,6 +2788,16 @@ export const articles: Article[] = [
     category: 'Recours',
     excerpt: 'ANAPEC défavorable, dossier rejeté au guichet du Ministère : pourquoi ça arrive, ce qu\'on peut faire dans la foulée, et quand envisager un vrai recours.',
     Content: Article18Content,
+  },
+  {
+    slug: 'fiscalite-impot-revenu-salarie-etranger-maroc',
+    title: 'Fiscalité du salarié étranger au Maroc : impôt sur le revenu et double imposition',
+    description: 'Résidence fiscale, barème de l\'IR, retenue à la source et conventions de non double imposition : tout ce qu\'un employeur doit savoir sur la fiscalité d\'un salarié étranger recruté au Maroc.',
+    date: '12 juillet 2026',
+    readTime: 7,
+    category: 'Fiscalité',
+    excerpt: 'Carte de séjour et résidence fiscale sont deux choses différentes. Barème de l\'IR, retenue à la source, conventions bilatérales : le guide pour ne pas se tromper sur la fiscalité de votre salarié étranger.',
+    Content: Article19Content,
   },
 ];
 
