@@ -2457,6 +2457,167 @@ function Article18Content() {
   );
 }
 
+/* ─── Article 19 — Fiscalité de l'expatrié (lead-gen) ───────────────────── */
+
+function Article19Content() {
+  return (
+    <>
+      <Lead>
+        Un salarié étranger qui découvre son premier bulletin de paie marocain a presque
+        toujours la même réaction : « Attendez, on m'a prélevé combien, et est-ce que je vais
+        aussi être imposé chez moi sur ce même salaire ? » La fiscalité de l'expatrié au Maroc
+        n'est pas si compliquée une fois qu'on a compris trois choses : qui est résident fiscal,
+        comment se calcule l'impôt sur le salaire, et comment jouer avec les conventions pour
+        ne pas payer deux fois.
+      </Lead>
+
+      <H2>Résident fiscal ou pas ? La question qui décide de tout</H2>
+      <P>
+        Toute votre fiscalité marocaine découle de ce statut. Et contrairement à ce que
+        beaucoup pensent, ce n'est pas d'abord une question de nombre de jours passés au Maroc.
+        La loi marocaine applique une hiérarchie de trois critères, dans cet ordre :
+      </P>
+      <ol className="list-decimal pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Le foyer permanent.</strong> Là où se trouve votre logement principal et votre famille.</li>
+        <li><strong>Le centre des intérêts économiques.</strong> Là où se trouve l'essentiel de votre activité professionnelle ou de vos investissements.</li>
+        <li><strong>La durée de séjour.</strong> Plus de 183 jours, consécutifs ou non, au cours d'une même année civile.</li>
+      </ol>
+      <P>
+        Le troisième critère n'intervient que si les deux premiers ne permettent pas de trancher.
+        Concrètement, ça veut dire qu'on peut devenir résident fiscal marocain dès son arrivée,
+        avant même d'avoir passé six mois dans le pays.
+      </P>
+      <Info>
+        La conséquence est majeure. Un résident fiscal marocain doit déclarer et payer l'impôt
+        sur l'ensemble de ses revenus mondiaux — salaire marocain, mais aussi loyers, dividendes
+        ou pension perçus à l'étranger. Un non-résident, lui, n'est imposé au Maroc que sur ses
+        revenus de source marocaine.
+      </Info>
+      <P>
+        J'ai eu le cas d'un cadre belge arrivé à Casablanca avec sa femme et ses enfants dès le
+        premier mois, logement loué en son nom, enfants scolarisés sur place. Bien qu'il n'ait pas
+        encore atteint les 183 jours lors de sa première année, l'administration l'a considéré
+        résident fiscal dès son installation, parce que son foyer permanent était déjà au Maroc.
+      </P>
+
+      <H2>Comment se calcule l'impôt sur votre salaire marocain</H2>
+      <P>
+        Pour un salarié, l'impôt sur le revenu (IR) est prélevé directement par l'employeur
+        chaque mois — c'est la retenue à la source. Avant d'appliquer le barème, plusieurs
+        éléments sont déduits du salaire brut :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Cotisation CNSS</strong> — environ 4,48 %, plafonnée à un salaire de 6 000 Dhs/mois</li>
+        <li><strong>Cotisation AMO</strong> — environ 2,26 %, sans plafond</li>
+        <li><strong>Frais professionnels forfaitaires</strong> — 35 % du brut (plafonnés à 2 500 Dhs/mois) si le brut est ≤ 6 500 Dhs, sinon 25 % (plafonnés à 2 916,67 Dhs/mois)</li>
+        <li><strong>Charges de famille</strong> — 50 Dhs/mois par personne à charge, dans la limite de 300 Dhs/mois (6 personnes)</li>
+      </ul>
+      <P>
+        Ce qui reste après ces déductions, c'est le revenu net imposable. C'est sur ce montant
+        qu'on applique le barème progressif — celui en vigueur depuis la réforme 2025-2026 a
+        relevé le seuil d'exonération et abaissé le taux marginal :
+      </P>
+      <Table
+        rows={[
+          ['Tranche annuelle (RNI)', 'Taux'],
+          ['0 – 40 000 Dhs', '0 %'],
+          ['40 001 – 60 000 Dhs', '10 %'],
+          ['60 001 – 80 000 Dhs', '20 %'],
+          ['80 001 – 100 000 Dhs', '30 %'],
+          ['100 001 – 180 000 Dhs', '34 %'],
+          ['Au-delà de 180 000 Dhs', '37 %'],
+        ]}
+      />
+      <Tip>
+        Si votre contrat mentionne un « salaire net garanti » plutôt qu'un salaire brut,
+        assurez-vous de bien faire préciser par écrit qui prend en charge la différence si le
+        barème ou les cotisations évoluent d'une année sur l'autre. C'est un point qui génère
+        des malentendus à la signature.
+      </Tip>
+
+      <H2>Salaire déjà imposé ailleurs : le risque de double imposition</H2>
+      <P>
+        Le Maroc a signé des conventions fiscales bilatérales avec une cinquantaine de pays,
+        dont la France, la Belgique, l'Espagne, l'Allemagne et le Canada. Ces conventions
+        prévoient un mécanisme — crédit d'impôt ou exonération, selon les textes — pour éviter
+        qu'un même revenu soit taxé deux fois.
+      </P>
+      <Warning>
+        Le mécanisme exact varie d'une convention à l'autre, et il ne joue pas automatiquement :
+        dans la plupart des cas, il faut le faire valoir vous-même dans votre déclaration, pièces
+        justificatives à l'appui. Si le pays d'origine n'a pas de convention avec le Maroc, le
+        risque de double imposition est réel.
+      </Warning>
+      <P>
+        Un piège fréquent : un Français installé au Maroc pense que la convention franco-marocaine
+        le dispense de toute démarche en France. En réalité, il doit souvent continuer à déclarer
+        ses revenus marocains à l'administration fiscale française, ne serait-ce que pour faire
+        valoir le crédit d'impôt correspondant à l'IR déjà payé au Maroc. Un client à qui j'avais
+        pourtant signalé le point a reçu une relance des impôts français deux ans plus tard pour
+        n'avoir rien déclaré.
+      </P>
+
+      <H2>Quelques cas particuliers fréquents</H2>
+      <H3>Les retraités : l'abattement de 80 % sur la pension</H3>
+      <P>
+        Si vous percevez une pension de retraite étrangère et que vous la faites rapatrier en
+        dirhams via une banque marocaine, la loi marocaine prévoit un abattement de 80 % sur le
+        montant imposable. Concrètement, seuls 20 % de la pension entrent dans le calcul de l'IR
+        — un avantage que beaucoup de retraités expatriés ignorent la première année.
+      </P>
+      <H3>Le salarié détaché : généralement imposé dans son pays d'origine</H3>
+      <P>
+        Si votre salarié reste rémunéré par la maison mère à l'étranger pour une mission
+        temporaire au Maroc, la plupart des conventions fiscales prévoient qu'il continue d'être
+        imposé dans son pays d'origine — sous conditions de durée de mission et à condition que
+        l'employeur marocain ne supporte pas directement la charge de sa rémunération.
+      </P>
+      <H3>Gérants et actionnaires : salaire et dividendes ne se traitent pas pareil</H3>
+      <P>
+        Le salaire perçu en tant que gérant suit le barème IR classique. Les dividendes, eux,
+        relèvent d'un régime distinct avec une retenue à la source forfaitaire — ne confondez
+        pas les deux quand vous établissez votre budget personnel.
+      </P>
+
+      <H2>Vos obligations déclaratives concrètes</H2>
+      <Table
+        rows={[
+          ['Situation', 'Obligation', 'Échéance'],
+          ['Salaire unique, un seul employeur marocain', 'Aucune déclaration à déposer : la retenue à la source est libératoire', '—'],
+          ['Résident avec revenus étrangers ou plusieurs sources', 'Déclaration annuelle du revenu global en ligne (portail SIMPL, tax.gov.ma)', 'Avant le 1er mars'],
+          ['Revenus professionnels (régime réel ou simplifié)', 'Déclaration annuelle du revenu global', 'Avant le 1er avril'],
+        ]}
+      />
+      <Warning>
+        Ne pas déclarer des revenus étrangers alors que vous êtes résident fiscal marocain
+        expose à un redressement avec majorations — l'administration fiscale marocaine échange
+        désormais des informations avec de nombreux pays dans le cadre d'accords d'échange
+        automatique.
+      </Warning>
+
+      <LeadBox
+        title="Besoin d'y voir clair sur votre situation fiscale d'expatrié ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Résidence fiscale, double imposition, déclaration de revenus étrangers : chaque
+          situation est différente. Décrivez-nous la vôtre et nous pouvons vous orienter vers
+          un fiduciaire ou un expert-comptable habitué aux dossiers d'expatriés au Maroc.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger paie-t-il l\'impôt marocain comme un salarié marocain ?', a: 'Oui. Dès qu\'il perçoit un salaire de source marocaine, le même barème progressif de l\'IR s\'applique, qu\'il soit résident fiscal ou non.' },
+          { q: 'Quand devient-on résident fiscal au Maroc ?', a: 'Dès que votre foyer permanent (famille, logement principal) ou le centre de vos intérêts économiques s\'y trouve, ou à défaut dès que vous dépassez 183 jours de séjour dans l\'année civile.' },
+          { q: 'Comment éviter de payer l\'impôt deux fois sur le même salaire ?', a: 'Vérifiez si le Maroc a signé une convention fiscale avec votre pays d\'origine et faites valoir le mécanisme de crédit d\'impôt ou d\'exonération qu\'elle prévoit, généralement dans votre propre déclaration.' },
+          { q: 'Les retraités étrangers bénéficient-ils d\'un avantage fiscal au Maroc ?', a: 'Oui, un abattement de 80 % s\'applique sur les pensions de retraite étrangères rapatriées en dirhams via une banque marocaine.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2637,6 +2798,16 @@ export const articles: Article[] = [
     category: 'Recours',
     excerpt: 'ANAPEC défavorable, dossier rejeté au guichet du Ministère : pourquoi ça arrive, ce qu\'on peut faire dans la foulée, et quand envisager un vrai recours.',
     Content: Article18Content,
+  },
+  {
+    slug: 'fiscalite-expatrie-impot-revenu-maroc',
+    title: 'Fiscalité de l\'expatrié au Maroc : impôt sur le revenu et double imposition',
+    description: 'Résidence fiscale, calcul de l\'impôt sur le revenu (IR) d\'un salarié étranger au Maroc, conventions de non double imposition et obligations déclaratives à connaître.',
+    date: '14 juillet 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Résident fiscal ou pas, barème de l\'IR 2026, conventions bilatérales pour éviter de payer deux fois, cas des retraités et des détachés : le guide complet de la fiscalité de l\'expatrié salarié au Maroc.',
+    Content: Article19Content,
   },
 ];
 
