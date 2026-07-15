@@ -2618,6 +2618,192 @@ function Article19Content() {
   );
 }
 
+/* ─── Article 20 ─────────────────────────────────────────────────────────── */
+
+function Article20Content() {
+  return (
+    <>
+      <Lead>
+        Un recrutement TAECHIR abouti, un salarié étranger installé, sa carte de séjour en poche —
+        et puis vient la question qu'on me pose presque à chaque fois : « Et pour faire venir ma
+        femme et mes enfants, comment on fait ? » Le regroupement familial au Maroc n'a rien
+        d'impossible, mais il obéit à ses propres règles, distinctes de celles du dossier de
+        travail. Voici comment ça fonctionne concrètement.
+      </Lead>
+
+      <H2>Le principe : une résidence qui ouvre le droit, pas un visa automatique</H2>
+      <P>
+        Contrairement à certains pays où le regroupement familial est une procédure formalisée
+        avec un visa dédié, le Maroc fonctionne différemment. Ce qui compte, c'est le statut du
+        salarié étranger : dès qu'il détient sa <strong>carte de séjour</strong> — la même que
+        celle obtenue à la DGSN une fois le visa TAECHIR délivré — son conjoint et ses enfants
+        mineurs peuvent, à leur tour, demander une carte de séjour au titre de membre de famille
+        d'un étranger résident.
+      </P>
+      <Info>
+        Retenez l'ordre logique : d'abord le salarié obtient sa propre carte de séjour, ensuite
+        seulement la famille peut engager sa demande. On ne peut pas faire les deux dossiers en
+        parallèle dès le premier jour — l'administration veut voir un statut de résident déjà établi.
+      </Info>
+
+      <H2>Qui est concerné par le regroupement familial ?</H2>
+      <P>
+        La notion de « famille » retenue par l'administration marocaine est plus restrictive
+        qu'on ne le pense souvent :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Le conjoint marié.</strong> Le mariage doit être légalement établi — un acte de mariage légalisé (et traduit si besoin) suffit, y compris pour un mariage célébré à l'étranger.</li>
+        <li><strong>Les enfants mineurs</strong> du couple, ou de l'un des deux conjoints avec justificatif de l'autorité parentale.</li>
+        <li><strong>Les enfants majeurs à charge</strong>, dans certains cas — mais c'est apprécié au dossier, avec justificatif de dépendance (études en cours, absence de ressources propres) ; ne comptez pas dessus par défaut.</li>
+      </ul>
+      <Warning>
+        Le concubinage et le partenariat civil ne sont pas reconnus pour le regroupement familial
+        au Maroc. J'ai eu le cas d'un couple néerlandais pacsé chez eux mais non marié : la
+        compagne n'a pas pu prétendre à une carte de séjour comme conjointe. La seule option
+        restante était une demande de carte de séjour à titre personnel, sur un autre fondement
+        (activité professionnelle propre, par exemple).
+      </Warning>
+
+      <H2>Les conditions à remplir côté salarié résident</H2>
+      <P>
+        Ce n'est pas parce que vous avez votre carte de séjour que le regroupement est automatique.
+        L'administration vérifie trois choses chez le sponsor — c'est-à-dire le salarié déjà résident :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Un logement adapté.</strong> Un bail ou un titre de propriété au nom du résident, avec une surface jugée cohérente avec la taille de la famille.</li>
+        <li><strong>Des ressources suffisantes.</strong> Le salaire figurant sur le contrat TAECHIR sert généralement de référence — pas besoin de revenus mirobolants, mais il faut pouvoir montrer que le foyer peut subvenir aux besoins de la famille.</li>
+        <li><strong>Une carte de séjour en cours de validité.</strong> Une demande de regroupement déposée avec une carte de séjour sur le point d'expirer se retrouve souvent bloquée en attendant le renouvellement du dossier principal.</li>
+      </ul>
+      <Tip>
+        Un dossier de bail simple, quelques bulletins de salaire et l'attestation de résidence
+        suffisent dans la grande majorité des cas. Inutile de monter un dossier financier
+        sophistiqué — la préfecture cherche la cohérence, pas la richesse.
+      </Tip>
+
+      <H2>La question qui change tout : votre famille a-t-elle besoin d'un visa d'entrée ?</H2>
+      <P>
+        C'est le point que je vois le plus souvent mal anticipé, et il dépend uniquement de la
+        nationalité du conjoint et des enfants — pas de celle du salarié.
+      </P>
+      <H3>Nationalité dispensée de visa court séjour</H3>
+      <P>
+        Pour de nombreuses nationalités (plusieurs pays d'Europe, d'Amérique du Nord et certains
+        pays arabes et africains), l'entrée au Maroc ne nécessite pas de visa préalable pour un
+        séjour touristique. Dans ce cas, la famille entre simplement avec son passeport, puis
+        dépose sa demande de carte de séjour une fois sur place — dans les 90 jours suivant
+        l'entrée, en pratique.
+      </P>
+      <H3>Nationalité soumise à visa</H3>
+      <P>
+        Si la nationalité du conjoint ou des enfants nécessite un visa pour entrer au Maroc, il
+        faut le demander au consulat marocain du pays de résidence <strong>avant le départ</strong>,
+        en présentant les justificatifs de la relation familiale et de la résidence du salarié
+        au Maroc. Une entrée en tourisme puis une régularisation sur place n'est pas la bonne
+        méthode dans ce cas — le consulat est l'interlocuteur de départ.
+      </P>
+      <Warning>
+        Un client basé à Fès m'a appelé après avoir fait venir son épouse philippine avec un
+        simple billet d'avion, sans anticiper le visa. Elle a été refoulée à l'aéroport
+        Mohammed V. Le couple a dû reprendre toute la démarche depuis Manille, consulat par
+        consulat, avec plusieurs semaines de retard. Vérifiez systématiquement le régime de
+        visa applicable à la nationalité concernée, pas seulement à celle du salarié.
+      </Warning>
+
+      <H2>Le dossier à constituer à la préfecture</H2>
+      <Table
+        rows={[
+          ['Document', 'Concerne', 'Point d\'attention'],
+          ['Acte de mariage légalisé et traduit', 'Conjoint', 'Apostille ou légalisation consulaire selon le pays'],
+          ['Actes de naissance des enfants', 'Enfants mineurs', 'Traduction arabe ou française requise'],
+          ['Copie de la carte de séjour du salarié résident', 'Sponsor', 'Doit être en cours de validité'],
+          ['Justificatif de logement', 'Foyer', 'Bail ou titre de propriété au nom du résident'],
+          ['Justificatifs de ressources', 'Foyer', 'Bulletins de salaire ou attestation employeur'],
+          ['Photos d\'identité et copies de passeport', 'Chaque membre', 'Format réglementaire, comme pour toute carte de séjour'],
+        ]}
+      />
+      <P>
+        Le dossier se dépose au bureau des étrangers de la préfecture ou du commissariat de
+        police dont dépend le domicile de la famille — le même guichet DGSN que celui qui a
+        traité la carte de séjour du salarié. Les délais de traitement varient sensiblement
+        d'une ville à l'autre : plutôt rapide à Rabat ou à Tanger d'après les retours que je
+        reçois, plus long à Casablanca aux périodes de forte affluence.
+      </P>
+
+      <H2>Une fois la carte de séjour familiale obtenue</H2>
+      <P>
+        Le conjoint et les enfants reçoivent une carte de séjour dont la durée est généralement
+        alignée sur celle du résident principal — logique, puisqu'elle découle de son statut.
+        Si le contrat de travail du salarié est renouvelé, pensez à renouveler dans la foulée
+        les cartes de séjour de la famille : elles ne se prolongent pas automatiquement.
+      </P>
+      <Info>
+        La carte de séjour du conjoint ne donne pas automatiquement le droit de travailler.
+        Si le conjoint souhaite lui-même occuper un emploi au Maroc, il doit en principe suivre
+        sa propre procédure TAECHIR auprès d'un employeur — sauf s'il entre dans une catégorie
+        dispensée d'ANAPEC, comme celle des époux de Marocains évoquée pour d'autres situations.
+      </Info>
+
+      <H2>La scolarisation des enfants : anticiper le dossier scolaire</H2>
+      <P>
+        Une fois la famille installée, la scolarisation est souvent l'urgence suivante. Deux
+        options principales : les écoles publiques marocaines, ou les établissements de la
+        mission française, les écoles américaines et autres écoles internationales, très
+        présentes à Casablanca et Rabat.
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Les <strong>relevés de notes et bulletins</strong> des années précédentes, légalisés voire traduits, sont demandés par la quasi-totalité des établissements.</li>
+        <li>Les <strong>écoles internationales</strong> ont des listes d'attente qui se remplissent des mois à l'avance, en particulier à Casablanca — inscrivez-vous dès que la date d'arrivée est connue, sans attendre la carte de séjour.</li>
+        <li>Un <strong>test de niveau ou un entretien</strong> est fréquent, surtout en cours d'année scolaire.</li>
+      </ul>
+      <Tip>
+        Ne bloquez pas l'inscription scolaire en attendant que toutes les cartes de séjour
+        soient délivrées. La plupart des établissements acceptent un dossier avec un récépissé
+        de dépôt de la demande de titre de séjour en attendant la carte définitive.
+      </Tip>
+
+      <Divider />
+
+      <H2>Le calendrier réaliste</H2>
+      <Table
+        rows={[
+          ['Étape', 'Durée estimée', 'Remarque'],
+          ['Carte de séjour du salarié déjà obtenue', 'Prérequis', 'Doit être en cours de validité'],
+          ['Visa d\'entrée famille (si nationalité soumise)', '1 à 4 semaines', 'Démarche au consulat avant le départ'],
+          ['Dépôt du dossier regroupement familial', 'Le jour même ou sur rendez-vous', 'Selon la préfecture'],
+          ['Traitement du dossier DGSN', '2 à 6 semaines', 'Variable selon la ville et la saison'],
+          ['Inscription scolaire des enfants', 'À lancer en parallèle', 'Ne pas attendre la carte de séjour définitive'],
+        ]}
+      />
+      <P>
+        Au global, comptez <strong>1 à 3 mois</strong> entre le moment où le salarié obtient sa
+        propre carte de séjour et l'installation complète de sa famille avec des cartes de séjour
+        en règle. C'est plus long qu'on ne l'imagine au départ — mieux vaut lancer les démarches
+        tôt, en particulier le volet visa si la nationalité de la famille l'exige.
+      </P>
+
+      <LeadBox
+        title="Besoin d'aide pour organiser le regroupement familial de votre salarié ?"
+        cta="Être mis en relation"
+      >
+        <p>
+          Chaque situation familiale est différente selon les nationalités en jeu, le régime de
+          visa applicable et la ville d'installation. Décrivez-nous votre cas, nous pouvons vous
+          orienter vers des professionnels habitués aux démarches DGSN pour familles d'expatriés.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Peut-on demander la carte de séjour de la famille en même temps que celle du salarié ?', a: 'Non, en pratique le salarié doit d\'abord obtenir sa propre carte de séjour avant que sa famille puisse déposer sa demande en tant que membre de famille d\'un résident.' },
+          { q: 'Le concubinage ouvre-t-il droit au regroupement familial ?', a: 'Non, seul le mariage légalement établi est reconnu pour la carte de séjour du conjoint. Le concubinage ou le partenariat civil ne sont pas retenus.' },
+          { q: 'La carte de séjour du conjoint autorise-t-elle à travailler au Maroc ?', a: 'Pas automatiquement. Pour occuper un emploi, le conjoint doit en principe suivre sa propre procédure TAECHIR, sauf s\'il entre dans une catégorie dispensée d\'ANAPEC.' },
+          { q: 'Faut-il un visa pour faire venir sa famille au Maroc ?', a: 'Cela dépend uniquement de la nationalité du conjoint et des enfants. Si leur nationalité est soumise à visa, il doit être demandé au consulat marocain avant le départ, pas régularisé sur place après une entrée touristique.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2808,6 +2994,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Résident fiscal ou pas, barème de l\'IR 2026, conventions bilatérales pour éviter de payer deux fois, cas des retraités et des détachés : le guide complet de la fiscalité de l\'expatrié salarié au Maroc.',
     Content: Article19Content,
+  },
+  {
+    slug: 'regroupement-familial-conjoint-enfants-maroc',
+    title: 'Regroupement familial au Maroc : faire venir son conjoint et ses enfants',
+    description: 'Comment un salarié étranger titulaire d\'une carte de séjour au Maroc peut faire venir son conjoint et ses enfants mineurs : conditions, visa, dossier DGSN et scolarisation.',
+    date: '21 juillet 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Une fois sa propre carte de séjour obtenue, le salarié étranger peut faire venir sa famille — mais la démarche a ses propres règles. Conditions, régime de visa selon la nationalité, dossier DGSN et scolarisation des enfants.',
+    Content: Article20Content,
   },
 ];
 
