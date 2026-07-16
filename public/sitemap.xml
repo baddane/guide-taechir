@@ -243,4 +243,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 19 : Fiscalité de l'expatrié au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/fiscalite-expatrie-impot-revenu-maroc</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 20 : Fin de contrat, rupture et licenciement d'un salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

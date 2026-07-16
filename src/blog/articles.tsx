@@ -2618,6 +2618,173 @@ function Article19Content() {
   );
 }
 
+/* ─── Article 20 — Fin de contrat d'un salarié étranger (lead-gen) ──────── */
+
+function Article20Content() {
+  return (
+    <>
+      <Lead>
+        « Est-ce qu'il doit quitter le Maroc immédiatement ? » C'est la première question que
+        me posent presque tous les employeurs quand le contrat d'un salarié étranger touche à
+        sa fin — que ce soit une démission, un licenciement ou simplement l'arrivée du terme
+        d'un CDD. La réponse est presque toujours non, mais la gestion administrative de ce
+        moment est pleine de pièges que je vois revenir dossier après dossier.
+      </Lead>
+
+      <H2>Le principe de base : le titre de séjour suit le contrat, pas l'inverse</H2>
+      <P>
+        Beaucoup d'employeurs — et de salariés — pensent que la fin du contrat de travail
+        entraîne automatiquement l'annulation de la carte de séjour. Ce n'est pas le cas.
+        La carte de séjour reste valable jusqu'à sa date d'expiration, quel que soit le sort
+        du contrat. Ce qui s'arrête immédiatement, en revanche, c'est <strong>l'autorisation
+        de travailler pour cet employeur précis</strong>, sur ce poste précis.
+      </P>
+      <Info>
+        Le visa TAECHIR n'autorise jamais un salarié étranger à travailler « au Maroc » de
+        façon générale. Il autorise un salarié précis, chez un employeur précis, sur un poste
+        précis. Dès que l'un des trois change, l'autorisation de travail correspondante
+        s'éteint — même si la carte de séjour, elle, continue de courir.
+      </Info>
+      <P>
+        J'ai eu le cas d'un DRH à Casablanca persuadé qu'il devait signaler le départ de son
+        salarié congolais à la police des frontières dans les 48 heures, comme s'il s'agissait
+        d'une expulsion. Rien de tout ça. La carte de séjour reste un droit acquis pour sa
+        durée de validité ; c'est la suite de son parcours professionnel qui doit être
+        régularisée.
+      </P>
+
+      <H2>Les trois scénarios de fin de contrat</H2>
+      <H3>1. La fin normale d'un CDD</H3>
+      <P>
+        C'est le cas le plus simple sur le plan juridique. Le contrat arrive à échéance,
+        aucune des deux parties ne le renouvelle. Aucun préavis légal n'est requis pour un
+        CDD arrivant à terme, mais je recommande toujours d'anticiper la conversation avec
+        le salarié au moins un mois avant — ne serait-ce que pour lui laisser le temps de
+        chercher un nouvel employeur si besoin.
+      </P>
+      <H3>2. La démission</H3>
+      <P>
+        Un salarié étranger a exactement les mêmes droits de démissionner qu'un salarié
+        marocain, avec le même préavis contractuel ou conventionnel. Le seul point d'attention
+        propre à sa situation : s'il n'a pas de nouvel employeur prêt à l'accueillir avec un
+        dossier TAECHIR en cours, il se retrouve sans autorisation de travail dès son dernier
+        jour, même si sa carte de séjour est valable encore deux ans.
+      </P>
+      <H3>3. Le licenciement</H3>
+      <P>
+        Là, la procédure du Code du Travail s'applique intégralement — convocation, entretien
+        préalable, notification motivée, indemnités le cas échéant. La nationalité du salarié
+        ne change strictement rien à la procédure de licenciement elle-même.
+      </P>
+      <Table
+        rows={[
+          ['Type de rupture', 'Préavis', 'Effet sur l\'autorisation de travail'],
+          ['Fin de CDD (terme normal)', 'Aucun préavis légal', 'S\'éteint à la date de fin du contrat'],
+          ['Démission', 'Selon contrat/convention (souvent 1 mois cadres)', 'S\'éteint à la fin du préavis'],
+          ['Licenciement pour faute grave', 'Aucun', 'S\'éteint immédiatement'],
+          ['Licenciement (autre motif)', 'Selon ancienneté (1 à 3 mois)', 'S\'éteint à la fin du préavis'],
+        ]}
+      />
+
+      <H2>Les obligations de l'employeur au moment du départ</H2>
+      <P>Trois choses à faire sans tarder, comme pour n'importe quel salarié :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Radier le salarié de la CNSS</strong> via la déclaration de fin de période de travail sur DAMANCOM, dès la date effective de départ.</li>
+        <li><strong>Remettre le certificat de travail et le solde de tout compte</strong>, comme pour tout salarié — le certificat de travail sert d'ailleurs souvent de pièce justificative pour le prochain employeur du salarié étranger.</li>
+        <li><strong>Conserver une copie complète du dossier TAECHIR</strong> (contrat visé, attestation ANAPEC) au moins deux ans, en cas de contrôle de l'inspection du travail portant sur la période d'emploi.</li>
+      </ul>
+      <Warning>
+        Il n'existe aucune procédure officielle pour « clôturer » un dossier TAECHIR côté
+        Ministère lors d'un départ. Beaucoup d'employeurs en concluent, à tort, qu'ils n'ont
+        rien à faire. En pratique, une radiation CNSS qui traîne après le départ d'un salarié
+        étranger attire souvent l'attention lors d'un contrôle ultérieur — mieux vaut la faire
+        dans les jours qui suivent, pas des mois après.
+      </Warning>
+
+      <H2>Que devient le salarié étranger après la rupture ?</H2>
+      <P>
+        Sa carte de séjour reste valable jusqu'à son échéance. Pendant cette période, il peut
+        rester au Maroc, chercher un nouvel emploi, ou repartir. Ce qu'il ne peut pas faire,
+        c'est travailler — même à temps partiel, même en freelance — sans une nouvelle
+        autorisation liée à sa nouvelle situation.
+      </P>
+      <P>
+        Le point qui coince le plus souvent en pratique : au moment du renouvellement de la
+        carte de séjour, la DGSN demande un justificatif d'activité à jour. Un salarié sans
+        emploi depuis plusieurs mois, sans nouveau contrat visé, peut voir son renouvellement
+        se compliquer — pas refusé automatiquement, mais examiné de plus près.
+      </P>
+      <Tip>
+        Si votre salarié quitte l'entreprise et cherche activement un nouveau poste, conseillez-lui
+        de garder une trace écrite de ses démarches (candidatures, promesses d'embauche) — ça peut
+        servir à justifier la continuité de son projet professionnel au Maroc lors du renouvellement
+        de sa carte de séjour.
+      </Tip>
+
+      <H2>Changer d'employeur avec le même salarié : repartir de zéro, ou presque</H2>
+      <P>
+        Erreur fréquente : un nouvel employeur croit qu'il peut simplement « reprendre » le
+        salarié étranger qui a déjà un visa TAECHIR chez un concurrent, sans nouvelle démarche.
+        Faux. Un changement d'employeur est traité exactement comme un premier recrutement :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Nouvelle attestation ANAPEC (sauf si le salarié appartient à une catégorie dispensée)</li>
+        <li>Nouveau contrat généré et visé sur TAECHIR, au nom du nouvel employeur</li>
+        <li>Nouveau dépôt et nouveau visa au guichet régional du Ministère</li>
+      </ul>
+      <P>
+        La seule vraie économie : la carte de séjour DGSN, elle, n'a pas besoin d'être refaite
+        de zéro si elle est encore valide — un simple changement d'employeur est signalé lors
+        du prochain renouvellement. Mais côté ANAPEC et TAECHIR, il n'y a aucun raccourci lié
+        à l'ancienneté du salarié au Maroc.
+      </P>
+      <Warning>
+        J'ai vu une entreprise à Marrakech faire travailler un chef cuisinier philippin dès sa
+        signature, en se disant que son visa TAECHIR précédent — chez un autre restaurant du
+        même groupe — suffisait. Contrôle de l'inspection du travail trois semaines plus tard :
+        infraction caractérisée à l'article 516. Chaque employeur doit avoir sa propre
+        autorisation, même au sein d'un même groupe.
+      </Warning>
+
+      <H2>Licenciement abusif : le salarié étranger a les mêmes recours</H2>
+      <P>
+        Rien dans le statut de travailleur étranger ne réduit les droits en cas de licenciement
+        abusif. Le salarié peut saisir le tribunal social compétent, dans les mêmes délais et
+        avec les mêmes indemnités potentielles qu'un salarié marocain. La situation du titre de
+        séjour n'entre pas en compte dans l'appréciation du litige prud'homal.
+      </P>
+      <P>
+        J'ai accompagné un ingénieur camerounais licencié sans procédure régulière par une
+        entreprise industrielle à Tanger. Le tribunal lui a accordé des indemnités de
+        licenciement abusif classiques, exactement comme il l'aurait fait pour un salarié
+        marocain dans la même situation. Sa carte de séjour, valable encore un an, lui a
+        permis de mener la procédure jusqu'au bout sans être sous pression pour quitter le pays.
+      </P>
+
+      <LeadBox
+        title="Vous gérez le départ ou le remplacement d'un salarié étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Radiation CNSS, nouveau dossier TAECHIR pour un changement d'employeur, question sur
+          le renouvellement d'une carte de séjour après une rupture : décrivez-nous votre
+          situation et nous pouvons vous orienter vers un spécialiste du droit du travail
+          habitué aux dossiers de salariés étrangers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'La carte de séjour est-elle annulée automatiquement à la fin du contrat de travail ?', a: 'Non. La carte de séjour reste valable jusqu\'à sa date d\'expiration. Seule l\'autorisation de travailler pour l\'employeur concerné s\'éteint à la fin du contrat.' },
+          { q: 'Un salarié étranger licencié doit-il quitter le Maroc immédiatement ?', a: 'Non, tant que sa carte de séjour est valide, il peut rester sur le territoire pour chercher un nouvel emploi ou régler sa situation, mais il ne peut plus travailler sans nouvelle autorisation.' },
+          { q: 'Peut-on transférer un visa TAECHIR d\'un employeur à un autre ?', a: 'Non, il n\'existe pas de mécanisme de transfert. Un changement d\'employeur exige un nouveau dossier complet : attestation ANAPEC (sauf dispense), nouveau contrat visé et nouveau dépôt au Ministère.' },
+          { q: 'Un salarié étranger licencié abusivement a-t-il les mêmes recours qu\'un salarié marocain ?', a: 'Oui. Le droit du travail marocain s\'applique de la même façon, indépendamment de la nationalité. Le salarié peut saisir le tribunal compétent dans les mêmes conditions et délais.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2808,6 +2975,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Résident fiscal ou pas, barème de l\'IR 2026, conventions bilatérales pour éviter de payer deux fois, cas des retraités et des détachés : le guide complet de la fiscalité de l\'expatrié salarié au Maroc.',
     Content: Article19Content,
+  },
+  {
+    slug: 'fin-contrat-salarie-etranger-maroc-rupture-licenciement',
+    title: 'Fin de contrat d\'un salarié étranger au Maroc : rupture, licenciement et titre de séjour',
+    description: 'Que devient un salarié étranger quand son contrat de travail se termine au Maroc : impact sur la carte de séjour, obligations de l\'employeur, changement d\'employeur et licenciement abusif.',
+    date: '21 juillet 2026',
+    readTime: 7,
+    category: 'Rupture',
+    excerpt: 'Démission, fin de CDD ou licenciement : la carte de séjour ne s\'arrête pas avec le contrat, mais l\'autorisation de travailler oui. Ce qu\'il faut faire, dans quel ordre, et les pièges du changement d\'employeur.',
+    Content: Article20Content,
   },
 ];
 
