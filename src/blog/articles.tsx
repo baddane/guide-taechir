@@ -2785,6 +2785,185 @@ function Article20Content() {
   );
 }
 
+/* ─── Article 21 ────────────────────────────────────────────────────────── */
+
+function Article21Content() {
+  return (
+    <>
+      <Lead>
+        « J'ai encore huit mois avant que ça expire, non ? » Un DRH à Casablanca m'a posé
+        cette question pour son ingénieur portugais, convaincu qu'il pouvait rouler indéfiniment
+        avec son permis étranger tant que sa carte de séjour était valable. Faux — et c'est
+        une des démarches que les salariés étrangers oublient le plus souvent une fois installés.
+        Voici comment ça marche vraiment.
+      </Lead>
+
+      <H2>Le principe de base : un an, pas un jour de plus</H2>
+      <P>
+        Dès que vous vous installez au Maroc en tant que résident — c'est-à-dire dès que vous
+        obtenez votre carte de séjour —, vous avez le droit de conduire avec votre permis
+        étranger pendant <strong>12 mois maximum</strong>. Passé ce délai, pour continuer à
+        conduire légalement, il ne vous reste que deux options : l'échange de votre permis
+        contre un permis marocain, ou le passage de l'examen marocain complet.
+      </P>
+      <Info>
+        Ce délai d'un an court à partir de l'établissement de votre résidence, pas à partir
+        de votre visa TAECHIR ni de votre date d'arrivée physique au Maroc. En pratique,
+        c'est la date de votre carte de séjour qui sert de référence la plupart du temps.
+      </Info>
+      <P>
+        Un touriste, lui, peut conduire jusqu'à 12 mois avec son permis étranger sans aucune
+        démarche particulière — logique, puisqu'il n'est pas résident. C'est cette confusion
+        entre statut touriste et statut résident qui piège le plus de monde : le salarié
+        étranger fraîchement installé continue de se considérer comme « de passage » alors
+        que l'horloge tourne déjà.
+      </P>
+
+      <H2>Échange ou examen : tout dépend de votre nationalité</H2>
+      <P>
+        Le Maroc n'échange pas les permis de tous les pays. Il faut que votre pays d'origine
+        ait signé un accord de reconnaissance ou de réciprocité avec le Royaume. Si c'est le
+        cas, la procédure est simple et rapide. Sinon, il faut repasser l'examen — comme un
+        primo-candidat marocain.
+      </P>
+
+      <H3>Les pays reconnus (liste indicative)</H3>
+      <Table
+        rows={[
+          ['Type d\'accord', 'Pays concernés'],
+          ['Réciprocité totale', 'France, Corée du Sud, Japon, Pologne, Roumanie, Hongrie'],
+          ['Reconnaissance', 'Belgique, Espagne (cat. A et B), Italie, Portugal, Suisse, Turquie, Bahreïn, Égypte, Jordanie (cat. B), Oman, Arabie Saoudite, Syrie'],
+          ['Reconnaissance (Afrique)', 'Tunisie, Algérie, Mauritanie, Sénégal, Gabon, Niger, Mali, Bénin'],
+        ]}
+      />
+      <Warning>
+        Cette liste évolue régulièrement et je vois souvent des employeurs se fier à une
+        information périmée. Avant de vous engager dans une démarche, vérifiez le statut
+        exact de votre pays auprès de l'agence NARSA (Agence Nationale de la Sécurité
+        Routière) — les catégories concernées varient parfois selon le type de permis (A, B).
+        Notez aussi que des pays très représentés parmi les salariés étrangers au Maroc —
+        les États-Unis, le Royaume-Uni, l'Allemagne ou le Canada, par exemple — n'ont pas
+        d'accord d'échange à ce jour : leurs ressortissants doivent repasser l'examen marocain.
+      </Warning>
+
+      <H2>La procédure d'échange, pour les pays reconnus</H2>
+      <P>Si votre pays figure sur la liste, vous déposez votre dossier auprès du centre NARSA de votre région avec :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Une copie de votre carte de séjour valide</li>
+        <li>Un certificat de résidence de moins de 3 mois, délivré par la Sûreté Nationale ou la Gendarmerie Royale</li>
+        <li>L'original de votre permis étranger, accompagné d'une traduction en français ou en arabe s'il n'est pas déjà dans l'une de ces langues</li>
+        <li>Un certificat médical de moins de 3 mois</li>
+        <li>Deux photos d'identité au format 35×45 mm</li>
+        <li>Le règlement des droits de timbre — <strong>700 Dhs</strong> environ, frais de service inclus</li>
+      </ul>
+      <P>
+        Un récépissé vous est remis le jour du dépôt, puis le permis définitif suit —
+        comptez généralement <strong>4 à 8 semaines</strong> selon le centre. Le point que
+        beaucoup négligent : ce récépissé ne vaut pas toujours autorisation de conduire dans
+        l'intervalle. Renseignez-vous précisément auprès du centre où vous déposez, la
+        pratique varie d'une préfecture à l'autre.
+      </P>
+      <Tip>
+        Ne collectionnez pas les documents au dernier moment. Le certificat de résidence
+        et le certificat médical ont une durée de validité de 3 mois : si vous les obtenez
+        trop tôt et que le dossier traîne, il faudra les refaire. Un employeur à Rabat m'a
+        raconté avoir dû refaire deux fois le certificat médical de son cadre allemand,
+        simplement parce que le dossier NARSA avait pris du retard entre-temps.
+      </Tip>
+
+      <H2>Repasser l'examen, pour les pays sans accord</H2>
+      <P>
+        Pas de panique : ce n'est pas un retour à la case départ complète, mais il faut
+        suivre le circuit officiel comme un candidat marocain, avec une pièce en plus —
+        la copie de votre carte de séjour et un certificat de résidence de moins de 3 mois.
+      </P>
+      <H3>L'épreuve théorique</H3>
+      <P>
+        Elle se passe au centre régional de la NARSA. Pour la catégorie B (voiture
+        particulière), 40 questions sont tirées au sort et il faut obtenir au moins
+        <strong> 32 bonnes réponses sur 40</strong> pour être admis. En cas d'échec, une
+        nouvelle convocation est délivrée pour repasser l'épreuve, au minimum 15 jours après.
+      </P>
+      <H3>L'épreuve pratique</H3>
+      <P>
+        Une fois le théorique validé, place à la conduite. En cas de réussite, vous recevez
+        un permis provisoire valable 60 jours, échangé ensuite contre le permis définitif —
+        valable 10 ans, comme pour tout titulaire au Maroc.
+      </P>
+      <Info>
+        Contrairement à un candidat qui n'a jamais conduit, vous n'êtes généralement pas
+        obligé de refaire les 20 heures de conduite obligatoires d'une auto-école si vous
+        justifiez déjà d'une expérience de conduite à l'étranger — mais cette appréciation
+        reste au cas par cas selon le centre. Demandez confirmation directement à l'auto-école
+        ou au centre NARSA avant de vous engager dans un forfait complet inutile.
+      </Info>
+
+      <H2>Conduire après le délai d'un an sans avoir régularisé</H2>
+      <P>
+        C'est un risque que je vois sous-estimé en permanence. Passé les 12 mois, votre
+        permis étranger n'a plus de valeur légale au Maroc. En cas de contrôle, cela équivaut
+        à conduire sans permis. Et le vrai problème surgit surtout en cas d'accident : une
+        assurance peut refuser la prise en charge — ou se retourner contre vous — si le
+        conducteur n'était plus en règle au moment des faits.
+      </P>
+      <Warning>
+        J'ai eu le cas d'un cadre néerlandais à Tanger, installé depuis 14 mois, impliqué
+        dans un accrochage sans gravité. Son assureur a longuement chipoté sur la prise en
+        charge parce que son permis étranger n'était plus valable pour circuler au Maroc
+        depuis deux mois. Le dossier s'est réglé, mais ça a pris des semaines de tension
+        évitables.
+      </Warning>
+
+      <H2>Le calendrier à connaître</H2>
+      <Table
+        rows={[
+          ['Étape', 'Délai', 'À retenir'],
+          ['Conduite libre avec permis étranger', '12 mois depuis la résidence', 'Aucune démarche nécessaire pendant cette période'],
+          ['Dépôt du dossier d\'échange (pays reconnu)', 'Avant l\'échéance des 12 mois', '700 Dhs de droits de timbre'],
+          ['Traitement du dossier d\'échange', '4 à 8 semaines', 'Variable selon le centre NARSA'],
+          ['Examen complet (pays non reconnu)', '2 à 6 mois', 'Théorique puis pratique, via une auto-école'],
+        ]}
+      />
+      <P>
+        Mon conseil, valable pour les deux cas de figure : lancez la démarche <strong>dès le
+        8ᵉ ou 9ᵉ mois</strong> de résidence, pas au 11ᵉ. Ça laisse une marge confortable si
+        un document doit être refait ou si le centre est surchargé — ce qui arrive souvent
+        à Casablanca et Rabat en période de forte affluence.
+      </P>
+
+      <H2>Le lien avec votre carte de séjour</H2>
+      <P>
+        Cette démarche est indépendante de votre carte de séjour DGSN et de votre dossier
+        TAECHIR, mais elle s'inscrit dans le même calendrier d'installation. Beaucoup de
+        salariés étrangers, occupés par les démarches CNSS et la carte de séjour à leur
+        arrivée, relèguent le permis de conduire au second plan — jusqu'à ce que le délai
+        soit presque écoulé. Autant l'intégrer dès le départ dans la liste des choses à faire
+        pendant votre première année au Maroc.
+      </P>
+
+      <LeadBox
+        title="Vous accompagnez l'installation d'un salarié étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Carte de séjour, CNSS, permis de conduire : l'installation d'un salarié étranger
+          comporte plusieurs démarches parallèles à ne pas manquer. Décrivez-nous votre
+          situation et nous pouvons vous orienter vers un spécialiste habitué à ces dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il conduire au Maroc dès son arrivée ?', a: 'Oui, avec son permis étranger, sans démarche particulière, pendant 12 mois à compter de l\'établissement de sa résidence au Maroc.' },
+          { q: 'Que se passe-t-il si mon pays n\'a pas d\'accord avec le Maroc ?', a: 'Vous devez repasser l\'examen marocain complet — théorique puis pratique — comme un candidat marocain, avec votre carte de séjour et un certificat de résidence en plus dans le dossier.' },
+          { q: 'Combien coûte l\'échange d\'un permis étranger contre un permis marocain ?', a: 'Environ 700 Dhs de droits de timbre et frais de service, pour les ressortissants des pays ayant un accord de reconnaissance avec le Maroc.' },
+          { q: 'Le permis marocain obtenu par échange est-il valable 10 ans ?', a: 'Oui, comme tout permis délivré au Maroc, qu\'il soit obtenu par échange ou par examen complet.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -2985,6 +3164,16 @@ export const articles: Article[] = [
     category: 'Rupture',
     excerpt: 'Démission, fin de CDD ou licenciement : la carte de séjour ne s\'arrête pas avec le contrat, mais l\'autorisation de travailler oui. Ce qu\'il faut faire, dans quel ordre, et les pièges du changement d\'employeur.',
     Content: Article20Content,
+  },
+  {
+    slug: 'permis-conduire-etranger-maroc-echange-examen',
+    title: 'Permis de conduire au Maroc pour un salarié étranger : échange, examen et démarches',
+    description: 'Comment conduire légalement au Maroc en tant que salarié étranger : délai d\'un an, pays avec accord d\'échange, procédure NARSA, coûts et cas où il faut repasser l\'examen.',
+    date: '28 juillet 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Un an après votre installation, votre permis étranger n\'est plus valable au Maroc. Échange direct ou examen complet selon votre pays d\'origine : la procédure, les délais et les pièges à éviter.',
+    Content: Article21Content,
   },
 ];
 
