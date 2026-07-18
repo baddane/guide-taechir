@@ -2964,6 +2964,189 @@ function Article21Content() {
   );
 }
 
+/* ─── Article 22 ────────────────────────────────────────────────────────── */
+
+function Article22Content() {
+  return (
+    <>
+      <Lead>
+        Une fois installé, la question arrive presque toujours au bout de quelques mois :
+        "Et ma famille, comment je la fais venir ?" C'est une démarche à part entière, distincte
+        du dossier TAECHIR, et beaucoup de salariés étrangers — et leurs employeurs — la découvrent
+        trop tard. Voici comment ça se passe concrètement pour un conjoint et des enfants.
+      </Lead>
+
+      <H2>Le regroupement familial, une démarche séparée du dossier TAECHIR</H2>
+      <P>
+        Première chose à comprendre : le visa de travail et la carte de séjour du salarié
+        ne couvrent que lui. Ni son conjoint ni ses enfants n'ont automatiquement le droit
+        de résider au Maroc parce que le chef de famille y travaille légalement. Chacun
+        doit avoir son propre titre de séjour, obtenu auprès de la DGSN (Loi n° 02-03 relative
+        à l'entrée et au séjour des étrangers).
+      </P>
+      <P>
+        La bonne nouvelle, c'est que la démarche pour la famille est plus simple que celle
+        du salarié lui-même — pas d'ANAPEC, pas de TAECHIR. Mais elle demande son propre
+        lot de documents, souvent à faire légaliser depuis le pays d'origine, ce qui prend
+        du temps.
+      </P>
+      <Info>
+        Un conseil que je donne systématiquement : lancez les démarches de la famille dès
+        que le salarié a son propre récépissé de carte de séjour en poche. Pas besoin d'attendre
+        la carte définitive pour commencer à réunir les pièces — actes de naissance, de mariage,
+        traductions — pendant que la carte du salarié est en traitement.
+      </Info>
+
+      <H2>Qui peut être rejoint : conjoint et enfants mineurs</H2>
+      <H3>Le conjoint marié</H3>
+      <P>
+        Seul le conjoint <strong>marié</strong> peut prétendre à une carte de séjour en tant
+        que membre de famille. Le mariage doit être prouvé par un acte légalisé — et traduit
+        en français ou en arabe si besoin. J'ai vu un couple néerlandais à Casablanca bloqué
+        plusieurs semaines parce que leur acte de mariage, rédigé en néerlandais, n'avait
+        pas été traduit par un traducteur assermenté reconnu au Maroc. Une simple traduction
+        libre ne suffit pas.
+      </P>
+      <Warning>
+        Le concubinage et le PACS (ou équivalent étranger) ne sont pas reconnus par
+        l'administration marocaine pour cette démarche. Seul un mariage légalement établi
+        ouvre droit à la carte de séjour "conjoint de résident". C'est une question qui revient
+        souvent et la réponse ne varie pas d'une préfecture à l'autre.
+      </Warning>
+      <H3>Les enfants mineurs à charge</H3>
+      <P>
+        Les enfants du salarié, tant qu'ils sont mineurs et à sa charge, peuvent également
+        obtenir une carte de séjour rattachée à celle du parent. Il faut l'acte de naissance
+        de l'enfant, légalisé et traduit si nécessaire, et parfois une autorisation parentale
+        si un seul des deux parents fait la demande — notamment en cas de séparation ou de
+        garde partagée à l'étranger.
+      </P>
+      <P>
+        Pour un enfant qui approche de la majorité, anticipez : passé 18 ans, il ne peut plus
+        être rattaché au dossier des parents et doit constituer son propre dossier — étudiant,
+        salarié, ou autre statut selon sa situation.
+      </P>
+
+      <H2>La procédure pas à pas à la DGSN</H2>
+      <H3>1. Le salarié doit déjà être en règle</H3>
+      <P>
+        Le dossier famille ne peut être déposé qu'une fois le salarié lui-même titulaire
+        d'un récépissé ou d'une carte de séjour en cours de validité. Impossible de faire
+        venir la famille avant d'avoir soi-même une situation régularisée — c'est logique,
+        mais ça surprend certains employeurs pressés qui voudraient tout faire arriver en même temps.
+      </P>
+      <H3>2. Constituer le dossier famille</H3>
+      <P>
+        Chaque membre de la famille dépose son propre dossier, avec ses propres photos,
+        son propre passeport et le lien de parenté ou de mariage prouvé. Le justificatif
+        de domicile est souvent commun — le même bail ou la même attestation d'hébergement
+        que celle utilisée par le salarié.
+      </P>
+      <H3>3. Dépôt et biométrie</H3>
+      <P>
+        Chaque membre, y compris les enfants selon leur âge, se présente en personne au
+        service des étrangers pour le dépôt et la prise des empreintes. À Rabat comme à
+        Casablanca, prévoyez de venir en famille le même jour — ça évite de multiplier les
+        rendez-vous et les demi-journées posées au travail.
+      </P>
+      <H3>4. Délai et retrait</H3>
+      <P>
+        Comptez un délai comparable à celui du salarié — de 2 à 6 semaines selon la
+        préfecture et la période de l'année. Les mois de septembre et octobre, en pleine
+        rentrée, sont souvent les plus chargés dans les grandes villes.
+      </P>
+
+      <Table
+        rows={[
+          ['Membre de la famille', 'Pièce clé à fournir', 'Délai indicatif'],
+          ['Conjoint marié', 'Acte de mariage légalisé et traduit', '2 à 6 semaines'],
+          ['Enfant mineur à charge', 'Acte de naissance légalisé et traduit', '2 à 6 semaines'],
+          ['Enfant proche de la majorité', 'Dossier autonome à prévoir avant 18 ans', 'Variable selon statut'],
+          ['Concubin(e) / partenaire non marié(e)', 'Non éligible au regroupement familial', 'Sans objet'],
+        ]}
+      />
+
+      <H2>Le conjoint a-t-il le droit de travailler au Maroc ?</H2>
+      <P>
+        C'est la question qui revient le plus souvent, et la réponse surprend beaucoup de
+        monde : <strong>non, pas automatiquement</strong>. La carte de séjour "conjoint de
+        résident" autorise à vivre au Maroc, pas à y exercer un emploi salarié. Si le conjoint
+        veut travailler pour une entreprise marocaine, il doit passer par son propre dossier
+        TAECHIR — attestation ANAPEC comprise, sauf s'il est lui-même dispensé pour un autre motif.
+      </P>
+      <Info>
+        Attention à ne pas confondre avec la dispense vue dans nos autres articles : elle
+        s'applique au conjoint étranger d'un <strong>ressortissant marocain</strong>, pas au
+        conjoint d'un autre salarié étranger. Deux Français mariés entre eux, l'un salarié
+        et l'autre souhaitant travailler à son tour, doivent chacun avoir leur propre visa
+        de travail en bonne et due forme.
+      </Info>
+      <P>
+        J'ai eu le cas d'une famille à Tanger où l'épouse, arrivée avec une carte de séjour
+        "conjointe", a commencé à donner des cours particuliers sans dossier TAECHIR en pensant
+        que sa carte de séjour suffisait. Techniquement, c'était une activité salariée non
+        déclarée. Rien de dramatique dans ce cas précis, mais je recommande toujours de
+        clarifier ce point avant toute activité rémunérée, même ponctuelle.
+      </P>
+
+      <H2>Et la scolarisation des enfants ?</H2>
+      <P>
+        Une fois la carte de séjour des enfants obtenue, l'inscription dans une école
+        marocaine, une mission française, un établissement espagnol ou une école
+        internationale se fait comme pour n'importe quelle famille installée au Maroc :
+        dossier scolaire, copie de la carte de séjour, carnet de vaccination et, souvent,
+        un test de niveau pour les écoles les plus demandées à Casablanca et Rabat.
+      </P>
+      <Tip>
+        Les places dans les meilleures écoles internationales se réservent parfois plusieurs
+        mois à l'avance, notamment à Casablanca et Rabat. Si un déménagement en cours d'année
+        scolaire est prévu, lancez les démarches d'inscription en parallèle du dossier de
+        carte de séjour plutôt que d'attendre que celle-ci soit délivrée — la plupart des
+        écoles acceptent un récépissé de dépôt en attendant la carte définitive.
+      </Tip>
+
+      <H2>Le calendrier réaliste pour toute la famille</H2>
+      <Table
+        rows={[
+          ['Étape', 'Durée estimée', 'À ne pas oublier'],
+          ['Dossier et carte de séjour du salarié', '2 à 6 semaines', 'Prérequis indispensable avant tout le reste'],
+          ['Légalisation et traduction des actes (mariage, naissance)', '1 à 4 semaines', 'Selon le pays d\'origine et le consulat concerné'],
+          ['Dépôt du dossier famille à la DGSN', '2 à 6 semaines', 'Prévoir la présence physique de chaque membre'],
+          ['Inscription scolaire des enfants', 'Variable', 'À lancer en parallèle, pas après coup'],
+        ]}
+      />
+      <P>
+        Pour une famille qui arrive en même temps que le salarié, comptez réalistement
+        <strong> 2 à 3 mois</strong> avant que tout le monde ait sa carte de séjour en poche.
+        C'est plus long qu'on ne l'imagine au départ, surtout quand les actes d'état civil
+        viennent d'un pays où la légalisation consulaire prend du temps.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous préparez l'arrivée d'un salarié étranger et de sa famille ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Carte de séjour du salarié, dossier famille, scolarisation des enfants : chaque
+          étape a son propre calendrier. Décrivez-nous votre situation et nous pouvons vous
+          orienter vers un accompagnement adapté.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Le conjoint d\'un salarié étranger peut-il obtenir une carte de séjour au Maroc ?', a: 'Oui, à condition que le mariage soit légalement établi et prouvé par un acte légalisé et traduit si nécessaire. Le salarié doit lui-même déjà disposer d\'un récépissé ou d\'une carte de séjour en cours de validité.' },
+          { q: 'Un enfant né à l\'étranger doit-il avoir sa propre carte de séjour ?', a: 'Oui, chaque enfant mineur à charge dépose son propre dossier à la DGSN, avec un acte de naissance légalisé et traduit, pour obtenir une carte de séjour rattachée à celle du parent.' },
+          { q: 'Le conjoint peut-il travailler avec sa carte de séjour "conjoint de résident" ?', a: 'Non, cette carte autorise uniquement à résider au Maroc. Pour exercer un emploi salarié, le conjoint doit obtenir son propre visa de travail via TAECHIR, sauf s\'il bénéficie d\'une dispense pour un autre motif.' },
+          { q: 'Combien de temps prévoir pour faire venir toute une famille ?', a: 'Comptez généralement 2 à 3 mois entre la carte de séjour du salarié, la légalisation des actes d\'état civil et le dépôt du dossier famille à la DGSN, en tenant compte des délais propres à chaque préfecture.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3174,6 +3357,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Un an après votre installation, votre permis étranger n\'est plus valable au Maroc. Échange direct ou examen complet selon votre pays d\'origine : la procédure, les délais et les pièges à éviter.',
     Content: Article21Content,
+  },
+  {
+    slug: 'regroupement-familial-conjoint-enfants-etranger-maroc',
+    title: 'Regroupement familial au Maroc : faire venir son conjoint et ses enfants',
+    description: 'Comment un salarié étranger installé au Maroc peut faire venir son conjoint et ses enfants mineurs : procédure DGSN, documents requis, droit au travail du conjoint et scolarisation.',
+    date: '4 août 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Le visa de travail ne couvre que le salarié. Conjoint marié, enfants mineurs à charge : voici la procédure distincte à suivre auprès de la DGSN, les délais réalistes et le piège du droit au travail du conjoint.',
+    Content: Article22Content,
   },
 ];
 
