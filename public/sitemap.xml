@@ -267,4 +267,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 22 : Regroupement familial au Maroc, conjoint et enfants -->
+  <url>
+    <loc>https://guide-taechir.org/blog/regroupement-familial-conjoint-enfants-maroc</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
