@@ -20,6 +20,7 @@ const categoryColors: Record<string, string> = {
   'RH':          'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100',
   'Recours':     'bg-lime-50 text-lime-700 border-lime-100',
   'Rupture':     'bg-pink-50 text-pink-700 border-pink-100',
+  'Famille':     'bg-green-50 text-green-700 border-green-100',
 };
 
 export function BlogList() {
