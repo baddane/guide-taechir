@@ -2964,6 +2964,184 @@ function Article21Content() {
   );
 }
 
+/* ─── Article 22 — Se loger au Maroc ─────────────────────────────────────── */
+
+function Article22Content() {
+  return (
+    <>
+      <Lead>
+        Une fois le visa de travail en poche, la question qui revient tout de suite après
+        c'est : où est-ce qu'on habite ? Beaucoup d'employeurs pensent que c'est l'affaire
+        du salarié et s'en désintéressent — grosse erreur, parce que le logement conditionne
+        souvent la suite : le compte bancaire, la carte de séjour, et même la tranquillité
+        d'esprit des premières semaines. Voici comment ça se passe vraiment.
+      </Lead>
+
+      <H2>Louer avant d'avoir sa carte de séjour : oui, c'est possible</H2>
+      <P>
+        C'est la première question qu'on me pose, presque à chaque fois : « il n'a pas encore
+        sa carte de séjour, peut-il signer un bail ? » Oui, sans problème. Un passeport valide
+        et, idéalement, le contrat de travail visé par le Ministère suffisent pour la plupart
+        des propriétaires et agences. La carte de séjour n'est pas une condition légale pour
+        louer un logement au Maroc — c'est souvent l'inverse qui pose problème : c'est le bail
+        qui sert de justificatif de domicile pour <strong>obtenir</strong> la carte de séjour.
+      </P>
+      <Info>
+        Gardez bien cette logique en tête : contrat de travail visé → logement → justificatif
+        de domicile → dossier carte de séjour à la DGSN. Si vous inversez l'ordre et que le
+        salarié traîne sans adresse fixe, tout le reste prend du retard derrière.
+      </Info>
+
+      <H2>Meublé, non meublé, ou résidence de standing ?</H2>
+      <P>
+        Trois grandes options s'offrent à un salarié étranger qui arrive, et le bon choix
+        dépend surtout de la durée prévue du séjour.
+      </P>
+      <H3>Le meublé courte à moyenne durée</H3>
+      <P>
+        Pour les 2 à 6 premiers mois, je recommande presque toujours un appartement meublé,
+        loué directement au propriétaire ou via une agence spécialisée dans les expatriés.
+        C'est plus cher au mètre carré, mais ça évite d'acheter de l'électroménager pour
+        repartir six mois plus tard si le poste ne convient finalement pas.
+      </P>
+      <H3>Le non meublé, une fois installé durablement</H3>
+      <P>
+        Passé les premiers mois, beaucoup basculent vers un bail non meublé classique,
+        nettement moins cher au m² et plus stable dans la durée. C'est le choix logique pour
+        un contrat TAECHIR d'un an renouvelable, une fois qu'on sait qu'on reste.
+      </P>
+      <H3>La résidence gérée, pour les profils très mobiles</H3>
+      <P>
+        Pour les cadres qui font des allers-retours fréquents ou dont la mission n'excède
+        pas quelques mois, les résidences hôtelières avec services (ménage, réception,
+        parfois salle de sport) évitent de gérer un bail classique. C'est le plus cher au
+        mois, mais le plus simple à arrêter du jour au lendemain.
+      </P>
+      <Table
+        rows={[
+          ['Formule', 'Durée typique', 'Prix indicatif (Casablanca)', 'Avantage principal'],
+          ['Meublé courte durée', '1 à 6 mois', '6 000–15 000 Dhs/mois', 'Flexibilité, zéro équipement à acheter'],
+          ['Non meublé classique', '1 an et plus', '4 000–12 000 Dhs/mois', 'Prix au m² nettement inférieur'],
+          ['Résidence gérée / hôtelière', 'Variable, sans engagement long', '8 000–20 000 Dhs/mois', 'Aucune gestion, services inclus'],
+        ]}
+      />
+      <P>
+        Ces fourchettes varient fortement selon la ville et le quartier — Casablanca et Rabat
+        sont sensiblement plus chers que Tanger, Marrakech ou Fès, et un quartier comme
+        Californie ou Anfa à Casablanca n'a rien à voir avec un quartier plus périphérique.
+      </P>
+
+      <H2>Le dépôt de garantie : la vraie source de litiges</H2>
+      <P>
+        Au Maroc, il est encore courant que les propriétaires demandent <strong>2 à 3 mois
+        de loyer d'avance</strong> à la signature — parfois en plus d'une caution distincte.
+        Rien d'illégal en soi, mais c'est souvent bien plus élevé que ce à quoi un salarié
+        venant d'Europe ou d'ailleurs s'attend, et ça peut représenter une grosse sortie de
+        trésorerie au moment le plus mal choisi, juste après le déménagement.
+      </P>
+      <Warning>
+        J'ai vu un cadre canadien à Rabat verser 3 mois de loyer d'avance en liquide sans
+        aucune quittance écrite, sur simple confiance envers l'agence. Six mois plus tard,
+        au moment de récupérer sa caution en quittant le logement, le propriétaire a nié
+        avoir reçu quoi que ce soit au-delà d'un mois. Sans preuve écrite, impossible de
+        faire valoir quoi que ce soit. Exigez toujours une quittance signée pour chaque
+        somme versée, y compris le dépôt de garantie.
+      </Warning>
+      <P>
+        Autre point à négocier avant de signer : la restitution du dépôt de garantie n'est
+        pas automatique ni rapide dans la pratique. Prévoyez, dans le bail lui-même, un délai
+        précis de restitution (30 jours est raisonnable) et les conditions d'un éventuel
+        retrait pour dégradations, avec état des lieux d'entrée et de sortie signé des deux
+        parties.
+      </P>
+
+      <H2>Ce qu'il faut vérifier avant de signer le bail</H2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>
+          <strong>Le titre de propriété ou le mandat de l'agence.</strong> Demandez à voir
+          le titre foncier ou, si vous passez par une agence, son mandat de gestion. Ça évite
+          de traiter avec quelqu'un qui n'a pas le droit de louer le bien.
+        </li>
+        <li>
+          <strong>La durée et les conditions de résiliation.</strong> Un bail d'un an renouvelable
+          tacitement est courant ; vérifiez le préavis à donner si le contrat de travail se
+          termine plus tôt que prévu.
+        </li>
+        <li>
+          <strong>Les charges incluses ou non.</strong> Eau, électricité, syndic, gardiennage :
+          précisez noir sur blanc ce qui est compris dans le loyer affiché.
+        </li>
+        <li>
+          <strong>L'état des lieux détaillé.</strong> Photos datées à l'appui, pour chaque pièce,
+          avant d'emménager. C'est ce qui vous protège au moment de récupérer le dépôt de garantie.
+        </li>
+      </ul>
+      <Tip>
+        Faites toujours rédiger le bail en français ou en arabe — les deux versions ont valeur
+        légale au Maroc. Si vous ne lisez pas l'arabe, demandez la version française et
+        faites-la relire par quelqu'un qui connaît les usages locaux avant de signer, surtout
+        pour les clauses de résiliation anticipée.
+      </Tip>
+
+      <H2>Le justificatif de domicile, la pièce qui débloque tout le reste</H2>
+      <P>
+        Une fois installé, le bail — ou, à défaut, une attestation d'hébergement si le
+        salarié loge chez quelqu'un — sert de justificatif de domicile pour trois démarches
+        qui suivent de près l'arrivée :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>La demande de carte de séjour à la DGSN</li>
+        <li>L'ouverture d'un compte bancaire résident</li>
+        <li>Le certificat de résidence nécessaire pour certaines démarches administratives, comme l'échange du permis de conduire</li>
+      </ul>
+      <P>
+        Un bail sans quittance, ou un logement chez un proche sans attestation d'hébergement
+        en bonne et due forme, peut bloquer ces trois démarches en cascade. Mon conseil : dès
+        la signature du bail, demandez systématiquement une quittance de loyer mensuelle avec
+        l'adresse complète — même si vous payez par virement.
+      </P>
+
+      <Divider />
+
+      <H2>Casablanca, Rabat, Tanger : des marchés très différents</H2>
+      <P>
+        Le marché locatif n'a rien d'uniforme d'une ville à l'autre. À Casablanca, la demande
+        des expatriés se concentre sur des quartiers comme Californie, Bourgogne, Racine ou
+        Anfa, avec des loyers qui grimpent vite pour du meublé de standing. À Rabat, Agdal et
+        Hay Riad sont les quartiers de référence pour les cadres internationaux, avec une offre
+        un peu plus abordable qu'à Casablanca pour un niveau de confort comparable. À Tanger,
+        portée par l'industrie automobile et logistique, le marché s'est nettement tendu ces
+        dernières années, en particulier près des zones industrielles.
+      </P>
+      <Info>
+        Si l'entreprise recrute régulièrement des profils étrangers dans la même ville,
+        ça vaut le coup de nouer une relation avec une ou deux agences locales fiables plutôt
+        que de repartir de zéro à chaque arrivée. Ça accélère la recherche et ça limite le
+        risque de tomber sur un logement mal en règle.
+      </Info>
+
+      <LeadBox
+        title="Vous préparez l'arrivée d'un salarié étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Logement, carte de séjour, compte bancaire : l'installation complète d'un salarié
+          étranger comporte plusieurs étapes à bien enchaîner. Décrivez-nous votre situation
+          et nous pouvons vous orienter vers un spécialiste habitué à ces dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il louer un logement sans carte de séjour ?', a: 'Oui. Un passeport valide et idéalement le contrat de travail visé suffisent pour signer un bail. C\'est même souvent le bail qui sert ensuite de justificatif de domicile pour obtenir la carte de séjour.' },
+          { q: 'Combien faut-il prévoir de dépôt de garantie ?', a: 'La pratique courante est de 2 à 3 mois de loyer d\'avance, parfois cumulés à une caution distincte. Exigez toujours une quittance écrite pour chaque somme versée.' },
+          { q: 'Le bail suffit-il comme justificatif de domicile pour la carte de séjour ?', a: 'Oui, un bail en bonne et due forme, accompagné de quittances, est généralement accepté par la DGSN. À défaut, une attestation d\'hébergement signée par l\'hébergeant peut convenir.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3174,6 +3352,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Un an après votre installation, votre permis étranger n\'est plus valable au Maroc. Échange direct ou examen complet selon votre pays d\'origine : la procédure, les délais et les pièges à éviter.',
     Content: Article21Content,
+  },
+  {
+    slug: 'logement-location-salarie-etranger-maroc',
+    title: 'Se loger au Maroc en tant que salarié étranger : bail, dépôt de garantie et pièges à éviter',
+    description: 'Comment un salarié étranger loue un logement au Maroc avant même d\'avoir sa carte de séjour : meublé ou non, dépôt de garantie, justificatif de domicile et différences entre Casablanca, Rabat et Tanger.',
+    date: '4 août 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Pas besoin d\'attendre la carte de séjour pour signer un bail — c\'est même souvent l\'inverse. Le guide complet du logement pour un salarié étranger : formules, dépôt de garantie, pièges du contrat et spécificités par ville.',
+    Content: Article22Content,
   },
 ];
 
