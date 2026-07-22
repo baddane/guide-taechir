@@ -267,4 +267,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 22 : Se loger au Maroc en tant que salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/logement-location-salarie-etranger-maroc</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 23 : Regroupement familial au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/regroupement-familial-conjoint-enfants-maroc</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
