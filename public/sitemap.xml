@@ -283,4 +283,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 24 : Scolarisation des enfants d'un salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/scolarisation-enfants-etranger-maroc-ecoles-internationales</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

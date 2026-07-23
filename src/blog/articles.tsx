@@ -3324,6 +3324,196 @@ function Article23Content() {
   );
 }
 
+/* ─── Article 24 — Scolarisation des enfants ────────────────────────────── */
+
+function Article24Content() {
+  return (
+    <>
+      <Lead>
+        « La carte de séjour, le bail, le compte bancaire, c'est bon — mais pour l'école
+        de mon fils, on commence quand ? » Cette question arrive presque toujours trop
+        tard, une fois la famille déjà arrivée. Or c'est souvent l'inscription scolaire,
+        et non la paperasse administrative, qui détermine la date d'installation
+        définitive d'une famille au Maroc. Voici comment s'y prendre dans le bon ordre.
+      </Lead>
+
+      <H2>Les quatre grandes options, du plus international au plus local</H2>
+      <P>
+        Le choix dépend surtout du projet familial : rester au Maroc quelques années
+        avant de repartir, ou s'installer durablement. Il conditionne directement le
+        type d'établissement à viser.
+      </P>
+      <H3>La Mission Laïque Française et l'AEFE</H3>
+      <P>
+        Le réseau homologué par l'Éducation nationale française reste le choix par
+        défaut de beaucoup de familles francophones en mobilité, notamment parce que
+        le programme est identique à celui suivi en France et que les enfants peuvent
+        réintégrer le système français sans rupture. Au Maroc, ce réseau est présent
+        à Casablanca (Lycée Lyautey, Groupe Scolaire Louis Massignon), Rabat, Marrakech,
+        Tanger, Kénitra et plusieurs autres villes.
+      </P>
+      <Warning>
+        Le revers de la médaille : la demande dépasse largement l'offre dans les
+        grandes villes. Au Lycée Lyautey à Casablanca, il n'est pas rare qu'une famille
+        s'inscrive sur liste d'attente 12 à 18 mois avant la rentrée visée, en particulier
+        pour les classes de primaire et de sixième. Si votre poste démarre dans deux mois,
+        cette option peut tout simplement ne pas être disponible à temps.
+      </Warning>
+      <H3>Les écoles internationales anglophones ou hispanophones</H3>
+      <P>
+        Casablanca, Rabat et Marrakech accueillent aussi un réseau d'écoles américaines
+        et britanniques — Casablanca American School, Rabat American School, American
+        School of Marrakesh, George Washington Academy, British International School
+        of Casablanca, entre autres — ainsi que des établissements espagnols dans le
+        nord du pays. Les places y sont généralement plus accessibles que dans le réseau
+        français, surtout en cours d'année, mais les frais de scolarité sont souvent
+        plus élevés.
+      </P>
+      <H3>Les écoles privées marocaines bilingues</H3>
+      <P>
+        De nombreuses écoles privées marocaines proposent un cursus bilingue arabe-français
+        ou arabe-anglais, avec des frais de scolarité nettement inférieurs aux réseaux
+        homologués étrangers. C'est une option pertinente pour les familles qui
+        s'installent durablement et souhaitent que les enfants s'intègrent pleinement
+        au système marocain, notamment en vue du baccalauréat marocain.
+      </P>
+      <H3>L'école publique marocaine</H3>
+      <P>
+        Ouverte aux enfants étrangers résidents, gratuite, mais dispensée en arabe avec
+        un enseignement du français progressif. En pratique, elle reste rare chez les
+        familles de salariés en mobilité TAECHIR, sauf installation de très longue durée
+        ou maîtrise déjà solide de l'arabe par les enfants.
+      </P>
+
+      <Table
+        rows={[
+          ['Type d\'établissement', 'Langue principale', 'Homologation / réintégration', 'Frais annuels indicatifs'],
+          ['Mission Laïque / AEFE', 'Français', 'Programme français à l\'identique', '25 000–55 000 Dhs'],
+          ['École américaine / britannique', 'Anglais', 'Curriculum US/UK ou IB', '60 000–140 000 Dhs'],
+          ['École privée marocaine bilingue', 'Arabe/Français ou Arabe/Anglais', 'Baccalauréat marocain', '15 000–40 000 Dhs'],
+          ['École publique marocaine', 'Arabe', 'Baccalauréat marocain', 'Gratuit (frais annexes faibles)'],
+        ]}
+      />
+      <P>
+        Ces fourchettes varient sensiblement selon la ville, le niveau (maternelle,
+        primaire, collège, lycée) et les frais annexes — inscription, cantine, transport
+        scolaire, uniforme, sorties et voyages pédagogiques peuvent facilement ajouter
+        10 à 20% à la facture affichée.
+      </P>
+
+      <H2>Le dossier d'inscription : ce qu'on demande réellement</H2>
+      <P>
+        Contrairement à une idée reçue, la plupart des établissements — publics comme
+        privés — acceptent un dossier d'inscription avant même que l'enfant dispose de
+        sa carte de séjour. Ce qui compte pour eux, c'est de prouver la scolarité
+        antérieure et la légitimité du séjour du parent au Maroc.
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Le passeport de l'enfant</strong>, en cours de validité.</li>
+        <li><strong>Les bulletins scolaires</strong> des deux ou trois dernières années, si possible traduits.</li>
+        <li><strong>Le certificat de radiation</strong> ou d'attestation de niveau de l'école d'origine.</li>
+        <li><strong>L'acte de naissance</strong> légalisé et traduit — souvent le même document que celui préparé pour le dossier de regroupement familial.</li>
+        <li><strong>Un justificatif de la mobilité professionnelle du parent</strong> : contrat TAECHIR visé ou, à défaut, promesse d'embauche et lettre de mission.</li>
+        <li><strong>Un test de niveau</strong>, en français ou en anglais selon l'établissement, surtout à partir du collège.</li>
+      </ul>
+      <Info>
+        Beaucoup d'établissements du réseau AEFE ou anglophone acceptent un dossier
+        « pré-inscription » sur cette seule base, en attendant l'arrivée effective de la
+        famille et l'obtention de la carte de séjour. Ne laissez pas ce dossier de côté
+        en attendant que tout le reste soit finalisé — c'est justement l'inverse qui
+        fonctionne le mieux.
+      </Info>
+
+      <H2>Le bon ordre : lancer l'école en parallèle, pas après</H2>
+      <P>
+        L'erreur la plus fréquente que je vois chez les familles et les DRH qui gèrent
+        une mobilité : attendre que le salarié ait sa carte de séjour, puis que la famille
+        obtienne la sienne au titre du regroupement familial, avant de s'occuper de
+        l'école. Sur une liste d'attente de plusieurs mois dans le réseau français, ça
+        peut coûter une année scolaire entière.
+      </P>
+      <Table
+        rows={[
+          ['Étape', 'Quand la lancer', 'Ce qui est nécessaire'],
+          ['Pré-inscription / liste d\'attente', 'Dès que la date de départ est connue, idéalement 6 à 12 mois avant', 'Passeport, bulletins, justificatif de mobilité du parent'],
+          ['Test de niveau et entretien', '1 à 3 mois avant la rentrée visée', 'Selon l\'établissement, parfois à distance'],
+          ['Confirmation d\'inscription et paiement', 'Avant l\'arrivée ou à l\'arrivée', 'Acte de naissance légalisé, certificat de radiation'],
+          ['Mise à jour du dossier avec la carte de séjour', 'Une fois obtenue', 'Copie de la carte « membre de famille » de l\'enfant'],
+        ]}
+      />
+      <Tip>
+        Si votre entreprise recrute régulièrement des profils étrangers avec famille,
+        prenez contact directement avec les établissements visés dès la signature du
+        contrat TAECHIR, sans attendre que le salarié s'en charge lui-même une fois
+        arrivé. Un simple e-mail de préinscription, envoyé plusieurs mois à l'avance,
+        peut faire la différence entre une place et une liste d'attente.
+      </Tip>
+
+      <H2>Le calendrier scolaire marocain</H2>
+      <P>
+        La rentrée scolaire marocaine a lieu début septembre, avec une organisation en
+        trimestres proche de celle observée dans d'autres pays francophones. Le réseau
+        AEFE suit le calendrier scolaire français adapté aux vacances marocaines plutôt
+        que celui de la zone d'origine — un point qui surprend parfois les familles
+        arrivant en cours d'année scolaire, notamment sur la date des vacances de
+        printemps, qui ne correspond pas toujours à celle de leur pays d'origine.
+      </P>
+      <Warning>
+        Une arrivée en cours d'année scolaire (janvier, par exemple) réduit fortement
+        les places disponibles dans le réseau AEFE, où les classes sont souvent déjà
+        complètes depuis la rentrée de septembre. Les écoles internationales anglophones
+        et les écoles privées marocaines sont en général plus souples sur les admissions
+        en cours d'année.
+      </Warning>
+
+      <H2>Et après ? L'homologation des diplômes au retour</H2>
+      <P>
+        Pour une famille qui sait qu'elle repartira dans son pays d'origine à l'issue
+        du contrat TAECHIR, le réseau AEFE présente un avantage net : les bulletins et
+        diplômes obtenus sont directement reconnus en France, sans démarche
+        d'équivalence. Pour un enfant scolarisé dans le système marocain — baccalauréat
+        marocain notamment —, une procédure d'équivalence auprès des autorités
+        académiques du pays de destination est en général nécessaire, et mérite d'être
+        anticipée dès le choix de l'école plutôt qu'au moment du départ.
+      </P>
+
+      <Divider />
+
+      <H2>Ce qu'il faut retenir</H2>
+      <P>
+        La scolarisation des enfants suit un calendrier propre, largement déconnecté de
+        celui du dossier TAECHIR et de la carte de séjour. Elle se prépare en parallèle,
+        dès que la mobilité est confirmée — pas après. Pour une place dans le réseau
+        AEFE à Casablanca ou Rabat, comptez <strong>6 à 12 mois d'anticipation</strong> ;
+        pour une école internationale anglophone ou une école privée marocaine, une
+        anticipation de <strong>2 à 3 mois</strong> suffit généralement, sauf pour une
+        arrivée en tout début d'année scolaire où la demande est la plus forte.
+      </P>
+
+      <LeadBox
+        title="Vous organisez la mobilité d'un salarié étranger avec sa famille ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Carte de séjour, regroupement familial, scolarisation des enfants : ces
+          démarches se planifient mieux qu'elles ne se rattrapent. Décrivez-nous votre
+          situation et nous pouvons vous orienter vers un spécialiste habitué à ces
+          dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Faut-il attendre la carte de séjour de l\'enfant pour l\'inscrire à l\'école ?', a: 'Non. La plupart des établissements acceptent un dossier de pré-inscription sur la base du passeport, des bulletins scolaires et d\'un justificatif de la mobilité professionnelle du parent. La copie de la carte de séjour vient compléter le dossier une fois obtenue.' },
+          { q: 'Combien de temps à l\'avance faut-il s\'inscrire dans le réseau AEFE au Maroc ?', a: 'Dans les grandes villes, notamment à Casablanca et Rabat, il est recommandé de lancer la démarche 6 à 12 mois avant la rentrée visée, les listes d\'attente étant fréquentes en primaire et au collège.' },
+          { q: 'Les écoles internationales anglophones sont-elles plus accessibles que le réseau français ?', a: 'En général oui, avec des admissions possibles en cours d\'année scolaire, mais les frais de scolarité y sont souvent plus élevés que dans le réseau AEFE.' },
+          { q: 'Que se passe-t-il si la famille arrive au Maroc en cours d\'année scolaire ?', a: 'Les places se raréfient dans le réseau AEFE en cours d\'année, car les classes sont souvent complètes depuis la rentrée de septembre. Les écoles internationales anglophones et les écoles privées marocaines offrent en général plus de flexibilité pour une admission à mi-parcours.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3554,6 +3744,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Avoir sa propre carte de séjour ne suffit pas pour faire venir sa famille sans démarche. Ce qu\'il faut préparer, dans quel ordre, et pourquoi le conjoint ne peut pas travailler sans son propre dossier TAECHIR.',
     Content: Article23Content,
+  },
+  {
+    slug: 'scolarisation-enfants-etranger-maroc-ecoles-internationales',
+    title: 'Scolariser ses enfants au Maroc : écoles internationales, inscription et délais',
+    description: 'Comment inscrire les enfants d\'un salarié étranger dans une école au Maroc : Mission Laïque/AEFE, écoles internationales anglophones, écoles privées marocaines, documents requis et calendrier réaliste.',
+    date: '18 août 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Le regroupement familial obtenu, la carte de séjour en poche : reste la scolarité, qui suit son propre calendrier — souvent bien plus exigeant en anticipation que le dossier TAECHIR lui-même.',
+    Content: Article24Content,
   },
 ];
 
