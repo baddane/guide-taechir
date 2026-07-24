@@ -3324,6 +3324,165 @@ function Article23Content() {
   );
 }
 
+/* ─── Article 24 — CDD ou CDI pour un salarié étranger ──────────────────── */
+
+function Article24Content() {
+  return (
+    <>
+      <Lead>
+        « On part sur un CDD ou un CDI ? » — c'est une question que beaucoup d'employeurs
+        expédient en deux minutes au moment de générer le contrat sur TAECHIR, en pensant
+        que ça n'a pas grande importance. Erreur. Ce choix détermine la durée de votre visa
+        de travail, la façon dont vous allez devoir le renouveler, et ce qui vous attend si
+        la collaboration s'arrête plus tôt que prévu. Voici ce qu'il faut trancher avant de
+        remplir le formulaire, pas après.
+      </Lead>
+
+      <H2>Ce que dit le Code du travail, sans le jargon</H2>
+      <P>
+        Le CDI reste le contrat de référence en droit marocain — c'est la forme par défaut,
+        celle que le législateur privilégie. Le CDD, lui, n'est autorisé que dans des cas
+        précis prévus par l'article 16 du Code du travail : remplacement d'un salarié absent,
+        accroissement temporaire d'activité, travaux à caractère saisonnier, ou lancement
+        d'une nouvelle activité pour une durée maximale d'un an, renouvelable une fois.
+      </P>
+      <P>
+        Rien dans ces textes ne traite différemment un salarié étranger d'un salarié marocain
+        sur ce point — les mêmes règles de fond s'appliquent. Ce qui change, c'est
+        l'articulation avec la procédure TAECHIR, qui elle est spécifique aux étrangers.
+      </P>
+      <Info>
+        Le formulaire TAECHIR ne vous impose pas un type de contrat plutôt qu'un autre.
+        Mais le type de contrat que vous saisissez détermine directement la durée du visa
+        qui sera apposé — c'est là que le choix devient stratégique.
+      </Info>
+
+      <H2>Comment le contrat détermine la durée du visa</H2>
+      <P>
+        Le visa de travail délivré par le Ministère est calé sur la durée du contrat déposé.
+        Pour un CDI, le visa est généralement délivré pour <strong>un an</strong>, renouvelable
+        ensuite chaque année selon la procédure allégée décrite dans notre guide du
+        renouvellement. Pour un CDD, le visa suit la durée exacte du contrat — s'il porte sur
+        6 mois, le visa couvre 6 mois, pas un jour de plus.
+      </P>
+      <P>
+        Concrètement, ça veut dire qu'un CDD de 3 mois pour tester une collaboration
+        oblige à repasser une procédure complète de renouvellement — ANAPEC compris si le
+        profil n'est pas dispensé — dès que le contrat arrive à échéance. J'ai vu un
+        employeur à Casablanca enchaîner deux CDD de 3 mois sur le même poste pour « voir
+        venir » : au final, il avait payé deux fois les frais ANAPEC pour une situation
+        qu'un CDI avec période d'essai aurait réglée d'entrée en une seule démarche.
+      </P>
+
+      <Table
+        rows={[
+          ['Critère', 'CDI', 'CDD'],
+          ['Durée du visa TAECHIR', '1 an, renouvelable', 'Calée sur la durée du contrat'],
+          ['Cas d\'usage légal', 'Poste pérenne, sans limite de durée', 'Motif précis : remplacement, surcroît, saisonnier, nouvelle activité'],
+          ['Renouvellement ANAPEC', 'Procédure allégée après le 1er dossier', 'Nouveau passage à chaque échéance, sauf dispense'],
+          ['Rupture anticipée', 'Préavis + indemnités selon ancienneté', 'Dommages-intérêts dus au salarié, sauf faute grave'],
+          ['Perception côté Ministère', 'Poste jugé stable, dossier généralement plus simple', 'Justification du motif du CDD parfois demandée'],
+        ]}
+      />
+
+      <H2>Pourquoi la plupart des employeurs choisissent le CDI</H2>
+      <P>
+        Sur les dossiers que j'accompagne, le CDI reste très largement majoritaire dès le
+        premier recrutement — et pas seulement par préférence légale. C'est aussi le choix
+        le plus simple à gérer administrativement : un visa d'un an, une période d'essai qui
+        permet de mettre fin à la relation sans les contraintes du CDD si ça ne convient pas,
+        et un renouvellement qui devient une formalité de 48 heures les années suivantes.
+      </P>
+      <P>
+        La période d'essai d'un CDI — 3 mois pour un cadre, renouvelable une fois — joue
+        souvent le rôle que certains employeurs cherchent à donner artificiellement à un CDD
+        court : tester la collaboration avant de s'engager durablement. Sauf qu'avec un CDI,
+        vous n'avez pas à repasser par l'ANAPEC au bout de trois mois si tout se passe bien.
+      </P>
+
+      <H3>Le CDD, réservé aux vraies situations temporaires</H3>
+      <P>
+        Le CDD garde tout son sens dans certains contextes bien précis : un ingénieur détaché
+        sur un chantier BTP à Tanger pour la durée exacte du projet, un expert technique venu
+        remplacer un salarié en congé de maternité, ou un renfort saisonnier dans
+        l'agroalimentaire. Dans ces cas, le CDD colle à la réalité de la mission et le visa
+        calé sur sa durée n'est pas une contrainte, c'est simplement cohérent.
+      </P>
+      <Warning>
+        Un piège classique : enchaîner des CDD successifs sur le même poste au-delà de la
+        durée maximale légale pour éviter de s'engager en CDI. Le droit du travail marocain
+        requalifie automatiquement la relation en CDI si cette limite est dépassée — et ce,
+        qu'il s'agisse d'un salarié marocain ou étranger. Une requalification en cours de
+        contrat TAECHIR peut compliquer sérieusement le dossier auprès du Ministère, qui se
+        retrouve avec un contrat visé qui ne correspond plus à la réalité juridique de la
+        relation de travail.
+      </Warning>
+
+      <H2>Rupture anticipée : les conséquences ne sont pas les mêmes</H2>
+      <P>
+        Si le contrat s'arrête avant son terme — décision de l'employeur, du salarié, ou
+        d'un commun accord — les conséquences légales diffèrent nettement selon le type de
+        contrat, et elles ont aussi un impact direct sur le titre de séjour du salarié.
+      </P>
+      <P>
+        Pour un CDI, une rupture avant l'issue de la période d'essai reste libre pour les
+        deux parties ; passé cette période, elle suit les règles du licenciement ou de la
+        démission, avec préavis et indemnités selon l'ancienneté. Pour un CDD rompu
+        anticipativement sans faute grave ni accord des deux parties, l'employeur qui met fin
+        au contrat doit en principe des dommages-intérêts correspondant aux salaires restant
+        dus jusqu'au terme prévu.
+      </P>
+      <Tip>
+        Que ce soit un CDD ou un CDI, gardez en tête que la fin du contrat de travail met fin
+        à l'autorisation de travailler du salarié étranger, indépendamment de sa carte de
+        séjour qui, elle, peut rester valide plus longtemps. Notre guide sur la fin de contrat
+        d'un salarié étranger détaille précisément ce qui se passe ensuite, démarche par
+        démarche.
+      </Tip>
+
+      <Divider />
+
+      <H2>Notre recommandation, dossier par dossier</H2>
+      <P>
+        Il n'existe pas de bon choix universel — tout dépend de la nature réelle du poste.
+        Voici la grille que j'utilise en pratique pour trancher avec les employeurs que
+        j'accompagne :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Poste pérenne, sans date de fin prévisible</strong> → CDI, avec période d'essai pour sécuriser les deux parties.</li>
+        <li><strong>Mission liée à un chantier ou un projet daté</strong> → CDD calé sur la durée réelle du projet, sans excéder les limites légales.</li>
+        <li><strong>Remplacement d'un salarié absent</strong> → CDD pour la durée de l'absence, avec le motif clairement indiqué dans le contrat.</li>
+        <li><strong>Vous hésitez encore sur le profil après plusieurs entretiens</strong> → CDI avec période d'essai plutôt qu'un CDD de complaisance, pour éviter une double procédure ANAPEC en cas de confirmation.</li>
+      </ul>
+      <P>
+        Dans le doute, un contrat qui reflète honnêtement la réalité du poste évite les
+        mauvaises surprises — aussi bien devant l'inspection du travail que devant le guichet
+        du Ministère au moment du dépôt ou du renouvellement.
+      </P>
+
+      <LeadBox
+        title="Vous hésitez entre CDD et CDI pour votre prochain recrutement ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Le bon choix dépend de la nature du poste, de la durée réelle du besoin et de votre
+          stratégie de renouvellement. Décrivez-nous votre situation et nous pouvons vous
+          orienter vers un spécialiste habitué aux dossiers TAECHIR.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Le formulaire TAECHIR impose-t-il un type de contrat ?', a: 'Non. Vous choisissez CDD ou CDI selon la réalité du poste, mais ce choix détermine ensuite la durée du visa de travail délivré par le Ministère.' },
+          { q: 'Un CDD peut-il être renouvelé indéfiniment pour un salarié étranger ?', a: 'Non, les mêmes limites légales qu\'un salarié marocain s\'appliquent. Au-delà de la durée maximale autorisée, la relation est automatiquement requalifiée en CDI, ce qui peut compliquer le dossier TAECHIR en cours.' },
+          { q: 'Quelle est la durée du visa TAECHIR pour un CDI ?', a: 'Généralement un an, renouvelable ensuite selon la procédure allégée (48 heures, 1 500 Dhs) décrite dans notre guide du renouvellement.' },
+          { q: 'Que se passe-t-il si un CDD est rompu avant son terme ?', a: 'Sauf faute grave ou accord des deux parties, l\'employeur qui met fin au CDD par anticipation doit en principe des dommages-intérêts au salarié correspondant aux salaires restant dus jusqu\'à l\'échéance prévue.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3554,6 +3713,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Avoir sa propre carte de séjour ne suffit pas pour faire venir sa famille sans démarche. Ce qu\'il faut préparer, dans quel ordre, et pourquoi le conjoint ne peut pas travailler sans son propre dossier TAECHIR.',
     Content: Article23Content,
+  },
+  {
+    slug: 'cdd-cdi-salarie-etranger-maroc-contrat-taechir',
+    title: 'CDD ou CDI pour un salarié étranger au Maroc : quel contrat choisir pour le dossier TAECHIR',
+    description: 'CDD ou CDI pour un salarié étranger au Maroc : différences légales, impact sur la durée du visa TAECHIR, sur le renouvellement ANAPEC et sur la rupture anticipée du contrat.',
+    date: '18 août 2026',
+    readTime: 7,
+    category: 'Procédure',
+    excerpt: 'Le choix entre CDD et CDI pour un salarié étranger n\'est pas neutre : il détermine la durée de validité du visa TAECHIR, la façon dont il se renouvelle et les conséquences en cas de rupture anticipée.',
+    Content: Article24Content,
   },
 ];
 

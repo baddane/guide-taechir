@@ -283,4 +283,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 24 : CDD ou CDI pour un salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/cdd-cdi-salarie-etranger-maroc-contrat-taechir</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
