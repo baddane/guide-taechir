@@ -291,4 +291,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 25 : Carte de résident après plusieurs années -->
+  <url>
+    <loc>https://guide-taechir.org/blog/carte-resident-maroc-salarie-etranger-longue-duree</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

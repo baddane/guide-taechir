@@ -3483,6 +3483,164 @@ function Article24Content() {
   );
 }
 
+/* ─── Article 25 — Carte de résident après plusieurs années ────────────── */
+
+function Article25Content() {
+  return (
+    <>
+      <Lead>
+        Après trois ou quatre renouvellements TAECHIR, beaucoup de mes clients me posent la
+        même question : « On est obligés de refaire ça chaque année, indéfiniment ? » La
+        réponse est non — à condition que le salarié étranger, de son côté, passe à la carte
+        de résident. C'est un changement de statut qui allège vraiment la vie de tout le
+        monde, mais qui reste mal connu et souvent découvert trop tard.
+      </Lead>
+
+      <H2>Carte de séjour et carte de résident : deux titres, pas un seul</H2>
+      <P>
+        La confusion est fréquente, alors autant la lever tout de suite. La <strong>carte
+        de séjour</strong> — celle que le salarié obtient à son arrivée, comme détaillé dans
+        notre guide sur la carte de séjour DGSN — est un titre limité dans le temps, calé sur
+        la durée du contrat de travail visé. Elle se renouvelle chaque année, en même temps
+        que le dossier TAECHIR.
+      </P>
+      <P>
+        La <strong>carte de résident</strong>, elle, est un titre différent, réservé aux
+        étrangers qui justifient d'une résidence régulière et ininterrompue au Maroc depuis
+        plusieurs années. Elle est délivrée pour <strong>10 ans</strong>, renouvelable, et
+        dispense son titulaire de repasser chaque année par le guichet de la préfecture pour
+        la partie « séjour ». C'est un vrai confort administratif.
+      </P>
+      <Info>
+        Attention à ne pas confondre les deux plans : la carte de résident règle la question
+        du <strong>séjour</strong>. Elle ne dispense pas l'employeur de la procédure TAECHIR
+        pour l'<strong>autorisation de travail</strong>, qui reste une démarche distincte liée
+        au contrat. Les deux titres coexistent, mais l'un devient beaucoup plus stable que
+        l'autre.
+      </Info>
+
+      <H2>Qui peut demander la carte de résident ?</H2>
+      <P>
+        Le cadre est fixé par la loi 02-03 relative à l'entrée et au séjour des étrangers au
+        Royaume. Pour un salarié étranger recruté via TAECHIR, la voie la plus courante est
+        celle de la résidence continue : avoir résidé au Maroc de manière <strong>régulière
+        et ininterrompue pendant au moins quatre années</strong>, sous couvert d'une carte de
+        séjour valide, renouvelée sans interruption sur cette période.
+      </P>
+      <P>D'autres situations donnent accès à la carte de résident, parfois plus rapidement :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Conjoint(e) de ressortissant marocain</strong> — sous condition de deux années de mariage et de résidence régulière.</li>
+        <li><strong>Enfant né au Maroc de parents étrangers</strong> — à sa majorité, sous certaines conditions.</li>
+        <li><strong>Retraité ayant résidé durablement au Maroc</strong> — cas plus rare pour nos dossiers, mais qui existe.</li>
+      </ul>
+      <P>
+        Pour la grande majorité des salariés que j'accompagne, c'est la voie des quatre
+        années de résidence continue qui s'applique. Concrètement, cela veut dire quatre
+        renouvellements TAECHIR réussis, sans trou dans le dossier.
+      </P>
+
+      <H2>La régularité, c'est le nerf de la guerre</H2>
+      <P>
+        Le mot qui compte le plus dans ce dossier, c'est « ininterrompue ». Si la carte de
+        séjour a expiré à un moment donné — même quelques semaines, même pour une raison
+        purement administrative — la préfecture peut considérer que la continuité est rompue
+        et refuser de comptabiliser les années antérieures.
+      </P>
+      <P>
+        J'ai vu un cas à Casablanca où un salarié en était à sa quatrième année, mais son
+        renouvellement de carte de séjour avait pris trois semaines de retard l'année
+        précédente à cause d'un dossier TAECHIR déposé trop tard par l'employeur. Résultat :
+        la préfecture a estimé que la résidence n'était pas strictement continue et a demandé
+        de repartir sur une nouvelle période de référence. C'est exactement le genre de
+        situation qu'on peut éviter en anticipant les renouvellements TAECHIR de 2 à 3 mois,
+        comme on le recommande systématiquement.
+      </P>
+      <Warning>
+        Chaque interruption de la carte de séjour — expiration non renouvelée à temps, gap
+        entre deux contrats lors d'un changement d'employeur — remet potentiellement le
+        compteur à zéro. Gardez une trace de chaque titre délivré : les dates de validité de
+        chaque carte de séjour sont la première pièce qu'on vous demandera pour prouver la
+        continuité.
+      </Warning>
+
+      <H2>Le dossier à préparer</H2>
+      <Table
+        rows={[
+          ['Document', 'Détail'],
+          ['Les cartes de séjour successives', 'Toutes les cartes obtenues depuis l\'arrivée, sans trou de validité'],
+          ['Justificatif de revenus stables', 'Bulletins de salaire et attestation de travail récente de l\'employeur'],
+          ['Bordereaux CNSS', 'Historique de cotisation sur la période de résidence'],
+          ['Justificatif de domicile', 'Contrat de bail ou titre de propriété récent'],
+          ['Casier judiciaire', 'Extrait marocain, et parfois du pays d\'origine selon le dossier'],
+          ['Passeport en cours de validité', 'Avec les cachets d\'entrée si demandés'],
+        ]}
+      />
+      <P>
+        Le dossier se dépose au bureau des étrangers de la préfecture ou de la DGSN dont
+        dépend le domicile du salarié — les mêmes services qui gèrent la carte de séjour au
+        quotidien. Comptez plusieurs semaines de traitement, parfois plusieurs mois selon la
+        préfecture : Casablanca et Rabat, qui traitent le plus de dossiers, ne sont pas
+        toujours les plus rapides.
+      </P>
+
+      <H2>Ce qui change concrètement une fois la carte obtenue</H2>
+      <P>
+        Le bénéfice principal est simple : plus besoin de repasser chaque année au guichet
+        DGSN pour renouveler le titre de séjour. La carte de résident couvre dix ans, ce qui
+        supprime une bonne partie du stress administratif annuel côté salarié.
+      </P>
+      <P>
+        Mais — et c'est le point que beaucoup d'employeurs négligent — la mécanique TAECHIR,
+        elle, continue de tourner normalement si le salarié reste en poste. Le contrat de
+        travail garde sa propre durée de validité, et le visa doit toujours être renouvelé
+        selon les règles habituelles décrites dans notre guide du renouvellement. La carte de
+        résident simplifie la vie du salarié, pas les obligations de l'employeur envers le
+        Ministère.
+      </P>
+      <Tip>
+        Une carte de résident valide facilite en revanche les futurs renouvellements TAECHIR :
+        elle constitue une preuve de stabilité et de régularité du séjour qui rassure le
+        guichet, et elle évite d'avoir à jongler chaque année entre deux administrations qui
+        ne se parlent pas toujours.
+      </Tip>
+
+      <H2>Et si le salarié change d'employeur entre-temps ?</H2>
+      <P>
+        Un changement d'employeur ne remet pas en cause la carte de résident une fois qu'elle
+        est délivrée — elle reste valable dix ans, indépendamment du contrat de travail en
+        cours. Par contre, pendant la phase de constitution du dossier, avant que les quatre
+        années de résidence continue ne soient acquises, un changement d'employeur mal
+        anticipé — avec un gap entre l'ancien et le nouveau contrat visé — peut, comme on l'a
+        vu, casser la continuité recherchée. Si une transition est prévue, mieux vaut la
+        préparer en amont avec le nouvel employeur pour qu'il n'y ait pas de trou dans le
+        dossier TAECHIR.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Votre salarié étranger approche des quatre ans de présence ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Le passage à la carte de résident demande un dossier solide et une continuité sans
+          faille dans l'historique des renouvellements. Décrivez-nous la situation et nous
+          pouvons vous orienter vers un spécialiste habitué à ces dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Au bout de combien de temps un salarié étranger peut-il demander la carte de résident ?', a: 'En général après quatre années de résidence régulière et ininterrompue au Maroc, sous couvert de cartes de séjour valides et renouvelées sans interruption sur toute la période.' },
+          { q: 'La carte de résident remplace-t-elle le dossier TAECHIR ?', a: 'Non. La carte de résident concerne uniquement le droit au séjour. L\'autorisation de travailler, elle, reste liée au contrat de travail et continue de suivre la procédure TAECHIR habituelle, avec ses renouvellements.' },
+          { q: 'Une interruption de la carte de séjour empêche-t-elle d\'obtenir la carte de résident ?', a: 'Elle peut casser la continuité exigée par la préfecture, qui peut alors refuser de comptabiliser les années antérieures et demander de reconstituer une nouvelle période de référence de résidence ininterrompue.' },
+          { q: 'La carte de résident est-elle valable si le salarié change d\'employeur ?', a: 'Oui, une fois délivrée, la carte de résident reste valable dix ans indépendamment de l\'employeur. Seule la phase d\'acquisition, avant l\'obtention du titre, est sensible à une éventuelle interruption du séjour régulier.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3723,6 +3881,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Le choix entre CDD et CDI pour un salarié étranger n\'est pas neutre : il détermine la durée de validité du visa TAECHIR, la façon dont il se renouvelle et les conséquences en cas de rupture anticipée.',
     Content: Article24Content,
+  },
+  {
+    slug: 'carte-resident-maroc-salarie-etranger-longue-duree',
+    title: 'Carte de résident au Maroc : comment un salarié étranger l\'obtient après plusieurs années',
+    description: 'Carte de résident au Maroc pour un salarié étranger : conditions des quatre années de résidence continue, dossier à préparer et ce qui change (ou pas) pour la procédure TAECHIR.',
+    date: '25 août 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Après quatre années de renouvellements TAECHIR réussis, un salarié étranger peut prétendre à une carte de résident valable dix ans. Conditions, dossier et ce que ça change vraiment côté employeur.',
+    Content: Article25Content,
   },
 ];
 
