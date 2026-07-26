@@ -3641,6 +3641,193 @@ function Article25Content() {
   );
 }
 
+/* ─── Article 26 ────────────────────────────────────────────────────────── */
+
+function Article26Content() {
+  return (
+    <>
+      <Lead>
+        « Quel salaire je dois mettre sur le contrat ? » C'est une question qui revient dans
+        presque tous mes premiers rendez-vous avec un employeur. Beaucoup pensent qu'il suffit
+        de respecter le SMIG et que le dossier passera tout seul. Ce n'est pas aussi simple :
+        le Ministère et l'ANAPEC regardent la cohérence du salaire avec le poste, pas
+        seulement le plancher légal. Voici comment fixer un chiffre qui ne bloquera pas votre
+        dossier TAECHIR.
+      </Lead>
+
+      <H2>Le SMIG, un plancher — pas un objectif</H2>
+      <P>
+        Premier réflexe à avoir : un salarié étranger ne peut jamais être payé en dessous du
+        salaire minimum légal marocain, exactement comme un salarié marocain. Depuis le 1er
+        janvier 2026, le SMIG du secteur non agricole (industrie, commerce, services,
+        professions libérales — c'est le secteur qui concerne la quasi-totalité des dossiers
+        TAECHIR) a été revalorisé à <strong>17,92 Dhs de l'heure</strong>, soit{' '}
+        <strong>3 422,72 Dhs bruts par mois</strong> sur la base légale de 191 heures. C'est la
+        deuxième tranche de l'accord social tripartite signé en avril 2024, actée par le
+        décret n° 2.25.983.
+      </P>
+      <Table
+        rows={[
+          ['Année', 'SMIG horaire', 'SMIG mensuel brut (191h)'],
+          ['2024', '16,29 Dhs', '3 111,39 Dhs'],
+          ['2025', '17,10 Dhs', '3 266,10 Dhs'],
+          ['2026', '17,92 Dhs', '3 422,72 Dhs'],
+        ]}
+      />
+      <Info>
+        Le SMIG est révisé périodiquement par accord tripartite entre le gouvernement, la CGEM
+        et les centrales syndicales. Avant de finaliser un contrat, vérifiez toujours le
+        montant en vigueur à la date de signature — un décalage de quelques mois peut suffire
+        à vous faire proposer un salaire déjà obsolète.
+      </Info>
+      <P>
+        Mais dans la pratique, presque aucun dossier TAECHIR de salarié étranger ne se joue
+        réellement sur le SMIG. Si vous faites venir un développeur, un ingénieur ou un
+        directeur depuis l'étranger, un salaire au plancher légal va au contraire éveiller les
+        soupçons — j'y reviens plus bas.
+      </P>
+
+      <H2>Ce que regarde vraiment le guichet : la cohérence, pas juste le montant</H2>
+      <P>
+        C'est le point que la plupart des employeurs sous-estiment. Ni l'ANAPEC ni le
+        Ministère ne se contentent de vérifier que le salaire dépasse le SMIG. Ils comparent
+        le chiffre annoncé au poste déclaré, au secteur d'activité et, implicitement, au
+        niveau de qualification exigé pour justifier de faire venir un profil étranger plutôt
+        qu'un candidat marocain.
+      </P>
+      <P>Trois incohérences reviennent le plus souvent dans les dossiers que je vois bloqués :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>
+          <strong>Un salaire trop proche du SMIG pour un poste qualifié.</strong> Un « ingénieur
+          logiciel senior » payé 3 800 Dhs bruts, ça ne tient pas la route aux yeux du guichet.
+          Soit le poste est surqualifié sur le papier, soit le salaire ne reflète pas la réalité
+          du marché — dans les deux cas, ça déclenche des questions.
+        </li>
+        <li>
+          <strong>Un écart trop important avec la grille interne de l'entreprise.</strong> Si vos
+          salariés marocains sur des postes comparables touchent nettement plus, ou nettement
+          moins, l'écart doit pouvoir s'expliquer.
+        </li>
+        <li>
+          <strong>Un salaire qui ne colle pas avec le motif de la demande.</strong> Si vous
+          justifiez le recrutement par la rareté du profil (listes A1/A2), un salaire d'entrée
+          de gamme contredit l'argument même que vous avancez pour obtenir la procédure
+          accélérée.
+        </li>
+      </ul>
+      <Warning>
+        Un client à Casablanca avait proposé 4 200 Dhs bruts à un chef de projet BTP étranger —
+        un poste qu'il justifiait pourtant comme « impossible à pourvoir localement » pour
+        passer en liste A2. L'ANAPEC a requalifié le dossier en standard : à ce niveau de
+        salaire, difficile de soutenir qu'il s'agissait d'un profil rare et recherché. Retour à
+        la case départ, 20 jours et 5 000 Dhs de plus.
+      </Warning>
+
+      <H2>Brut, net : ne confondez pas ce qui figure sur le contrat TAECHIR</H2>
+      <P>
+        Le contrat généré par la plateforme TAECHIR indique un salaire <strong>brut</strong>.
+        C'est ce montant, avant cotisations, qui sert de référence pour vérifier la conformité
+        au SMIG et la cohérence avec le poste. Beaucoup d'employeurs négocient oralement un
+        montant net avec leur futur salarié étranger, puis se retrouvent à devoir « reconvertir
+        » ce chiffre en brut au moment de remplir le dossier — et le salarié, lui, découvre
+        souvent l'écart au moment de sa première fiche de paie.
+      </P>
+      <H3>Les charges qui viennent en plus, côté employeur</H3>
+      <P>
+        Le salaire brut n'est pas ce que vous coûte réellement le salarié. Il faut y ajouter
+        les charges patronales — CNSS, AMO, taxe de formation professionnelle — que nous avons
+        détaillées dans notre guide de la déclaration CNSS. En pratique, comptez entre{' '}
+        <strong>20 et 22 % de charges patronales</strong> en plus du brut pour estimer le coût
+        complet mensuel d'un salarié étranger, en plus des frais propres au dossier TAECHIR que
+        nous détaillons dans notre article sur le coût total du recrutement.
+      </P>
+      <Table
+        rows={[
+          ['Élément', 'Base de calcul', 'Ordre de grandeur'],
+          ['Salaire brut mensuel', 'Négocié, ≥ SMIG', 'Variable selon poste'],
+          ['Charges patronales CNSS/AMO/formation', '≈ 20 à 22 % du brut', 'Ex. : 800 à 900 Dhs pour 4 000 Dhs de brut'],
+          ['Salaire net perçu par le salarié', 'Brut − cotisations salariales (≈ 6,7 %) − IR', 'Variable selon tranche d\'IR'],
+        ]}
+      />
+
+      <H2>Cas particuliers : profils rares, cadres dirigeants, salaires en devises</H2>
+      <H3>Pour les listes A1 et A2</H3>
+      <P>
+        Comme évoqué plus haut, un salaire cohérent avec le niveau de rareté annoncé renforce
+        votre dossier. Un DSI ou un expert en cybersécurité offensive dont le salaire se situe
+        dans la fourchette basse du marché a plus de chances de voir son dossier requalifié en
+        standard — ce qui vous fait perdre à la fois le délai de 48 heures et le tarif réduit
+        décrits dans notre guide des profils rares.
+      </P>
+      <H3>Salaire fixé en devises étrangères</H3>
+      <P>
+        Certaines entreprises, notamment dans l'offshoring ou les sièges régionaux, négocient
+        un package en euros ou en dollars avant conversion. C'est possible, mais le contrat
+        TAECHIR doit afficher un montant en dirhams, et c'est ce montant converti qui sera
+        comparé au SMIG et évalué pour sa cohérence — pas le chiffre affiché dans l'offre
+        initiale en devise étrangère. Faites la conversion au taux du jour de signature et
+        gardez une marge : un taux de change qui bouge entre l'offre et la signature peut faire
+        passer un salaire de « confortable » à « limite ».
+      </P>
+      <H3>Avantages en nature</H3>
+      <P>
+        Logement de fonction, véhicule, billets d'avion annuels : ces avantages comptent dans
+        l'appréciation globale du package, mais rarement dans le calcul strict de conformité au
+        SMIG, qui reste une comparaison sur le salaire numéraire. Ne comptez pas sur eux pour
+        « compenser » un salaire de base trop faible sur le contrat.
+      </P>
+      <Tip>
+        Mon conseil pour les postes de cadre ou d'expert : visez un salaire brut qui reste dans
+        une fourchette réaliste par rapport aux grilles publiées par les cabinets de
+        recrutement pour le même métier au Maroc. Ce n'est pas une exigence légale écrite noir
+        sur blanc, mais c'est ce qui évite le plus de questions au guichet.
+      </Tip>
+
+      <H2>Comment documenter un salaire qui passe sans accroc</H2>
+      <P>
+        Si votre salarié va occuper un poste bien rémunéré et cohérent avec son profil, vous
+        n'avez généralement rien à justifier de particulier. Mais pour les dossiers un peu
+        atypiques — salaire élevé pour un jeune profil, salaire bas pour un poste censé être
+        rare — préparez de quoi appuyer votre décision :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Une fiche de poste détaillée précisant les missions et le niveau d'expérience requis</li>
+        <li>Votre grille salariale interne, si elle existe, pour situer le poste par rapport aux autres</li>
+        <li>Un comparatif de marché, même sommaire, pour un métier rare ou peu répandu au Maroc</li>
+        <li>Le CV du candidat, qui doit rester cohérent avec le niveau de rémunération proposé</li>
+      </ul>
+      <P>
+        Ce n'est pas une pièce officiellement exigée dans le dossier TAECHIR standard, mais je
+        recommande de la garder sous la main : en cas de question de l'agent ANAPEC ou du
+        guichet du Ministère, pouvoir répondre immédiatement évite des allers-retours qui
+        coûtent des jours, parfois des semaines.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Un doute sur le salaire à indiquer sur votre contrat TAECHIR ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Décrivez-nous le poste, le secteur et le profil du candidat : nous pouvons vous
+          orienter vers un spécialiste habitué à fixer une rémunération qui passe sans
+          accroc au guichet.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il être payé exactement au SMIG ?', a: 'Légalement oui, le SMIG est le seul plancher fixé par la loi. Mais en pratique, un salaire au SMIG pour un profil recruté à l\'international est rarement cohérent avec le motif du recrutement et peut faire l\'objet de questions de l\'ANAPEC ou du Ministère.' },
+          { q: 'Le salaire indiqué sur le contrat TAECHIR est-il en brut ou en net ?', a: 'En brut. C\'est ce montant qui est comparé au SMIG légal et évalué pour sa cohérence avec le poste. Le salaire net dépend ensuite des cotisations salariales et de l\'impôt sur le revenu.' },
+          { q: 'Le SMIG est-il le même pour tous les secteurs au Maroc ?', a: 'Non. Le SMIG s\'applique au secteur non agricole (industrie, commerce, services, professions libérales), avec un montant horaire. Le secteur agricole a son propre plancher, le SMAG, calculé à la journée et généralement inférieur.' },
+          { q: 'Un salaire trop bas peut-il faire échouer un dossier TAECHIR ?', a: 'Directement non, s\'il respecte le SMIG. Mais indirectement oui : un salaire jugé incohérent avec le poste ou avec le statut de profil rare invoqué peut entraîner une requalification du dossier en procédure standard, avec délai et frais plus élevés.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3891,6 +4078,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Après quatre années de renouvellements TAECHIR réussis, un salarié étranger peut prétendre à une carte de résident valable dix ans. Conditions, dossier et ce que ça change vraiment côté employeur.',
     Content: Article25Content,
+  },
+  {
+    slug: 'salaire-minimum-salarie-etranger-maroc-taechir',
+    title: 'Quel salaire proposer à un salarié étranger au Maroc ? SMIG et exigences TAECHIR',
+    description: 'SMIG 2026 au Maroc, cohérence salaire/poste exigée par l\'ANAPEC et le Ministère, brut vs net et charges patronales : comment fixer un salaire qui ne bloque pas votre dossier TAECHIR.',
+    date: '1 septembre 2026',
+    readTime: 7,
+    category: 'Coûts',
+    excerpt: 'Respecter le SMIG ne suffit pas : l\'ANAPEC et le Ministère jugent aussi la cohérence du salaire avec le poste et le motif du recrutement. Montants 2026, pièges fréquents et méthode pour fixer un salaire qui passe sans accroc.',
+    Content: Article26Content,
   },
 ];
 
