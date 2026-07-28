@@ -3641,6 +3641,180 @@ function Article25Content() {
   );
 }
 
+/* ─── Article 26 ────────────────────────────────────────────────────────── */
+
+function Article26Content() {
+  return (
+    <>
+      <Lead>
+        De plus en plus d'étrangers s'installent au Maroc tout en gardant leur emploi chez
+        un employeur basé à l'étranger — développeurs, consultants, designers, cadres en
+        télétravail complet. Le réflexe de beaucoup, c'est de me demander : « on fait un
+        dossier TAECHIR ? » La réponse est presque toujours non, et c'est justement là que
+        les choses se compliquent, parce que personne ne leur explique ce qu'il faut faire à la place.
+      </Lead>
+
+      <H2>Pourquoi TAECHIR ne s'applique pas ici</H2>
+      <P>
+        TAECHIR répond à une situation précise : un <strong>employeur marocain</strong> qui
+        veut embaucher un salarié étranger sur un poste au Maroc. Toute la mécanique —
+        attestation ANAPEC, contrat visé par le Ministère, priorité nationale à l'emploi —
+        repose sur l'existence d'une relation de travail avec une entreprise installée ici.
+      </P>
+      <P>
+        Un salarié qui reste sous contrat avec une société basée à Paris, Londres ou Dubaï,
+        et qui se contente de travailler depuis un appartement à Casablanca ou Marrakech,
+        ne rentre pas dans ce cadre. Il n'y a pas d'employeur marocain, donc pas de dossier
+        TAECHIR à monter. C'est souvent un soulagement pour les gens que j'accompagne — mais
+        ça ne veut absolument pas dire qu'il n'y a rien à faire.
+      </P>
+      <Info>
+        Le vide juridique n'existe pas vraiment : il n'y a simplement pas de procédure
+        <em> unique</em> et bien balisée comme TAECHIR pour ce cas de figure. Cela veut dire
+        qu'il faut assembler soi-même les bonnes briques — séjour, fiscalité, couverture
+        santé — plutôt que suivre un parcours tout tracé.
+      </Info>
+
+      <H2>Le vrai sujet : le titre de séjour, pas le travail</H2>
+      <P>
+        Le point que la plupart des télétravailleurs sous-estiment, c'est la durée de séjour.
+        Un visa touristique ou une entrée sans visa autorise généralement <strong>90 jours</strong>
+        {' '}sur le territoire. Au-delà, rester au Maroc sans régulariser sa situation devient
+        un séjour irrégulier — même si le travail effectué se passe entièrement en ligne pour
+        une entreprise à l'étranger.
+      </P>
+      <P>
+        J'ai eu le cas d'un développeur canadien installé à Tanger depuis huit mois, payé par
+        sa boîte à Montréal, qui pensait être « invisible » aux yeux de l'administration
+        marocaine puisqu'il ne travaillait pour aucune entreprise locale. Sauf qu'il n'avait
+        jamais renouvelé son statut au-delà des 90 premiers jours. Techniquement en situation
+        irrégulière depuis des mois, sans le savoir.
+      </P>
+      <Warning>
+        Travailler à distance pour un employeur étranger ne dispense jamais de régulariser
+        son séjour au Maroc au-delà de 90 jours. Les deux sujets — autorisation de travail
+        et droit au séjour — restent distincts, même quand le premier ne s'applique pas.
+      </Warning>
+
+      <H2>Quelle voie pour rester en règle sur le séjour ?</H2>
+      <H3>La carte de séjour pour ressources suffisantes</H3>
+      <P>
+        C'est la voie la plus courante pour les télétravailleurs. Sans contrat de travail
+        marocain à présenter, le dossier se construit autour de la preuve de revenus stables
+        venant de l'étranger : bulletins de salaire ou contrats de prestation, relevés
+        bancaires des derniers mois, parfois une attestation de l'employeur. La logique de la
+        préfecture est simple : montrer que la personne dispose de moyens suffisants pour
+        vivre au Maroc sans peser sur le marché du travail local.
+      </P>
+      <H3>Le statut d'indépendant local (auto-entrepreneur ou société)</H3>
+      <P>
+        Certains choisissent de facturer leurs prestations depuis une structure marocaine —
+        statut d'auto-entrepreneur ou société de portage. Cette option a un avantage réel :
+        elle simplifie la fiscalité et donne accès à une couverture sociale locale via l'AMO.
+        Mais attention, l'inscription en tant qu'auto-entrepreneur suppose déjà d'avoir un
+        titre de séjour en cours — ce n'est pas un raccourci pour l'obtenir.
+      </P>
+      <H3>Le portage salarial international</H3>
+      <P>
+        Une société de portage à l'étranger emploie formellement la personne et facture le
+        client final ; le télétravailleur touche un salaire. Ça ne change rien côté séjour
+        marocain — la carte pour ressources suffisantes reste nécessaire — mais ça peut
+        simplifier la vie de ceux dont le statut de freelance pur pose problème vis-à-vis de
+        leur ancien employeur ou de la réglementation de leur pays d'origine.
+      </P>
+      <Table
+        rows={[
+          ['Situation', 'Titre de séjour', 'Couverture sociale', 'Fiscalité au Maroc'],
+          ['Salarié à distance, employeur étranger', 'Carte pour ressources suffisantes', 'Assurance privée à sa charge', 'Selon résidence fiscale (183 jours)'],
+          ['Auto-entrepreneur / société locale', 'Titre de séjour préexistant requis', 'AMO via cotisations locales', 'Impôt marocain sur le revenu local'],
+          ['Portage salarial international', 'Carte pour ressources suffisantes', 'Selon le pays de la société de portage', 'Selon résidence fiscale (183 jours)'],
+        ]}
+      />
+
+      <H2>Et côté fiscal, ça se joue où ?</H2>
+      <P>
+        C'est le deuxième angle mort classique. Comme on le détaille dans notre article sur
+        la fiscalité de l'expatrié, la résidence fiscale au Maroc se déclenche notamment au-delà
+        de <strong>183 jours</strong> de présence sur une période de douze mois — indépendamment
+        du pays qui verse le salaire. Un télétravailleur fiscalement résident au Maroc doit en
+        principe déclarer l'ensemble de ses revenus mondiaux ici, sous réserve des conventions
+        de non-double imposition entre le Maroc et le pays de l'employeur.
+      </P>
+      <P>
+        J'ai vu plusieurs profils partir du principe que « puisque mon salaire arrive sur un
+        compte à l'étranger, ça ne regarde pas le fisc marocain ». C'est une erreur classique
+        qui peut coûter cher au moment d'une régularisation, surtout que les échanges
+        automatiques d'informations bancaires entre administrations fiscales se sont
+        largement généralisés.
+      </P>
+      <Tip>
+        Avant de dépasser les six mois de présence, faites le point avec un fiscaliste sur
+        votre statut de résident fiscal et sur la convention applicable entre le Maroc et
+        votre pays d'origine. Anticiper coûte largement moins cher que régulariser après coup.
+      </Tip>
+
+      <H2>La couverture santé : personne ne s'en occupe à votre place</H2>
+      <P>
+        Sans employeur marocain, pas de CNSS, pas d'AMO automatique. C'est un point que
+        beaucoup découvrent seulement en cas de pépin médical. La solution la plus répandue
+        reste une assurance santé internationale privée, comme on l'explique dans notre guide
+        sur l'assurance santé pour expatrié — à souscrire avant même le départ, pas une fois
+        installé.
+      </P>
+
+      <H2>Les erreurs les plus fréquentes</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Enchaîner les sorties de territoire tous les 90 jours</strong> pour repartir
+          sur un nouveau compteur touristique. Ça fonctionnait autrefois de façon tolérée dans
+          certains cas, mais ce n'est pas un statut légal stable et ça peut être requalifié en
+          contournement lors d'un contrôle.
+        </li>
+        <li>
+          <strong>Ignorer la question fiscale</strong> en se disant que le salaire étranger «
+          n'a rien à voir » avec le Maroc. Le lieu de résidence effective compte davantage que
+          le lieu de versement du salaire.
+        </li>
+        <li>
+          <strong>Confondre carte de séjour et autorisation de travail.</strong> La carte pour
+          ressources suffisantes autorise à résider, pas à exercer une activité rémunérée
+          <em> pour un employeur marocain</em>. Si la situation évolue vers un vrai poste local,
+          c'est TAECHIR qui reprend la main.
+        </li>
+      </ul>
+      <Warning>
+        Si un télétravailleur bascule, même partiellement, vers une mission facturée à une
+        entreprise marocaine, la logique change : selon la nature du lien, cela peut nécessiter
+        un vrai contrat de travail local et donc un dossier TAECHIR classique. Le statut de
+        télétravailleur pour un employeur étranger ne suit pas automatiquement la personne si
+        son activité évolue.
+      </Warning>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous vous installez au Maroc en télétravail pour un employeur étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Titre de séjour, fiscalité, couverture santé : chaque situation a ses subtilités.
+          Décrivez-nous votre cas et nous pouvons vous orienter vers un spécialiste habitué
+          à ces dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un télétravailleur payé par une entreprise étrangère a-t-il besoin d\'un dossier TAECHIR ?', a: 'Non, tant qu\'il n\'existe pas de relation d\'emploi avec une entreprise marocaine. TAECHIR concerne uniquement les recrutements par un employeur installé au Maroc.' },
+          { q: 'Peut-on rester au Maroc indéfiniment avec des allers-retours tous les 90 jours ?', a: 'Ce n\'est pas un statut légal stable et ça peut être requalifié lors d\'un contrôle. Au-delà de 90 jours de présence continue, il faut régulariser sa situation, généralement via une carte de séjour pour ressources suffisantes.' },
+          { q: 'Un télétravailleur pour un employeur étranger doit-il payer des impôts au Maroc ?', a: 'S\'il devient résident fiscal marocain — notamment au-delà de 183 jours de présence sur douze mois — il doit en principe déclarer ses revenus au Maroc, sous réserve des conventions de non-double imposition applicables.' },
+          { q: 'Comment un télétravailleur étranger est-il couvert en cas de maladie ?', a: 'Sans employeur marocain, il n\'y a pas d\'affiliation CNSS ni d\'AMO automatique. Une assurance santé internationale privée, souscrite avant l\'installation, est la solution la plus courante.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -3891,6 +4065,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Après quatre années de renouvellements TAECHIR réussis, un salarié étranger peut prétendre à une carte de résident valable dix ans. Conditions, dossier et ce que ça change vraiment côté employeur.',
     Content: Article25Content,
+  },
+  {
+    slug: 'teletravail-employeur-etranger-maroc-statut',
+    title: 'Télétravailler au Maroc pour un employeur étranger : quel statut choisir ?',
+    description: 'Vivre au Maroc en télétravail pour une entreprise étrangère : pourquoi TAECHIR ne s\'applique pas, quel titre de séjour obtenir, et ce qu\'il faut savoir côté fiscalité et couverture santé.',
+    date: '1 septembre 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Pas d\'employeur marocain, pas de dossier TAECHIR — mais pas non plus de vide juridique. Titre de séjour, résidence fiscale et couverture santé : ce qu\'un télétravailleur installé au Maroc doit réellement mettre en place.',
+    Content: Article26Content,
   },
 ];
 
