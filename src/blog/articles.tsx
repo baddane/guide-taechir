@@ -3815,6 +3815,205 @@ function Article26Content() {
   );
 }
 
+/* ─── Article 27 ─────────────────────────────────────────────────────────── */
+
+function Article27Content() {
+  return (
+    <>
+      <Lead>
+        Une fois la carte de séjour en poche et la famille arrivée au Maroc, une question
+        revient presque systématiquement dans les dossiers que j'accompagne : « et pour
+        l'école des enfants, on fait comment ? » Le problème, c'est que beaucoup s'en
+        occupent une fois sur place — alors que dans les établissements les plus demandés,
+        les listes d'attente se remplissent parfois un an à l'avance. Voici comment s'y
+        prendre sans perdre une rentrée scolaire.
+      </Lead>
+
+      <H2>Une démarche à lancer bien avant l'arrivée</H2>
+      <P>
+        C'est le premier réflexe à corriger : la scolarisation ne se règle pas après le
+        déménagement, elle se prépare en parallèle du dossier TAECHIR et de la carte de séjour.
+        J'ai eu le cas d'un cadre allemand muté à Casablanca en juillet, famille avec deux
+        enfants en primaire, persuadé qu'il trouverait une place à la rentrée de septembre
+        dans l'école française du quartier. Résultat : liste d'attente fermée depuis mars.
+        Les enfants ont fait leur première année dans un établissement de second choix, le
+        temps qu'une place se libère ailleurs.
+      </P>
+      <Info>
+        Dès que la date d'installation est à peu près connue — souvent au moment où le
+        dossier TAECHIR ou la demande de regroupement familial est déposée — c'est le bon
+        moment pour commencer à contacter les écoles. Certaines proposent une préinscription
+        même sans carte de séjour définitive.
+      </Info>
+
+      <H2>Les grandes familles d'écoles disponibles</H2>
+      <P>
+        Au Maroc, les familles étrangères ont en réalité plusieurs options, avec des logiques
+        et des budgets très différents.
+      </P>
+      <Table
+        rows={[
+          ['Type d\'établissement', 'Programme', 'Langue principale', 'Frais annuels indicatifs'],
+          ['Missions homologuées françaises (AEFE, OSUI, Mission Laïque)', 'Programme français, examens type brevet/bac', 'Français', 'Environ 25 000 à 45 000 Dhs selon le niveau'],
+          ['Écoles américaines / britanniques', 'Curriculum américain, IB ou British', 'Anglais', 'Souvent 60 000 à plus de 120 000 Dhs selon le niveau'],
+          ['Écoles privées marocaines bilingues', 'Programme marocain renforcé ou mixte', 'Arabe / Français', 'Environ 15 000 à 35 000 Dhs selon l\'établissement'],
+          ['École publique marocaine', 'Programme national marocain', 'Arabe (avec français en matières scientifiques)', 'Frais de scolarité quasi nuls, fournitures à charge'],
+        ]}
+      />
+      <P>
+        Ces montants varient fortement d'un établissement à l'autre et évoluent chaque année
+        — prenez-les comme un ordre de grandeur pour construire votre budget, pas comme un
+        tarif garanti. Le réseau homologué français reste souvent le choix par défaut des
+        familles expatriées, notamment parce qu'il facilite un retour ultérieur dans le
+        système scolaire d'origine. Mais ce n'est ni le seul choix, ni toujours le plus adapté
+        selon l'âge des enfants et la durée prévue du séjour.
+      </P>
+
+      <H2>Casablanca et Rabat, ou une ville secondaire : deux réalités différentes</H2>
+      <P>
+        L'offre n'est absolument pas la même selon la ville d'installation. À Casablanca et
+        Rabat, le choix est large — plusieurs missions françaises, plusieurs écoles
+        internationales anglophones, de nombreuses écoles bilingues privées — mais la
+        demande l'est tout autant, et les places les plus recherchées se comptent parfois en
+        dizaines seulement par niveau.
+      </P>
+      <P>
+        À Tanger, Marrakech ou Agadir, l'offre internationale existe mais reste plus limitée,
+        avec souvent un seul établissement homologué français par ville et peu d'alternatives
+        anglophones. J'ai accompagné une famille installée à Agadir pour un poste dans
+        l'aéronautique : la seule école française de la ville affichait complet sur plusieurs
+        niveaux, et il a fallu composer avec une école privée bilingue le temps qu'une place
+        se libère.
+      </P>
+      <Tip>
+        Si le poste de votre salarié étranger est situé dans une ville secondaire, renseignez-vous
+        sur l'offre scolaire avant même de finaliser le choix du logement — certaines familles
+        arbitrent leur lieu d'habitation en fonction de la proximité de l'école, pas l'inverse.
+      </Tip>
+
+      <H2>Le dossier d'inscription : ce qu'on vous demandera</H2>
+      <P>
+        Les pièces varient selon les établissements, mais on retrouve un socle commun dans
+        la quasi-totalité des dossiers :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Les bulletins scolaires des deux ou trois dernières années, souvent traduits et parfois légalisés — le même principe que pour les diplômes du dossier TAECHIR</li>
+        <li>Un certificat de radiation ou de scolarité de l'établissement précédent</li>
+        <li>Le passeport de l'enfant et, selon l'établissement, un justificatif du statut de séjour de la famille</li>
+        <li>Un extrait d'acte de naissance, parfois avec traduction</li>
+        <li>Le carnet de vaccination international</li>
+      </ul>
+      <P>
+        Pour les enfants qui changent de système éducatif — par exemple un passage d'un
+        curriculum britannique vers le programme français — beaucoup d'écoles organisent
+        aussi un test de niveau ou un entretien, surtout à partir du collège. C'est moins une
+        sélection qu'une vérification que l'enfant pourra suivre sereinement dans la langue
+        d'enseignement.
+      </P>
+      <Warning>
+        Ne sous-estimez pas le temps de traduction et de légalisation des bulletins et
+        certificats scolaires. Comme pour les diplômes du salarié étranger, un document non
+        conforme peut retarder une inscription de plusieurs semaines — exactement au moment
+        où vous n'avez plus de marge avant la rentrée.
+      </Warning>
+
+      <H2>Le calendrier réel des inscriptions</H2>
+      <Table
+        rows={[
+          ['Période', 'Ce qu\'il faut faire'],
+          ['9 à 12 mois avant la rentrée', 'Premiers contacts avec les écoles, préinscription sur liste d\'attente pour les établissements homologués les plus demandés'],
+          ['4 à 6 mois avant', 'Constitution du dossier complet, traduction et légalisation des bulletins et actes'],
+          ['1 à 3 mois avant', 'Confirmation de la place, test de niveau ou entretien si nécessaire, règlement des frais d\'inscription'],
+          ['À l\'arrivée', 'Remise des originaux, visite de l\'établissement, intégration progressive selon l\'âge'],
+        ]}
+      />
+      <P>
+        Ce calendrier peut sembler exagérément prudent pour une simple inscription scolaire.
+        Dans les faits, pour les établissements homologués les plus recherchés de Casablanca
+        et Rabat, il ne l'est pas : certaines listes d'attente se referment plusieurs mois
+        avant la rentrée de septembre, en particulier sur les petites classes du primaire où
+        le nombre de places par niveau est volontairement limité.
+      </P>
+
+      <H2>Le budget réel, au-delà des frais de scolarité affichés</H2>
+      <P>
+        Le montant annoncé par l'école n'est presque jamais le coût total. Il faut en général
+        y ajouter :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Des droits d'inscription ou une caution</strong> à régler une seule fois, parfois plusieurs milliers de dirhams, non systématiquement remboursables</li>
+        <li><strong>Les fournitures et l'uniforme</strong>, obligatoires dans de nombreux établissements privés</li>
+        <li><strong>Le transport scolaire</strong>, facturé séparément dans la plupart des cas</li>
+        <li><strong>La cantine et les activités périscolaires</strong>, rarement incluses dans les frais de base</li>
+      </ul>
+      <P>
+        Certains employeurs intègrent une prime ou un forfait scolarité dans le package
+        d'expatriation, comme évoqué dans notre article sur le coût total du recrutement
+        d'un étranger au Maroc. Si c'est votre cas, clarifiez avec l'employeur, avant la
+        signature du contrat, ce que le forfait couvre exactement — frais de scolarité seuls,
+        ou l'ensemble des coûts annexes.
+      </P>
+
+      <H2>Et si la famille repart, ou change d'école en cours de route ?</H2>
+      <P>
+        C'est une question que les parents se posent rarement au moment de l'inscription,
+        et qu'ils regrettent parfois de ne pas avoir anticipée. Les établissements homologués
+        français suivent un programme reconnu par l'Éducation nationale, ce qui facilite en
+        général un retour ou une poursuite de scolarité dans un autre pays du réseau. Un
+        passage par une école purement locale ou un programme atypique peut, à l'inverse,
+        compliquer une réintégration ultérieure dans un système étranger — sans que ce soit
+        pour autant rédhibitoire, surtout pour les plus jeunes niveaux.
+      </P>
+      <Info>
+        Pour les enfants proches d'examens déterminants — fin de collège ou de lycée — le choix
+        de l'établissement mérite une attention particulière sur la continuité des programmes,
+        surtout si un retour dans le pays d'origine est envisagé à moyen terme.
+      </Info>
+
+      <Divider />
+
+      <H2>Les erreurs les plus fréquentes</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Attendre d'être installé pour s'occuper de l'école.</strong> C'est de loin
+          l'erreur la plus coûteuse en temps — les meilleures places partent bien avant
+          l'arrivée effective de la famille.
+        </li>
+        <li>
+          <strong>Négliger la traduction et la légalisation des bulletins scolaires.</strong>
+          Ce sont souvent les derniers documents préparés, alors qu'ils conditionnent
+          l'inscription au même titre que les diplômes du dossier TAECHIR.
+        </li>
+        <li>
+          <strong>Sous-estimer le budget réel.</strong> Entre droits d'inscription, uniforme,
+          transport et cantine, le coût annuel dépasse souvent de 20 à 30% les frais de
+          scolarité affichés au départ.
+        </li>
+      </ul>
+
+      <LeadBox
+        title="Vous préparez l'installation d'un salarié étranger avec sa famille au Maroc ?"
+        cta="Être accompagné sur le dossier complet"
+      >
+        <p>
+          Carte de séjour, regroupement familial, scolarisation des enfants : décrivez-nous
+          votre situation et nous pouvons vous orienter vers les bonnes démarches, dans le
+          bon ordre.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Quand faut-il commencer les démarches de scolarisation au Maroc ?', a: 'Idéalement 9 à 12 mois avant la rentrée souhaitée pour les établissements homologués les plus demandés à Casablanca et Rabat, et au minimum quelques mois à l\'avance ailleurs.' },
+          { q: 'Peut-on préinscrire un enfant avant d\'avoir la carte de séjour ?', a: 'Oui, la plupart des établissements acceptent une préinscription sur la base d\'un dossier TAECHIR ou d\'une demande de regroupement familial en cours, sous réserve de régulariser le statut de séjour avant la rentrée.' },
+          { q: 'Les diplômes et bulletins scolaires étrangers doivent-ils être légalisés ?', a: 'C\'est fréquemment demandé, surtout pour un changement de système éducatif, selon la même logique de légalisation et de traduction assermentée que pour les documents du dossier TAECHIR.' },
+          { q: 'L\'école publique marocaine est-elle une option réaliste pour un enfant étranger ?', a: 'C\'est possible et peu coûteux, mais l\'enseignement se fait majoritairement en arabe, ce qui suppose une adaptation linguistique importante pour un enfant qui n\'a jamais été scolarisé dans cette langue.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4075,6 +4274,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Pas d\'employeur marocain, pas de dossier TAECHIR — mais pas non plus de vide juridique. Titre de séjour, résidence fiscale et couverture santé : ce qu\'un télétravailleur installé au Maroc doit réellement mettre en place.',
     Content: Article26Content,
+  },
+  {
+    slug: 'scolarite-enfants-etranger-maroc-ecoles-internationales',
+    title: 'Scolariser ses enfants au Maroc quand on est salarié étranger : écoles, inscription et budget',
+    description: 'Comment scolariser ses enfants au Maroc en tant que famille de salarié étranger : missions homologuées, écoles internationales, calendrier d\'inscription et budget réel.',
+    date: '8 septembre 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Missions françaises homologuées, écoles américaines ou britanniques, établissements bilingues : le calendrier des inscriptions se joue souvent un an à l\'avance. Le guide pour ne pas rater une rentrée.',
+    Content: Article27Content,
   },
 ];
 
