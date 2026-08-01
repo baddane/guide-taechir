@@ -307,4 +307,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 27 : Stagiaire étranger au Maroc, convention de stage -->
+  <url>
+    <loc>https://guide-taechir.org/blog/stagiaire-etranger-maroc-convention-stage</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

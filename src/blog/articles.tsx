@@ -3815,6 +3815,175 @@ function Article26Content() {
   );
 }
 
+/* ─── Article 27 ────────────────────────────────────────────────────────── */
+
+function Article27Content() {
+  return (
+    <>
+      <Lead>
+        « On n'a pas besoin de TAECHIR, c'est juste un stagiaire » — c'est la phrase que
+        j'entends le plus souvent quand une entreprise accueille un étudiant étranger pour
+        quelques mois. Le principe est vrai, mais la façon dont beaucoup d'entreprises
+        l'appliquent ne l'est pas. Le statut de stagiaire a ses propres règles, et les confondre
+        avec celles d'un salarié peut coûter cher aux deux, l'entreprise comme l'étudiant.
+      </Lead>
+
+      <H2>Stagiaire ou salarié : une distinction qui change tout</H2>
+      <P>
+        Le programme TAECHIR répond à une question précise : un employeur marocain veut-il
+        embaucher un étranger dans le cadre d'un <strong>contrat de travail</strong>, avec lien
+        de subordination et rémunération salariale ? Un stage, par nature, n'est pas ça. C'est une
+        mise en situation professionnelle rattachée à un cursus scolaire ou universitaire, encadrée
+        par une convention tripartite entre l'établissement, l'entreprise et l'étudiant — pas
+        un contrat de travail au sens du Code du Travail.
+      </P>
+      <P>
+        Tant que le stage reste un stage dans les faits, il n'y a donc ni attestation ANAPEC
+        ni contrat visé par le Ministère à prévoir. Mais cette dispense n'est pas un blanc-seing :
+        elle tient uniquement à la nature réelle de la relation, pas à l'étiquette qu'on lui colle.
+      </P>
+      <Info>
+        Un stage n'est pas une version allégée de TAECHIR pour éviter la procédure et ses frais.
+        C'est un statut à part entière, avec ses propres conditions — et ses propres limites,
+        que je détaille plus bas.
+      </Info>
+
+      <H2>La convention de stage tripartite : le document central</H2>
+      <P>
+        Tout repose sur cette convention, signée par l'établissement d'enseignement (marocain
+        ou étranger), l'entreprise d'accueil et l'étudiant. Elle doit préciser les missions
+        confiées, la durée, le rythme hebdomadaire, le nom du tuteur côté entreprise et
+        l'encadrant côté école, et l'indemnité éventuelle. C'est ce document, bien plus que
+        la nationalité de l'étudiant, qui légitime sa présence en entreprise.
+      </P>
+      <P>
+        J'ai vu une PME industrielle à Kénitra accueillir un stagiaire ivoirien d'une école
+        d'ingénieurs partenaire sans jamais faire signer de convention en bonne et due forme —
+        juste un échange d'emails. Lors d'un contrôle de routine, l'entreprise n'a eu aucun
+        document à présenter pour justifier la présence de l'étudiant sur site. Il a fallu
+        tout régulariser dans l'urgence, convention rétroactive comprise, ce qui n'a rassuré
+        personne côté inspection du travail.
+      </P>
+
+      <H3>L'étudiant déjà inscrit dans un établissement marocain</H3>
+      <P>
+        Cas le plus simple : un étudiant étranger déjà installé au Maroc pour ses études, titulaire
+        d'une carte de séjour « étudiant » en cours de validité, qui effectue un stage prévu dans
+        son cursus. Sa carte couvre déjà son séjour ; l'entreprise n'a rien à demander à la
+        préfecture pour lui. Il suffit de la convention de stage et, si l'entreprise le souhaite,
+        d'en informer son service RH pour le dossier interne.
+      </P>
+
+      <H3>L'étudiant qui vient spécifiquement de l'étranger pour le stage</H3>
+      <P>
+        Cas plus fréquent qu'on ne le croit avec les écoles partenaires (échanges académiques,
+        stages de fin d'études) : l'étudiant n'est pas encore au Maroc. Il doit alors obtenir
+        auprès du consulat marocain de son pays un visa lui permettant d'entrer sur la base de
+        la convention de stage et d'une attestation de scolarité. Si le stage dépasse 90 jours —
+        ce qui est le cas de la plupart des stages de fin d'études de 4 à 6 mois — une régularisation
+        auprès de la préfecture, généralement via une carte de séjour « étudiant », devient
+        nécessaire une fois sur place.
+      </P>
+      <Tip>
+        Lancez les démarches consulaires au moins 6 à 8 semaines avant le début du stage. Un
+        stage de fin d'études qui doit commencer le 1er du mois n'attend pas que le visa arrive —
+        et un stagiaire qui débarque sans visa adapté se retrouve à devoir repartir régulariser
+        sa situation depuis son pays d'origine.
+      </Tip>
+
+      <Table
+        rows={[
+          ['Critère', 'Stagiaire', 'Salarié TAECHIR'],
+          ['Base', 'Convention de stage tripartite', 'Contrat de travail visé par le Ministère'],
+          ['Attestation ANAPEC', 'Non requise', 'Requise sauf catégorie dispensée'],
+          ['Titre de séjour', 'Carte « étudiant » si stage > 90 jours', 'Carte de séjour « salarié » après le visa'],
+          ['Rémunération', 'Indemnité de stage, pas un salaire', 'Salaire selon le contrat visé'],
+          ['CNSS / AMO', 'Pas d\'affiliation salarié', 'Affiliation obligatoire dès le visa'],
+          ['Durée typique', '2 à 6 mois, non renouvelable indéfiniment', 'Durée du contrat, renouvelable'],
+        ]}
+      />
+
+      <H2>L'indemnité de stage : ce qu'il faut savoir</H2>
+      <P>
+        Contrairement à certains pays où une gratification minimale devient obligatoire au-delà
+        d'une certaine durée de stage, le droit marocain n'impose pas de seuil légal équivalent.
+        Dans la pratique, la plupart des entreprises sérieuses versent tout de même une indemnité
+        mensuelle, ne serait-ce que pour couvrir les frais de transport et de repas de l'étudiant.
+        Cette indemnité n'est pas un salaire : elle n'entre pas dans l'assiette des cotisations
+        CNSS et ne doit pas apparaître comme telle sur un bulletin de paie classique.
+      </P>
+      <Warning>
+        Une indemnité qui se rapproche du salaire d'un poste équivalent, versée sur la durée,
+        est un signal que l'inspection du travail regarde de près. Ce n'est pas le montant seul
+        qui pose problème, c'est la combinaison avec des missions et un rythme identiques à
+        ceux d'un salarié classique.
+      </Warning>
+
+      <H2>Le risque de requalification : quand le stage devient un emploi déguisé</H2>
+      <P>
+        C'est le point sur lequel j'insiste le plus auprès des entreprises qui accueillent
+        des stagiaires étrangers en continu. Un stage qui s'étire sur douze ou dix-huit mois,
+        sans lien avec un cursus en cours, avec des missions identiques à celles d'un poste
+        permanent et sans véritable encadrement pédagogique, cesse d'être un stage aux yeux
+        de l'inspection du travail — même si la convention initiale était parfaitement en règle.
+      </P>
+      <P>
+        J'ai accompagné une société de développement offshore à Rabat qui avait « prolongé »
+        le stage d'un développeur camerounais trois fois de suite sur près de quatorze mois,
+        sans jamais engager de dossier TAECHIR. Lors d'un contrôle, l'inspection a requalifié
+        la relation en contrat de travail depuis le premier renouvellement. Résultat : régularisation
+        rétroactive, cotisations CNSS dues avec majorations, et un dossier TAECHIR à monter en
+        urgence pour un salarié déjà présent sur le territoire depuis plus d'un an — la pire
+        configuration possible.
+      </P>
+      <Info>
+        Un stage isolé, même s'il se prolonge un peu au-delà de la durée prévue par la convention,
+        n'est pas automatiquement requalifié. Ce qui alerte l'inspection, c'est la répétition de
+        stages successifs sur le même poste sans perspective de contrat, ou une durée totale qui
+        dépasse largement ce que justifie un cursus pédagogique.
+      </Info>
+
+      <H2>Et après le stage ? La transition vers un vrai contrat</H2>
+      <P>
+        Beaucoup d'entreprises souhaitent logiquement embaucher le stagiaire étranger qu'elles
+        ont formé pendant plusieurs mois. Bonne nouvelle : rien ne l'interdit. Mauvaise nouvelle :
+        la période de stage ne dispense de rien et ne raccourcit aucun délai. Le dossier TAECHIR
+        se monte comme pour n'importe quel autre recrutement, attestation ANAPEC comprise si le
+        profil n'entre pas dans une catégorie dispensée ou une liste A1/A2.
+      </P>
+      <Tip>
+        Si l'objectif est d'embaucher le stagiaire à l'issue de son stage, lancez le dossier
+        ANAPEC dès le dernier mois de stage plutôt que d'attendre la fin officielle. Comptez
+        le délai standard de 4 à 6 semaines pour un profil classique — sans cette anticipation,
+        il y a presque toujours un trou entre la fin du stage et le début effectif du contrat,
+        pendant lequel l'étudiant n'a plus aucun statut qui l'autorise à rester sur le poste.
+      </Tip>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous accueillez ou souhaitez embaucher un stagiaire étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Convention de stage, titre de séjour adapté, transition vers un contrat TAECHIR :
+          chaque étape a ses pièges. Décrivez-nous votre situation et nous pouvons vous orienter
+          vers un spécialiste habitué à ces dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un stagiaire étranger a-t-il besoin d\'une attestation ANAPEC ?', a: 'Non. Le stage repose sur une convention tripartite avec un établissement d\'enseignement, pas sur un contrat de travail. La procédure ANAPEC/TAECHIR ne s\'applique qu\'aux relations salariales.' },
+          { q: 'Un stagiaire étranger a-t-il besoin d\'un visa spécifique ?', a: 'S\'il est déjà étudiant au Maroc avec une carte de séjour valide, non. S\'il vient spécifiquement de l\'étranger pour le stage, il doit obtenir un visa sur la base de la convention de stage, puis régulariser son séjour via une carte « étudiant » si le stage dépasse 90 jours.' },
+          { q: 'Un stage prolongé plusieurs fois peut-il être requalifié en contrat de travail ?', a: 'Oui. Des renouvellements successifs sur un même poste, sans lien avec un cursus en cours et avec des missions identiques à celles d\'un salarié, exposent l\'entreprise à une requalification par l\'inspection du travail, avec régularisation rétroactive à la clé.' },
+          { q: 'Peut-on embaucher directement un stagiaire étranger à la fin de son stage ?', a: 'Oui, mais aucune étape de TAECHIR n\'est raccourcie pour autant : attestation ANAPEC (sauf dispense) et contrat visé par le Ministère restent nécessaires, comme pour tout nouveau recrutement.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4075,6 +4244,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Pas d\'employeur marocain, pas de dossier TAECHIR — mais pas non plus de vide juridique. Titre de séjour, résidence fiscale et couverture santé : ce qu\'un télétravailleur installé au Maroc doit réellement mettre en place.',
     Content: Article26Content,
+  },
+  {
+    slug: 'stagiaire-etranger-maroc-convention-stage',
+    title: 'Accueillir un stagiaire étranger au Maroc : convention de stage et limites de TAECHIR',
+    description: 'Stage étudiant étranger au Maroc : pourquoi TAECHIR ne s\'applique pas, ce que doit contenir la convention de stage, le titre de séjour à prévoir et le risque de requalification en contrat de travail.',
+    date: '8 septembre 2026',
+    readTime: 7,
+    category: 'Stagiaires',
+    excerpt: '« C\'est juste un stagiaire, pas besoin de TAECHIR » — vrai en principe, risqué en pratique. Convention tripartite, titre de séjour et le point qui fait basculer un stage en emploi déguisé aux yeux de l\'inspection du travail.',
+    Content: Article27Content,
   },
 ];
 
