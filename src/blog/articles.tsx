@@ -3815,6 +3815,177 @@ function Article26Content() {
   );
 }
 
+/* ─── Article 27 ────────────────────────────────────────────────────────── */
+
+function Article27Content() {
+  return (
+    <>
+      <Lead>
+        C'est une confusion que je vois revenir sans arrêt : un employeur me demande de
+        "faire faire l'équivalence" du diplôme de son futur salarié étranger avant de monter
+        le dossier TAECHIR — alors que dans 9 cas sur 10, ce n'est pas du tout ce qu'on lui
+        demandera au guichet. L'équivalence de diplôme est une vraie procédure, utile et
+        parfois obligatoire, mais rarement pour les raisons qu'on croit.
+      </Lead>
+
+      <H2>Équivalence, légalisation, traduction : trois choses différentes</H2>
+      <P>
+        On mélange souvent ces trois démarches parce qu'elles concernent toutes le même bout
+        de papier — le diplôme — mais elles ne répondent pas à la même question.
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>La légalisation ou l'apostille</strong> atteste que le diplôme est authentique — qu'il a bien été émis par l'établissement indiqué. On en parle en détail dans notre guide sur la légalisation des documents étrangers.</li>
+        <li><strong>La traduction assermentée</strong> rend le contenu du diplôme lisible en français ou en arabe pour l'administration marocaine.</li>
+        <li><strong>L'équivalence</strong> va plus loin : elle compare le niveau du diplôme étranger à un diplôme marocain officiel et lui attribue une correspondance reconnue par l'État — bac, licence, master, doctorat.</li>
+      </ul>
+      <Info>
+        Un diplôme peut être parfaitement légalisé et traduit sans jamais avoir fait l'objet
+        d'une équivalence. Ce sont deux démarches indépendantes, qui ne se déclenchent pas au
+        même moment ni pour les mêmes raisons.
+      </Info>
+
+      <H2>Est-ce vraiment nécessaire pour un dossier TAECHIR ?</H2>
+      <P>
+        C'est la question qui revient le plus souvent, et la réponse surprend beaucoup
+        d'employeurs : pour la grande majorité des dossiers TAECHIR dans le secteur privé,
+        <strong> non</strong>. Comme on le détaille dans notre guide du recrutement, le
+        Ministère demande une copie certifiée conforme du diplôme, avec traduction assermentée
+        si besoin — pas une équivalence officielle. Le guichet vérifie que le poste correspond
+        au profil du salarié, pas que son diplôme a une correspondance administrative marocaine.
+      </P>
+      <P>Il y a cependant des situations où l'équivalence devient réellement nécessaire :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Les professions réglementées</strong> — médecin, pharmacien, architecte, expert-comptable, avocat — où l'inscription à un ordre professionnel marocain exige une équivalence reconnue avant même de pouvoir exercer.</li>
+        <li><strong>L'enseignement</strong>, dans le public comme dans certains établissements privés sous convention.</li>
+        <li><strong>La fonction publique</strong> ou les postes dans des organismes publics et semi-publics.</li>
+        <li><strong>La poursuite d'études</strong> au Maroc après l'embauche, ou une future demande de naturalisation où le niveau de diplôme est pris en compte.</li>
+      </ul>
+      <Tip>
+        Avant de vous lancer dans une démarche d'équivalence par précaution, vérifiez si le
+        poste concerné en a réellement besoin. J'ai vu des employeurs payer un traducteur
+        assermenté et lancer une procédure de plusieurs mois pour un poste d'ingénieur logiciel
+        en entreprise privée, alors qu'une simple copie certifiée conforme suffisait pour le
+        dossier TAECHIR.
+      </Tip>
+
+      <H2>Qui délivre l'équivalence, et pour quels diplômes</H2>
+      <P>
+        Pour les diplômes de l'enseignement supérieur — licence, master, doctorat, diplômes
+        d'ingénieur — c'est le <strong>Ministère de l'Enseignement Supérieur, de la Recherche
+        Scientifique et de l'Innovation</strong> (MESRSI) qui est compétent, via sa Direction
+        des Affaires Pédagogiques à Rabat. Pour le baccalauréat, la démarche relève plutôt du
+        Ministère de l'Éducation Nationale.
+      </P>
+      <Table
+        rows={[
+          ['Type de diplôme', 'Autorité compétente', 'Lieu de dépôt'],
+          ['Baccalauréat étranger', 'Ministère de l\'Éducation Nationale', 'Délégation régionale ou dépôt en ligne selon les cas'],
+          ['Licence, master', 'MESRSI — Direction des Affaires Pédagogiques', 'Rabat'],
+          ['Doctorat', 'MESRSI — Direction des Affaires Pédagogiques', 'Rabat'],
+          ['Diplômes de santé (médecine, pharmacie)', 'MESRSI, en lien avec le Ministère de la Santé', 'Rabat'],
+        ]}
+      />
+
+      <H2>Le dossier à préparer</H2>
+      <P>
+        La liste type, quel que soit le diplôme, ressemble à ceci :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Copie certifiée conforme du diplôme original</li>
+        <li>Traduction officielle en arabe ou en français, réalisée par un traducteur assermenté, si le diplôme n'est pas déjà dans l'une de ces deux langues</li>
+        <li>Relevés de notes de toutes les années d'études concernées</li>
+        <li>Attestation de l'établissement confirmant la reconnaissance du diplôme dans le pays d'origine</li>
+        <li>Diplôme légalisé ou apostillé selon le pays d'émission</li>
+        <li>Copie de la carte de séjour, de la CIN ou du passeport</li>
+        <li>Formulaire de demande d'équivalence dûment rempli</li>
+      </ul>
+      <Warning>
+        Un dossier d'équivalence incomplet n'est pas juste ralenti — il est le plus souvent
+        purement et simplement renvoyé, et il faut reconstituer l'ensemble avant de le redéposer.
+        Vérifiez systématiquement la légalisation ou l'apostille du diplôme avant le dépôt : c'est
+        le document qui coince le plus souvent.
+      </Warning>
+
+      <H2>Les délais, très variables selon le diplôme et le pays</H2>
+      <P>
+        C'est le point sur lequel il faut le moins se faire d'illusions : il n'y a pas de délai
+        garanti. En pratique, comptez <strong>2 à 4 mois</strong> pour un baccalauréat,
+        <strong> 3 à 6 mois</strong> pour une licence ou un master, et <strong>6 à 12 mois</strong>
+        {' '}pour les diplômes de santé, qui passent par une commission sectorielle plus exigeante.
+        Les diplômes d'universités européennes bien identifiées — France, Espagne, Belgique —
+        vont généralement plus vite que ceux d'établissements moins connus, pour lesquels le
+        MESRSI peut demander des pièces complémentaires ou un temps d'instruction plus long.
+      </P>
+      <P>
+        Pour les professions réglementées, ce délai a un impact direct sur la date de prise de
+        poste : un médecin étranger ne peut pas s'inscrire à l'Ordre national des médecins, donc
+        pas exercer légalement, tant que son équivalence n'est pas obtenue. Contrairement au
+        visa TAECHIR, on ne peut pas "faire commencer le salarié en attendant" — c'est un vrai
+        préalable.
+      </P>
+
+      <H2>La commission nationale d'équivalence : trois issues possibles</H2>
+      <P>
+        Le dossier déposé est examiné par une commission sectorielle, qui rend l'une des trois
+        décisions suivantes :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Équivalence accordée</strong> — le diplôme est reconnu tel quel, au niveau demandé.</li>
+        <li><strong>Équivalence accordée sous condition</strong> — un complément de formation, un stage ou un examen spécifique peut être exigé avant la reconnaissance définitive.</li>
+        <li><strong>Équivalence refusée</strong> — la commission estime que le contenu ou le volume horaire de la formation ne correspond pas au niveau marocain visé.</li>
+      </ul>
+      <P>
+        J'ai eu le cas d'une infirmière ivoirienne dont le diplôme a été reconnu sous condition
+        d'un stage pratique de quelques mois dans un établissement marocain avant validation
+        définitive. Frustrant sur le moment, mais ça reste beaucoup plus rapide qu'un refus pur
+        et simple, qui oblige à repartir sur un autre type de dossier ou de poste.
+      </P>
+
+      <H2>Les pièges que je vois le plus souvent</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Confondre légalisation et équivalence.</strong> Le diplôme apostillé et
+          traduit suffit très largement pour la majorité des dossiers TAECHIR — inutile de
+          lancer une procédure de plusieurs mois si le poste ne l'exige pas.
+        </li>
+        <li>
+          <strong>Croire qu'un diplôme européen est automatiquement reconnu.</strong> Même un
+          master d'une grande école française passe par la même commission que n'importe quel
+          autre diplôme étranger. Il n'y a pas de raccourci lié au pays d'origine.
+        </li>
+        <li>
+          <strong>Lancer la démarche trop tard</strong> pour une profession réglementée. Si le
+          poste visé nécessite une inscription à un ordre professionnel, il faut démarrer
+          l'équivalence des mois avant la date de prise de poste souhaitée — bien avant même
+          de penser au dossier TAECHIR.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un doute sur le diplôme d'un futur salarié étranger ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Équivalence nécessaire ou pas, quelle autorité saisir, quel délai anticiper : décrivez-nous
+          le poste et le profil, et nous pouvons vous orienter vers un spécialiste habitué à ces
+          dossiers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Faut-il une équivalence de diplôme pour monter un dossier TAECHIR ?', a: 'Dans la grande majorité des cas en entreprise privée, non : une copie certifiée conforme du diplôme, légalisée ou apostillée et traduite si besoin, suffit. L\'équivalence devient nécessaire surtout pour les professions réglementées, l\'enseignement ou la fonction publique.' },
+          { q: 'Qui délivre l\'équivalence des diplômes au Maroc ?', a: 'Pour les diplômes de l\'enseignement supérieur (licence, master, doctorat), c\'est le Ministère de l\'Enseignement Supérieur, de la Recherche Scientifique et de l\'Innovation, via sa Direction des Affaires Pédagogiques à Rabat. Le baccalauréat relève du Ministère de l\'Éducation Nationale.' },
+          { q: 'Combien de temps prend une équivalence de diplôme ?', a: 'Cela varie fortement : 2 à 4 mois pour un baccalauréat, 3 à 6 mois pour une licence ou un master, et 6 à 12 mois pour les diplômes de santé. Les diplômes d\'universités moins connues peuvent prendre plus de temps.' },
+          { q: 'Un diplôme européen est-il automatiquement reconnu au Maroc ?', a: 'Non. Même un diplôme d\'un pays européen passe par la même commission d\'équivalence que n\'importe quel autre diplôme étranger, sans traitement accéléré lié au pays d\'origine.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4075,6 +4246,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Pas d\'employeur marocain, pas de dossier TAECHIR — mais pas non plus de vide juridique. Titre de séjour, résidence fiscale et couverture santé : ce qu\'un télétravailleur installé au Maroc doit réellement mettre en place.',
     Content: Article26Content,
+  },
+  {
+    slug: 'equivalence-diplomes-etrangers-maroc',
+    title: 'Équivalence des diplômes étrangers au Maroc : quand est-elle vraiment nécessaire ?',
+    description: 'Équivalence, légalisation et traduction du diplôme d\'un salarié étranger au Maroc : ce que demande vraiment un dossier TAECHIR, quand l\'équivalence officielle est réellement obligatoire, et comment l\'obtenir auprès du MESRSI.',
+    date: '8 septembre 2026',
+    readTime: 7,
+    category: 'Documents',
+    excerpt: 'Un diplôme légalisé et traduit suffit pour la plupart des dossiers TAECHIR — l\'équivalence officielle, elle, ne devient obligatoire que dans des cas précis. Autorité compétente, pièces, délais et pièges à éviter.',
+    Content: Article27Content,
   },
 ];
 
