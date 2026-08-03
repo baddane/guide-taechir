@@ -315,4 +315,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 28 : Scolariser ses enfants au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/ecole-scolarisation-enfants-etrangers-maroc</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
