@@ -323,4 +323,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 29 : Étudiant étranger diplômé, visa de travail TAECHIR -->
+  <url>
+    <loc>https://guide-taechir.org/blog/etudiant-etranger-diplome-maroc-visa-travail-taechir</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

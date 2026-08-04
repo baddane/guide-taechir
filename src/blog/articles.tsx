@@ -4158,6 +4158,166 @@ function Article28Content() {
   );
 }
 
+function Article29Content() {
+  return (
+    <>
+      <Lead>
+        C'est une question que je reçois presque chaque printemps : un étudiant étranger
+        termine son master à l'université ou dans une business school au Maroc, décroche
+        une promesse d'embauche, et l'employeur me dit « il est déjà installé ici depuis
+        trois ans, pas besoin de TAECHIR non ? ». Mauvaise nouvelle : si, il en faut un.
+        Bonne nouvelle : la transition se prépare, et bien anticipée, elle passe sans accroc.
+      </Lead>
+
+      <H2>Le statut étudiant ne donne aucun droit au travail salarié</H2>
+      <P>
+        C'est le malentendu de départ. La carte de séjour "étudiant" autorise à résider au
+        Maroc pour suivre des études, éventuellement à faire un stage encadré par une
+        convention avec l'établissement — pas à occuper un poste salarié. Le nombre d'années
+        passées sur le territoire, même quatre ou cinq, ne crée aucune dispense particulière.
+        Le jour où l'étudiant signe un contrat de travail, il redevient un salarié étranger
+        comme un autre aux yeux du Ministère de l'Emploi.
+      </P>
+      <Info>
+        Une ancienneté de résidence au Maroc peut jouer plus tard, pour l'obtention d'une
+        carte de résident de longue durée par exemple — mais elle ne remplace jamais le
+        dossier TAECHIR au moment de l'embauche. Ce sont deux logiques différentes.
+      </Info>
+
+      <H2>Le stage de fin d'études n'est pas une embauche</H2>
+      <P>
+        Beaucoup de diplômés enchaînent un stage de fin d'études chez l'employeur qui va
+        ensuite les recruter. Tant que ce stage reste couvert par une convention signée avec
+        l'établissement d'enseignement — durée limitée, gratification éventuelle mais pas de
+        salaire, tuteur pédagogique désigné — il ne s'agit pas d'un contrat de travail et
+        TAECHIR ne s'applique pas.
+      </P>
+      <P>
+        Le glissement dangereux, c'est quand le stage se termine et que le jeune continue à
+        venir travailler « en attendant que le dossier TAECHIR soit prêt ». J'ai vu ça chez
+        un cabinet de conseil à Casablanca : la stagiaire ivoirienne a continué à facturer des
+        missions un mois et demi après la fin de sa convention de stage, pendant que le
+        dossier trainait. Techniquement, c'était du travail dissimulé sans visa. Le dossier a
+        fini par passer, mais l'entreprise s'est mise en risque pour rien.
+      </P>
+      <Warning>
+        Entre la fin de la convention de stage et l'obtention du visa TAECHIR, il ne doit y
+        avoir aucune activité salariée — même informelle, même « en attendant ». Soit la
+        convention de stage court encore, soit le contrat est visé. Il n'y a pas d'entre-deux.
+      </Warning>
+
+      <H2>L'ANAPEC : pas de dispense automatique pour les diplômés du Maroc</H2>
+      <P>
+        Autre idée reçue fréquente : « il a été formé ici, il connaît le marché marocain,
+        l'ANAPEC va forcément valider vite ». Sur le principe de la procédure, non : un
+        diplômé étranger d'une université marocaine suit exactement le même circuit qu'un
+        candidat recruté directement depuis l'étranger. L'attestation ANAPEC reste requise,
+        sauf si le profil entre dans une catégorie dispensée ou dans les listes de profils
+        rares A1/A2.
+      </P>
+      <Table
+        rows={[
+          ['Situation du diplômé', 'Passage ANAPEC', 'Ce qui change vraiment'],
+          ['Diplômé étranger, université marocaine, profil standard', 'Oui, procédure classique', 'Rien de spécifique lié aux études'],
+          ['Diplômé étranger, poste sur liste A1/A2', '48h, 1 500 Dhs', 'Comme tout profil rare, indépendamment du diplôme'],
+          ['Nationalité algérienne, tunisienne ou sénégalaise', 'Dispensé', 'Convention bilatérale, pas lié au statut étudiant'],
+          ['Époux/épouse de marocain(e)', 'Dispensé', 'Pièces de dispense classiques à fournir'],
+        ]}
+      />
+      <P>
+        En clair : ce qui déclenche une dispense ou une procédure allégée, c'est toujours la
+        nationalité, la situation familiale ou la rareté du poste — jamais le simple fait
+        d'avoir étudié au Maroc.
+      </P>
+
+      <H2>Le vrai enjeu : la course entre la fin de la carte étudiant et le visa TAECHIR</H2>
+      <P>
+        La carte de séjour étudiant expire en général quelques mois après l'obtention du
+        diplôme — le temps de la remise officielle des résultats. C'est là que le calendrier
+        devient serré : il faut faire tenir dans cette fenêtre l'attestation ANAPEC (jusqu'à
+        20 jours ouvrables en profil standard), la génération et la légalisation du contrat
+        TAECHIR, puis le dépôt et le visa au Ministère (jusqu'à 10 jours).
+      </P>
+      <P>
+        Si le contrat de travail est déjà signé avant la fin du stage, rien n'empêche de
+        lancer le dossier ANAPEC en amont, dès que le diplôme est acquis dans les faits même
+        si le parchemin officiel n'est pas encore délivré — une attestation de réussite
+        provisoire de l'établissement suffit généralement pour ouvrir le dossier.
+      </P>
+      <Tip>
+        Ne pas attendre la remise officielle du diplôme pour démarrer l'ANAPEC. L'attestation
+        de réussite délivrée par l'université ou l'école dès la publication des résultats est
+        acceptée dans la quasi-totalité des dossiers pour lancer la procédure.
+      </Tip>
+      <P>
+        Si malgré tout la carte de séjour étudiant arrive à expiration avant que le visa
+        TAECHIR ne soit délivré, il existe en pratique une tolérance administrative le temps
+        que le dossier TAECHIR aboutisse, à condition que le récépissé de dépôt puisse être
+        présenté. Mais c'est une zone grise qui varie selon les préfectures — mieux vaut ne
+        jamais compter dessus et garder plusieurs semaines de marge.
+      </P>
+
+      <H2>Diplôme étranger obtenu au Maroc : légalisation ou équivalence ?</H2>
+      <P>
+        Pour un diplôme délivré par un établissement marocain reconnu par l'État, la question
+        de l'équivalence ne se pose en général pas — c'est déjà un diplôme marocain. La
+        situation se complique pour les diplômes délivrés par des établissements étrangers
+        implantés au Maroc (campus délocalisés, doubles diplômes) : selon les cas, une
+        légalisation simple suffit, ou une équivalence devient nécessaire. Notre guide sur
+        l'équivalence des diplômes étrangers détaille les critères précis pour trancher.
+      </P>
+
+      <H2>Ce qui ne change pas par rapport à un recrutement classique</H2>
+      <P>
+        Une fois la question du statut étudiant écartée, le reste du dossier suit exactement
+        la même mécanique qu'un recrutement TAECHIR standard : CNSS de l'employeur à jour,
+        contrat en trois exemplaires légalisés, dépôt au guichet régional du Ministère,
+        déclaration CNSS du salarié dès le visa, puis demande de carte de séjour "salarié"
+        auprès de la DGSN pour remplacer la carte "étudiant".
+      </P>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Compter sur les années de résidence pour éviter TAECHIR.</strong> Ça ne
+          marche jamais — seule la nationalité, la situation familiale ou la rareté du poste
+          ouvrent droit à une dispense.
+        </li>
+        <li>
+          <strong>Laisser le stage glisser vers un emploi de fait.</strong> C'est l'erreur la
+          plus fréquente et la plus risquée pour l'employeur, à cause du vide entre la fin de
+          la convention et le visa.
+        </li>
+        <li>
+          <strong>Sous-estimer le délai de bascule entre les deux cartes de séjour.</strong>
+          {' '}La carte "étudiant" et la carte "salarié" sont deux titres distincts, la seconde
+          ne se délivre qu'une fois le contrat TAECHIR visé.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un jeune diplômé étranger à embaucher à la sortie de ses études ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Stage de fin d'études, calendrier serré avant l'expiration de la carte étudiant,
+          premier dossier TAECHIR : décrivez-nous votre situation, nous pouvons vous orienter
+          vers les bons interlocuteurs pour ne pas perdre de temps sur ce recrutement.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un étudiant étranger diplômé au Maroc doit-il quand même passer par TAECHIR ?', a: 'Oui. Le statut étudiant n\'accorde aucun droit au travail salarié, quelle que soit la durée de résidence au Maroc. Dès qu\'un contrat de travail est signé, la procédure TAECHIR classique s\'applique, avec passage par l\'ANAPEC sauf cas de dispense (nationalité, situation familiale, profil rare A1/A2).' },
+          { q: 'Le stage de fin d\'études compte-t-il comme une période de travail dispensée de TAECHIR ?', a: 'Oui, tant qu\'il reste couvert par une convention de stage signée avec l\'établissement d\'enseignement, avec une durée limitée et un tuteur pédagogique désigné. Dès que le stage se termine, toute activité salariée doit attendre le visa TAECHIR, sans période intermédiaire.' },
+          { q: 'Faut-il attendre la remise officielle du diplôme pour lancer le dossier ANAPEC ?', a: 'Non. Une attestation de réussite provisoire délivrée par l\'université ou l\'école dès la publication des résultats est acceptée dans la quasi-totalité des dossiers pour ouvrir la procédure ANAPEC, sans attendre le parchemin définitif.' },
+          { q: 'Que se passe-t-il si la carte de séjour étudiant expire avant l\'obtention du visa TAECHIR ?', a: 'Une tolérance administrative existe souvent le temps que le dossier TAECHIR aboutisse, sur présentation du récépissé de dépôt, mais elle varie selon les préfectures. Il vaut mieux lancer la procédure suffisamment tôt pour ne jamais s\'appuyer sur cette tolérance.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4438,6 +4598,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Ce n\'est pas la carte de séjour de l\'enfant qui bloque l\'inscription, ce sont les places disponibles. Réseau français, écoles internationales ou privé bilingue : le guide complet pour scolariser ses enfants au Maroc sans perdre une rentrée.',
     Content: Article28Content,
+  },
+  {
+    slug: 'etudiant-etranger-diplome-maroc-visa-travail-taechir',
+    title: 'Étudiant étranger diplômé au Maroc : comment obtenir un visa de travail TAECHIR après les études',
+    description: 'Un étudiant étranger diplômé au Maroc qui trouve un emploi doit passer par le dossier TAECHIR comme n\'importe quel salarié étranger : stage de fin d\'études, ANAPEC, calendrier serré avec la carte de séjour étudiant et bascule vers la carte "salarié".',
+    date: '22 septembre 2026',
+    readTime: 7,
+    category: 'Procédure',
+    excerpt: 'Des années de résidence au Maroc ne dispensent jamais de TAECHIR. Stage de fin d\'études, passage ANAPEC, course contre l\'expiration de la carte étudiant : ce qui change vraiment pour un jeune diplômé étranger qui décroche son premier poste au Maroc.',
+    Content: Article29Content,
   },
 ];
 
