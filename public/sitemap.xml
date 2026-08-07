@@ -323,4 +323,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 29 : Importer sa voiture au Maroc en tant que salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/importer-voiture-etranger-maroc-admission-temporaire</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

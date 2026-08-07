@@ -4158,6 +4158,201 @@ function Article28Content() {
   );
 }
 
+/* ─── Article 29 ────────────────────────────────────────────────────────── */
+
+function Article29Content() {
+  return (
+    <>
+      <Lead>
+        C'est une question qui revient presque à chaque installation : "je garde ma voiture,
+        je peux l'amener au Maroc ?" La réponse est oui, mais pas n'importe comment. Le régime
+        qui s'applique s'appelle l'admission temporaire douanière, et si vous ne respectez pas
+        ses règles, vous pouvez vous retrouver avec un véhicule bloqué à la douane — ou pire,
+        une amende salée à la sortie du territoire.
+      </Lead>
+
+      <H2>Le principe : l'admission temporaire, pas l'importation définitive</H2>
+      <P>
+        Un salarié étranger qui s'installe au Maroc n'a pas besoin de dédouaner définitivement
+        son véhicule personnel pour pouvoir rouler avec. L'Administration des Douanes et Impôts
+        Indirects (ADII) prévoit un régime spécifique : l'<strong>admission temporaire (AT)</strong>.
+        Concrètement, votre voiture entre au Maroc en franchise des droits et taxes normalement
+        dus à l'importation, à condition qu'elle reste immatriculée à l'étranger, qu'elle ne soit
+        ni vendue ni prêtée sur place, et qu'elle finisse par ressortir du territoire — ou soit
+        dédouanée définitivement plus tard si vous décidez de la garder pour de bon.
+      </P>
+      <Info>
+        L'admission temporaire n'est pas réservée aux salariés TAECHIR. Elle concerne tout
+        résident étranger qui s'installe au Maroc avec un titre de séjour valide. Mais dans les
+        faits, c'est un sujet qui revient très souvent une fois le contrat visé et le
+        déménagement lancé — d'où sa place ici.
+      </Info>
+
+      <H2>Qui peut en bénéficier ?</H2>
+      <P>
+        Le régime vise les personnes qui transfèrent leur résidence habituelle au Maroc, pas les
+        touristes de passage (qui ont leur propre régime, plus court). Pour un salarié étranger
+        embauché via TAECHIR, les conditions généralement demandées sont :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Être titulaire d'une carte de séjour marocaine en cours de validité (ou en cours d'obtention, selon le bureau douanier)</li>
+        <li>Le véhicule doit vous appartenir personnellement, immatriculé à votre nom à l'étranger depuis un certain temps avant votre arrivée</li>
+        <li>Le véhicule ne doit pas être destiné à un usage commercial au Maroc</li>
+        <li>Une seule voiture par foyer, en général — au-delà, la douane pose des questions</li>
+      </ul>
+      <P>
+        J'ai eu le cas d'un cadre belge à Casablanca qui pensait pouvoir faire venir la voiture
+        de sa femme en même temps que la sienne, sous le même dossier. Le bureau douanier a
+        refusé : un véhicule par titre de séjour, chacun devait faire sa propre demande avec
+        ses propres justificatifs.
+      </P>
+
+      <H2>Les documents à réunir</H2>
+      <P>
+        La liste précise peut varier légèrement d'un bureau douanier à l'autre — port d'entrée,
+        aéroport, ou poste frontière terrestre — mais le socle commun ressemble à ceci :
+      </P>
+      <Table
+        rows={[
+          ['Document', 'À propos'],
+          ['Carte grise étrangère', 'Le véhicule doit être à votre nom'],
+          ['Passeport et carte de séjour', 'Ou récépissé de dépôt si la carte est en cours'],
+          ['Carte verte internationale ou assurance frontière', 'Le véhicule doit être assuré dès l\'entrée sur le territoire'],
+          ['Justificatif de domicile au Maroc', 'Bail, attestation d\'hébergement ou facture récente'],
+          ['Contrat de travail visé', 'Preuve que vous transférez votre résidence pour un motif professionnel'],
+        ]}
+      />
+      <Tip>
+        Faites une photocopie de tous ces documents avant de vous présenter au bureau de douane
+        — j'ai vu plusieurs dossiers traîner simplement parce que le guichet n'avait pas de
+        photocopieuse disponible ce jour-là.
+      </Tip>
+
+      <H2>Combien de temps ça dure, et comment ça se renouvelle</H2>
+      <P>
+        L'admission temporaire est accordée pour une durée initiale limitée, généralement de
+        l'ordre de six mois, renouvelable auprès du même bureau douanier tant que votre situation
+        de résident reste valable. Dans la pratique, tant que votre carte de séjour est à jour et
+        que vous n'avez pas d'antécédent avec la douane, les renouvellements successifs se passent
+        sans difficulté particulière.
+      </P>
+      <Warning>
+        Les durées et modalités exactes de renouvellement peuvent évoluer et varient parfois
+        selon le bureau douanier concerné. Ne vous fiez pas uniquement à ce qu'un ami expatrié
+        vous a raconté : demandez une confirmation écrite ou orale précise à votre bureau de
+        douane local avant l'échéance de votre autorisation.
+      </Warning>
+      <P>
+        Le point à ne jamais rater : la date d'expiration de l'AT. Un véhicule qui circule au
+        Maroc avec une admission temporaire expirée est en situation irrégulière, et ça peut
+        aller jusqu'à la saisie du véhicule lors d'un contrôle. Notez la date quelque part et
+        anticipez le renouvellement au moins un mois avant l'échéance.
+      </P>
+
+      <H2>Ce qui est formellement interdit pendant l'AT</H2>
+      <P>
+        Un véhicule en admission temporaire n'a pas quitté son statut de "véhicule étranger de
+        passage" aux yeux de la douane, même s'il reste plusieurs années sur le territoire. Ça
+        implique des règles strictes :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Interdiction de le vendre, le donner ou le prêter durablement à un résident marocain</li>
+        <li>Interdiction de le laisser conduire par un tiers qui n'est pas couvert par votre autorisation, sauf exceptions encadrées (conjoint, par exemple, selon les règles locales)</li>
+        <li>Interdiction de le laisser au Maroc en repartant définitivement sans régulariser sa situation douanière au préalable</li>
+      </ul>
+      <Warning>
+        Un salarié étranger à Tanger a voulu revendre sa voiture à un collègue marocain juste
+        avant de rentrer dans son pays, pour éviter les frais de réexportation. La transaction
+        s'est faite sans en informer la douane. Résultat : le véhicule a été considéré comme
+        importé en fraude, avec amende et régularisation forcée pour l'acheteur. Ne faites jamais
+        ça — la seule sortie propre, c'est la réexportation ou le dédouanement définitif déclaré.
+      </Warning>
+
+      <H2>À l'expiration : trois options, pas une de plus</H2>
+      <Table
+        rows={[
+          ['Option', 'Ce que ça implique', 'Quand la choisir'],
+          ['Réexporter le véhicule', 'Le faire sortir physiquement du Maroc, constaté par la douane', 'Fin de mission, retour au pays d\'origine'],
+          ['Dédouaner définitivement', 'Payer les droits et taxes d\'importation, calculés sur la valeur du véhicule dégressive selon son ancienneté', 'Vous vous installez durablement et voulez garder la voiture au Maroc'],
+          ['Renouveler l\'admission temporaire', 'Reconduire l\'autorisation avant son expiration', 'Votre séjour au Maroc se poursuit'],
+        ]}
+      />
+      <P>
+        Le dédouanement définitif peut représenter une somme importante — les droits sont
+        calculés sur une valeur vénale qui tient compte de l'âge du véhicule, et les taux varient
+        selon la cylindrée et le type de motorisation. Avant de vous décider, demandez une
+        simulation précise à votre bureau de douane ou à un transitaire : selon l'ancienneté de
+        la voiture, il est parfois plus économique de la revendre dans votre pays d'origine et
+        d'en racheter une au Maroc que de la dédouaner.
+      </P>
+
+      <H2>Cas particulier : véhicule de fonction ou de leasing</H2>
+      <P>
+        Si le véhicule appartient à votre employeur d'origine ou à une société de leasing
+        étrangère plutôt qu'à vous personnellement, le dossier se complique un peu : il faut
+        généralement une lettre de mise à disposition de l'entreprise ou du loueur, en plus des
+        justificatifs habituels. Certains bureaux douaniers sont plus stricts sur ce point,
+        car ils veulent s'assurer que le véhicule ne sert pas à une activité commerciale
+        déguisée au Maroc.
+      </P>
+      <Info>
+        Pour un véhicule de société qui vous accompagne depuis votre pays d'origine, prévenez
+        votre employeur en amont : il devra probablement fournir une attestation officielle sur
+        papier à en-tête, parfois légalisée, précisant que le véhicule reste sa propriété et que
+        vous en avez l'usage personnel dans le cadre de votre mission au Maroc.
+      </Info>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Attendre la carte de séjour définitive pour se lancer.</strong> Certains bureaux
+          douaniers acceptent d'ouvrir le dossier avec un récépissé de dépôt de la demande de
+          carte de séjour — inutile d'attendre des semaines les bras croisés si votre véhicule
+          est déjà sur place.
+        </li>
+        <li>
+          <strong>Oublier l'assurance dès l'entrée sur le territoire.</strong> Une carte verte
+          internationale a une couverture et une durée limitées ; vérifiez qu'elle reste valable
+          jusqu'à ce que vous ayez souscrit une assurance marocaine ou renouvelé la couverture
+          internationale.
+        </li>
+        <li>
+          <strong>Laisser filer la date d'expiration de l'AT.</strong> C'est de loin l'erreur la
+          plus fréquente et la plus coûteuse à corriger — un renouvellement anticipé prend
+          quelques minutes, une régularisation après coup peut prendre des semaines.
+        </li>
+        <li>
+          <strong>Confondre admission temporaire et immatriculation marocaine.</strong> Tant que
+          le véhicule est en AT, il garde ses plaques d'origine. Le faire immatriculer au Maroc
+          en cours d'AT sans passer par le dédouanement définitif n'est pas une option légale.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un déménagement à organiser en même temps que votre dossier TAECHIR ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Véhicule personnel, logement, carte de séjour, scolarisation des enfants : l'installation
+          d'un salarié étranger au Maroc comporte plusieurs démarches parallèles. Décrivez-nous
+          votre situation, nous pouvons vous orienter vers les bons interlocuteurs.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il rouler au Maroc avec sa voiture immatriculée à l\'étranger ?', a: 'Oui, via le régime de l\'admission temporaire douanière (AT), qui permet de faire entrer un véhicule personnel en franchise des droits et taxes normalement dus à l\'importation, sous conditions de résidence et de non-cession sur place.' },
+          { q: 'Combien de temps dure une admission temporaire de véhicule au Maroc ?', a: 'La durée initiale est généralement de l\'ordre de six mois, renouvelable auprès du bureau douanier tant que le titre de séjour reste valide. Les modalités précises de renouvellement peuvent varier selon le bureau : il vaut mieux confirmer directement auprès de la douane locale.' },
+          { q: 'Peut-on vendre sa voiture en admission temporaire à un résident marocain ?', a: 'Non, c\'est formellement interdit tant que le véhicule est sous ce régime. Une vente non déclarée expose à une requalification en importation frauduleuse, avec amende et régularisation forcée pour l\'acheteur.' },
+          { q: 'Que se passe-t-il si l\'admission temporaire expire sans être renouvelée ?', a: 'Le véhicule se retrouve en situation irrégulière vis-à-vis de la douane, ce qui peut aller jusqu\'à sa saisie lors d\'un contrôle. Il faut impérativement renouveler l\'autorisation avant son échéance ou entamer les démarches de réexportation ou de dédouanement définitif.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4438,6 +4633,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Ce n\'est pas la carte de séjour de l\'enfant qui bloque l\'inscription, ce sont les places disponibles. Réseau français, écoles internationales ou privé bilingue : le guide complet pour scolariser ses enfants au Maroc sans perdre une rentrée.',
     Content: Article28Content,
+  },
+  {
+    slug: 'importer-voiture-etranger-maroc-admission-temporaire',
+    title: 'Importer sa voiture au Maroc en tant que salarié étranger : admission temporaire douanière',
+    description: 'Comment un salarié étranger peut faire entrer son véhicule personnel au Maroc : régime de l\'admission temporaire douanière, documents requis, durée, renouvellement et options à l\'expiration.',
+    date: '22 septembre 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Pas besoin de dédouaner sa voiture pour rouler au Maroc en tant que résident étranger — le régime de l\'admission temporaire le permet, à condition d\'en respecter les règles. Documents, durée, renouvellement et pièges à éviter.',
+    Content: Article29Content,
   },
 ];
 
