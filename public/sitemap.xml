@@ -331,4 +331,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 30 : Déménager ses affaires personnelles au Maroc -->
+  <url>
+    <loc>https://guide-taechir.org/blog/demenagement-effets-personnels-maroc-douane</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

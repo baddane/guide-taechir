@@ -4353,6 +4353,198 @@ function Article29Content() {
   );
 }
 
+/* ─── Article 30 ─────────────────────────────────────────────────────────── */
+
+function Article30Content() {
+  return (
+    <>
+      <Lead>
+        Entre la carte de séjour, le contrat visé et la recherche d'un logement, un point est
+        presque toujours réglé au dernier moment : que faire de ses meubles et de ses affaires
+        personnelles ? Bonne nouvelle, il existe une franchise douanière pensée exactement pour
+        ça. Mauvaise nouvelle, elle est mal connue et beaucoup de salariés étrangers découvrent
+        les règles une fois le conteneur déjà en mer — trop tard pour les respecter sereinement.
+      </Lead>
+
+      <H2>La franchise douanière pour transfert de résidence : le principe</H2>
+      <P>
+        Comme pour un véhicule personnel (voir notre guide sur{' '}
+        <Link to="/blog/importer-voiture-etranger-maroc-admission-temporaire" className="text-indigo-600 font-medium hover:underline">
+          l'admission temporaire des véhicules
+        </Link>
+        ), l'Administration des Douanes et Impôts Indirects (ADII) prévoit un régime allégé pour
+        les personnes qui transfèrent réellement leur résidence habituelle au Maroc. Il permet
+        d'importer son mobilier, son électroménager et ses effets personnels usagés en franchise
+        des droits et taxes normalement dus à l'importation, dans certaines limites.
+      </P>
+      <Info>
+        Le mot clé est « usagés ». La franchise vise des biens qui vous ont réellement servi dans
+        votre pays d'origine, pas du matériel neuf encore emballé acheté juste avant le départ
+        pour profiter de l'exonération. La douane peut demander des justificatifs d'ancienneté
+        d'usage sur les articles de valeur.
+      </Info>
+
+      <H2>Qui peut en bénéficier ?</H2>
+      <P>
+        Le régime s'adresse aux personnes qui prouvent un transfert réel et durable de leur
+        résidence, pas à celles qui viennent tenter une installation temporaire. Pour un salarié
+        étranger recruté via TAECHIR, les conditions généralement demandées sont :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Avoir résidé à l'étranger de façon continue pendant une durée minimale avant l'arrivée (habituellement au moins un an, à confirmer auprès du bureau douanier)</li>
+        <li>Être titulaire d'une carte de séjour marocaine en cours de validité, ou d'un récépissé de dépôt de la demande selon les bureaux</li>
+        <li>Ne pas avoir déjà bénéficié de cette franchise lors d'une installation précédente au Maroc</li>
+        <li>Les biens doivent vous appartenir personnellement et avoir été en votre possession et usage avant le déménagement</li>
+      </ul>
+      <P>
+        J'ai vu le cas d'une famille canadienne à Rabat qui pensait pouvoir cumuler la franchise
+        de transfert de résidence de la mère ET celle du père sur un seul inventaire commun pour
+        doubler le plafond de valeur admis. Le bureau douanier a exigé deux dossiers séparés,
+        chacun rattaché à sa propre carte de séjour et son propre inventaire détaillé.
+      </P>
+
+      <H2>Ce qui est couvert, et ce qui ne l'est pas</H2>
+      <Table
+        rows={[
+          ['Catégorie', 'Traitement en franchise'],
+          ['Meubles, literie, vaisselle, linge de maison', 'Oui, si usagés et raisonnables en quantité'],
+          ['Électroménager (réfrigérateur, machine à laver, etc.)', 'Oui, en général un seul exemplaire par type d\'appareil'],
+          ['Vêtements, livres, effets personnels', 'Oui, sans difficulté particulière'],
+          ['Matériel informatique et électronique personnel', 'Oui, en quantité raisonnable pour un usage familial'],
+          ['Véhicule automobile', 'Non — régime distinct de l\'admission temporaire, voir notre guide dédié'],
+          ['Marchandises neuves ou en grande quantité', 'Non — traitées comme une importation commerciale classique'],
+          ['Armes, alcool, biens réglementés', 'Non ou soumis à autorisation spécifique'],
+        ]}
+      />
+
+      <H2>Les documents à réunir</H2>
+      <P>
+        La liste précise varie légèrement d'un bureau douanier à l'autre, mais le socle commun
+        que demande la plupart des transitaires ressemble à ceci :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Inventaire détaillé et valorisé</strong> des biens transportés, en français ou traduit, si possible établi et signé par le déménageur</li>
+        <li><strong>Carte de séjour ou récépissé de dépôt</strong>, plus une copie du passeport</li>
+        <li><strong>Contrat de travail visé</strong> ou attestation de l'employeur justifiant le motif de l'installation</li>
+        <li><strong>Justificatif de résidence antérieure à l'étranger</strong> (bail, factures, ou attestation de l'employeur précédent)</li>
+        <li><strong>Justificatif de domicile au Maroc</strong>, même provisoire, pour la livraison</li>
+        <li><strong>Connaissement ou titre de transport</strong> (maritime, aérien ou routier) émis par le transporteur ou le déménageur</li>
+      </ul>
+      <Tip>
+        Faites établir l'inventaire par le déménageur avant le départ, pièce par pièce, avec une
+        valeur estimée pour chaque poste. Un inventaire vague du type « divers cartons » est la
+        première cause de blocage et de contrôle approfondi à l'arrivée.
+      </Tip>
+
+      <H2>Le calendrier : un point à ne pas négliger</H2>
+      <P>
+        La franchise n'est pas ouverte indéfiniment. Dans la plupart des cas, les effets
+        personnels doivent arriver au Maroc dans une fenêtre resserrée autour de votre propre
+        installation — généralement de l'ordre de quelques mois avant ou après votre arrivée
+        effective sur le territoire, pas des années plus tard.
+      </P>
+      <Warning>
+        Les délais exacts et les modalités peuvent évoluer et varier selon le bureau douanier
+        concerné. Ne calez jamais un déménagement international sur ce que vous a raconté un
+        collègue expatrié : demandez une confirmation précise à votre transitaire ou au bureau
+        de douane du port ou de l'aéroport de destination avant de réserver le transport.
+      </Warning>
+      <P>
+        Dans la pratique, beaucoup de salariés font le choix d'arriver avec l'essentiel en
+        bagages et de faire suivre le mobilier quelques semaines plus tard, une fois le logement
+        trouvé — c'est souvent plus simple que de tout synchroniser sur une seule date.
+      </P>
+
+      <H2>Comment se déroule concrètement le dédouanement</H2>
+      <P>
+        En pratique, très peu de particuliers gèrent ce dossier seuls de bout en bout. Le circuit
+        habituel passe par un déménageur international qui travaille avec un transitaire local
+        au Maroc :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Le déménageur d'origine enlève vos biens, établit l'inventaire et organise le transport (groupage ou conteneur complet)</li>
+        <li>Le transitaire marocain reçoit le dossier, dépose la déclaration en douane et présente l'inventaire au bureau compétent</li>
+        <li>Un contrôle physique, complet ou par sondage, peut être effectué à l'arrivée</li>
+        <li>Une fois la franchise accordée, les biens sont libérés et livrés à votre nouveau domicile</li>
+      </ul>
+      <Info>
+        Le recours à un transitaire n'est pas obligatoire sur le papier, mais dans les faits il
+        simplifie énormément les choses : il connaît les usages du bureau douanier concerné et
+        évite les allers-retours de documents qui font perdre des semaines à un particulier non
+        initié.
+      </Info>
+
+      <H2>Combien ça coûte réellement, franchise ou pas</H2>
+      <P>
+        « Franchise » ne veut pas dire gratuit. Elle exonère des droits et taxes d'importation,
+        mais pas des frais logistiques, qui restent souvent le poste le plus lourd du budget
+        déménagement :
+      </P>
+      <Table
+        rows={[
+          ['Poste de dépense', 'Ordre de grandeur'],
+          ['Transport en groupage (quelques mètres cubes)', 'Le plus économique, mais délai plus long'],
+          ['Conteneur complet (20 ou 40 pieds)', 'Le plus cher, mais délai plus court et plus de place'],
+          ['Frais de transitaire et de dédouanement au Maroc', 'Généralement facturé en sus du transport'],
+          ['Assurance transport (fortement recommandée)', 'Souvent proposée en option par le déménageur'],
+          ['Manutention et livraison au domicile final', 'Peut varier selon l\'accessibilité du logement'],
+        ]}
+      />
+      <Warning>
+        Ne partez jamais sans assurance transport, même pour quelques cartons. En cas de casse ou
+        de perte pendant un transport maritime long, l'indemnisation de base du transporteur est
+        souvent dérisoire par rapport à la valeur réelle des biens.
+      </Warning>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Faire partir le conteneur avant d'avoir la carte de séjour ou le récépissé.</strong>{' '}
+          Sans ce document, le dossier de franchise ne peut généralement pas être ouvert à
+          l'arrivée — mieux vaut vérifier avec le transitaire avant d'enlever quoi que ce soit.
+        </li>
+        <li>
+          <strong>Inclure du matériel neuf dans l'inventaire « effets usagés ».</strong> Un
+          téléviseur ou un ordinateur encore sous emballage d'origine attire l'attention et peut
+          être requalifié en importation commerciale, taxée au taux normal.
+        </li>
+        <li>
+          <strong>Sous-estimer la valeur déclarée pour payer moins de frais d'assurance.</strong>{' '}
+          En cas de sinistre, l'indemnisation sera plafonnée à la valeur déclarée — pas à la
+          valeur réelle des biens perdus ou cassés.
+        </li>
+        <li>
+          <strong>Laisser traîner le dossier après l'arrivée du conteneur au port.</strong> Des
+          frais de magasinage (stockage) courent dès l'arrivée de la marchandise et s'accumulent
+          vite si les documents ne suivent pas rapidement.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un déménagement international à préparer en parallèle de votre dossier TAECHIR ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Effets personnels, logement, carte de séjour, scolarisation des enfants : l'installation
+          d'un salarié étranger au Maroc comporte plusieurs démarches à mener de front. Décrivez-
+          nous votre situation, nous pouvons vous orienter vers les bons interlocuteurs.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Peut-on importer ses meubles au Maroc sans payer de droits de douane ?', a: 'Oui, via la franchise douanière pour transfert de résidence, qui exonère des droits et taxes normalement dus à l\'importation les effets personnels usagés d\'une personne qui s\'installe réellement et durablement au Maroc, sous conditions et dans certaines limites.' },
+          { q: 'Faut-il attendre la carte de séjour avant de faire venir ses affaires ?', a: 'Dans la plupart des cas, le dossier de franchise s\'appuie sur la carte de séjour ou, selon les bureaux, sur un récépissé de dépôt de la demande. Il vaut mieux vérifier ce point avec son transitaire avant d\'enlever le déménagement.' },
+          { q: 'Le véhicule personnel est-il inclus dans cette franchise ?', a: 'Non, un véhicule automobile relève d\'un régime distinct, l\'admission temporaire douanière, avec ses propres conditions et sa propre durée de validité.' },
+          { q: 'Que se passe-t-il si l\'inventaire contient des objets neufs ?', a: 'La franchise vise les effets usagés ayant réellement servi avant le départ. Des biens neufs ou en grande quantité peuvent être requalifiés en importation commerciale et taxés au régime normal.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4643,6 +4835,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Pas besoin de dédouaner sa voiture pour rouler au Maroc en tant que résident étranger — le régime de l\'admission temporaire le permet, à condition d\'en respecter les règles. Documents, durée, renouvellement et pièges à éviter.',
     Content: Article29Content,
+  },
+  {
+    slug: 'demenagement-effets-personnels-maroc-douane',
+    title: 'Déménager ses affaires personnelles au Maroc : la franchise douanière expliquée',
+    description: 'Comment un salarié étranger fait venir ses meubles et effets personnels au Maroc en franchise de droits de douane : conditions, documents, délais et coûts réels malgré la franchise.',
+    date: '29 septembre 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Il existe une franchise douanière pensée pour les salariés étrangers qui transfèrent leur résidence au Maroc — encore faut-il connaître ses conditions et son calendrier avant d\'enlever le déménagement. Le guide complet, documents et pièges inclus.',
+    Content: Article30Content,
   },
 ];
 
