@@ -28,6 +28,17 @@ export interface Lead {
   created_at: string;
 }
 
+/** Ligne du pipeline partenaires (onglet Outreach). */
+export interface OutreachRow {
+  partner_id: string;
+  name: string | null;
+  contact_email: string | null;
+  status: string;
+  commission_pct: number | null;
+  notes: string | null;
+  updated_at: string;
+}
+
 /**
  * Message d'un fil, archivé dans `message_replies` :
  *  - `direction: 'out'` — réponse envoyée depuis /admin via Brevo

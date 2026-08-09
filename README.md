@@ -50,6 +50,21 @@ La clé Brevo ne quitte jamais le serveur : le navigateur appelle
 > ⚠️ Dans Brevo, laisser l'option **« Authorised IPs » désactivée** : les IP de
 > Vercel sont dynamiques, sinon l'API renvoie `401`.
 
+## Onglets du dashboard
+
+| Onglet | Rôle | Route serveur |
+|---|---|---|
+| **Messages** | Formulaire de contact + fils de discussion. | `api/admin/reply.ts` |
+| **Leads** | Téléchargements de la checklist, avec réponse possible. | `api/admin/reply.ts` |
+| **Outreach** | Pipeline partenaires (statut, commission, notes). | RPC `admin_outreach_*` |
+| **Newsletter** | Sélection d'articles → campagne Brevo, synchro des contacts. | `api/admin/newsletter.ts` |
+| **Composer** | E-mail libre en Markdown, avec pièces jointes. | `api/admin/compose.ts` |
+
+La newsletter passe par une **campagne** Brevo (désinscription gérée), alors que
+Composer et les réponses passent par l'API transactionnelle. « Synchroniser les
+contacts » pousse les leads et messages Supabase dans la liste Brevo — le
+formulaire public, lui, n'est pas modifié.
+
 ## Réponses entrantes des contacts
 
 Les réponses des contacts reviennent dans `/admin`, sous le message d'origine,

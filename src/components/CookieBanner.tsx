@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Cookie, Settings, X } from 'lucide-react';
 import {
   getStoredConsent,
@@ -13,6 +13,9 @@ export function CookieBanner() {
   const [view, setView] = useState<View>('hidden');
   const [adsChecked, setAdsChecked] = useState(false);
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
+  // Le dashboard n'est pas une page publique : pas de bannière, elle
+  // recouvrirait les fils de discussion et les fenêtres d'envoi.
+  const isAdmin = useLocation().pathname.startsWith('/admin');
 
   // Affichage initial : si pas de choix mémorisé, on montre la bannière
   useEffect(() => {
@@ -53,7 +56,7 @@ export function CookieBanner() {
     setView('hidden');
   };
 
-  if (view === 'hidden') return null;
+  if (isAdmin || view === 'hidden') return null;
 
   // ═══ Vue préférences détaillées ═══
   if (view === 'preferences') {
