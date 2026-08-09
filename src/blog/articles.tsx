@@ -4353,6 +4353,223 @@ function Article29Content() {
   );
 }
 
+/* ─── Article 30 ────────────────────────────────────────────────────────── */
+
+function Article30Content() {
+  return (
+    <>
+      <Lead>
+        Après quelques années au Maroc sous statut TAECHIR, une question finit presque toujours
+        par se poser : "Est-ce que je pourrais devenir marocain ?" La réponse existe bel et bien
+        dans la loi, mais elle est moins automatique qu'on ne l'imagine — la naturalisation reste
+        une faveur accordée par décret, pas un droit qu'on obtient en cochant des cases. Voici ce
+        qu'il faut vraiment savoir avant de se lancer.
+      </Lead>
+
+      <H2>Le principe : une décision discrétionnaire, pas un guichet automatique</H2>
+      <P>
+        La nationalité marocaine est régie par le Dahir n° 1-58-250 du 6 septembre 1958 portant
+        Code de la nationalité marocaine, profondément modifié par la loi n° 62-06 de 2007 —
+        notamment pour permettre aux mères marocaines de transmettre leur nationalité à leurs
+        enfants au même titre que les pères. C'est ce même texte qui encadre, à ses articles 11
+        à 16, la naturalisation des étrangers.
+      </P>
+      <Info>
+        Retenez ce point avant toute chose : même en remplissant toutes les conditions listées
+        ci-dessous, l'administration n'est pas obligée de vous naturaliser. La naturalisation par
+        résidence est accordée par décret royal, à la discrétion des autorités. Remplir les
+        conditions ouvre le droit de déposer un dossier — pas d'obtenir automatiquement une
+        réponse favorable.
+      </Info>
+
+      <H2>Les deux voies possibles pour un salarié étranger</H2>
+      <P>
+        En pratique, un salarié étranger installé durablement au Maroc dans le cadre d'un contrat
+        TAECHIR peut emprunter l'une de deux voies, selon sa situation personnelle.
+      </P>
+      <Table
+        rows={[
+          ['Voie', 'Condition centrale', 'Qui est concerné'],
+          ['Naturalisation par résidence', '5 ans de résidence habituelle et régulière au Maroc', 'Tout salarié étranger installé durablement, marié ou non à un(e) Marocain(e)'],
+          ['Acquisition par mariage', 'Marié(e) depuis au moins 5 ans à un(e) Marocain(e), mariage enregistré, vie commune réelle', 'Conjoint(e) étranger(ère) d\'un(e) ressortissant(e) marocain(e)'],
+        ]}
+      />
+
+      <H3>La naturalisation par résidence</H3>
+      <P>
+        Pour être naturalisé marocain par cette voie, le demandeur doit en principe réunir
+        plusieurs conditions cumulatives :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Être âgé de 18 ans révolus au moment du dépôt de la demande</li>
+        <li>Avoir résidé de façon habituelle et régulière au Maroc pendant au moins 5 ans immédiatement avant le dépôt</li>
+        <li>Justifier d'une bonne conduite, sans condamnation pénale pour crime ou délit infamant</li>
+        <li>Démontrer une intégration réelle dans la société marocaine (notamment une connaissance suffisante de la langue arabe)</li>
+        <li>Disposer de moyens d'existence suffisants et stables pour subvenir à ses besoins et à ceux de sa famille</li>
+      </ul>
+      <Warning>
+        La condition de résidence "habituelle et régulière" est examinée de près. Un séjour
+        entrecoupé de longues absences, ou un titre de séjour qui a connu une rupture de
+        validité à un moment donné, peut fragiliser tout le dossier. Le socle, c'est une carte
+        de séjour renouvelée sans interruption pendant les cinq années précédant la demande.
+      </Warning>
+      <P>
+        Certaines catégories bénéficient de conditions de résidence allégées, voire supprimées :
+        les personnes ayant rendu des services exceptionnels au Maroc, les investisseurs à
+        l'origine de créations d'emplois significatives, ou encore les personnes originaires de
+        pays arabes ou musulmans. Ces régimes particuliers s'apprécient au cas par cas — un
+        dossier de ce type se prépare avec un professionnel du droit, pas seul avec un
+        formulaire téléchargé sur internet.
+      </P>
+
+      <H3>L'acquisition par mariage avec un(e) Marocain(e)</H3>
+      <P>
+        L'époux ou l'épouse étranger(ère) d'un(e) ressortissant(e) marocain(e) peut, sous
+        conditions, acquérir la nationalité marocaine sans passer par le régime général de la
+        naturalisation. Il faut : être marié(e) depuis au moins 5 ans à la date du dépôt de la
+        demande, ce mariage devant être enregistré conformément à la législation marocaine ;
+        résider habituellement et régulièrement au Maroc ; et justifier d'une bonne moralité et
+        d'une intégration réelle dans la société marocaine.
+      </P>
+      <Info>
+        Le mariage avec un(e) Marocain(e) n'ouvre pas la nationalité automatiquement — il ouvre
+        seulement le droit de la demander, une fois le délai de cinq ans écoulé et la vie
+        commune effective démontrée. J'ai vu plus d'un dossier retoqué faute de justificatifs
+        suffisants de cohabitation réelle : quittances, factures communes, attestations de
+        voisinage, autant de pièces à conserver dès le début du mariage.
+      </Info>
+
+      <H2>Le dossier à réunir</H2>
+      <Table
+        rows={[
+          ['Pièce', 'Remarque'],
+          ['Demande manuscrite', 'Adressée au Ministre de la Justice'],
+          ['Extrait d\'acte de naissance', 'Traduit et légalisé'],
+          ['Copie du passeport', 'En cours de validité'],
+          ['Certificat de résidence', 'Délivré par les autorités locales'],
+          ['Casier judiciaire du pays d\'origine', 'Traduit et apostillé ou légalisé selon le pays'],
+          ['Casier judiciaire marocain', 'À demander une fois installé'],
+          ['Justificatifs de ressources', 'Contrat de travail, fiches de paie, relevés bancaires'],
+          ['Pour une demande par mariage', 'Acte de mariage marocain et justificatifs de vie commune'],
+        ]}
+      />
+      <Tip>
+        Le sort de vos documents étrangers (état civil, casier judiciaire) dépend de la
+        convention signée ou non entre le Maroc et votre pays d'origine : simple apostille pour
+        les pays signataires de la Convention de La Haye, chaîne de légalisation consulaire pour
+        les autres. Anticipez ce point tôt, c'est souvent l'étape la plus lente du dossier.
+      </Tip>
+
+      <H2>Où déposer la demande, et combien de temps ça prend réellement</H2>
+      <P>
+        Le dossier se dépose auprès du Ministère de la Justice, Direction des Affaires Civiles,
+        directement ou par l'intermédiaire du Procureur du Roi compétent près le tribunal de
+        votre lieu de résidence. Pour une personne encore à l'étranger au moment d'entamer les
+        démarches, certaines étapes peuvent être initiées auprès d'un consulat marocain.
+      </P>
+      <Warning>
+        Il n'existe pas de délai légal fixe pour la naturalisation par résidence. En pratique,
+        comptez entre deux et cinq ans entre le dépôt d'un dossier complet et la réponse —
+        parfois davantage selon la charge des services instructeurs. Pour l'acquisition par
+        mariage, la loi prévoit en revanche que le ministre statue dans un délai d'un an à
+        compter du dépôt, le silence passé ce délai valant rejet. Dans les deux cas, n'organisez
+        jamais votre vie (démission, vente d'un bien, changement de statut) en pariant sur une
+        décision imminente.
+      </Warning>
+      <P>
+        Pendant l'instruction, l'administration mène une enquête sur votre situation : vérification
+        des antécédents judiciaires, enquête de moralité, contrôle de la réalité de la résidence
+        déclarée. C'est cette phase — plus que la constitution du dossier elle-même — qui explique
+        la durée totale de la procédure.
+      </P>
+
+      <H2>La décision : décret royal et prestation de serment</H2>
+      <P>
+        En cas d'avis favorable, la naturalisation est accordée par décret royal, publié au
+        Bulletin officiel du Royaume. L'intéressé est ensuite convié à prêter serment devant le
+        tribunal compétent avant que le nouveau statut ne devienne pleinement effectif. En cas de
+        refus, la décision doit être motivée et un recours — d'abord gracieux auprès du Ministère
+        de la Justice, puis le cas échéant contentieux devant les juridictions administratives —
+        reste ouvert.
+      </P>
+
+      <H2>Double nationalité : faut-il renoncer à sa nationalité d'origine ?</H2>
+      <P>
+        Le droit marocain n'exige pas de renoncer à sa nationalité d'origine pour devenir
+        marocain par naturalisation : le Maroc tolère la double nationalité. Mais l'inverse
+        n'est pas garanti — certains pays imposent, dans certains cas, la perte automatique de
+        leur propre nationalité en cas d'acquisition volontaire d'une nationalité étrangère.
+      </P>
+      <Warning>
+        Ce n'est pas le Maroc qui décide de ce point, mais votre pays d'origine. Avant d'engager
+        une démarche de naturalisation, vérifiez précisément auprès de votre consulat ou d'un
+        avocat compétent dans votre pays ce que sa législation prévoit dans un cas comme le
+        vôtre — les règles varient beaucoup d'un pays à l'autre.
+      </Warning>
+
+      <H2>Ce que la naturalisation change concrètement</H2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Carte d'identité nationale et passeport marocains ; plus besoin de titre de séjour ni de visa TAECHIR pour rester et travailler au Maroc</li>
+        <li>Levée des restrictions qui s'appliquent aux étrangers dans certains domaines, notamment l'accès à la propriété foncière agricole</li>
+        <li>Droit de vote et éligibilité, dans les conditions prévues par le droit électoral marocain</li>
+        <li>Accès élargi à la fonction publique, certains postes ou concours pouvant rester soumis à des conditions particulières après une naturalisation récente — un point à vérifier précisément si votre projet professionnel en dépend</li>
+      </ul>
+      <Info>
+        Depuis 2019, le Maroc a rétabli un service militaire ou civique obligatoire pour les
+        citoyens marocains d'un certain âge. Si ce sujet vous concerne au moment de votre
+        naturalisation, renseignez-vous directement auprès des autorités compétentes sur son
+        application aux personnes naturalisées.
+      </Info>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Déposer un dossier incomplet ou mal légalisé.</strong> Une pièce non traduite,
+          non apostillée ou périmée peut suspendre l'instruction pendant des mois, le temps que
+          la correction remonte jusqu'au service concerné.
+        </li>
+        <li>
+          <strong>Laisser sa carte de séjour connaître une interruption.</strong> Même quelques
+          semaines de retard dans un renouvellement peuvent être interprétées comme une rupture
+          de la résidence "régulière" exigée par la loi.
+        </li>
+        <li>
+          <strong>Miser sur le mariage comme un raccourci.</strong> Sans preuves solides et
+          régulières de vie commune réelle, un dossier par mariage se heurte aux mêmes exigences
+          de sérieux qu'une naturalisation par résidence.
+        </li>
+        <li>
+          <strong>Ne pas vérifier le droit de son pays d'origine sur la double nationalité.</strong>{' '}
+          C'est l'oubli qui coûte le plus cher a posteriori, quand il est parfois trop tard pour
+          revenir en arrière.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous envisagez une installation durable au Maroc ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Naturalisation, carte de résident de longue durée, statut de votre famille : chaque
+          parcours est différent et mérite un accompagnement adapté. Décrivez-nous votre
+          situation, nous pouvons vous orienter vers les bons interlocuteurs.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Après combien d\'années au Maroc un salarié étranger peut-il demander la nationalité marocaine ?', a: 'En principe après 5 ans de résidence habituelle et régulière au Maroc immédiatement avant le dépôt de la demande, sous réserve de remplir les autres conditions (âge, moralité, intégration, ressources). Certaines catégories bénéficient de conditions allégées.' },
+          { q: 'Le mariage avec un(e) Marocain(e) donne-t-il automatiquement la nationalité marocaine ?', a: 'Non. Il ouvre seulement le droit de la demander après cinq ans de mariage enregistré au Maroc, sous réserve de justifier d\'une résidence régulière et d\'une vie commune réelle avec le conjoint marocain.' },
+          { q: 'Faut-il renoncer à sa nationalité d\'origine pour devenir marocain ?', a: 'Non, le Maroc autorise la double nationalité et n\'exige pas de renonciation. En revanche, certains pays d\'origine imposent leurs propres règles en cas d\'acquisition volontaire d\'une nationalité étrangère : il faut vérifier ce point directement auprès de son pays d\'origine.' },
+          { q: 'Combien de temps dure une procédure de naturalisation au Maroc ?', a: 'Il n\'existe pas de délai légal fixe pour la naturalisation par résidence : comptez en pratique entre deux et cinq ans. Pour l\'acquisition par mariage, la loi prévoit une réponse du ministre dans un délai d\'un an, le silence au-delà valant rejet.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4643,6 +4860,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Pas besoin de dédouaner sa voiture pour rouler au Maroc en tant que résident étranger — le régime de l\'admission temporaire le permet, à condition d\'en respecter les règles. Documents, durée, renouvellement et pièges à éviter.',
     Content: Article29Content,
+  },
+  {
+    slug: 'nationalite-marocaine-salarie-etranger-naturalisation',
+    title: 'Nationalité marocaine pour un salarié étranger : conditions, procédure et délais de la naturalisation',
+    description: 'Peut-on devenir marocain après plusieurs années sous statut TAECHIR ? Conditions de la naturalisation par résidence, acquisition par mariage, dossier à réunir et délais réels.',
+    date: '29 septembre 2026',
+    readTime: 8,
+    category: 'Nationalité',
+    excerpt: 'Cinq ans de résidence régulière, un dossier solide et beaucoup de patience : la naturalisation marocaine n\'est jamais automatique. Conditions, documents, délais réels et pièges à éviter pour un salarié étranger qui envisage de s\'installer durablement.',
+    Content: Article30Content,
   },
 ];
 
