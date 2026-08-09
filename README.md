@@ -49,3 +49,39 @@ La clé Brevo ne quitte jamais le serveur : le navigateur appelle
 
 > ⚠️ Dans Brevo, laisser l'option **« Authorised IPs » désactivée** : les IP de
 > Vercel sont dynamiques, sinon l'API renvoie `401`.
+
+## Réponses entrantes des contacts
+
+Les réponses des contacts reviennent dans `/admin`, sous le message d'origine,
+via l'**Inbound Parsing** de Brevo.
+
+| Élément | Rôle |
+|---|---|
+| `api/brevo/inbound.ts` | Webhook : lit le mail, le rattache au fil, l'enregistre. |
+| RPC `inbound_add_reply` | Rattachement + insertion, protégée par secret haché. |
+| Table `inbound_config` | Empreinte du secret du webhook (jamais en clair). |
+| `message_replies.direction` | `out` = envoyé depuis /admin, `in` = reçu du contact. |
+
+**Rattachement au fil**, par ordre de fiabilité :
+
+1. **jeton d'adresse** — les réponses partent avec
+   `Reply-To: reply+<id>@<BREVO_INBOUND_DOMAIN>`. Le fil est retrouvé même si le
+   contact répond depuis une autre adresse ;
+2. **adresse de l'expéditeur** — dernier message ou lead portant cet e-mail ;
+3. **expéditeur inconnu** — le mail devient un nouveau message de contact, donc
+   rien n'est jamais perdu.
+
+Une réponse reçue repasse le fil en « non lu » pour le faire remonter dans le
+dashboard. Les rejeux du webhook sont ignorés (déduplication sur l'identifiant
+du message).
+
+**Mise en place**
+
+1. Créer un sous-domaine dédié, ex. `inbound.guide-taechir.org`, et faire
+   pointer ses **MX vers Brevo** (valeurs indiquées dans l'écran Inbound
+   Parsing). ⚠️ Ne pas toucher aux MX du domaine principal : ça détournerait
+   tout le courrier de `guide-taechir.org`.
+2. Dans Brevo, déclarer l'URL du webhook :
+   `https://www.guide-taechir.org/api/brevo/inbound?token=<SECRET>`
+3. Sur Vercel : `BREVO_INBOUND_SECRET` (le même secret) et
+   `BREVO_INBOUND_DOMAIN` (le sous-domaine), puis redéployer.

@@ -45,6 +45,17 @@ const SENDER_EMAIL = process.env.BREVO_SENDER || 'contact@guide-taechir.org';
 const SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Guide-Taechir.org';
 const REPLY_TO = process.env.BREVO_REPLY_TO || SENDER_EMAIL;
 
+/**
+ * Adresse de retour du fil. Quand `BREVO_INBOUND_DOMAIN` est configuré, on
+ * répond depuis `reply+<id>@<domaine>` : le webhook entrant retrouve ainsi le
+ * message d'origine même si le contact répond depuis une autre adresse.
+ * Sinon on retombe sur `BREVO_REPLY_TO`.
+ */
+export function replyToFor(id: string): string {
+  const domain = process.env.BREVO_INBOUND_DOMAIN;
+  return domain ? `reply+${id}@${domain}` : REPLY_TO;
+}
+
 /* ── Limitation de débit (best-effort, mémoire de l'instance) ─────────────── */
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 20;
@@ -202,7 +213,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
       },
       body: JSON.stringify({
         sender: { email: SENDER_EMAIL, name: SENDER_NAME },
-        replyTo: { email: REPLY_TO, name: SENDER_NAME },
+        replyTo: { email: replyToFor(id), name: SENDER_NAME },
         to: [toName ? { email: to, name: toName } : { email: to }],
         subject,
         htmlContent: buildHtml(body, quote || null),

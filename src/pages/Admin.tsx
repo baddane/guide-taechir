@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Globe, Lock, LogOut, RefreshCw, Trash2, Mail, Download, Inbox,
   CheckCircle2, Circle, AlertTriangle, KeyRound, Building2, Reply, Send, X,
-  CornerDownRight,
+  CornerDownRight, CornerDownLeft,
 } from 'lucide-react';
 import { supabase, type ContactMessage, type Lead, type MessageReply } from '../lib/supabase';
 
@@ -92,6 +92,8 @@ function ReplyDialog({
       subject,
       body,
       created_at: new Date().toISOString(),
+      direction: 'out',
+      from_email: null,
     });
   };
 
@@ -204,25 +206,63 @@ function errorLabel(code: string | undefined, status: number, detail?: string): 
   }
 }
 
-/* ── Fil des réponses déjà envoyées ──────────────────────────────────────── */
+/* ── Pastilles d'état du fil ─────────────────────────────────────────────── */
+function ThreadBadges({ replies }: { replies: MessageReply[] }) {
+  const sent = replies.filter((r) => r.direction !== 'in').length;
+  const received = replies.filter((r) => r.direction === 'in').length;
+  return (
+    <>
+      {received > 0 && (
+        <span className="text-[10px] font-bold uppercase tracking-wide text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full">
+          {received > 1 ? `${received} réponses reçues` : 'Réponse reçue'}
+        </span>
+      )}
+      {sent > 0 && (
+        <span className="text-[10px] font-bold uppercase tracking-wide text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+          Répondu{sent > 1 ? ` ×${sent}` : ''}
+        </span>
+      )}
+    </>
+  );
+}
+
+/* ── Fil de la conversation : envois (out) et réponses reçues (in) ────────── */
 function ReplyThread({ replies }: { replies: MessageReply[] }) {
   if (replies.length === 0) return null;
   return (
     <div className="mt-4 pt-4 border-t border-slate-100 space-y-3">
-      {replies.map((r) => (
-        <div key={r.id} className="flex gap-2.5">
-          <CornerDownRight className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-          <div className="min-w-0 flex-1">
-            <p className="text-xs text-slate-400 mb-1">
-              Répondu le {fmt(r.created_at)}
-              {r.subject ? <> · <span className="text-slate-500">{r.subject}</span></> : null}
-            </p>
-            <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-wrap bg-slate-50 border border-slate-100 rounded-lg p-3">
-              {r.body}
-            </p>
+      {replies.map((r) => {
+        const incoming = r.direction === 'in';
+        return (
+          <div key={r.id} className="flex gap-2.5">
+            {incoming
+              ? <CornerDownLeft className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+              : <CornerDownRight className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />}
+            <div className="min-w-0 flex-1">
+              <p className="text-xs text-slate-400 mb-1">
+                {incoming ? (
+                  <>
+                    <span className="font-semibold text-indigo-600">Réponse reçue</span>
+                    {r.from_email ? <> de {r.from_email}</> : null} le {fmt(r.created_at)}
+                  </>
+                ) : (
+                  <>Répondu le {fmt(r.created_at)}</>
+                )}
+                {r.subject ? <> · <span className="text-slate-500">{r.subject}</span></> : null}
+              </p>
+              <p
+                className={`text-sm leading-relaxed whitespace-pre-wrap rounded-lg p-3 border ${
+                  incoming
+                    ? 'bg-indigo-50/60 border-indigo-100 text-slate-700'
+                    : 'bg-slate-50 border-slate-100 text-slate-600'
+                }`}
+              >
+                {r.body}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -328,25 +368,35 @@ export function Admin() {
     setReplies((rs) => rs.filter((r) => (kind === 'contact' ? r.message_id : r.lead_id) !== id));
   };
 
-  const openReply = (c: ContactMessage) => setReplyTarget({
-    kind: 'contact',
-    id: c.id,
-    to: c.email,
-    toName: c.name ?? '',
-    subject: (c.subject ?? '').toLowerCase().startsWith('re')
-      ? (c.subject as string)
-      : `Re : ${c.subject || 'votre message'}`,
-    quote: c.message ?? '',
-  });
+  /** Dernière réponse reçue du contact, s'il y en a une. */
+  const lastIncoming = (id: string) =>
+    (repliesByMessage.get(id) ?? []).filter((r) => r.direction === 'in').at(-1);
 
-  const openReplyLead = (l: Lead) => setReplyTarget({
-    kind: 'lead',
-    id: l.id,
-    to: l.email,
-    toName: l.name ?? '',
-    subject: 'Votre demande sur Guide-Taechir.org',
-    quote: '',
-  });
+  const openReply = (c: ContactMessage) => {
+    const incoming = lastIncoming(c.id);
+    const baseSubject = incoming?.subject || c.subject || 'votre message';
+    return setReplyTarget({
+      kind: 'contact',
+      id: c.id,
+      // On répond à l'adresse qui a écrit en dernier (affichée dans la fenêtre).
+      to: incoming?.from_email || c.email,
+      toName: c.name ?? '',
+      subject: baseSubject.toLowerCase().startsWith('re') ? baseSubject : `Re : ${baseSubject}`,
+      quote: incoming?.body || c.message || '',
+    });
+  };
+
+  const openReplyLead = (l: Lead) => {
+    const incoming = lastIncoming(l.id);
+    return setReplyTarget({
+      kind: 'lead',
+      id: l.id,
+      to: incoming?.from_email || l.email,
+      toName: l.name ?? '',
+      subject: incoming?.subject || 'Votre demande sur Guide-Taechir.org',
+      quote: incoming?.body || '',
+    });
+  };
 
   // Une réponse envoyée marque aussi l'élément comme lu (côté base : admin_add_reply)
   const handleSent = (reply: MessageReply) => {
@@ -493,11 +543,7 @@ export function Admin() {
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2 flex-wrap mb-1">
                           {!c.is_read && <span className="text-[10px] font-bold uppercase tracking-wide text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded-full">Nouveau</span>}
-                          {thread.length > 0 && (
-                            <span className="text-[10px] font-bold uppercase tracking-wide text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                              Répondu{thread.length > 1 ? ` ×${thread.length}` : ''}
-                            </span>
-                          )}
+                          <ThreadBadges replies={thread} />
                           <span className="font-semibold text-slate-900">{c.name || 'Sans nom'}</span>
                           <a href={`mailto:${c.email}`} className="text-sm text-indigo-600 hover:underline truncate">{c.email}</a>
                         </div>
@@ -537,11 +583,7 @@ export function Admin() {
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2 flex-wrap mb-1">
                           {!l.is_read && <span className="text-[10px] font-bold uppercase tracking-wide text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded-full">Nouveau</span>}
-                          {thread.length > 0 && (
-                            <span className="text-[10px] font-bold uppercase tracking-wide text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                              Répondu{thread.length > 1 ? ` ×${thread.length}` : ''}
-                            </span>
-                          )}
+                          <ThreadBadges replies={thread} />
                           <span className="font-semibold text-slate-900">{l.name || 'Sans nom'}</span>
                           <a href={`mailto:${l.email}`} className="text-sm text-indigo-600 hover:underline truncate">{l.email}</a>
                         </div>

@@ -28,7 +28,11 @@ export interface Lead {
   created_at: string;
 }
 
-/** Réponse envoyée depuis /admin via Brevo, archivée dans `message_replies`. */
+/**
+ * Message d'un fil, archivé dans `message_replies` :
+ *  - `direction: 'out'` — réponse envoyée depuis /admin via Brevo
+ *  - `direction: 'in'`  — réponse reçue du contact (webhook Brevo entrant)
+ */
 export interface MessageReply {
   id: string;
   message_id: string | null;
@@ -37,4 +41,6 @@ export interface MessageReply {
   subject: string | null;
   body: string;
   created_at: string;
+  direction: 'out' | 'in';
+  from_email: string | null;
 }
