@@ -27,3 +27,14 @@ export interface Lead {
   is_read: boolean;
   created_at: string;
 }
+
+/** Réponse envoyée depuis /admin via Brevo, archivée dans `message_replies`. */
+export interface MessageReply {
+  id: string;
+  message_id: string | null;
+  lead_id: string | null;
+  to_email: string;
+  subject: string | null;
+  body: string;
+  created_at: string;
+}
