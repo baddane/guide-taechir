@@ -331,4 +331,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog — Article 30 : Nationalité marocaine pour un salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/nationalite-marocaine-salarie-etranger-naturalisation</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 31 : Acheter un bien immobilier au Maroc en tant qu'étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/achat-immobilier-etranger-maroc-conditions-fiscalite</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

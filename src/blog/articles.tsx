@@ -4570,6 +4570,213 @@ function Article30Content() {
   );
 }
 
+/* ─── Article 31 ────────────────────────────────────────────────────────── */
+
+function Article31Content() {
+  return (
+    <>
+      <Lead>
+        "Puisque je suis là pour plusieurs années, autant acheter plutôt que louer" — c'est une
+        phrase qu'on entend souvent chez les salariés étrangers installés au Maroc depuis un an
+        ou deux. Bonne nouvelle : contrairement à une idée reçue, un étranger peut acheter un
+        bien immobilier au Maroc presque aussi librement qu'un Marocain, carte de séjour ou pas.
+        Mais "presque" cache quelques règles précises qu'il vaut mieux connaître avant de signer
+        un compromis.
+      </Lead>
+
+      <H2>Le principe : la propriété immobilière est ouverte aux étrangers</H2>
+      <P>
+        Il n'existe pas, au Maroc, de régime général d'interdiction pour les étrangers d'acquérir
+        un bien immobilier urbain — appartement, villa, local commercial ou terrain à bâtir en
+        zone urbaine. Un salarié étranger en poste via TAECHIR peut acheter dès son arrivée, sans
+        attendre un nombre d'années de résidence, et même s'il n'a encore que son récépissé de
+        demande de carte de séjour. La seule vraie restriction générale concerne les <strong>terres
+        agricoles situées en dehors du périmètre urbain</strong> : leur acquisition par un étranger
+        est en principe interdite, sauf autorisation spéciale du Ministère de l'Intérieur, souvent
+        conditionnée à un projet d'investissement non agricole sur le terrain.
+      </P>
+      <Info>
+        Le statut de résident (carte de séjour) n'est donc pas une condition légale pour acheter.
+        En pratique, il facilite tout de même certaines démarches annexes — ouverture de compte,
+        obtention d'un crédit immobilier local — d'où l'intérêt d'avoir au moins entamé son
+        dossier TAECHIR avant de se lancer dans une acquisition importante.
+      </Info>
+
+      <H2>Titre foncier ou "melkia" : la distinction qui change tout</H2>
+      <P>
+        Avant même de parler de prix, il faut comprendre à quel régime juridique appartient le
+        bien visé, car cela détermine la sécurité de la transaction et la façon dont elle se
+        formalise :
+      </P>
+      <Table
+        rows={[
+          ['Régime', 'Ce que c\'est', 'Ce que ça implique pour l\'acheteur'],
+          ['Immatriculé (titre foncier)', 'Le bien est inscrit à la Conservation Foncière, avec un numéro de titre unique et un historique de propriété fiable', 'Transaction devant notaire, sécurité juridique maximale, financement bancaire facilité'],
+          ['Non immatriculé ("melkia")', 'Propriété traditionnelle, prouvée par une chaîne d\'actes adoulaires sans titre foncier centralisé', 'Transaction devant adoul, vérifications plus longues, risque de litiges sur la chaîne de propriété'],
+          ['En cours d\'immatriculation', 'Une procédure d\'immatriculation a été engagée mais n\'est pas encore achevée', 'Prudence particulière : la procédure peut faire apparaître des oppositions de tiers'],
+        ]}
+      />
+      <Warning>
+        Pour un premier achat au Maroc, privilégiez presque toujours un bien avec titre foncier
+        déjà établi, ou à défaut en cours d'immatriculation avancée. C'est la Conservation
+        Foncière, et non le vendeur ni l'agence, qui doit être votre référence : demandez
+        systématiquement un extrait de titre foncier récent (quelques jours, pas quelques mois)
+        avant toute signature.
+      </Warning>
+
+      <H2>Notaire ou adoul : qui fait quoi</H2>
+      <P>
+        Le Maroc a un système mixte hérité de deux traditions juridiques. Pour un bien immatriculé
+        (titre foncier), l'acte de vente est en général reçu par un <strong>notaire</strong>, selon
+        des règles proches de ce que connaissent les acheteurs français, belges ou espagnols :
+        rédaction de l'acte, vérifications d'usage, enregistrement et publication au registre
+        foncier. Pour un bien non immatriculé, c'est l'<strong>adoul</strong> — officier ministériel
+        habilité à dresser des actes selon le droit musulman — qui reçoit l'acte, avec des
+        vérifications différentes et généralement moins centralisées.
+      </P>
+      <P>
+        J'ai eu le cas d'un cadre canadien à Rabat convaincu que "notaire" et "adoul" étaient
+        interchangeables tant que quelqu'un signait un papier officiel. Il a fini par découvrir,
+        après un compromis signé un peu vite, que le bien qui l'intéressait n'avait jamais été
+        immatriculé et que la chaîne de propriété remontait à un acte adoulaire de plusieurs
+        décennies, difficile à vérifier seul. Rien d'irrégulier en soi, mais ça change complètement
+        le niveau de vigilance à avoir — et le délai réaliste avant de pouvoir signer sereinement.
+      </P>
+
+      <H2>Les étapes concrètes d'un achat</H2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Recherche et négociation</strong> — en direct ou via une agence immobilière (commission généralement autour de 2,5 % à la charge de l'acheteur, à négocier)</li>
+        <li><strong>Vérifications préalables</strong> — extrait de titre foncier à jour, absence d'hypothèque ou de saisie, conformité urbanistique du bien</li>
+        <li><strong>Compromis de vente</strong> — souvent accompagné d'un dépôt de garantie (autour de 5 à 10 % du prix), à ne verser qu'après les vérifications, jamais avant</li>
+        <li><strong>Financement</strong> — crédit bancaire local si nécessaire, ou transfert de fonds depuis l'étranger via un compte adapté</li>
+        <li><strong>Acte définitif</strong> — signature devant notaire (ou adoul selon le régime du bien), paiement du solde, remise des clés</li>
+        <li><strong>Enregistrement et mutation</strong> — dépôt de l'acte à la Conservation Foncière pour faire inscrire le nouveau propriétaire sur le titre</li>
+      </ul>
+      <Tip>
+        Ne versez jamais d'arrhes ou de dépôt de garantie en espèces sans reçu détaillé, et
+        n'acceptez jamais de signer un compromis rédigé uniquement dans une langue que vous ne
+        maîtrisez pas. Faites-vous accompagner par un notaire dès le compromis, pas seulement à
+        l'acte final — beaucoup de litiges naissent d'un compromis mal rédigé, pas de l'acte
+        définitif lui-même.
+      </Tip>
+
+      <H2>Financer l'achat depuis l'étranger : la question du transfert</H2>
+      <P>
+        Un salarié étranger qui paie son bien avec des fonds venus de l'étranger a intérêt à faire
+        transiter cet argent par un <strong>compte en dirhams convertibles</strong> plutôt que par
+        un compte résident classique. C'est ce compte convertible qui permet, plus tard, de
+        rapatrier librement le produit d'une revente ou des loyers perçus — un compte résident
+        ordinaire complique nettement ce rapatriement, l'Office des Changes exigeant alors de
+        reconstituer l'origine des fonds a posteriori. Le sujet est détaillé dans notre guide sur
+        l'ouverture d'un compte bancaire pour étranger au Maroc.
+      </P>
+      <Info>
+        Conservez précieusement toutes les preuves du transfert initial (ordre de virement,
+        attestation bancaire) : c'est ce document, appelé attestation de transfert de devises, qui
+        justifiera plus tard votre droit à retransférer les fonds à l'étranger en cas de revente.
+        Sans cette trace, le rapatriement du capital peut devenir un vrai casse-tête administratif.
+      </Info>
+
+      <H2>Le crédit immobilier local, une option réaliste ?</H2>
+      <P>
+        Les banques marocaines accordent des crédits immobiliers aux salariés étrangers résidents,
+        mais les conditions sont en général plus strictes que pour un emprunteur marocain : apport
+        personnel plus élevé (souvent 30 à 40 % du prix au lieu de 10 à 20 %), exigence d'un contrat
+        de travail en cours de validité et parfois d'une ancienneté minimale au Maroc, et durée de
+        remboursement calée sur la durée prévisible du séjour professionnel. Certaines banques
+        proposent des offres dédiées aux Marocains résidant à l'étranger (MRE), mais elles ne
+        s'appliquent pas à un salarié étranger non marocain : il relève du régime standard des
+        crédits résidents, avec les critères ci-dessus.
+      </P>
+
+      <H2>Les taxes et frais à prévoir</H2>
+      <Table
+        rows={[
+          ['Poste', 'Montant indicatif', 'Remarque'],
+          ['Droits d\'enregistrement', '4 % à 6 % du prix', 'Taux réduit pour un logement principal sous conditions, taux plein pour un investissement locatif ou un terrain'],
+          ['Conservation foncière', 'Environ 1 % à 1,5 %', 'Frais d\'inscription du nouveau titre'],
+          ['Honoraires du notaire', 'Variables, souvent 1 % environ', 'À négocier, distincts des droits et taxes qu\'il collecte pour l\'État'],
+          ['Commission d\'agence', 'Environ 2,5 % + TVA', 'À la charge de l\'acheteur, sauf accord contraire'],
+          ['Taxe d\'habitation et services communaux', 'Selon la valeur locative', 'Due chaque année une fois propriétaire occupant'],
+        ]}
+      />
+      <P>
+        Au total, prévoyez généralement entre 6 % et 9 % du prix d'achat en frais annexes, en plus
+        du prix du bien lui-même. C'est un budget qu'il faut intégrer dès le départ, pas découvrir
+        au moment de signer l'acte définitif.
+      </P>
+
+      <H2>Et en cas de revente : la fiscalité de la plus-value</H2>
+      <P>
+        Si vous revendez un jour, le profit réalisé est en principe soumis à l'impôt sur le revenu
+        au titre du "profit foncier", calculé sur la différence entre le prix de vente et le prix
+        d'acquisition revalorisé. Une exonération existe pour la résidence principale, sous
+        condition d'occupation effective pendant une durée minimale (généralement autour de six
+        ans) avant la cession. Un salarié étranger qui repart de façon anticipée et revend avant ce
+        délai perd donc cet avantage et doit intégrer la taxation du profit dans son calcul de
+        rentabilité.
+      </P>
+      <Warning>
+        Les règles de calcul du profit foncier et les taux applicables évoluent régulièrement d'une
+        loi de finances à l'autre. Avant toute revente, faites confirmer le calcul exact par un
+        fiscaliste ou directement auprès de la Direction Générale des Impôts — ne vous fiez pas à
+        un taux entendu "en général" auprès d'un tiers.
+      </Warning>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Signer un compromis avant d'avoir vu l'extrait de titre foncier à jour.</strong>{' '}
+          Un extrait de plus de quelques semaines peut déjà être obsolète si une hypothèque ou une
+          saisie est survenue entre-temps.
+        </li>
+        <li>
+          <strong>Payer un dépôt de garantie en espèces sans trace écrite.</strong> En cas de
+          désaccord sur la transaction, l'absence de preuve du versement peut rendre toute
+          restitution très difficile à obtenir.
+        </li>
+        <li>
+          <strong>Confondre promesse verbale et compromis engageant.</strong> Un accord de principe
+          avec un vendeur n'a aucune valeur juridique tant qu'il n'est pas formalisé par écrit et
+          signé par les deux parties.
+        </li>
+        <li>
+          <strong>Négliger le compte convertible au moment du transfert de fonds.</strong> Utiliser
+          le mauvais type de compte au départ complique inutilement un futur rapatriement des
+          fonds, parfois des années plus tard.
+        </li>
+        <li>
+          <strong>Acheter un bien non immatriculé sans accompagnement juridique renforcé.</strong>{' '}
+          Ce n'est pas interdit, mais ça exige une vérification approfondie de la chaîne de
+          propriété que peu d'acheteurs étrangers savent mener seuls.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un projet d'achat immobilier en parallèle de votre installation au Maroc ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Dossier TAECHIR, ouverture de compte convertible, achat immobilier : ces démarches
+          gagnent à être pensées ensemble plutôt que dans le désordre. Décrivez-nous votre
+          situation, nous pouvons vous orienter vers les bons interlocuteurs.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger a-t-il besoin d\'une carte de séjour pour acheter un bien immobilier au Maroc ?', a: 'Non, ce n\'est pas une condition légale : un étranger peut acheter un bien urbain au Maroc même sans carte de séjour ou avec un dossier de résidence encore en cours. La carte de séjour facilite en revanche certaines démarches annexes comme l\'ouverture de compte ou l\'obtention d\'un crédit local.' },
+          { q: 'Un étranger peut-il acheter un terrain agricole au Maroc ?', a: 'En principe non, sauf autorisation spéciale du Ministère de l\'Intérieur, généralement liée à un projet d\'investissement non agricole. Les biens urbains (appartements, villas, locaux commerciaux, terrains à bâtir en zone urbaine) ne sont pas concernés par cette restriction.' },
+          { q: 'Faut-il passer par un notaire ou un adoul pour acheter au Maroc ?', a: 'Cela dépend du régime juridique du bien : un bien immatriculé (avec titre foncier) passe devant notaire, tandis qu\'un bien non immatriculé ("melkia") relève de l\'adoul. Un bien avec titre foncier offre en général plus de sécurité juridique et facilite le financement bancaire.' },
+          { q: 'Comment un salarié étranger peut-il rapatrier le produit d\'une revente immobilière au Maroc ?', a: 'À condition d\'avoir financé l\'achat initial via un compte en dirhams convertibles et d\'avoir conservé l\'attestation de transfert de devises correspondante, le produit de la revente peut en principe être retransféré à l\'étranger. Sans cette trace documentée, le rapatriement des fonds devient beaucoup plus compliqué.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4870,6 +5077,16 @@ export const articles: Article[] = [
     category: 'Nationalité',
     excerpt: 'Cinq ans de résidence régulière, un dossier solide et beaucoup de patience : la naturalisation marocaine n\'est jamais automatique. Conditions, documents, délais réels et pièges à éviter pour un salarié étranger qui envisage de s\'installer durablement.',
     Content: Article30Content,
+  },
+  {
+    slug: 'achat-immobilier-etranger-maroc-conditions-fiscalite',
+    title: 'Acheter un bien immobilier au Maroc en tant qu\'étranger : conditions, démarches et fiscalité',
+    description: 'Un salarié étranger peut-il acheter un bien immobilier au Maroc ? Titre foncier, notaire ou adoul, transfert de fonds, crédit local et fiscalité de la revente : le guide complet.',
+    date: '6 octobre 2026',
+    readTime: 8,
+    category: 'Expatrié',
+    excerpt: 'Pas besoin d\'être marocain ni même résident pour acheter un appartement ou une villa au Maroc — mais titre foncier, compte convertible et fiscalité de la revente changent tout. Le guide complet pour un salarié étranger qui envisage d\'acheter.',
+    Content: Article31Content,
   },
 ];
 
