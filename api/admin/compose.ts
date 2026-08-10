@@ -16,14 +16,14 @@ import {
   rpc,
   str,
   verifyAdminPassword,
-} from '../../lib/adminApi';
+} from '../../lib/adminApi.js';
 import {
   type BrevoAttachment,
   emailShell,
   markdownToHtml,
   markdownToText,
   sendTransactional,
-} from '../../lib/email';
+} from '../../lib/email.js';
 
 const SENDER_EMAIL = process.env.BREVO_SENDER || 'contact@guide-taechir.org';
 const SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Guide-Taechir.org';
