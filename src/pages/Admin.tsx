@@ -96,13 +96,19 @@ function ReplyDialog({
       return;
     }
 
-    const data = await res.json().catch(() => null) as
-      | { ok?: boolean; error?: string; status?: number; detail?: string; replyId?: string; archived?: boolean }
-      | null;
+    // On lit le corps en texte d'abord : une erreur de plateforme (502, 504…)
+    // renvoie du HTML, pas du JSON, et c'est justement l'info qu'il faut voir.
+    const raw = await res.text().catch(() => '');
+    let data: { ok?: boolean; error?: string; status?: number; detail?: string; replyId?: string } | null = null;
+    try {
+      data = raw ? JSON.parse(raw) : null;
+    } catch {
+      data = null;
+    }
 
     if (!res.ok || !data?.ok) {
       setState('error');
-      setError(errorLabel(data?.error, res.status, data?.detail));
+      setError(errorLabel(data?.error, res.status, data?.detail, data ? '' : raw));
       return;
     }
 
@@ -205,7 +211,15 @@ function ReplyDialog({
   );
 }
 
-function errorLabel(code: string | undefined, status: number, detail?: string): string {
+function errorLabel(code: string | undefined, status: number, detail?: string, raw?: string): string {
+  // Réponse non-JSON = erreur de plateforme Vercel, jamais du code applicatif.
+  if (!code && raw) {
+    const platform = raw.match(/[A-Z_]{6,}/)?.[0];
+    if (platform) {
+      return `Erreur de plateforme Vercel (${status} ${platform}). La fonction n'a pas répondu — consultez les logs du déploiement.`;
+    }
+    return `Réponse inattendue du serveur (${status}) : ${raw.slice(0, 200)}`;
+  }
   switch (code) {
     case 'unauthorized':
       return 'Session expirée ou mot de passe invalide. Reconnectez-vous.';
