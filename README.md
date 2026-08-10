@@ -50,6 +50,28 @@ La clé Brevo ne quitte jamais le serveur : le navigateur appelle
 > ⚠️ Dans Brevo, laisser l'option **« Authorised IPs » désactivée** : les IP de
 > Vercel sont dynamiques, sinon l'API renvoie `401`.
 
+## Configuration (une seule fois)
+
+```bash
+# 1. Prépare le compte Brevo : vérifie la clé, l'expéditeur et le domaine,
+#    crée la liste de diffusion si besoin, puis affiche les variables à poser.
+BREVO_API_KEY="xkeysib-..." npm run setup:brevo
+
+# 2. Pose toutes les variables sur Vercel (secrets saisis au clavier).
+npx vercel login && npx vercel link
+bash scripts/setup-vercel-env.sh
+
+# 3. Redéploie pour les activer.
+npx vercel --prod
+```
+
+Restent deux actions manuelles, impossibles à scripter :
+
+- **Brevo → Inbound Parsing** : déclarer l'URL
+  `https://www.guide-taechir.org/api/brevo/inbound?token=<secret>`
+- **DNS** : faire pointer les MX de `inbound.guide-taechir.org` vers Brevo.
+  ⚠️ Ne pas toucher aux MX de `guide-taechir.org`.
+
 ## Onglets du dashboard
 
 | Onglet | Rôle | Route serveur |
