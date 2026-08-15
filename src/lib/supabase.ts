@@ -23,7 +23,12 @@ export interface Lead {
   name: string | null;
   email: string;
   company: string | null;
+  /** Canal de capture : `checklist`, `simulateur`… */
   source: string;
+  /** Origine exacte : `accueil`, `blog`, `blog/<slug>`… */
+  page: string | null;
+  /** Réponses de qualification du simulateur, le cas échéant. */
+  details: Record<string, unknown> | null;
   is_read: boolean;
   created_at: string;
 }

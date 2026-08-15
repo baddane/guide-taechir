@@ -38,6 +38,7 @@ export function Checklist() {
       email: formData.email,
       company: formData.company,
       source: 'checklist',
+      page: 'checklist',
     });
 
     // 2) Notification e-mail (best-effort)

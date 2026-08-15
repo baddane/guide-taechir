@@ -4,6 +4,7 @@ import {
   CreditCard, Clock, ExternalLink, AlertCircle, Building2, User,
   Globe, Briefcase, RefreshCw, ArrowLeftRight, Star
 } from 'lucide-react';
+import { LeadCapture } from './components/LeadCapture';
 
 type Demarche = 'nouveau' | 'renouvellement' | 'changement';
 type Profil = 'standard' | 'rare' | 'exempt';
@@ -358,6 +359,27 @@ function WizardResults({
               <p>L'Administration peut demander des documents supplémentaires. En cas de refus du visa, l'employeur prend en charge les frais de rapatriement (Art. 5 du contrat type).</p>
             </div>
           </div>
+
+          {/* Capture — le visiteur vient de répondre à cinq questions de
+              qualification : c'est le moment le plus engagé de sa visite, et
+              ses réponses partent avec le lead pour préparer la relance. */}
+          <LeadCapture
+            source="simulateur"
+            page="accueil/simulateur"
+            title="Recevez la checklist correspondant à votre situation"
+            description="Le PDF complet du dossier, à garder sous la main pendant vos démarches. Vos réponses nous permettent de vous répondre plus précisément si vous nous écrivez."
+            ctaLabel="Recevoir la checklist"
+            details={{
+              demarche: data.demarche,
+              profil: data.profil,
+              nationalite: data.nationalite,
+              employeur: data.employeur,
+              nombre_salaries: n,
+              dispense_anapec: isExempt,
+              cout_anapec_estime: anapecCost,
+              delai_estime_jours: totalDays,
+            }}
+          />
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-3 pb-2">

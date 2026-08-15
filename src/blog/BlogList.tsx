@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { articles } from './articles';
 import { Footer } from '../components/Footer';
+import { LeadCapture } from '../components/LeadCapture';
 
 const categoryColors: Record<string, string> = {
   'Guide':       'bg-indigo-50 text-indigo-700 border-indigo-100',
@@ -107,6 +108,17 @@ export function BlogList() {
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Capture en fin de liste : le lecteur qui parcourt le blog est en
+            phase de documentation, c'est le moment de lui offrir la checklist. */}
+        <div className="max-w-2xl mx-auto mt-16">
+          <LeadCapture
+            source="checklist"
+            page="blog"
+            title="Avant de vous lancer dans la lecture"
+            description="La checklist complète du dossier TAECHIR 2026, en PDF imprimable. Toutes les étapes et toutes les pièces, gratuitement."
+          />
         </div>
       </main>
 

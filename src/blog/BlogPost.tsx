@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle, Download } from 'lucide-react';
+import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle } from 'lucide-react';
 import { getArticleBySlug, articles } from './articles';
 import { Footer } from '../components/Footer';
+import { LeadCapture } from '../components/LeadCapture';
+import { NewsletterForm } from '../components/NewsletterForm';
 
 const categoryColors: Record<string, string> = {
   'Guide':      'bg-indigo-50 text-indigo-700',
@@ -175,23 +177,23 @@ export function BlogPost() {
           </div>
         </div>
 
-        {/* Lead magnet — checklist download */}
-        <div className="mt-10 bg-white border border-indigo-100 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
-          <div className="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
-            <Download className="w-6 h-6" />
-          </div>
-          <div className="flex-1">
-            <h3 className="text-lg font-bold text-slate-900 mb-1">Checklist gratuite du dossier TAECHIR</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Toutes les {'é'}tapes et pi{'è'}ces {'à'} r{'é'}unir, dans un PDF imprimable de 2 pages.
-            </p>
-          </div>
-          <Link
-            to="/checklist"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-colors shrink-0"
-          >
-            <Download className="w-4 h-4" /> T{'é'}l{'é'}charger
-          </Link>
+        {/* Lead magnet — formulaire sur place plutôt qu'un lien vers /checklist :
+            chaque changement de page perd une partie des lecteurs. La `page`
+            porte le slug, on saura donc quels articles produisent des leads. */}
+        <div className="mt-10">
+          <LeadCapture
+            source="checklist"
+            page={`blog/${article.slug}`}
+            title="Checklist gratuite du dossier TAECHIR"
+            description="Toutes les étapes et pièces à réunir, dans un PDF imprimable. Recevez-la sans quitter cette page."
+            askCompany={false}
+          />
+        </div>
+
+        {/* Newsletter — le lecteur arrivé en bas d'article est le meilleur
+            candidat à l'abonnement : il vient de lire jusqu'au bout. */}
+        <div className="mt-6">
+          <NewsletterForm source="blog" page={`blog/${article.slug}`} />
         </div>
 
         {/* CTA */}

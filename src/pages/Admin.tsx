@@ -261,6 +261,31 @@ function errorLabel(
   }
 }
 
+/**
+ * Réponses du simulateur jointes au lead. Rend n'importe quel objet JSON :
+ * si l'on ajoute demain une question au simulateur, elle s'affichera sans
+ * qu'il y ait quoi que ce soit à modifier ici.
+ */
+function QualificationDetails({ details }: { details: Record<string, unknown> | null }) {
+  if (!details || Object.keys(details).length === 0) return null;
+  const label = (key: string) => key.replace(/_/g, ' ');
+  const value = (v: unknown) =>
+    typeof v === 'boolean' ? (v ? 'oui' : 'non') : v === null ? '—' : String(v);
+
+  return (
+    <div className="mt-2.5 flex flex-wrap gap-1.5">
+      {Object.entries(details).map(([k, v]) => (
+        <span
+          key={k}
+          className="text-[11px] text-slate-600 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded"
+        >
+          <span className="text-slate-400">{label(k)} :</span> {value(v)}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 /* ── Pastilles d'état du fil ─────────────────────────────────────────────── */
 function ThreadBadges({ replies }: { replies: MessageReply[] }) {
   const sent = replies.filter((r) => r.direction !== 'in').length;
@@ -826,6 +851,8 @@ export function Admin() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [replies, setReplies] = useState<MessageReply[]>([]);
   const [tab, setTab] = useState<Tab>('contacts');
+  /** Filtre de l'onglet Leads par canal de capture ('all' = tous). */
+  const [sourceFilter, setSourceFilter] = useState<string>('all');
 
   const [replyTarget, setReplyTarget] = useState<ReplyTarget | null>(null);
   const [toast, setToast] = useState('');
@@ -1012,7 +1039,12 @@ export function Admin() {
 
   /* ── Dashboard ─────────────────────────────────────────────────────────── */
   const isInbox = tab === 'contacts' || tab === 'leads';
-  const list = tab === 'contacts' ? contacts : leads;
+  // Canaux réellement présents dans les données : le filtre ne propose que ce
+  // qui existe, plutôt qu'une liste figée à maintenir à chaque nouveau canal.
+  const leadSources = Array.from(new Set(leads.map((l) => l.source))).sort();
+  const filteredLeads =
+    sourceFilter === 'all' ? leads : leads.filter((l) => l.source === sourceFilter);
+  const list = tab === 'contacts' ? contacts : filteredLeads;
 
   return (
     <div className="min-h-screen bg-slate-100 font-sans text-slate-900">
@@ -1069,6 +1101,30 @@ export function Admin() {
         {tab === 'outreach' && <OutreachTab password={password} />}
         {tab === 'newsletter' && <NewsletterTab password={password} />}
         {tab === 'composer' && <ComposerTab password={password} />}
+
+        {/* Filtre par canal — répond à « qu'est-ce qui convertit ? » */}
+        {tab === 'leads' && leadSources.length > 1 && (
+          <div className="flex items-center gap-2 flex-wrap mb-4">
+            <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Canal</span>
+            {(['all', ...leadSources] as string[]).map((key) => {
+              const count = key === 'all' ? leads.length : leads.filter((l) => l.source === key).length;
+              const active = sourceFilter === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setSourceFilter(key)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
+                    active
+                      ? 'bg-indigo-600 text-white border-indigo-600'
+                      : 'bg-white text-slate-600 border-slate-200 hover:border-indigo-300'
+                  }`}
+                >
+                  {key === 'all' ? 'Tous' : key} <span className={active ? 'text-indigo-200' : 'text-slate-400'}>{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Messages et Leads */}
         {isInbox && (list.length === 0 ? (
@@ -1136,10 +1192,16 @@ export function Admin() {
                           <span className="font-semibold text-slate-900">{l.name || 'Sans nom'}</span>
                           <a href={`mailto:${l.email}`} className="text-sm text-indigo-600 hover:underline truncate">{l.email}</a>
                         </div>
-                        <div className="flex items-center gap-3 text-sm text-slate-600">
+                        <div className="flex items-center gap-2 flex-wrap text-sm text-slate-600">
                           {l.company && <span className="inline-flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-slate-400" />{l.company}</span>}
-                          <span className="inline-flex items-center gap-1 text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{l.source}</span>
+                          <span className="inline-flex items-center gap-1 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full">{l.source}</span>
+                          {l.page && (
+                            <span className="inline-flex items-center gap-1 text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full" title="Page d'origine">
+                              {l.page}
+                            </span>
+                          )}
                         </div>
+                        <QualificationDetails details={l.details} />
                         <p className="text-xs text-slate-400 mt-2">{fmt(l.created_at)}</p>
                         <button
                           onClick={() => openReplyLead(l)}

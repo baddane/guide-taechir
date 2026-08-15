@@ -4,6 +4,7 @@ import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcas
 import { Wizard } from './Wizard';
 import { Chatbot } from './Chatbot';
 import { Footer } from './components/Footer';
+import { LeadCapture } from './components/LeadCapture';
 import { articles } from './blog/articles';
 
 function AccordionItem({ title, children, defaultOpen = true }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
@@ -539,6 +540,26 @@ export default function App() {
               Voir tous les articles
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Capture — la checklist n'était atteignable que par le pied de page. */}
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
+              Ressource gratuite
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-3 mb-4">
+              Le dossier TAECHIR, étape par étape
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              La vérification préalable, l'étape ANAPEC, la légalisation du contrat, le dépôt au
+              Ministère, l'après-visa et un budget indicatif 2026 — en un PDF imprimable que vous
+              pouvez suivre ligne à ligne.
+            </p>
+          </div>
+          <LeadCapture source="checklist" page="accueil" />
         </div>
       </section>
 

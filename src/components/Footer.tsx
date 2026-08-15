@@ -1,11 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Globe } from 'lucide-react';
 import { openCookiePreferences } from '../lib/consent';
+import { NewsletterForm } from './NewsletterForm';
 
 export function Footer() {
+  const { pathname } = useLocation();
+
   return (
     <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Inscription newsletter — présente sur toutes les pages du site. */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <NewsletterForm
+            tone="dark"
+            source="footer"
+            page={pathname.replace(/^\//, '') || 'accueil'}
+          />
+        </div>
+
         <div className="grid md:grid-cols-3 gap-10 mb-10">
 
           {/* Brand */}
