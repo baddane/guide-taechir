@@ -610,14 +610,38 @@ export function parseFrDate(value: string): number {
   return new Date(Number(m[3]), month, Number(m[1])).getTime();
 }
 
+/* ── Texte par défaut de la campagne ──────────────────────────────────────
+ * Pré-rempli plutôt que suggéré en placeholder : partir d'un texte à ajuster
+ * demande moins d'effort que partir d'une page blanche, et évite qu'un envoi
+ * se retrouve sans introduction.
+ *
+ * L'introduction n'a pas de formule de politesse finale : dans le gabarit,
+ * les articles s'insèrent juste en dessous, une signature s'y retrouverait
+ * au milieu du message.
+ */
+const MOIS = [
+  'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+  'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
+];
+
+function defaultSubject(now = new Date()): string {
+  return `Guide-Taechir — les nouveautés de ${MOIS[now.getMonth()]} ${now.getFullYear()}`;
+}
+
+const DEFAULT_INTRO = `Bonjour,
+
+Voici les dernières publications de Guide-Taechir.org : nouveaux articles sur la procédure TAECHIR, évolutions réglementaires et rappels pratiques pour vos dossiers de recrutement de salariés étrangers au Maroc.
+
+Bonne lecture.`;
+
 function NewsletterTab({ password }: { password: string }) {
   const sorted = useMemo(
     () => [...articles].sort((a, b) => parseFrDate(b.date) - parseFrDate(a.date)),
     [],
   );
   const [selected, setSelected] = useState<string[]>([]);
-  const [subject, setSubject] = useState('');
-  const [intro, setIntro] = useState('');
+  const [subject, setSubject] = useState(defaultSubject);
+  const [intro, setIntro] = useState(DEFAULT_INTRO);
   const [status, setStatus] = useState<{ subscribers: number; listName: string | null } | null>(null);
   const [busy, setBusy] = useState<'' | 'status' | 'sync' | 'send'>('status');
   const [error, setError] = useState('');
@@ -634,6 +658,8 @@ function NewsletterTab({ password }: { password: string }) {
     return () => { cancelled = true; };
   }, [password]);
 
+  const isDefaultText = subject === defaultSubject() && intro === DEFAULT_INTRO;
+
   const toggle = (slug: string) =>
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : [...s, slug]));
 
@@ -649,7 +675,15 @@ function NewsletterTab({ password }: { password: string }) {
 
   const send = async (e: FormEvent) => {
     e.preventDefault();
-    if (!confirm(`Envoyer la campagne à ${status?.subscribers ?? '?'} abonné(s) ? Cette action est irréversible.`)) return;
+    // Le texte étant pré-rempli, le bouton d'envoi est actif dès l'ouverture de
+    // l'onglet : la confirmation rappelle donc explicitement ce qui va partir,
+    // et en particulier qu'aucun article n'est peut-être sélectionné.
+    const quoi = selected.length === 0
+      ? "l'introduction seule, sans aucun article"
+      : `${selected.length} article(s)`;
+    if (!confirm(
+      `Envoyer « ${subject} » avec ${quoi} à ${status?.subscribers ?? '?'} abonné(s) ?\n\nCette action est irréversible.`,
+    )) return;
     setBusy('send'); setError(''); setSuccess('');
     const chosen = sorted.filter((a) => selected.includes(a.slug));
     const r = await postJson('/api/admin/newsletter', {
@@ -701,9 +735,19 @@ function NewsletterTab({ password }: { password: string }) {
               placeholder="Les nouveautés TAECHIR de ce mois" className={inputClass} />
           </Field>
           <Field label="Introduction (Markdown, facultatif)">
-            <textarea rows={4} value={intro} onChange={(e) => setIntro(e.target.value)}
+            <textarea rows={6} value={intro} onChange={(e) => setIntro(e.target.value)}
               placeholder={'Bonjour,\n\nVoici la sélection du mois.'} className={`${inputClass} resize-y`} />
           </Field>
+
+          {!isDefaultText && (
+            <button
+              type="button"
+              onClick={() => { setSubject(defaultSubject()); setIntro(DEFAULT_INTRO); }}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 transition-colors"
+            >
+              <RefreshCw className="w-3.5 h-3.5" /> Rétablir le texte par défaut
+            </button>
+          )}
 
           <div>
             <p className="text-sm font-semibold text-slate-700 mb-2">
