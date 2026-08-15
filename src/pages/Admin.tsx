@@ -108,7 +108,9 @@ function ReplyDialog({
 
     if (!res.ok || !data?.ok) {
       setState('error');
-      setError(errorLabel(data?.error, res.status, data?.detail, data ? '' : raw));
+      setError(
+        errorLabel(data?.error, res.status, data?.detail, data ? '' : raw, requestId(res)),
+      );
       return;
     }
 
@@ -211,16 +213,33 @@ function ReplyDialog({
   );
 }
 
-function errorLabel(code: string | undefined, status: number, detail?: string, raw?: string): string {
+/** Identifiant de requête Vercel : la clé pour retrouver la trace dans les logs. */
+function requestId(res: Response): string {
+  return res.headers.get('x-vercel-id') ?? '';
+}
+
+function errorLabel(
+  code: string | undefined,
+  status: number,
+  detail?: string,
+  raw?: string,
+  reqId?: string,
+): string {
+  const trace = reqId ? ` (requête ${reqId})` : '';
+
   // Réponse non-JSON = erreur de plateforme Vercel, jamais du code applicatif.
   if (!code && raw) {
     const platform = raw.match(/[A-Z_]{6,}/)?.[0];
     if (platform) {
-      return `Erreur de plateforme Vercel (${status} ${platform}). La fonction n'a pas répondu — consultez les logs du déploiement.`;
+      return `Erreur de plateforme Vercel (${status} ${platform}). La fonction n'a pas répondu${trace} — consultez les logs du déploiement.`;
     }
     return `Réponse inattendue du serveur (${status}) : ${raw.slice(0, 200)}`;
   }
   switch (code) {
+    case 'server_error':
+      return `Erreur interne de la route d'envoi${detail ? ` : ${detail}` : ''}${trace}.`;
+    case 'supabase_unreachable':
+      return 'La base Supabase n\'a pas répondu — le mot de passe n\'a donc pas pu être vérifié. Réessayez dans un instant.';
     case 'unauthorized':
       return 'Session expirée ou mot de passe invalide. Reconnectez-vous.';
     case 'brevo_not_configured':
@@ -345,6 +364,9 @@ function Notice({ kind, children }: { kind: 'ok' | 'error'; children: ReactNode 
 /** Message d'erreur lisible à partir du code renvoyé par les routes serveur. */
 function apiError(code: string | undefined, status: number, detail?: string): string {
   switch (code) {
+    case 'server_error': return `Erreur interne de la route serveur${detail ? ` : ${detail}` : ''}.`;
+    case 'supabase_unreachable': return 'La base Supabase n\'a pas répondu. Réessayez dans un instant.';
+    case 'supabase_error': return 'La base Supabase a refusé la requête.';
     case 'unauthorized': return 'Session expirée. Reconnectez-vous.';
     case 'brevo_not_configured': return 'BREVO_API_KEY n\'est pas configurée sur le serveur (variables Vercel).';
     case 'newsletter_list_not_configured': return 'BREVO_NEWSLETTER_LIST_ID n\'est pas configurée sur le serveur.';
@@ -377,9 +399,21 @@ async function postJson(url: string, payload: unknown) {
   } catch {
     return { ok: false, message: 'Impossible de joindre le serveur.', data: null as any };
   }
-  const data = await res.json().catch(() => null);
+  // Corps lu en texte d'abord : un plantage de la fonction renvoie une page
+  // HTML, et c'est cette information-là qu'il faut afficher plutôt qu'un
+  // « échec de la requête » sans cause.
+  const raw = await res.text().catch(() => '');
+  let data: any = null;
+  try {
+    data = raw ? JSON.parse(raw) : null;
+  } catch {
+    data = null;
+  }
   if (!res.ok || !data?.ok) {
-    return { ok: false, message: apiError(data?.error, res.status, data?.detail), data };
+    const message = data
+      ? apiError(data.error, res.status, data.detail)
+      : errorLabel(undefined, res.status, undefined, raw, requestId(res));
+    return { ok: false, message, data };
   }
   return { ok: true, message: '', data };
 }

@@ -12,10 +12,11 @@
 import {
   type ApiRequest,
   type ApiResponse,
+  denyUnlessAdmin,
   readBody,
   rpc,
   str,
-  verifyAdminPassword,
+  withGuard,
 } from '../../lib/adminApi.js';
 import {
   type BrevoAttachment,
@@ -66,7 +67,7 @@ export function parseAttachments(raw: unknown): {
   return { attachments, bytes };
 }
 
-export default async function handler(req: ApiRequest, res: ApiResponse) {
+async function compose(req: ApiRequest, res: ApiResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ ok: false, error: 'method_not_allowed' });
     return;
@@ -111,10 +112,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     return;
   }
 
-  if (!(await verifyAdminPassword(password))) {
-    res.status(401).json({ ok: false, error: 'unauthorized' });
-    return;
-  }
+  if (await denyUnlessAdmin(password, res)) return;
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
@@ -135,7 +133,9 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   });
 
   if (!sent.ok) {
-    res.status(502).json({
+    // 503 : voir la note de `api/admin/reply.ts` — on laisse le 502 à Vercel.
+    console.error(`[admin/compose] envoi Brevo refusé (${sent.status}) — ${sent.detail}`);
+    res.status(503).json({
       ok: false,
       error: sent.status === 0 ? 'brevo_unreachable' : 'brevo_error',
       status: sent.status,
@@ -167,3 +167,5 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     archived,
   });
 }
+
+export default withGuard('admin/compose', compose);

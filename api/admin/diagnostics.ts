@@ -13,7 +13,7 @@
  * l'option « Authorised IPs ».
  */
 
-import { type ApiRequest, type ApiResponse, rpc } from '../../lib/adminApi.js';
+import { type ApiRequest, type ApiResponse, rpc, withGuard } from '../../lib/adminApi.js';
 
 function tokenFrom(req: ApiRequest): string {
   const header = req.headers['x-webhook-token'];
@@ -25,7 +25,7 @@ function tokenFrom(req: ApiRequest): string {
   return new URLSearchParams(url.slice(q + 1)).get('token')?.trim() ?? '';
 }
 
-export default async function handler(req: ApiRequest, res: ApiResponse) {
+async function diagnostics(req: ApiRequest, res: ApiResponse) {
   const token = tokenFrom(req);
   if (!token) {
     res.status(401).json({ ok: false, error: 'missing_token' });
@@ -37,7 +37,13 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     res.status(401).json({ ok: false, error: 'invalid_token' });
     return;
   }
-  const verified = await rpc('inbound_verify', { p_secret: token });
+  const verified = await rpc('inbound_verify', { p_secret: token }, { retry: true });
+  if (verified.status === 0) {
+    // Supabase injoignable : ce n'est pas un refus du jeton, et c'est en soi le
+    // diagnostic le plus utile — toutes les routes admin en dépendent.
+    res.status(503).json({ ok: false, error: 'supabase_unreachable', detail: verified.detail });
+    return;
+  }
   if (!verified.ok || verified.data !== true) {
     res.status(401).json({ ok: false, error: 'unauthorized' });
     return;
@@ -96,3 +102,5 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     blockers,
   });
 }
+
+export default withGuard('admin/diagnostics', diagnostics);

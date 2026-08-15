@@ -19,25 +19,7 @@
  *  - BREVO_INBOUND_DOMAIN (recommandé) — ex. `inbound.guide-taechir.org`
  */
 
-interface ApiRequest {
-  method?: string;
-  url?: string;
-  body?: unknown;
-  headers: Record<string, string | string[] | undefined>;
-}
-
-interface ApiResponse {
-  status(code: number): ApiResponse;
-  json(payload: unknown): void;
-  setHeader(name: string, value: string): void;
-  end(): void;
-}
-
-const SUPABASE_URL =
-  process.env.SUPABASE_URL || 'https://yjxuutdnhsvrbbgcqltw.supabase.co';
-const SUPABASE_KEY =
-  process.env.SUPABASE_PUBLISHABLE_KEY ||
-  'sb_publishable_x4ehI4AgVADT4U190djnGg_eXRCPd9c';
+import { type ApiRequest, type ApiResponse, rpc, withGuard } from '../../lib/adminApi.js';
 
 const MAX_BODY_CHARS = 20000;
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -134,28 +116,8 @@ export function secretFromRequest(req: ApiRequest): string {
   return new URLSearchParams(url.slice(q + 1)).get('token')?.trim() ?? '';
 }
 
-async function rpc(fn: string, args: Record<string, unknown>) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
-    },
-    body: JSON.stringify(args),
-  });
-  const text = await res.text();
-  let data: unknown = null;
-  try {
-    data = text ? JSON.parse(text) : null;
-  } catch {
-    data = text;
-  }
-  return { ok: res.ok, status: res.status, data };
-}
-
 /* ── Handler ──────────────────────────────────────────────────────────────── */
-export default async function handler(req: ApiRequest, res: ApiResponse) {
+async function inbound(req: ApiRequest, res: ApiResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ ok: false, error: 'method_not_allowed' });
     return;
@@ -207,6 +169,12 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     });
 
     if (!out.ok) {
+      // Supabase injoignable : là, un 5xx est la bonne réponse — Brevo réessaiera
+      // et le mail ne sera pas perdu, contrairement aux erreurs de traitement.
+      if (out.status === 0) {
+        res.status(503).json({ ok: false, error: 'supabase_unreachable' });
+        return;
+      }
       const detail = typeof out.data === 'object' && out.data
         ? (out.data as Json).message ?? ''
         : String(out.data ?? '');
@@ -232,3 +200,5 @@ function safeParse(value: string): unknown {
     return null;
   }
 }
+
+export default withGuard('brevo/inbound', inbound);

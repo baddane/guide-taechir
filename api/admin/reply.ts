@@ -18,10 +18,11 @@
 import {
   type ApiRequest,
   type ApiResponse,
+  denyUnlessAdmin,
   readBody,
   rpc,
   str,
-  verifyAdminPassword,
+  withGuard,
 } from '../../lib/adminApi.js';
 import { emailShell, escapeHtml, sendTransactional, textToParagraphs } from '../../lib/email.js';
 
@@ -64,7 +65,7 @@ function buildHtml(body: string, quote: string | null): string {
 }
 
 /* ── Handler ──────────────────────────────────────────────────────────────── */
-export default async function handler(req: ApiRequest, res: ApiResponse) {
+async function reply(req: ApiRequest, res: ApiResponse) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Allow', 'POST, OPTIONS');
     res.status(204).end();
@@ -120,10 +121,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   }
 
   // 1) Vérification du mot de passe admin (avant tout envoi)
-  if (!(await verifyAdminPassword(password))) {
-    res.status(401).json({ ok: false, error: 'unauthorized' });
-    return;
-  }
+  if (await denyUnlessAdmin(password, res)) return;
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
@@ -144,7 +142,11 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   });
 
   if (!sent.ok) {
-    res.status(502).json({
+    // 503 et non 502 : un 502 est le code que Vercel renvoie lui-même quand la
+    // fonction plante, avec une page HTML. En s'en écartant, une réponse 502
+    // signifie toujours « panne de plateforme », jamais « Brevo a refusé ».
+    console.error(`[admin/reply] envoi Brevo refusé (${sent.status}) — ${sent.detail}`);
+    res.status(503).json({
       ok: false,
       error: sent.status === 0 ? 'brevo_unreachable' : 'brevo_error',
       status: sent.status,
@@ -170,3 +172,5 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     replyId: archive.ok ? archive.data : null,
   });
 }
+
+export default withGuard('admin/reply', reply);

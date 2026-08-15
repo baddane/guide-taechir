@@ -17,10 +17,11 @@
 import {
   type ApiRequest,
   type ApiResponse,
+  denyUnlessAdmin,
   readBody,
   rpc,
   str,
-  verifyAdminPassword,
+  withGuard,
 } from '../../lib/adminApi.js';
 import { emailShell, escapeHtml, markdownToHtml } from '../../lib/email.js';
 
@@ -56,17 +57,25 @@ export function buildCampaignHtml(intro: string, articles: NewsletterArticle[]):
   return emailShell(`${intro ? markdownToHtml(intro) : ''}${cards}`, { unsubscribe: true });
 }
 
+/** Ne lance jamais : une panne réseau ressort en `{ ok: false, status: 0 }`. */
 async function brevo(path: string, init: RequestInit & { apiKey: string }) {
   const { apiKey, ...rest } = init;
-  const res = await fetch(`https://api.brevo.com/v3${path}`, {
-    ...rest,
-    headers: {
-      'Content-Type': 'application/json',
-      accept: 'application/json',
-      'api-key': apiKey,
-      ...(rest.headers as Record<string, string> | undefined),
-    },
-  });
+  let res: Response;
+  try {
+    res = await fetch(`https://api.brevo.com/v3${path}`, {
+      ...rest,
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+        'api-key': apiKey,
+        ...(rest.headers as Record<string, string> | undefined),
+      },
+    });
+  } catch (error) {
+    const detail = error instanceof Error ? `${error.name}: ${error.message}` : String(error);
+    console.error(`[admin/newsletter] API Brevo injoignable (${path}) — ${detail}`);
+    return { ok: false, status: 0, data: null, detail };
+  }
   const text = await res.text();
   let data: unknown = null;
   try {
@@ -77,7 +86,10 @@ async function brevo(path: string, init: RequestInit & { apiKey: string }) {
   return { ok: res.ok, status: res.status, data, detail: text.slice(0, 400) };
 }
 
-export default async function handler(req: ApiRequest, res: ApiResponse) {
+/** Code d'erreur distinguant « Brevo a refusé » de « Brevo injoignable ». */
+const brevoError = (status: number) => (status === 0 ? 'brevo_unreachable' : 'brevo_error');
+
+async function newsletter(req: ApiRequest, res: ApiResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ ok: false, error: 'method_not_allowed' });
     return;
@@ -91,10 +103,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     res.status(401).json({ ok: false, error: 'missing_password' });
     return;
   }
-  if (!(await verifyAdminPassword(password))) {
-    res.status(401).json({ ok: false, error: 'unauthorized' });
-    return;
-  }
+  if (await denyUnlessAdmin(password, res)) return;
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
@@ -111,7 +120,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   if (action === 'status') {
     const out = await brevo(`/contacts/lists/${listId}`, { method: 'GET', apiKey });
     if (!out.ok) {
-      res.status(502).json({ ok: false, error: 'brevo_error', detail: out.detail });
+      res.status(503).json({ ok: false, error: brevoError(out.status), detail: out.detail });
       return;
     }
     const list = out.data as { name?: string; totalSubscribers?: number };
@@ -128,7 +137,10 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   if (action === 'sync') {
     const data = await rpc('admin_list', { p_password: password });
     if (!data.ok) {
-      res.status(502).json({ ok: false, error: 'supabase_error' });
+      res.status(503).json({
+        ok: false,
+        error: data.status === 0 ? 'supabase_unreachable' : 'supabase_error',
+      });
       return;
     }
     const { contacts = [], leads = [] } = (data.data ?? {}) as {
@@ -161,7 +173,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
       }),
     });
     if (!out.ok) {
-      res.status(502).json({ ok: false, error: 'brevo_error', detail: out.detail });
+      res.status(503).json({ ok: false, error: brevoError(out.status), detail: out.detail });
       return;
     }
     res.status(200).json({ ok: true, imported: rows.length });
@@ -198,20 +210,20 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
       }),
     });
     if (!created.ok) {
-      res.status(502).json({ ok: false, error: 'brevo_error', detail: created.detail });
+      res.status(503).json({ ok: false, error: brevoError(created.status), detail: created.detail });
       return;
     }
     const campaignId = (created.data as { id?: number }).id;
     if (!campaignId) {
-      res.status(502).json({ ok: false, error: 'campaign_id_missing' });
+      res.status(503).json({ ok: false, error: 'campaign_id_missing' });
       return;
     }
 
     const sent = await brevo(`/emailCampaigns/${campaignId}/sendNow`, { method: 'POST', apiKey });
     if (!sent.ok) {
-      res.status(502).json({
+      res.status(503).json({
         ok: false,
-        error: 'brevo_send_error',
+        error: sent.status === 0 ? 'brevo_unreachable' : 'brevo_send_error',
         campaignId,
         detail: sent.detail,
       });
@@ -224,3 +236,5 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
   res.status(400).json({ ok: false, error: 'invalid_action' });
 }
+
+export default withGuard('admin/newsletter', newsletter);
