@@ -4570,6 +4570,197 @@ function Article30Content() {
   );
 }
 
+/* ─── Article 31 ────────────────────────────────────────────────────────── */
+
+function Article31Content() {
+  return (
+    <>
+      <Lead>
+        Un salarié étranger se casse le poignet sur un chantier, ou reste alité une semaine avec
+        une grippe carabinée : dans les deux cas, l'employeur a des obligations précises et des
+        délais courts. Sauf que ce ne sont pas les mêmes obligations, ni le même régime. Beaucoup
+        d'employeurs découvrent la différence entre accident du travail et maladie ordinaire le
+        jour où ils en ont besoin — au pire moment possible.
+      </Lead>
+
+      <H2>Deux régimes, pas un seul</H2>
+      <P>
+        C'est le point que presque personne n'anticipe : au Maroc, l'accident du travail et la
+        maladie professionnelle (AT/MP) ne relèvent pas de la CNSS mais d'une assurance privée
+        obligatoire, souscrite par l'employeur, régie par le Dahir du 6 février 1963 relatif à la
+        réparation des accidents du travail. La maladie ordinaire, elle, relève bien de la CNSS,
+        via l'AMO pour les soins et les indemnités journalières « prestations sociales à court
+        terme » pour la perte de salaire.
+      </P>
+      <Table
+        rows={[
+          ['', 'Accident du travail / maladie professionnelle', 'Maladie ordinaire'],
+          ['Qui couvre', 'Assurance AT privée souscrite par l\'employeur', 'CNSS (branche AMO + prestations à court terme)'],
+          ['Base légale', 'Dahir du 6 février 1963', 'Code de la sécurité sociale, régime AMO'],
+          ['Frais médicaux', 'Pris en charge à 100 % par l\'assureur AT', 'Remboursés selon la grille AMO'],
+          ['Perte de salaire', 'Indemnité journalière AT dès le lendemain de l\'arrêt', 'IJ CNSS après un délai de carence, sous conditions de cotisation'],
+          ['Séquelles', 'Rente d\'incapacité si IPP reconnue', 'Sans objet (hors invalidité CNSS distincte)'],
+        ]}
+      />
+      <Warning>
+        Un salarié étranger nouvellement recruté et pas encore couvert par l'assurance AT de
+        l'entreprise (parce que l'employeur n'a pas mis à jour son contrat) se retrouve sans
+        filet en cas d'accident dès le premier jour. Vérifiez que le contrat d'assurance AT de
+        votre entreprise couvre bien tous les effectifs déclarés, salariés étrangers compris —
+        ce n'est pas automatique si votre assureur facture par tête.
+      </Warning>
+
+      <H2>Accident du travail : les 48 heures qui comptent</H2>
+      <P>
+        Dès qu'un accident du travail survient — sur le lieu de travail, pendant les heures de
+        service, ou sur le trajet domicile-travail dans certaines conditions (accident de trajet)
+        — l'employeur doit le déclarer dans un délai de 48 heures, hors dimanches et jours fériés.
+        La déclaration part à la fois vers l'assureur AT de l'entreprise et vers l'inspection du
+        travail compétente.
+      </P>
+      <P>Concrètement, il faut réunir et transmettre :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Le formulaire de déclaration d'accident du travail, daté et signé par l'employeur</li>
+        <li>Un certificat médical initial décrivant les blessures et la durée prévisible d'incapacité</li>
+        <li>Les circonstances précises de l'accident (lieu, heure, témoins éventuels)</li>
+        <li>La copie du contrat de travail et, pour un salarié étranger, une copie du passeport et du visa TAECHIR en cours de validité</li>
+      </ul>
+      <Info>
+        Un accident non déclaré dans les délais reste indemnisable, mais la procédure devient
+        plus lourde : l'assureur peut exiger des justificatifs complémentaires, et l'employeur
+        s'expose à une contestation de la prise en charge s'il ne peut pas prouver que le retard
+        ne lui est pas imputable. Déclarez toujours dans les 48 heures, même si le dossier médical
+        n'est pas encore complet — vous pourrez le compléter ensuite.
+      </Info>
+
+      <H2>Ce que touche le salarié pendant l'arrêt</H2>
+      <P>
+        Pendant l'incapacité temporaire, le salarié en accident du travail perçoit une indemnité
+        journalière versée par l'assureur AT, généralement égale à une fraction du salaire
+        journalier moyen des jours précédant l'accident, dès le lendemain du jour de l'arrêt — sans
+        le délai de carence qui s'applique en maladie ordinaire. Les frais médicaux, pharmaceutiques
+        et d'hospitalisation liés à l'accident sont pris en charge intégralement par l'assurance AT,
+        sur présentation des justificatifs, sans passer par l'avance de frais habituelle de l'AMO.
+      </P>
+      <P>
+        Si l'accident laisse des séquelles, un médecin désigné par l'assureur (ou, en cas de
+        désaccord, un expert judiciaire) évalue un taux d'incapacité permanente partielle (IPP).
+        Ce taux détermine, selon son importance, soit une indemnité en capital, soit une rente
+        viagère. C'est un point sensible : ne laissez jamais un salarié étranger signer un accord
+        transactionnel avec l'assureur sans qu'il ait compris — idéalement dans sa langue —
+        ce à quoi il renonce.
+      </P>
+
+      <H2>Maladie ordinaire : le circuit CNSS</H2>
+      <P>
+        Pour un arrêt maladie sans lien avec le travail (grippe, intervention chirurgicale,
+        épisode de dos non lié à un accident identifié), c'est le circuit CNSS classique qui
+        s'applique — le même que pour un salarié marocain. Le salarié doit avoir cotisé un nombre
+        minimum de jours sur les mois précédant l'arrêt pour ouvrir droit aux indemnités
+        journalières, ce qui rend la déclaration CNSS rapide après l'embauche encore plus critique :
+        un salarié étranger déclaré tardivement risque de ne pas avoir assez de cotisations
+        enregistrées le jour où il tombe malade.
+      </P>
+      <Tip>
+        C'est un argument de plus, s'il en fallait, pour déclarer un salarié étranger à la CNSS
+        dès la date du visa et non à son arrivée effective : chaque mois de retard est un mois de
+        cotisations en moins dans le compteur qui ouvre droit aux indemnités journalières maladie.
+      </Tip>
+      <P>
+        L'arrêt de travail doit être transmis à la CNSS dans les délais habituels (48 heures pour
+        le volet employeur), accompagné du certificat médical. Un délai de carence de quelques
+        jours s'applique avant le versement des indemnités journalières, contrairement à l'accident
+        du travail qui est indemnisé dès le lendemain de l'arrêt.
+      </P>
+
+      <H2>Le cas particulier du salarié étranger éloigné de sa famille</H2>
+      <P>
+        Sur le plan strictement légal, un salarié étranger blessé ou malade a exactement les
+        mêmes droits qu'un salarié marocain — ni plus, ni moins. Mais dans les faits, deux
+        situations reviennent souvent et méritent d'être anticipées par l'employeur :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>
+          <strong>Une hospitalisation longue sans famille sur place</strong> — pensez à désigner
+          un référent RH qui reste en contact avec le salarié, et le cas échéant avec sa famille
+          restée à l'étranger.
+        </li>
+        <li>
+          <strong>Le rapatriement médical</strong> — ni la CNSS ni l'assurance AT ne financent en
+          principe un rapatriement vers le pays d'origine. C'est le rôle d'une complémentaire
+          santé internationale, si le salarié en dispose (voir notre guide sur l'assurance santé
+          de l'expatrié).
+        </li>
+      </ul>
+
+      <H2>Ce qui coûte cher : l'absence ou le retard de déclaration</H2>
+      <Table
+        rows={[
+          ['Situation', 'Conséquence'],
+          ['Accident non déclaré dans les 48h', 'Prise en charge assureur retardée ou contestée'],
+          ['Salarié pas encore couvert par l\'assurance AT', 'Frais médicaux et indemnités à la charge directe de l\'employeur'],
+          ['Salarié CNSS déclaré en retard', 'Cotisations insuffisantes pour ouvrir droit aux IJ maladie'],
+          ['Faute inexcusable de l\'employeur reconnue', 'Majoration de l\'indemnisation due au salarié, à la charge de l\'employeur'],
+        ]}
+      />
+      <P>
+        La dernière ligne mérite un mot : si l'accident résulte d'un manquement grave de
+        l'employeur aux règles de sécurité (absence de protection individuelle sur une machine
+        dangereuse, par exemple), la faute inexcusable peut être retenue et alourdir
+        significativement la facture, au-delà de ce que couvre l'assurance AT standard. J'ai vu un
+        atelier de menuiserie à Aïn Sebaâ payer, en plus de l'assurance, une majoration substantielle
+        après qu'un ouvrier ivoirien s'est blessé sur une machine dont le carter de protection avait
+        été retiré « pour aller plus vite ».
+      </P>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li>
+          <strong>Confondre les deux régimes.</strong> Traiter un accident du travail comme une
+          maladie ordinaire (ou l'inverse) retarde la prise en charge et peut priver le salarié de
+          droits auxquels il a pourtant droit.
+        </li>
+        <li>
+          <strong>Oublier de vérifier la couverture AT dès l'embauche.</strong> Un salarié étranger
+          qui commence à travailler avant que l'assureur ait confirmé son ajout à la police AT de
+          l'entreprise est un risque pur pour l'employeur.
+        </li>
+        <li>
+          <strong>Laisser le salarié gérer seul les démarches.</strong> Entre la barrière de la
+          langue administrative et l'éloignement de sa famille, un salarié étranger accidenté a
+          besoin d'un accompagnement RH plus soutenu qu'un salarié local dans la même situation.
+        </li>
+        <li>
+          <strong>Ne pas anticiper le rapatriement médical.</strong> Ni la CNSS ni l'assurance AT
+          ne couvrent ce poste : c'est une complémentaire santé internationale qui le fait, et
+          uniquement si elle a été souscrite en amont.
+        </li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un salarié étranger accidenté ou malade dans votre entreprise ?"
+        cta="Être mis en relation avec un expert"
+      >
+        <p>
+          Déclaration, assurance AT, coordination avec la CNSS : chaque dossier a ses urgences.
+          Décrivez-nous votre situation, nous pouvons vous orienter vers les bons interlocuteurs.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'L\'accident du travail d\'un salarié étranger passe-t-il par la CNSS ?', a: 'Non. L\'accident du travail et la maladie professionnelle relèvent d\'une assurance privée obligatoire souscrite par l\'employeur (Dahir du 6 février 1963), pas de la CNSS. Seule la maladie ordinaire, sans lien avec le travail, passe par le circuit CNSS classique.' },
+          { q: 'Dans quel délai un accident du travail doit-il être déclaré ?', a: 'Dans un délai de 48 heures, hors dimanches et jours fériés, à la fois auprès de l\'assureur accidents du travail de l\'entreprise et de l\'inspection du travail compétente.' },
+          { q: 'Un salarié étranger a-t-il les mêmes droits qu\'un salarié marocain en cas d\'accident ou de maladie ?', a: 'Oui, ses droits sont strictement identiques. La difficulté pratique vient souvent de l\'éloignement de sa famille et de la barrière administrative, pas d\'une différence de droits.' },
+          { q: 'Qui prend en charge un rapatriement médical si nécessaire ?', a: 'Ni la CNSS ni l\'assurance accidents du travail ne financent en principe un rapatriement vers le pays d\'origine. Ce poste doit être couvert par une complémentaire santé internationale souscrite en amont par le salarié ou l\'employeur.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -4870,6 +5061,16 @@ export const articles: Article[] = [
     category: 'Nationalité',
     excerpt: 'Cinq ans de résidence régulière, un dossier solide et beaucoup de patience : la naturalisation marocaine n\'est jamais automatique. Conditions, documents, délais réels et pièges à éviter pour un salarié étranger qui envisage de s\'installer durablement.',
     Content: Article30Content,
+  },
+  {
+    slug: 'accident-travail-arret-maladie-salarie-etranger-maroc',
+    title: 'Accident du travail et arrêt maladie d\'un salarié étranger au Maroc : ce que doit faire l\'employeur',
+    description: 'Accident du travail ou maladie ordinaire d\'un salarié étranger au Maroc : deux régimes différents, deux procédures. Déclaration sous 48h, assurance AT, indemnités et pièges à éviter.',
+    date: '6 octobre 2026',
+    readTime: 8,
+    category: 'Obligations',
+    excerpt: 'Accident du travail et maladie ordinaire ne relèvent pas du même régime au Maroc — l\'un passe par l\'assurance AT de l\'entreprise, l\'autre par la CNSS. Ce que l\'employeur d\'un salarié étranger doit savoir et faire dans les 48 heures.',
+    Content: Article31Content,
   },
 ];
 
