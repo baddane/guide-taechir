@@ -94,7 +94,7 @@
   <!-- Blog — Page listing -->
   <url>
     <loc>https://guide-taechir.org/blog</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -343,6 +343,14 @@
   <url>
     <loc>https://guide-taechir.org/blog/accident-travail-arret-maladie-salarie-etranger-maroc</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog — Article 32 : Achat immobilier au Maroc pour un salarié étranger -->
+  <url>
+    <loc>https://guide-taechir.org/blog/achat-immobilier-maroc-salarie-etranger</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

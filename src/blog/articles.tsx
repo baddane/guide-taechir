@@ -4761,6 +4761,171 @@ function Article31Content() {
   );
 }
 
+/* ─── Article 32 — Achat immobilier étranger (affiliation) ──────────────── */
+
+function Article32Content() {
+  return (
+    <>
+      <Lead>
+        « Est-ce qu'un étranger a même le droit d'acheter au Maroc ? » — c'est la première
+        question que me posent presque tous les salariés étrangers qui s'installent durablement.
+        La réponse tient en une phrase : oui, presque comme un Marocain, sauf sur un point précis
+        qui bloque plus de dossiers qu'on ne le croit. Voici ce qu'il faut vraiment savoir avant
+        de signer un compromis.
+      </Lead>
+      <AffDisclosure />
+
+      <H2>Ce qu'un étranger peut acheter — et ce qu'il ne peut pas</H2>
+      <P>
+        Sur le foncier urbain — appartement, villa, local commercial, terrain à bâtir en zone
+        urbaine — un étranger achète avec exactement les mêmes droits qu'un Marocain, quel que
+        soit son statut (salarié TAECHIR, retraité, ou simple acquéreur sans lien avec le
+        travail au Maroc). Aucune autorisation préalable n'est requise pour ce type de bien.
+      </P>
+      <Warning>
+        Le foncier <strong>agricole</strong>, en revanche, reste verrouillé : depuis le Dahir du
+        21 juillet 1973, une personne physique ou morale étrangère ne peut pas acquérir de terre
+        à vocation agricole sans autorisation du Wali de région. Dans les faits, cette autorisation
+        est rarement accordée. Si le bien qui vous intéresse est classé agricole au cadastre —
+        même une belle maison avec un grand terrain à la périphérie de Marrakech ou d'Essaouira —
+        vérifiez ce classement avant toute chose, pas après avoir versé un acompte.
+      </Warning>
+
+      <H2>Titre foncier ou melkia : le point qui décide de tout</H2>
+      <P>
+        Au Maroc, tous les biens ne sont pas enregistrés de la même façon, et ça change tout pour
+        un acheteur étranger.
+      </P>
+      <Table
+        rows={[
+          ['', 'Titre foncier (immatriculé)', 'Melkia (non immatriculé)'],
+          ['Registre', 'Conservation foncière (ANCFCC)', 'Actes adoulaires, pas de registre central'],
+          ['Vérification des charges', 'Certificat de propriété fiable', 'Difficile à sécuriser à 100 %'],
+          ['Acte de vente', 'Acte notarié, inscrit au titre', 'Acte adoulaire, procédure plus lourde'],
+          ['Risque pour l\'acheteur', 'Faible', 'Réel (hypothèques cachées, indivision non soldée)'],
+        ]}
+      />
+      <Info>
+        Mon conseil, sans exception, pour un acheteur étranger qui ne vit pas au Maroc à
+        l'année : n'achetez que du titré, ou exigez une immatriculation préalable à votre charge
+        contractuelle avant la signature définitive. La différence de sécurité juridique ne se
+        discute même pas.
+      </Info>
+
+      <H2>De la promesse de vente à l'acte notarié</H2>
+      <P>Le déroulé classique d'un achat sécurisé suit à peu près cet ordre :</P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Certificat de propriété</strong> — demandé à la conservation foncière, il confirme l'identité du propriétaire et l'absence d'hypothèque ou de saisie sur le bien.</li>
+        <li><strong>Compromis de vente</strong> — souvent accompagné d'un acompte de 10 %, versé de préférence via un compte séquestre plutôt que directement au vendeur.</li>
+        <li><strong>Purge des conditions suspensives</strong> — notamment l'obtention du financement si un crédit est nécessaire.</li>
+        <li><strong>Acte de vente authentique</strong> — signé chez un notaire, puis inscrit à la conservation foncière pour le transfert effectif de propriété.</li>
+      </ul>
+      <Tip>
+        Faites systématiquement appel à un notaire indépendant du vendeur et de l'agence, jamais
+        « recommandé » par l'une des deux parties. C'est lui qui vérifie les charges et sécurise
+        le séquestre — un mauvais choix ici coûte beaucoup plus cher que ses honoraires.
+      </Tip>
+
+      <H2>Le vrai coût d'un achat, au-delà du prix affiché</H2>
+      <Table
+        rows={[
+          ['Poste', 'Montant indicatif'],
+          ['Droits d\'enregistrement', '4 % du prix de vente'],
+          ['Frais de conservation foncière', 'Environ 1 % à 1,5 %'],
+          ['Honoraires de notaire', 'Environ 0,5 % à 1 %, hors TVA'],
+          ['Commission d\'agence (à la charge de l\'acheteur, usage courant)', 'Environ 2,5 %, hors TVA'],
+        ]}
+      />
+      <P>
+        Comptez donc entre 8 % et 10 % du prix affiché en frais annexes — un budget que beaucoup
+        de primo-acheteurs étrangers découvrent au moment de signer, plutôt qu'en négociant le
+        prix du bien lui-même.
+      </P>
+
+      <H2>Financer l'achat depuis l'étranger : ce que la banque va exiger</H2>
+      <P>
+        Un salarié étranger installé au Maroc peut, comme tout résident, solliciter un crédit
+        immobilier auprès d'une banque marocaine. La différence se joue surtout sur l'apport
+        personnel exigé — souvent plus élevé pour un non-résident ou un résident récent que pour
+        un Marocain avec un historique bancaire local — et sur la traçabilité des fonds.
+      </P>
+      <P>
+        C'est un point que presque personne n'anticipe : si vous financez l'achat, en tout ou
+        partie, avec des fonds venus de l'étranger, faites-les transiter par un compte bancaire
+        marocain et conservez l'attestation de transfert de devises. Le jour où vous revendrez
+        le bien, c'est ce document qui vous permettra de rapatrier le produit de la vente à
+        l'étranger sans blocage de l'Office des Changes. Sans cette traçabilité, une partie du
+        produit de la revente peut rester coincée en dirhams non transférables.
+      </P>
+
+      <AffiliateBox
+        title="Transférer l'apport ou le prix d'achat au taux réel du marché"
+        cta="Comparer le montant reçu"
+        href={affiliates.transfert.url}
+      >
+        <p>
+          Pour un virement de cette ampleur, quelques points de marge de change représentent
+          vite plusieurs milliers de dirhams. <strong>{affiliates.transfert.partner}</strong>{' '}
+          applique le taux interbancaire réel et affiche une commission transparente avant
+          l'envoi — de quoi comparer sérieusement avec le taux proposé par votre banque avant
+          de transférer une somme importante.
+        </p>
+      </AffiliateBox>
+
+      <H2>Non, acheter un bien ne donne pas de titre de séjour</H2>
+      <P>
+        C'est l'idée reçue la plus répandue, largement importée d'autres pays qui proposent un
+        « golden visa » adossé à l'investissement immobilier. Le Maroc ne propose pas ce
+        mécanisme : posséder un appartement ou une villa, même d'une valeur importante, ne donne
+        aucun droit automatique à une carte de séjour. Pour un salarié étranger, c'est bien le
+        contrat de travail et le dossier TAECHIR qui fondent le droit au séjour — l'achat
+        immobilier reste une opération patrimoniale totalement distincte.
+      </P>
+
+      <H2>Après l'achat : taxe d'habitation et plus-value à la revente</H2>
+      <P>
+        Une fois propriétaire, deux échéances fiscales à connaître. La taxe d'habitation et la
+        taxe de services communaux s'appliquent chaque année sur la base de la valeur locative du
+        bien — une résidence principale bénéficie d'une exonération partielle pendant les
+        premières années sous conditions. En cas de revente, la plus-value réalisée est soumise
+        à la taxe sur le profit immobilier (TPI), calculée sur la différence entre prix d'achat
+        et prix de revente, avec un régime plus favorable si le bien constitue votre résidence
+        principale depuis plusieurs années.
+      </P>
+
+      <H2>Les pièges les plus fréquents</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li><strong>Verser un acompte avant d'avoir le certificat de propriété.</strong> C'est le meilleur moyen de découvrir une hypothèque ou une indivision après coup, quand l'argent est déjà parti.</li>
+        <li><strong>Confondre agence « de confiance » et vérification juridique.</strong> Une bonne agence facilite la transaction, elle ne remplace jamais le notaire pour sécuriser le titre.</li>
+        <li><strong>Payer une partie du prix « au black », en espèces, hors acte.</strong> Outre le risque fiscal, cette pratique complique énormément la revente et le rapatriement des fonds pour un étranger.</li>
+        <li><strong>Oublier la traçabilité du financement.</strong> Sans attestation de transfert de devises, le rapatriement du produit de la revente peut se bloquer des mois.</li>
+      </ul>
+
+      <Divider />
+
+      <LeadBox
+        title="Un projet d'achat immobilier au Maroc en tant qu'étranger ?"
+        cta="Être mis en relation avec un notaire"
+      >
+        <p>
+          Vérification du titre, structuration du financement, sécurisation du compromis :
+          décrivez-nous votre projet, nous pouvons vous orienter vers des professionnels habitués
+          aux dossiers d'acheteurs étrangers.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il acheter un appartement au Maroc ?', a: 'Oui, sans restriction particulière pour un bien urbain (appartement, villa, local commercial), avec les mêmes droits qu\'un acheteur marocain. Seul le foncier agricole reste soumis à autorisation.' },
+          { q: 'Acheter un bien immobilier donne-t-il droit à un titre de séjour au Maroc ?', a: 'Non. Le Maroc ne propose pas de mécanisme de type « golden visa ». Le droit au séjour d\'un salarié étranger dépend de son contrat de travail et de son dossier TAECHIR, pas de son patrimoine immobilier.' },
+          { q: 'Quels sont les frais réels à prévoir en plus du prix d\'achat ?', a: 'Comptez environ 8 à 10 % du prix : droits d\'enregistrement (4 %), frais de conservation foncière (1 à 1,5 %), honoraires de notaire (0,5 à 1 %) et, le cas échéant, commission d\'agence (environ 2,5 %).' },
+          { q: 'Comment être sûr de pouvoir rapatrier l\'argent en cas de revente ?', a: 'En faisant transiter les fonds d\'achat par un compte bancaire marocain et en conservant l\'attestation de transfert de devises correspondante — c\'est ce document que l\'Office des Changes demande pour autoriser le rapatriement du produit de la revente.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5071,6 +5236,16 @@ export const articles: Article[] = [
     category: 'Obligations',
     excerpt: 'Accident du travail et maladie ordinaire ne relèvent pas du même régime au Maroc — l\'un passe par l\'assurance AT de l\'entreprise, l\'autre par la CNSS. Ce que l\'employeur d\'un salarié étranger doit savoir et faire dans les 48 heures.',
     Content: Article31Content,
+  },
+  {
+    slug: 'achat-immobilier-maroc-salarie-etranger',
+    title: 'Acheter un bien immobilier au Maroc en tant que salarié étranger : procédure, coûts et pièges',
+    description: 'Un salarié étranger peut-il acheter un bien immobilier au Maroc ? Ce que dit la loi sur le foncier agricole, titre foncier vs melkia, coûts réels (enregistrement, notaire, agence) et transfert de fonds depuis l\'étranger.',
+    date: '13 octobre 2026',
+    readTime: 8,
+    category: 'Expatrié',
+    excerpt: 'Un étranger achète un appartement ou une villa au Maroc presque aussi librement qu\'un Marocain — sauf sur le foncier agricole. Titre foncier, coûts réels, transfert de fonds et le mythe du titre de séjour « par l\'achat » : le guide complet.',
+    Content: Article32Content,
   },
 ];
 
