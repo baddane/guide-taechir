@@ -4926,6 +4926,167 @@ function Article32Content() {
   );
 }
 
+/* ─── Article 33 ────────────────────────────────────────────────────────── */
+
+function Article33Content() {
+  return (
+    <>
+      <Lead>
+        « Si je repars dans mon pays avant l'âge de la retraite, mes cotisations CNSS sont
+        perdues, non ? » C'est la question que me pose quasiment tout salarié étranger qui
+        signe un contrat de deux ou trois ans au Maroc. La réponse a d'ailleurs changé en 2025 :
+        une réforme a nettement amélioré la situation de ceux qui ne font qu'un passage au
+        Maroc. Voici ce qu'il faut savoir, seuil par seuil.
+      </Lead>
+
+      <H2>Les conditions pour toucher une pension : l'âge et les jours cotisés</H2>
+      <P>
+        La pension de vieillesse CNSS repose sur deux conditions cumulatives : avoir 60 ans
+        (55 ans pour les mineurs de fond justifiant 5 ans d'activité souterraine) et avoir
+        cessé toute activité salariée. La troisième condition, le nombre de jours cotisés,
+        est celle qui change tout pour un salarié étranger en poste quelques années seulement.
+      </P>
+      <Table
+        rows={[
+          ['Jours cotisés', 'Situation depuis la réforme de 2025'],
+          ['3 240 jours ou plus (≈ 10,8 ans)', 'Pension complète : 50 % du salaire moyen, +1 point par tranche de 216 jours au-delà, plafonnée à 70 %'],
+          ['Entre 1 320 et 3 239 jours', 'Pension réduite, proportionnelle au nombre de jours, avec un plancher forfaitaire mensuel'],
+          ['Moins de 1 320 jours', 'Pas de pension possible — seul le remboursement des cotisations reste ouvert'],
+        ]}
+      />
+      <P>
+        Le salaire moyen servant de base au calcul correspond à la 96ᵉ partie du total des
+        salaires déclarés sur les 96 derniers mois cotisés — donc, dans les faits, sur les
+        8 dernières années de carrière au Maroc si le salarié n'a pas cette ancienneté.
+      </P>
+
+      <H2>La réforme de 2025 : un vrai changement pour les carrières courtes</H2>
+      <P>
+        Jusqu'en 2025, il fallait impérativement atteindre 3 240 jours (l'équivalent de
+        10,8 années de cotisation) pour avoir droit à la moindre pension. En dessous, c'était
+        le remboursement pur et simple, sans aucune rente. Beaucoup de salariés étrangers
+        passaient sous ce seuil sans même s'en rendre compte.
+      </P>
+      <Info>
+        Depuis le 1ᵉʳ mai 2025 (loi 02.24), le seuil d'ouverture du droit à pension est
+        descendu à 1 320 jours, soit un peu moins de 4 ans et demi. Entre 1 320 et 3 239
+        jours, la pension est proportionnelle au nombre de jours réellement cotisés, avec un
+        montant plancher forfaitaire de l'ordre de 600 à 1 000 Dhs par mois selon la tranche
+        atteinte. Ce n'est pas une fortune, mais c'est une pension à vie là où il n'y avait
+        rien avant.
+      </Info>
+      <P>
+        Concrètement, un cadre portugais recruté à 45 ans pour un poste de 5 ans à Tanger, qui
+        rentre ensuite chez lui, franchit désormais le seuil des 1 320 jours dès sa deuxième
+        année complète au Maroc. Avant la réforme, il aurait fini avec un simple remboursement
+        de cotisations, sans aucune pension.
+      </P>
+
+      <H2>Sous le seuil : le remboursement des cotisations salariales</H2>
+      <P>
+        Si le salarié quitte le Maroc — ou cesse toute activité — sans avoir atteint 1 320
+        jours cotisés, il n'a pas droit à une pension, mais il peut demander le remboursement
+        de ses propres cotisations retraite (la part salariale, pas la part patronale) une fois
+        l'âge légal de la retraite atteint.
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Avoir cumulé moins de 1 320 jours de cotisation</li>
+        <li>Avoir atteint l'âge légal de départ à la retraite</li>
+        <li>Avoir cessé toute activité salariale au Maroc</li>
+        <li>Ne bénéficier d'aucune pension de vieillesse ou d'invalidité par ailleurs</li>
+      </ul>
+      <Warning>
+        Ce remboursement n'est ni automatique ni immédiat : il faut en faire la demande
+        auprès de la CNSS, l'âge légal doit être atteint (on ne le récupère pas le jour du
+        départ du Maroc à 35 ans), et seule la part salariale est concernée. La part versée
+        par l'employeur reste acquise à la caisse.
+      </Warning>
+
+      <H2>La vraie meilleure option : la convention bilatérale de sécurité sociale</H2>
+      <P>
+        Avant de se rabattre sur le remboursement, il faut vérifier une chose : le pays
+        d'origine du salarié a-t-il signé une convention de sécurité sociale avec le Maroc ?
+        Si oui, c'est presque toujours l'option la plus avantageuse, très loin devant le
+        simple remboursement des cotisations.
+      </P>
+      <P>
+        Le Maroc a signé ce type de convention avec la France (1979), la Belgique (1968),
+        l'Espagne (1979), les Pays-Bas (1972), ainsi qu'avec l'Allemagne, le Canada (et le
+        Québec séparément), la Tunisie et plusieurs autres pays. Ces accords permettent :
+      </P>
+      <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>La totalisation des périodes</strong> — les jours cotisés au Maroc s'additionnent à ceux cotisés dans le pays d'origine pour atteindre les seuils d'ouverture des droits, dans les deux sens</li>
+        <li><strong>Le maintien de la pension</strong> — chaque caisse verse sa propre quote-part, calculée au prorata de la durée cotisée chez elle, exportable vers le pays de résidence du retraité</li>
+        <li><strong>L'absence de double cotisation</strong> pour les salariés détachés temporairement, qui restent affiliés à la caisse de leur pays d'origine</li>
+      </ul>
+      <Tip>
+        La demande de totalisation ne se fait pas uniquement auprès de la CNSS : elle doit
+        être déposée en parallèle auprès de la caisse de retraite du pays d'origine (la CNAV
+        en France, l'ONSS/ONP en Belgique, etc.), qui se charge ensuite d'échanger les
+        attestations de carrière avec la CNSS. Mieux vaut lancer les deux démarches en même
+        temps que de faire l'une puis l'autre.
+      </Tip>
+
+      <H2>Partir avant 60 ans : la retraite anticipée est-elle possible ?</H2>
+      <P>
+        Oui, à partir de 55 ans, mais avec une décote : la pension est réduite d'environ 1 %
+        par année d'anticipation par rapport à l'âge légal de 60 ans. Un départ à 55 ans
+        pile entraîne donc une réduction de l'ordre de 5 % du montant calculé. C'est une
+        option rarement utilisée par les salariés étrangers, dont le départ du Maroc coïncide
+        généralement avec la fin du contrat plutôt qu'avec un projet de retraite anticipée.
+      </P>
+
+      <H2>Continuer à cotiser au Maroc après avoir quitté le pays</H2>
+      <P>
+        Un salarié qui approche du seuil de 1 320 ou 3 240 jours sans tout à fait l'atteindre
+        peut, sous certaines conditions, opter pour l'assurance volontaire auprès de la CNSS
+        afin de continuer à cotiser après la fin de son activité salariée au Maroc — une
+        option notamment utilisée par des Marocains résidant à l'étranger (MRE), mais ouverte
+        plus largement à qui a cotisé un minimum de temps au régime marocain. Ça permet de
+        franchir le seuil sans avoir à compter uniquement sur une convention bilatérale.
+      </P>
+
+      <Divider />
+
+      <H2>Avant de faire les valises : ce qu'il faut vérifier</H2>
+      <ul className="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+        <li><strong>Demander son relevé de carrière CNSS</strong> — il indique le nombre exact de jours cotisés, la première chose à connaître avant de choisir une stratégie.</li>
+        <li><strong>Vérifier si le pays d'origine a une convention avec le Maroc</strong> — si oui, la totalisation est presque toujours préférable au remboursement.</li>
+        <li><strong>Garder précieusement son numéro CNSS</strong> — il reste valable à vie, y compris pour un retour au Maroc des années plus tard chez un autre employeur.</li>
+        <li><strong>Ne pas confondre remboursement et pension</strong> — le remboursement solde définitivement les droits liés à ces cotisations ; une fois demandé, il n'est plus possible de les faire compter dans une future totalisation.</li>
+      </ul>
+
+      <P>
+        Au final, la retraite CNSS d'un salarié étranger n'est presque jamais une case vide.
+        Entre la pension complète, la pension proportionnelle depuis 2025, la totalisation
+        bilatérale et le remboursement en dernier recours, il y a presque toujours une option
+        qui permet de ne pas perdre ce qui a été cotisé — à condition de s'en occuper avant de
+        quitter le Maroc, pas des années après.
+      </P>
+
+      <LeadBox
+        title="Salarié étranger en fin de contrat au Maroc ?"
+        cta="Faire le point sur votre dossier CNSS"
+      >
+        <p>
+          Relevé de carrière, seuils atteints, convention bilatérale applicable selon votre
+          nationalité : décrivez-nous votre situation, nous pouvons vous orienter avant votre
+          départ pour ne pas perdre vos droits.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger qui quitte le Maroc perd-il ses cotisations retraite CNSS ?', a: 'Pas nécessairement. S\'il a cotisé au moins 1 320 jours, il a droit à une pension (complète à partir de 3 240 jours, proportionnelle en dessous). En dessous de 1 320 jours, il peut demander le remboursement de sa part de cotisations, ou bénéficier d\'une totalisation des périodes si son pays a signé une convention de sécurité sociale avec le Maroc.' },
+          { q: 'Qu\'est-ce qui a changé avec la réforme de 2025 ?', a: 'La loi 02.24, en vigueur depuis le 1ᵉʳ mai 2025, a abaissé le seuil d\'ouverture du droit à pension de 3 240 à 1 320 jours cotisés, avec une pension proportionnelle et un montant plancher pour les carrières comprises entre 1 320 et 3 239 jours.' },
+          { q: 'Comment fonctionne la totalisation des périodes avec une convention bilatérale ?', a: 'Les jours cotisés au Maroc et dans le pays d\'origine s\'additionnent pour atteindre les seuils d\'ouverture des droits. Chaque caisse verse ensuite sa propre quote-part de pension, calculée au prorata de la durée cotisée chez elle, exportable vers le pays de résidence.' },
+          { q: 'Le remboursement des cotisations est-il possible dès le départ du Maroc ?', a: 'Non. Il faut avoir atteint l\'âge légal de départ à la retraite et avoir cessé toute activité salariale, en plus d\'être sous le seuil de 1 320 jours cotisés. Ce n\'est pas une démarche disponible au moment du départ du pays si le salarié est encore jeune.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5246,6 +5407,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Un étranger achète un appartement ou une villa au Maroc presque aussi librement qu\'un Marocain — sauf sur le foncier agricole. Titre foncier, coûts réels, transfert de fonds et le mythe du titre de séjour « par l\'achat » : le guide complet.',
     Content: Article32Content,
+  },
+  {
+    slug: 'retraite-cnss-salarie-etranger-maroc',
+    title: 'Retraite CNSS d\'un salarié étranger au Maroc : cotisations, seuils et remboursement',
+    description: 'Ce que devient la pension de retraite CNSS d\'un salarié étranger qui quitte le Maroc : seuils de jours cotisés depuis la réforme 2025, remboursement des cotisations et conventions bilatérales de totalisation.',
+    date: '20 octobre 2026',
+    readTime: 7,
+    category: 'Expatrié',
+    excerpt: 'Depuis la réforme de 2025, le seuil pour toucher une pension CNSS est passé de 3 240 à 1 320 jours cotisés. Ce que ça change pour un salarié étranger, et comment ne pas perdre ses droits en quittant le Maroc.',
+    Content: Article33Content,
   },
 ];
 
