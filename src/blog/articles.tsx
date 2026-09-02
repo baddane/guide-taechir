@@ -466,9 +466,11 @@ function Article2Content() {
           du temps.
         </li>
         <li>
-          <strong>Les listes A1/A2 changent.</strong> Avant 2023, on pouvait encore classer certains
-          profils IT en A2 assez facilement. Depuis, les listes ont été mises à jour. Vérifiez toujours
-          la version en cours avant de vous lancer.
+          <strong>Ne confondez pas les deux listes.</strong> La liste A1 dépend du niveau
+          hiérarchique du poste et de la taille de l'entreprise — un cadre n-1 dans une société
+          de plus de 50 salariés y entre. La liste A2, elle, énumère des métiers précis. Un poste
+          du numérique n'y figure pas nommément : c'est presque toujours par la liste A1 qu'il
+          faut passer. Et les deux listes sont mises à jour, vérifiez la version en cours.
         </li>
       </ul>
       <Warning>
@@ -495,10 +497,16 @@ function Article3Content() {
       <H2>Le contexte : pourquoi des listes de profils rares ?</H2>
       <P>
         La procédure standard d'attestation ANAPEC — 20 jours d'annonce, 5 000 Dhs — a du sens
-        pour les postes où des candidats nationaux qualifiés existent. Mais pour certains métiers
-        très spécialisés ou de très haut niveau, imposer ce délai serait contre-productif : cela
-        freinerait les investissements sans servir l'emploi marocain puisqu'aucun candidat local
-        ne peut répondre au besoin.
+        pour les postes où des candidats nationaux qualifiés existent. Mais pour les fonctions
+        de direction et pour certains métiers structurellement absents du marché, imposer ce
+        délai serait contre-productif : cela freinerait les investissements sans servir l'emploi
+        marocain puisqu'aucun candidat local ne peut répondre au besoin.
+      </P>
+      <P>
+        Les deux listes ne répondent pas à la même logique, et c'est la source de confusion la
+        plus fréquente : <strong>A1 raisonne en niveau hiérarchique</strong>, A2 énumère des{' '}
+        <strong>métiers précis</strong>. Un poste peut relever de A1 dans une entreprise et pas
+        dans une autre, alors que l'appartenance à A2 ne dépend, elle, que du métier exercé.
       </P>
       <P>
         Les listes A1 et A2 permettent à l'ANAPEC de reconnaître officiellement ces situations
@@ -506,45 +514,58 @@ function Article3Content() {
         48 heures et 1 500 Dhs.
       </P>
 
-      <H2>La liste A1 : profils de haut niveau</H2>
+      <H2>La liste A1 : le niveau hiérarchique, pas le métier</H2>
       <P>
-        La liste A1 regroupe les fonctions de direction et d'encadrement de haut rang pour
-        lesquelles le Maroc cherche à attirer des talents internationaux dans une logique
-        d'attractivité économique.
+        C'est le point que presque tout le monde comprend de travers. La liste A1 ne
+        raisonne pas en intitulés de poste ni en années d'expérience, mais en{' '}
+        <strong>position dans l'organigramme</strong>, croisée avec la taille de
+        l'entreprise. Un même titre peut donc être éligible dans une société et pas dans
+        une autre.
       </P>
-      <P>On y retrouve généralement :</P>
       <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
-        <li>Directeurs Généraux et directeurs de filiales</li>
-        <li>Directeurs fonctionnels : DSI, DAF, DRH, Directeur Commercial, CTO</li>
-        <li>Experts de haut niveau avec plus de 10 ans d'expérience internationale dans leur domaine</li>
-        <li>Consultants seniors spécialisés dans des secteurs peu représentés au Maroc</li>
-        <li>Responsables de projets d'investissement étrangers d'envergure</li>
+        <li>Président-directeur général, président du conseil, directeur général, directeur général adjoint, secrétaire général</li>
+        <li><strong>Cadres de niveau n-1</strong> dans les multinationales, les entreprises de plus de 50 salariés, ou celles dont le capital dépasse 1 000 000 Dhs</li>
+        <li><strong>Cadres de niveau n-2</strong> dans les entreprises de plus de 500 salariés</li>
+        <li>Responsables d'associations et d'ONG justifiant d'au moins 3 ans d'expérience</li>
+        <li>Directeurs de succursale de société étrangère, avec au moins 2 ans d'expérience similaire dans la maison mère</li>
       </ul>
       <Info>
-        Pour la liste A1, l'idée directrice est que la rareté tient au niveau d'expérience et de
-        séniorité plutôt qu'à la spécialité technique elle-même. Un DSI avec 15 ans d'expérience
-        internationale relève de la liste A1, même si des profils DSI existent au Maroc.
+        Conséquence pratique : la question à se poser n'est pas « ce poste est-il
+        prestigieux ? » mais « à qui ce poste est-il rattaché, et quelle est la taille de
+        l'entreprise ? ». Un responsable commercial rattaché directement au dirigeant dans
+        une société de 60 salariés est un cadre n-1 : il entre dans la liste A1. Le même
+        poste, rattaché à un directeur commercial dans une PME de 20 salariés, n'y entre
+        pas.
       </Info>
 
-      <H2>La liste A2 : profils pointus et rares</H2>
+      <H2>La liste A2 : une liste de métiers, pas une catégorie technique</H2>
       <P>
-        La liste A2 cible des métiers techniques spécialisés dont la disponibilité est
-        structurellement insuffisante sur le marché de l'emploi marocain. Contrairement à la
-        liste A1 qui est orientée séniorité, la liste A2 est orientée spécialité.
+        La liste A2 recense des professions précises jugées rares ou indisponibles sur le
+        marché marocain. Elle est plus hétéroclite qu'on ne l'imagine : on n'y trouve pas
+        une catégorie « profils techniques pointus », mais des métiers nommément désignés.
       </P>
-      <P>Parmi les types de profils qui figurent typiquement dans cette liste :</P>
       <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
-        <li>Ingénieurs spécialisés dans des technologies de niche (semi-conducteurs, systèmes embarqués avancés, etc.)</li>
-        <li>Data scientists et experts IA dans des domaines pointus</li>
-        <li>Experts en cybersécurité offensive ou en infrastructure critique</li>
-        <li>Spécialistes de procédés industriels rares (métallurgie avancée, chimie fine, etc.)</li>
-        <li>Profils de l'ingénierie offshore et parapétrolière</li>
+        <li>Ingénieurs et architectes justifiant de plus de 5 ans d'expérience</li>
+        <li>Professeurs et chercheurs de l'enseignement supérieur (5 ans d'expérience), professeurs de langues, conseillers d'orientation</li>
+        <li>Commandants de bord, pilotes d'avion, capitaines de navire, mécaniciens aéronautiques</li>
+        <li>Directeurs des programmes d'antennes de radio et de télévision</li>
+        <li>Chefs cuisiniers, toutes spécialités gastronomiques confondues</li>
+        <li>Interprètes et traducteurs, bibliothécaires</li>
+        <li>Thérapeutes spa, entraîneurs de chevaux, pilotes de montgolfière, éleveurs de chameaux, professionnels de la plongée</li>
       </ul>
       <Warning>
-        Les listes A1 et A2 ne sont pas exhaustives et sont mises à jour régulièrement par l'ANAPEC
-        en concertation avec le Ministère chargé du Travail. Avant de qualifier un poste de "rare",
-        vérifiez les listes en vigueur. En cas de doute, contactez directement l'agence ANAPEC
-        régionale pour une confirmation préalable.
+        Un poste du numérique — data scientist, expert en cybersécurité, développeur
+        senior — ne figure <strong>pas</strong> nommément sur la liste A2. Si vous recrutez
+        sur ces métiers, votre voie d'accès à la procédure allégée est la liste A1 par le
+        niveau hiérarchique, ou l'entrée « ingénieurs justifiant de plus de 5 ans
+        d'expérience » de la liste A2 — à faire confirmer par votre agence, car son
+        interprétation varie.
+      </Warning>
+      <Warning>
+        Les listes A1 et A2 sont mises à jour régulièrement par l'ANAPEC en concertation
+        avec le Ministère chargé du Travail, et les intitulés ci-dessus sont donnés à titre
+        indicatif. Avant de qualifier un poste de « rare », vérifiez la version en vigueur
+        et faites confirmer l'éligibilité par votre agence ANAPEC régionale.
       </Warning>
 
       <H2>Les avantages concrets de la procédure allégée</H2>
@@ -567,10 +588,17 @@ function Article3Content() {
       <H2>Comment savoir si votre poste est éligible ?</H2>
       <H3>Étape 1 : consulter les listes officielles</H3>
       <P>
-        Les listes A1 et A2 sont publiées sur le site officiel de l'ANAPEC. La terminologie
-        utilisée est celle de la Classification Internationale Type des Professions (CITP). Il
-        est recommandé de rechercher non seulement le titre exact du poste, mais aussi les
-        catégories et sous-catégories qui pourraient y correspondre.
+        Les listes A1 et A2, ainsi que les pièces à fournir pour l'attestation d'activité,
+        sont publiées par l'ANAPEC :{' '}
+        <a
+          href="https://anapec.ma/home-page-o1/employeur/lattestation-dactivite-pieces/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-indigo-600 underline font-medium"
+        >
+          pièces à fournir — attestation d'activité
+        </a>. La procédure est encadrée par la loi n° 65-99 (Code du Travail) et l'arrêté
+        ministériel n° 350-05 du 9 février 2005.
       </P>
       <H3>Étape 2 : contacter l'ANAPEC pour confirmation</H3>
       <P>
@@ -1527,16 +1555,21 @@ function Article10Content() {
         Comment ? Grâce aux listes A1 et A2 de l'ANAPEC.
       </P>
       <P>
-        En pratique, un directeur de site avec 10 ans d'expérience, un responsable qualité
-        international, un chef de projet bilingue avec une expertise sectorielle pointue —
-        ces profils rentrent presque toujours dans les critères A1 ou A2. Pas d'annonce à
-        publier, traitement en 48h. C'est un vrai gain de temps.
+        Attention toutefois au critère réel : ce n'est pas l'expérience du candidat qui ouvre
+        la liste A1, mais <strong>sa position dans l'organigramme</strong>. Un cadre de niveau
+        n-1 dans une entreprise de plus de 50 salariés — ou dont le capital dépasse
+        1 000 000 Dhs — y entre ; un cadre n-2 y entre à partir de 500 salariés. Les centres
+        offshore dépassant très souvent ces seuils, leurs directeurs de site et leurs
+        responsables rattachés à la direction générale sont en général éligibles.
       </P>
       <Tip>
-        Avant de lancer un dossier ANAPEC standard pour un cadre de votre centre, vérifiez
-        d'abord s'il relève des listes A1/A2. Un directeur des opérations bilingue avec 8+
-        ans d'expérience en BPO ? C'est probablement A1. Un CTO avec un profil technique
-        pointu ? Probablement A2. Vérifiez, ça peut vous économiser 3 500 Dhs et 18 jours.
+        Avant de lancer un dossier ANAPEC standard pour un cadre de votre centre, posez-vous
+        la seule question qui compte : à qui ce poste est-il rattaché, et combien de salariés
+        compte la structure ? Un directeur des opérations rattaché au directeur général d'un
+        centre de 300 personnes est un cadre n-1, donc liste A1. En revanche un expert
+        technique, aussi pointu soit-il, n'est éligible que s'il est lui aussi n-1, ou s'il
+        relève de l'entrée « ingénieurs justifiant de plus de 5 ans d'expérience » de la
+        liste A2. Vérifiez : ça peut vous économiser 3 500 Dhs et 18 jours.
       </Tip>
 
       <H2>Les agents et superviseurs : là c'est plus compliqué</H2>
@@ -5111,11 +5144,11 @@ export const articles: Article[] = [
   {
     slug: 'profils-rares-listes-a1-a2-anapec-maroc',
     title: 'Profils rares au Maroc : listes A1 et A2 de l\'ANAPEC expliquées',
-    description: 'Qu\'est-ce que les listes A1 et A2 de l\'ANAPEC ? Comment bénéficier de la procédure allégée (48h, 1500 Dhs) pour recruter des talents rares au Maroc.',
+    description: 'Listes A1 et A2 de l\'ANAPEC : qui est réellement éligible à la procédure allégée (48h, 1 500 Dhs) ? Critères de niveau hiérarchique, métiers concernés et vérification.',
     date: '29 janvier 2026',
     readTime: 5,
     category: 'ANAPEC',
-    excerpt: 'Pour les métiers rares ou de haut niveau, l\'ANAPEC propose une procédure en 48 heures au lieu de 20 jours. Tout ce qu\'il faut savoir sur les listes A1 et A2 et comment savoir si votre poste y figure.',
+    excerpt: 'Une procédure en 48 heures au lieu de 20 jours, et 1 500 Dhs au lieu de 5 000. Mais l\'éligibilité ne tient pas à l\'intitulé du poste : la liste A1 dépend du niveau hiérarchique et de la taille de l\'entreprise, la liste A2 énumère des métiers précis.',
     Content: Article3Content,
   },
   {
