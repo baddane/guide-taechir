@@ -516,56 +516,92 @@ function Article3Content() {
 
       <H2>La liste A1 : le niveau hiérarchique, pas le métier</H2>
       <P>
-        C'est le point que presque tout le monde comprend de travers. La liste A1 ne
-        raisonne pas en intitulés de poste ni en années d'expérience, mais en{' '}
+        Intitulée « Postes de responsabilités de haut niveau », la liste A1 ne raisonne pas
+        en métiers ni en années d'expérience, mais en{' '}
         <strong>position dans l'organigramme</strong>, croisée avec la taille de
-        l'entreprise. Un même titre peut donc être éligible dans une société et pas dans
-        une autre.
+        l'entreprise. Un même intitulé de poste peut donc être éligible dans une société et
+        pas dans une autre. Voici son contenu intégral :
       </P>
       <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
-        <li>Président-directeur général, président du conseil, directeur général, directeur général adjoint, secrétaire général</li>
-        <li><strong>Cadres de niveau n-1</strong> dans les multinationales, les entreprises de plus de 50 salariés, ou celles dont le capital dépasse 1 000 000 Dhs</li>
-        <li><strong>Cadres de niveau n-2</strong> dans les entreprises de plus de 500 salariés</li>
-        <li>Responsables d'associations et d'ONG justifiant d'au moins 3 ans d'expérience</li>
-        <li>Directeurs de succursale de société étrangère, avec au moins 2 ans d'expérience similaire dans la maison mère</li>
+        <li>Président Directeur Général</li>
+        <li>Président de Directoire</li>
+        <li>Secrétaire Général</li>
+        <li>Directeur Général</li>
+        <li>Directeur Général Adjoint</li>
+        <li>
+          <strong>Responsable (n-1)</strong> de multinationales, d'entreprises employant plus
+          de 50 collaborateurs, ou ayant un capital d'investissement dépassant 1 000 000 Dhs
+        </li>
+        <li>
+          <strong>Responsables (n-2)</strong> pour les grandes entreprises, dont l'effectif
+          dépasse 500 collaborateurs
+        </li>
+        <li>
+          Responsables au sein des associations ou des ONG justifiant d'une expérience minimum
+          de 3 ans
+        </li>
+        <li>
+          Responsables au sein de succursales d'entreprises étrangères justifiant d'une
+          expérience de 2 ans au minimum dans un poste similaire ou équivalent au sein de
+          l'entreprise mère
+        </li>
       </ul>
       <Info>
         Conséquence pratique : la question à se poser n'est pas « ce poste est-il
-        prestigieux ? » mais « à qui ce poste est-il rattaché, et quelle est la taille de
-        l'entreprise ? ». Un responsable commercial rattaché directement au dirigeant dans
-        une société de 60 salariés est un cadre n-1 : il entre dans la liste A1. Le même
-        poste, rattaché à un directeur commercial dans une PME de 20 salariés, n'y entre
-        pas.
+        prestigieux ? » mais « à qui est-il rattaché, et quelle est la taille de
+        l'entreprise ? ». Un responsable commercial rattaché directement au dirigeant dans une
+        société de 60 collaborateurs est un n-1 : il entre dans la liste A1. Le même poste,
+        rattaché à un directeur commercial dans une PME de 20 personnes, n'y entre pas.
       </Info>
 
-      <H2>La liste A2 : une liste de métiers, pas une catégorie technique</H2>
+      <H2>La liste A2 : une liste de métiers nommément désignés</H2>
       <P>
-        La liste A2 recense des professions précises jugées rares ou indisponibles sur le
-        marché marocain. Elle est plus hétéroclite qu'on ne l'imagine : on n'y trouve pas
-        une catégorie « profils techniques pointus », mais des métiers nommément désignés.
+        Intitulée « Profils pointus considérés comme étant rares ou non disponibles sur le
+        marché de l'emploi », la liste A2 énumère des professions précises. Elle est bien plus
+        hétéroclite qu'on ne l'imagine — et la connaître évite de perdre un mois. La voici en
+        entier :
       </P>
       <ul className="list-disc pl-6 space-y-2 text-slate-700 mb-6">
-        <li>Ingénieurs et architectes justifiant de plus de 5 ans d'expérience</li>
-        <li>Professeurs et chercheurs de l'enseignement supérieur (5 ans d'expérience), professeurs de langues, conseillers d'orientation</li>
-        <li>Commandants de bord, pilotes d'avion, capitaines de navire, mécaniciens aéronautiques</li>
-        <li>Directeurs des programmes d'antennes de radio et de télévision</li>
-        <li>Chefs cuisiniers, toutes spécialités gastronomiques confondues</li>
-        <li>Interprètes et traducteurs, bibliothécaires</li>
-        <li>Thérapeutes spa, entraîneurs de chevaux, pilotes de montgolfière, éleveurs de chameaux, professionnels de la plongée</li>
+        <li>Chef boulanger, chef chocolatier, chef cuisinier (toute spécialité gastronomique confondue : française, asiatique…), chef pâtissier</li>
+        <li>Cuisinier (spécialité asiatique)</li>
+        <li>Commandant de bord, commandants de navire, pilotes d'avion</li>
+        <li>Mécaniciens d'avion</li>
+        <li>Directeurs des programmes d'antennes de radio et télévisions</li>
+        <li>Éleveurs de dromadaires</li>
+        <li>Entraîneurs de chevaux</li>
+        <li>Green keeper</li>
+        <li><strong>Ingénieurs et architectes justifiant d'une expérience de plus de 5 ans</strong></li>
+        <li>Ingénieur, superviseur et technicien en tuyauterie</li>
+        <li>Interprètes et traducteurs de langues étrangères</li>
+        <li>Majordomes justifiant d'une expérience de 5 ans</li>
+        <li>Œnologue</li>
+        <li>Personnels des métiers de casino</li>
+        <li>Pilotes de montgolfière</li>
+        <li>Plongeurs corailleurs</li>
+        <li>Professeurs et chercheurs des établissements d'enseignement supérieur avec 5 ans d'expérience</li>
+        <li>Professeurs et enseignants de langues et en langues étrangères</li>
+        <li>Prothésiste dentaire</li>
+        <li>Prothésiste ongulaire</li>
+        <li>Sexeur de volailles</li>
+        <li>Thérapeutes spa</li>
+        <li>Téléconseiller lusophone ou néerlandophone</li>
       </ul>
+      <Info>
+        Mention portée au bas de la liste : les candidats à ces postes doivent justifier des
+        diplômes et/ou de l'expérience professionnelle nécessaires à l'occupation du poste.
+        Figurer sur la liste ne dispense donc pas de documenter le profil.
+      </Info>
       <Warning>
-        Un poste du numérique — data scientist, expert en cybersécurité, développeur
-        senior — ne figure <strong>pas</strong> nommément sur la liste A2. Si vous recrutez
-        sur ces métiers, votre voie d'accès à la procédure allégée est la liste A1 par le
-        niveau hiérarchique, ou l'entrée « ingénieurs justifiant de plus de 5 ans
-        d'expérience » de la liste A2 — à faire confirmer par votre agence, car son
-        interprétation varie.
+        Aucun métier du numérique n'apparaît nommément : ni développeur, ni data scientist,
+        ni expert en cybersécurité. Pour ces profils, deux voies restent ouvertes — la liste
+        A1 par le niveau hiérarchique, ou l'entrée « ingénieurs justifiant d'une expérience de
+        plus de 5 ans » de la liste A2, dont l'interprétation revient à l'agence. Faites-la
+        confirmer avant de déposer.
       </Warning>
       <Warning>
-        Les listes A1 et A2 sont mises à jour régulièrement par l'ANAPEC en concertation
-        avec le Ministère chargé du Travail, et les intitulés ci-dessus sont donnés à titre
-        indicatif. Avant de qualifier un poste de « rare », vérifiez la version en vigueur
-        et faites confirmer l'éligibilité par votre agence ANAPEC régionale.
+        Ces listes sont mises à jour par l'ANAPEC en concertation avec le Ministère chargé du
+        Travail. Les intitulés ci-dessus proviennent des listes A1 et A2 publiées par
+        l'ANAPEC ; vérifiez la version en vigueur au moment de votre dossier.
       </Warning>
 
       <H2>Les avantages concrets de la procédure allégée</H2>
