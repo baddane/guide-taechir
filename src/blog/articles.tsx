@@ -5156,6 +5156,156 @@ function Article33Content() {
   );
 }
 
+/* ─── Article 34 ────────────────────────────────────────────────────────── */
+
+function Article34Content() {
+  return (
+    <>
+      <Lead>
+        « Mon salarié a trouvé mieux ailleurs, mais il a encore huit mois de visa TAECHIR devant
+        lui — le nouvel employeur peut juste reprendre le contrat, non ? » Non, justement. C'est
+        l'un des malentendus les plus coûteux que je croise, et il touche autant le salarié
+        étranger qui démissionne trop vite que le nouvel employeur pressé de le faire démarrer.
+        Voici ce qui se passe réellement quand un salarié étranger change d'employeur au Maroc.
+      </Lead>
+
+      <H2>Changer d'employeur, ce n'est jamais un renouvellement</H2>
+      <P>
+        On l'a vu dans notre guide sur le <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">renouvellement du contrat de travail étranger</Link> :
+        la procédure allégée (48 heures, 1 500 Dhs) ne s'applique que si l'employeur ET le poste
+        restent identiques. Un changement d'employeur, même si le salarié occupe exactement le
+        même métier chez le nouveau, remet le compteur à zéro aux yeux du Ministère : c'est un
+        nouveau recrutement, avec un nouveau dossier ANAPEC et un nouveau visa TAECHIR, comme si
+        le salarié arrivait pour la première fois au Maroc.
+      </P>
+      <Table
+        rows={[
+          ['Situation', 'Procédure ANAPEC applicable', 'Délai / frais'],
+          ['Nouvel employeur, poste inédit pour ce métier', 'Dossier standard, annonce ANAPEC', '20 jours ouvrables, 5 000 Dhs'],
+          ['Nouvel employeur, métier déjà couvert par une attestation existante', 'Dossier supplémentaire, même métier', '20 jours ouvrables, 1 500 Dhs'],
+          ['Nouvel employeur, profil sur listes A1/A2', 'Procédure allégée', '48 heures, 1 500 Dhs'],
+          ['Nouvel employeur, salarié dispensé (Tunisien, CFC, conjoint de Marocain…)', 'Pas d\'attestation ANAPEC requise', 'Directement le dossier TAECHIR'],
+        ]}
+      />
+      <Info>
+        La bonne nouvelle : contrairement à un tout premier recrutement, le nouvel employeur n'a
+        presque jamais à repasser par les 5 000 Dhs et les 20 jours du dossier « premier profil ».
+        Si le métier a déjà été validé une fois par l'ANAPEC — peu importe pour quel employeur —,
+        c'est le tarif « dossier supplémentaire » à 1 500 Dhs qui s'applique. Encore faut-il le
+        signaler explicitement dans le dossier.
+      </Info>
+
+      <H2>Ce que le salarié doit obtenir de son ancien employeur</H2>
+      <P>
+        Le dossier de changement d'employeur sur la plateforme TAECHIR exige une pièce que
+        beaucoup découvrent au dernier moment : une lettre de démission ou une attestation de fin
+        de travail signée par l'ancien employeur, ou, en cas de litige entre les parties, une
+        décision de justice qui tranche la rupture. Sans ce document, le nouveau dossier ne peut
+        tout simplement pas être instruit.
+      </P>
+      <P>
+        Ça suppose que la rupture avec l'ancien employeur soit propre, et donc que le préavis
+        légal ait été respecté. Le Code du travail (articles 43 à 47) fixe des minimums selon le
+        statut et l'ancienneté :
+      </P>
+      <Table
+        rows={[
+          ['Ancienneté', 'Préavis — employés / ouvriers', 'Préavis — cadres'],
+          ['Moins d\'1 an', '8 jours', '1 mois'],
+          ['1 à 5 ans', '1 mois', '2 mois'],
+          ['Plus de 5 ans', '2 mois', '3 mois'],
+        ]}
+      />
+      <Warning>
+        Un salarié étranger qui part sans respecter son préavis s'expose aux mêmes dommages et
+        intérêts qu'un salarié marocain — mais il risque en plus de se retrouver sans l'attestation
+        de fin de travail nécessaire pour ouvrir le nouveau dossier TAECHIR. Mieux vaut négocier
+        une sortie propre, quitte à rallonger un peu la transition, que de griller son préavis et
+        bloquer sa propre régularisation chez le nouvel employeur.
+      </Warning>
+
+      <H2>Le nouveau dossier TAECHIR côté employeur</H2>
+      <P>
+        Une fois l'attestation ANAPEC obtenue (ou la dispense confirmée), le nouvel employeur
+        dépose sa demande sur la plateforme TAECHIR en indiquant qu'il s'agit d'un changement
+        d'employeur — l'historique du salarié, déjà connu de la plateforme, se pré-remplit
+        automatiquement. Le dossier comprend le nouveau contrat de travail, l'attestation ANAPEC
+        ou le justificatif de dispense, et la fameuse lettre de démission ou attestation de fin de
+        travail de l'ancien employeur.
+      </P>
+      <Tip>
+        L'administration s'engage sur un délai de traitement maximal de dix jours ouvrables pour
+        les demandes déposées via TAECHIR, avec un suivi en temps réel de l'avancement sur la
+        plateforme. En cas de blocage ou de question sur un dossier, le support TAECHIR répond au
+        05 30 10 07 05 — un numéro qui évite bien des allers-retours au guichet pour rien.
+      </Tip>
+
+      <H2>Le piège du « trou » entre les deux contrats</H2>
+      <P>
+        C'est le vrai danger de tout changement d'employeur : le salarié étranger n'a le droit de
+        travailler pour son nouvel employeur qu'à partir du moment où le nouveau visa TAECHIR est
+        délivré — pas avant, même si le contrat est signé et le dossier déposé. Un employeur qui
+        fait démarrer un salarié étranger avant l'obtention du visa l'emploie en situation
+        irrégulière, ce qui expose autant l'entreprise que le salarié à des sanctions.
+      </P>
+      <P>
+        D'où une règle simple, et pourtant trop souvent ignorée : ne jamais démissionner de
+        l'ancien poste avant que le nouveau dossier ANAPEC/TAECHIR ne soit solidement engagé, dans
+        l'idéal avec l'attestation ANAPEC déjà en poche. Utilisez la durée du préavis comme fenêtre
+        pour faire avancer le dossier en parallèle, plutôt que de partir puis d'attendre.
+      </P>
+
+      <H2>Et la carte de séjour DGSN dans tout ça ?</H2>
+      <P>
+        Comme pour un renouvellement classique, la carte de séjour délivrée par la DGSN est liée à
+        un employeur précis. Une fois le nouveau visa TAECHIR obtenu, il faut redéposer un dossier
+        de mise à jour auprès du bureau des étrangers, avec le nouveau contrat visé, pour que la
+        carte de séjour reflète le nouvel employeur. Tant que ce n'est pas fait, la carte reste
+        matériellement valable jusqu'à sa date d'expiration, mais elle ne correspond plus à la
+        situation réelle du salarié — un décalage qui peut poser problème lors d'un contrôle ou
+        d'un renouvellement ultérieur.
+      </P>
+      <Info>
+        Prévoyez le même enchaînement que pour un renouvellement : d'abord le visa TAECHIR du
+        nouvel employeur, ensuite la mise à jour DGSN. Ne tentez pas l'inverse, la carte de séjour
+        ne peut pas être mise à jour sans le nouveau contrat visé en main.
+      </Info>
+
+      <H2>Le compteur CNSS ne repart pas à zéro</H2>
+      <P>
+        Rassurez le salarié sur ce point précis : son numéro d'affiliation CNSS lui appartient à
+        vie et ne change pas d'un employeur à l'autre. Les jours cotisés chez l'ancien employeur
+        restent acquis et continuent de compter pour les seuils de pension évoqués dans notre
+        guide sur la <Link to="/blog/retraite-cnss-salarie-etranger-maroc" className="text-indigo-600 hover:underline">retraite CNSS d'un salarié étranger</Link>.
+        Ce qui compte, en revanche, c'est que le nouvel employeur déclare le salarié dès le premier
+        jour effectif de travail — pas de délai de grâce toléré sur ce point.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Un salarié étranger sur le point de changer d'employeur ?"
+        cta="Sécuriser la transition"
+      >
+        <p>
+          Timing du préavis, dossier ANAPEC à relancer, synchronisation avec la carte de séjour :
+          décrivez-nous la situation, nous pouvons vous aider à enchaîner les étapes sans période
+          d'irrégularité.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger peut-il changer d\'employeur au Maroc avant la fin de son contrat TAECHIR ?', a: 'Oui, mais cela déclenche une nouvelle procédure complète : nouvelle attestation ANAPEC (sauf dispense) et nouveau visa TAECHIR au nom du nouvel employeur. Le visa en cours ne se transfère pas automatiquement d\'un employeur à l\'autre.' },
+          { q: 'Le nouvel employeur doit-il repasser par les 5 000 Dhs du premier dossier ANAPEC ?', a: 'Généralement non. Si le métier a déjà été validé une fois par l\'ANAPEC, c\'est le tarif « dossier supplémentaire » de 1 500 Dhs qui s\'applique, avec un délai de 20 jours ouvrables (48 heures si le profil relève des listes A1/A2).' },
+          { q: 'Le salarié peut-il commencer chez le nouvel employeur avant d\'avoir le nouveau visa TAECHIR ?', a: 'Non. Tant que le nouveau visa n\'est pas délivré, le salarié n\'est pas autorisé à travailler pour ce nouvel employeur. Le faire démarrer avant expose l\'entreprise et le salarié à une situation de travail irrégulière.' },
+          { q: 'Faut-il refaire la carte de séjour DGSN en cas de changement d\'employeur ?', a: 'Oui, une fois le nouveau visa TAECHIR obtenu, il faut mettre à jour le dossier auprès du bureau des étrangers de la DGSN avec le nouveau contrat visé, pour que la carte de séjour corresponde au nouvel employeur.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5486,6 +5636,16 @@ export const articles: Article[] = [
     category: 'Expatrié',
     excerpt: 'Depuis la réforme de 2025, le seuil pour toucher une pension CNSS est passé de 3 240 à 1 320 jours cotisés. Ce que ça change pour un salarié étranger, et comment ne pas perdre ses droits en quittant le Maroc.',
     Content: Article33Content,
+  },
+  {
+    slug: 'changer-employeur-contrat-taechir-maroc',
+    title: 'Changer d\'employeur avec un contrat TAECHIR au Maroc : la procédure à suivre',
+    description: 'Un salarié étranger peut-il changer d\'employeur au Maroc sans perdre son titre de séjour ? Nouvelle attestation ANAPEC, préavis légal, synchronisation avec la carte de séjour DGSN : la procédure complète.',
+    date: '27 octobre 2026',
+    readTime: 7,
+    category: 'Procédure',
+    excerpt: 'Changer d\'employeur n\'est pas un renouvellement : c\'est un nouveau recrutement aux yeux du Ministère. Nouvelle attestation ANAPEC, préavis légal, et le piège du « trou » entre deux contrats — la marche à suivre pour ne pas basculer dans l\'irrégularité.',
+    Content: Article34Content,
   },
 ];
 
