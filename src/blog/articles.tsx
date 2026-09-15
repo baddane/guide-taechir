@@ -5306,6 +5306,142 @@ function Article34Content() {
   );
 }
 
+/* ─── Article 35 ────────────────────────────────────────────────────────── */
+
+function Article35Content() {
+  return (
+    <>
+      <Lead>
+        « Je viens d'être licencié, mon collègue marocain touche le chômage CNSS — moi aussi j'y
+        ai droit ? » La réponse surprend souvent : oui, un salarié étranger peut toucher
+        l'indemnité pour perte d'emploi (IPE), exactement comme n'importe quel affilié CNSS. Ce qui
+        est beaucoup moins clair, en revanche, c'est ce que cette indemnité change — ou ne change
+        pas — à son droit de rester et de retravailler au Maroc. Voici comment démêler les deux sujets.
+      </Lead>
+
+      <H2>L'IPE ne fait aucune distinction de nationalité</H2>
+      <P>
+        L'indemnité pour perte d'emploi est une prestation CNSS ouverte à tout salarié affilié qui
+        perd involontairement son travail, quelle que soit sa nationalité. Le dossier de demande le
+        confirme d'ailleurs explicitement : là où un salarié marocain fournit une copie de sa CIN,
+        un salarié étranger fournit une copie de sa carte de séjour ou de son passeport. Aucune
+        autre pièce spécifique n'est exigée du fait de la nationalité.
+      </P>
+      <P>Cinq conditions cumulatives ouvrent le droit à l'IPE :</P>
+      <Table
+        rows={[
+          ['Condition', 'Ce que ça signifie concrètement'],
+          ['Perte involontaire de l\'emploi', 'Licenciement, fin de CDD, rupture pour cas de force majeure — pas une démission'],
+          ['Affiliation CNSS au moment de la perte', 'Le numéro d\'affiliation, valable à vie, doit être actif à la date de rupture'],
+          ['780 jours cotisés sur les 36 derniers mois', 'Dont 260 jours sur les 12 mois précédant la perte d\'emploi'],
+          ['Inscription à l\'ANAPEC', 'Recherche active d\'un nouvel emploi, obligatoire pour ouvrir et maintenir le droit'],
+          ['Absence de faute grave', 'Un licenciement pour faute grave, reconnu comme tel, ferme la porte à l\'IPE'],
+        ]}
+      />
+      <Info>
+        Ce seuil de 780 jours — un peu plus de deux ans — n'a rien à voir avec celui de la
+        retraite CNSS. Il est nettement plus accessible : un salarié étranger en poste depuis
+        seulement deux ans et quelques mois peut déjà y prétendre, alors qu'il lui faudrait
+        1 320 jours pour espérer une pension, comme expliqué dans notre guide sur la{' '}
+        <Link to="/blog/retraite-cnss-salarie-etranger-maroc" className="text-indigo-600 hover:underline">retraite CNSS d'un salarié étranger</Link>.
+      </Info>
+
+      <H2>Combien, et pendant combien de temps ?</H2>
+      <P>
+        Le montant de l'IPE correspond à 70 % du salaire mensuel moyen déclaré durant les trois
+        derniers mois d'activité, avec un plafond fixé au niveau du SMIG — 3 422 Dhs bruts par mois
+        en 2026. Concrètement, un cadre étranger payé 15 000 Dhs par mois touchera donc le plafond,
+        pas 70 % de son salaire réel : l'IPE n'a jamais vocation à remplacer un salaire de cadre,
+        seulement à couvrir un minimum vital pendant la recherche d'un nouvel emploi.
+      </P>
+      <P>
+        L'indemnité est versée pendant six mois maximum, et la couverture maladie (AMO) ainsi que
+        les allocations familiales continuent d'être prises en charge sur cette période — un point
+        souvent ignoré, qui compte pour un salarié étranger dont la famille dépend de cette
+        couverture santé au Maroc.
+      </P>
+      <Warning>
+        La demande doit parvenir à une agence CNSS dans les 60 jours suivant la perte d'emploi,
+        faute de quoi le droit est perdu. La CNSS dispose ensuite de 30 jours pour instruire le
+        dossier. Ne traînez pas : ce délai court même si vous êtes encore en train de chercher un
+        nouvel employeur ou de monter un dossier ANAPEC/TAECHIR en parallèle.
+      </Warning>
+
+      <H2>Le vrai piège : toucher l'IPE ne règle rien côté autorisation de travailler</H2>
+      <P>
+        C'est le point que la plupart des salariés étrangers découvrent trop tard. L'IPE est une
+        prestation sociale ; elle n'a aucun lien avec le régime d'autorisation de travail TAECHIR.
+        Comme on l'explique dans notre guide sur la{' '}
+        <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">fin de contrat d'un salarié étranger</Link>,
+        perdre son emploi met fin à l'autorisation de travailler liée à l'ancien employeur, même si
+        la carte de séjour DGSN reste matériellement valable jusqu'à sa date d'expiration.
+      </P>
+      <P>
+        Être inscrit à l'ANAPEC pour toucher l'IPE prouve une recherche active d'emploi — ça ne
+        donne en aucun cas le droit de commencer à travailler chez un nouvel employeur avant que
+        celui-ci n'ait obtenu un nouveau visa TAECHIR en bonne et due forme. Les deux démarches
+        avancent en parallèle, mais elles ne se remplacent jamais l'une l'autre.
+      </P>
+      <Tip>
+        Utilisez ces six mois d'IPE comme une fenêtre pour enchaîner les démarches : inscription
+        ANAPEC dès le premier jour pour ouvrir le droit, recherche active d'un nouvel employeur, et
+        dès qu'une offre se concrétise, lancement immédiat du nouveau dossier ANAPEC/TAECHIR — la
+        procédure de{' '}
+        <Link to="/blog/changer-employeur-contrat-taechir-maroc" className="text-indigo-600 hover:underline">changement d'employeur</Link>{' '}
+        prend généralement 10 à 20 jours ouvrables une fois le dossier déposé.
+      </Tip>
+
+      <H2>Et si la carte de séjour expire pendant la période d'IPE ?</H2>
+      <P>
+        C'est le scénario le plus délicat. La carte de séjour d'un salarié étranger est en général
+        alignée sur la durée du contrat de travail et du visa TAECHIR. Si son expiration tombe
+        pendant les six mois d'IPE, sans nouvel employeur encore identifié, le salarié se retrouve
+        en résidence expirée alors même qu'il touche une prestation CNSS en toute légalité — les
+        deux régimes ne sont pas connectés entre eux.
+      </P>
+      <Info>
+        Dans cette situation, mieux vaut se présenter au bureau des étrangers de la DGSN avant
+        l'expiration pour exposer la situation plutôt que de laisser la carte périmer en silence.
+        Certains préfets acceptent une prolongation temporaire le temps de finaliser un nouveau
+        dossier ; ce n'est jamais automatique, mais l'anticipation évite de basculer dans
+        l'irrégularité sur ce plan-là en plus du reste.
+      </Info>
+
+      <H2>Ce qu'il faut réunir pour le dossier</H2>
+      <P>
+        Le dossier de demande, à déposer dans l'agence CNSS de son choix, comprend le formulaire
+        320-1-04 dûment rempli, une copie de la carte de séjour (ou du passeport) en lieu et place
+        de la CIN, l'attestation de travail et le solde de tout compte remis par l'ancien
+        employeur, le certificat d'inscription à l'ANAPEC, un RIB, et, selon le motif de la
+        rupture, une copie du contrat de travail et le PV de l'inspecteur du travail mentionnant le
+        motif et la date de la perte d'emploi.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous venez de perdre votre emploi au Maroc en tant que salarié étranger ?"
+        cta="Faire le point sur votre situation"
+      >
+        <p>
+          Délai de dépôt IPE, statut de la carte de séjour, calendrier du nouveau dossier
+          ANAPEC/TAECHIR : décrivez-nous votre situation, nous pouvons vous aider à faire avancer
+          les deux démarches sans perdre de droits ni basculer dans l'irrégularité.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger a-t-il vraiment droit à l\'IPE de la CNSS ?', a: 'Oui, à condition d\'être affilié à la CNSS, d\'avoir cotisé 780 jours sur les 36 derniers mois (dont 260 sur les 12 derniers), d\'avoir perdu son emploi involontairement, d\'être inscrit à l\'ANAPEC et de ne pas avoir été licencié pour faute grave. La nationalité n\'entre pas en compte ; seule la pièce d\'identité fournie change (carte de séjour ou passeport au lieu de la CIN).' },
+          { q: 'Quel est le montant de l\'IPE et pendant combien de temps est-elle versée ?', a: 'L\'IPE correspond à 70 % du salaire mensuel moyen des trois derniers mois, plafonné au SMIG (3 422 Dhs bruts en 2026), versée pendant six mois maximum. La couverture AMO et les allocations familiales continuent d\'être prises en charge pendant cette période.' },
+          { q: 'Toucher l\'IPE donne-t-il le droit de travailler pour un nouvel employeur sans nouveau visa TAECHIR ?', a: 'Non. L\'IPE est une prestation sociale, sans lien avec l\'autorisation de travail. Un salarié étranger reste dans l\'obligation d\'attendre qu\'un nouvel employeur obtienne un visa TAECHIR avant de reprendre légalement une activité, même s\'il touche déjà l\'IPE.' },
+          { q: 'Que se passe-t-il si la carte de séjour expire pendant la période d\'indemnisation ?', a: 'La CNSS et la DGSN sont deux régimes indépendants : toucher l\'IPE ne prolonge pas automatiquement la carte de séjour. Il vaut mieux se présenter au bureau des étrangers avant l\'expiration pour exposer sa situation plutôt que de laisser le titre de séjour périmer.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5646,6 +5782,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Changer d\'employeur n\'est pas un renouvellement : c\'est un nouveau recrutement aux yeux du Ministère. Nouvelle attestation ANAPEC, préavis légal, et le piège du « trou » entre deux contrats — la marche à suivre pour ne pas basculer dans l\'irrégularité.',
     Content: Article34Content,
+  },
+  {
+    slug: 'indemnite-perte-emploi-ipe-salarie-etranger-maroc',
+    title: 'Indemnité pour perte d\'emploi (IPE) au Maroc : un salarié étranger y a-t-il droit ?',
+    description: 'Un salarié étranger qui perd son emploi au Maroc peut-il toucher l\'IPE de la CNSS ? Conditions, 780 jours cotisés, montant plafonné au SMIG, durée de 6 mois, et le vrai piège : le lien entre chômage et statut de séjour.',
+    date: '3 novembre 2026',
+    readTime: 8,
+    category: 'Expatrié',
+    excerpt: 'Oui, un salarié étranger affilié à la CNSS peut toucher l\'indemnité pour perte d\'emploi comme n\'importe quel salarié marocain — la carte de séjour remplace simplement la CIN dans le dossier. Mais l\'IPE ne règle rien côté autorisation de travailler : voici ce qu\'il faut vraiment anticiper.',
+    Content: Article35Content,
   },
 ];
 
