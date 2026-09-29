@@ -5306,6 +5306,145 @@ function Article34Content() {
   );
 }
 
+function Article35Content() {
+  return (
+    <>
+      <Lead>
+        « On le prend à l'essai trois mois, et si ça ne va pas, on arrête. » C'est le réflexe de
+        beaucoup d'employeurs face à un recrutement international. Sauf qu'avec un salarié étranger,
+        la période d'essai ne se joue pas seulement dans le contrat : elle se joue aussi sur le
+        visa TAECHIR, l'attestation ANAPEC et la carte de séjour, qui ont tous été obtenus pour ce
+        salarié précis. Voici ce qu'il faut savoir avant de signer.
+      </Lead>
+
+      <H2>Ce que prévoit le Code du travail marocain</H2>
+      <P>
+        La période d'essai est encadrée par les articles 13 à 18 du Code du travail. Elle permet à
+        chaque partie de mettre fin au contrat sans préavis ni indemnité pendant sa durée, mais
+        elle doit être prévue par écrit dès la signature. Les durées maximales de référence
+        dépendent de la catégorie du salarié :
+      </P>
+      <Table
+        rows={[
+          ['Catégorie', 'Durée maximale (référence Code du travail)', 'Renouvellement'],
+          ['Ouvriers et employés', '15 jours', 'Une fois, pour la même durée'],
+          ['Techniciens et agents de maîtrise', '1 mois et demi', 'Une fois, pour la même durée'],
+          ['Cadres et assimilés', '3 mois', 'Une fois, pour la même durée'],
+        ]}
+      />
+      <Warning>
+        Ces durées sont celles du texte de base ; elles ont pu être précisées ou ajustées par des
+        textes d'application et par les conventions collectives. Avant de figer une clause dans un
+        contrat, vérifiez la durée applicable à votre catégorie de salarié et à votre secteur, et
+        faites relire la clause par un juriste ou l'inspection du travail.
+      </Warning>
+
+      <H2>Un salarié étranger a-t-il un régime d'essai particulier ?</H2>
+      <P>
+        Non : le Code du travail s'applique à tout salarié employé au Maroc, quelle que soit sa
+        nationalité. Un salarié étranger n'a ni plus ni moins de droits qu'un salarié marocain sur
+        ce point. La clause d'essai doit figurer noir sur blanc dans le contrat déposé avec le
+        dossier TAECHIR, dont on retrouve le contenu attendu dans notre article sur le{' '}
+        <Link to="/blog/cdd-cdi-salarie-etranger-maroc-contrat-taechir" className="text-indigo-600 hover:underline">choix entre CDD et CDI</Link>.
+      </P>
+      <Info>
+        Point de vigilance : le contrat déposé avec le dossier TAECHIR et celui que le salarié
+        signe réellement doivent être identiques. Si la période d'essai est modifiée après coup,
+        on se retrouve avec un contrat qui ne correspond plus à celui sur lequel le visa a été
+        délivré.
+      </Info>
+
+      <H2>Le vrai risque : rompre l'essai après l'obtention du visa</H2>
+      <P>
+        Sur le plan du droit du travail, rompre pendant l'essai est simple. Sur le plan
+        administratif, c'est plus lourd, car l'employeur a déjà engagé des frais et des démarches :
+      </P>
+      <Table
+        rows={[
+          ['Élément engagé', 'Ce qu\'il devient si l\'essai est rompu'],
+          ['Attestation ANAPEC (5 000 Dhs pour un premier profil)', 'Non remboursée ; elle a été délivrée pour ce poste, pas pour un remplaçant'],
+          ['Visa TAECHIR', 'Rattaché au contrat : la rupture le prive de sa raison d\'être'],
+          ['Carte de séjour DGSN', 'Liée à l\'employeur : elle n\'a plus de fondement une fois le contrat rompu'],
+          ['Frais de déplacement et d\'installation', 'Perdus pour l\'employeur, sauf clause spécifique'],
+        ]}
+      />
+      <P>
+        Autrement dit, un essai raté coûte à l'employeur bien plus que le simple salaire versé, et
+        expose le salarié à devoir quitter le pays ou retrouver rapidement un autre employeur, avec
+        la procédure décrite dans notre guide sur le{' '}
+        <Link to="/blog/changer-employeur-contrat-taechir-maroc" className="text-indigo-600 hover:underline">changement d'employeur</Link> et
+        celle de la{' '}
+        <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">fin de contrat d'un salarié étranger</Link>.
+      </P>
+
+      <H2>Comment sécuriser l'essai côté employeur</H2>
+      <H3>Sélectionner avant de faire venir</H3>
+      <P>
+        La meilleure période d'essai pour un profil international est celle qu'on fait avant le
+        dépôt du dossier : entretiens en visio, test technique, vérification des références et des
+        diplômes (voir notre article sur l'{' '}
+        <Link to="/blog/equivalence-diplomes-etrangers-maroc" className="text-indigo-600 hover:underline">équivalence des diplômes</Link>).
+        Chaque étape amont réduit le risque d'un essai non concluant.
+      </P>
+      <H3>Choisir une durée cohérente avec le poste</H3>
+      <P>
+        Pour un cadre, l'essai maximal a du sens : il faut souvent plusieurs semaines pour évaluer
+        l'autonomie d'un profil senior. Pour un poste opérationnel, une durée plus courte suffit
+        et évite d'entretenir une incertitude inutile pour le salarié, qui a quitté son pays et
+        parfois déménagé sa famille.
+      </P>
+      <H3>Documenter l'évaluation</H3>
+      <P>
+        Prévoyez un point écrit à mi-parcours avec des objectifs clairs. Cela protège l'employeur
+        en cas de contestation et laisse au salarié une vraie chance de corriger le tir avant la
+        fin de l'essai.
+      </P>
+
+      <H2>Comment se protéger côté salarié</H2>
+      <Tip>
+        Avant de quitter un poste stable à l'étranger, demandez que le contrat précise la durée
+        de l'essai, son renouvellement éventuel et le préavis applicable après l'essai. Prenez
+        aussi le temps de lire les clauses sur les frais de retour : certains employeurs prévoient
+        de les prendre en charge, d'autres non, et mieux vaut le savoir avant de partir.
+      </Tip>
+      <P>
+        Gardez enfin une copie de tous les documents du dossier (contrat, attestation ANAPEC, visa,
+        récépissé DGSN). En cas de rupture, ils sont indispensables pour justifier votre situation
+        et, le cas échéant, pour ouvrir un nouveau dossier chez un autre employeur.
+      </P>
+
+      <H2>Et la déclaration CNSS pendant l'essai ?</H2>
+      <P>
+        La période d'essai ne suspend aucune obligation sociale : le salarié doit être déclaré à la
+        CNSS dès son premier jour de travail, comme détaillé dans notre article sur la{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">déclaration CNSS d'un salarié étranger</Link>.
+        Ne pas déclarer « le temps de voir » expose l'employeur à des redressements.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Un recrutement international à sécuriser ?"
+        cta="Parlons-en"
+      >
+        <p>
+          Clause d'essai, contrat aligné sur le dossier TAECHIR, calendrier des démarches :
+          décrivez-nous votre situation, nous pouvons vous aider à éviter les mauvaises surprises.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'La période d\'essai est-elle obligatoire pour un salarié étranger au Maroc ?', a: 'Non. Elle est facultative, mais si elle est prévue elle doit figurer par écrit dans le contrat. Sans clause écrite, aucune période d\'essai ne peut être invoquée.' },
+          { q: 'Peut-on rompre l\'essai d\'un salarié étranger sans préavis ?', a: 'Oui, sur le plan du droit du travail, chaque partie peut y mettre fin pendant l\'essai sans préavis ni indemnité, sous réserve des règles applicables à la rupture. Les conséquences administratives (visa, carte de séjour) restent à gérer.' },
+          { q: 'Le visa TAECHIR reste-t-il valable si l\'essai est rompu ?', a: 'Le visa est rattaché au contrat et à l\'employeur pour lesquels il a été délivré. Une rupture prive le salarié de ce fondement : il doit trouver un nouvel employeur et déposer un nouveau dossier.' },
+          { q: 'L\'essai peut-il être renouvelé ?', a: 'Le Code du travail prévoit un renouvellement unique, pour une durée identique, à condition que ce soit convenu par écrit. Vérifiez la durée applicable à votre catégorie et à votre convention collective.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5646,6 +5785,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Changer d\'employeur n\'est pas un renouvellement : c\'est un nouveau recrutement aux yeux du Ministère. Nouvelle attestation ANAPEC, préavis légal, et le piège du « trou » entre deux contrats — la marche à suivre pour ne pas basculer dans l\'irrégularité.',
     Content: Article34Content,
+  },
+  {
+    slug: 'periode-essai-salarie-etranger-maroc-contrat-taechir',
+    title: 'Période d\'essai d\'un salarié étranger au Maroc : durée, rupture et conséquences sur le visa TAECHIR',
+    description: 'Durées d\'essai du Code du travail, clause écrite, rupture pendant l\'essai : quelles conséquences sur le visa TAECHIR, l\'attestation ANAPEC et la carte de séjour d\'un salarié étranger ?',
+    date: '3 novembre 2026',
+    readTime: 6,
+    category: 'Procédure',
+    excerpt: 'Un essai raté ne coûte pas que des salaires : attestation ANAPEC, visa TAECHIR et carte de séjour ont été obtenus pour ce salarié précis. Durées, clause écrite et bonnes pratiques pour sécuriser la période d\'essai d\'un recrutement international.',
+    Content: Article35Content,
   },
 ];
 
