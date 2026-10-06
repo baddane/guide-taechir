@@ -5445,6 +5445,151 @@ function Article35Content() {
   );
 }
 
+function Article36Content() {
+  return (
+    <>
+      <Lead>
+        Le salaire figure en toutes lettres dans le contrat, dans le dossier TAECHIR et sur le
+        premier bulletin de paie. S'il varie d'un document à l'autre, c'est un motif de blocage ;
+        s'il est trop bas pour le poste, il attire des questions. Voici comment fixer, documenter
+        et verser la rémunération d'un salarié étranger au Maroc sans mauvaise surprise.
+      </Lead>
+
+      <H2>Un salarié étranger a-t-il droit au même salaire minimum ?</H2>
+      <P>
+        Oui. Le Code du travail marocain s'applique à tout salarié employé sur le territoire, quelle
+        que soit sa nationalité, et interdit toute discrimination fondée notamment sur l'ascendance
+        nationale, y compris en matière de rémunération. Le salaire minimum légal (SMIG) et les
+        minima des conventions collectives s'appliquent donc exactement comme pour un salarié
+        marocain occupant le même poste.
+      </P>
+      <Warning>
+        Le SMIG est revalorisé périodiquement et son montant diffère selon les secteurs (activités
+        non agricoles, agriculture). Ne reprenez jamais un chiffre lu dans un ancien article :
+        vérifiez le taux horaire en vigueur sur les sources officielles avant de rédiger le contrat.
+      </Warning>
+
+      <H2>Pourquoi le salaire compte autant dans le dossier TAECHIR</H2>
+      <P>
+        Le salaire est l'une des mentions que l'on retrouve à plusieurs étapes de la procédure. Il
+        doit être cohérent entre :
+      </P>
+      <Table
+        rows={[
+          ['Document', 'Rôle du salaire'],
+          ['Contrat de travail', 'Mention contractuelle de référence (brut mensuel ou annuel)'],
+          ['Demande d\'attestation ANAPEC', 'Le poste et ses conditions y sont décrits et validés'],
+          ['Dossier de visa TAECHIR', 'Doit reprendre les conditions validées par l\'ANAPEC'],
+          ['Bulletins de paie et déclaration CNSS', 'Doivent correspondre au contrat dès le premier mois'],
+        ]}
+      />
+      <P>
+        Une incohérence entre ces pièces figure parmi les causes classiques de demande de
+        régularisation, comme on le détaille dans notre article sur les{' '}
+        <Link to="/blog/refus-visa-taechir-recours-maroc" className="text-indigo-600 hover:underline">motifs de refus de visa TAECHIR</Link>.
+        Un salaire très proche du SMIG pour un poste qualifié peut aussi conduire l'administration
+        à demander des justifications : mieux vaut un niveau cohérent avec le marché pour le poste
+        et le profil.
+      </P>
+
+      <H2>Brut, net, avantages : bien tout écrire dans le contrat</H2>
+      <P>
+        Pour un salarié qui s'installe, la question n'est pas seulement « combien », mais « sous
+        quelle forme ». Précisez dans le contrat :
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>le salaire <strong>brut</strong> mensuel, en dirhams, et la périodicité de paiement ;</li>
+        <li>les primes éventuelles (13<sup>e</sup> mois, objectifs) et leurs conditions d'attribution ;</li>
+        <li>les avantages en nature (logement, véhicule, scolarité) et leur valorisation sur le bulletin ;</li>
+        <li>la prise en charge éventuelle des frais d'installation et de retour ;</li>
+        <li>la couverture santé complémentaire, détaillée dans notre guide sur l'{' '}
+          <Link to="/blog/assurance-sante-expatrie-maroc" className="text-indigo-600 hover:underline">assurance santé de l'expatrié</Link>.
+        </li>
+      </ul>
+      <Info>
+        Beaucoup de négociations se font en net « dans la poche » alors que le contrat est rédigé en
+        brut. Faites faire la simulation brut-net (CNSS, AMO, impôt sur le revenu) avant de
+        signer : l'écart peut être important et c'est le brut qui figure dans le dossier.
+      </Info>
+
+      <H2>Le bulletin de paie : une obligation, pas une option</H2>
+      <P>
+        L'employeur doit remettre un bulletin de paie à chaque versement du salaire, avec le détail
+        des éléments de rémunération et des retenues (cotisations sociales, impôt). Pour le salarié
+        étranger, ces bulletins servent aussi de preuve : ils justifient la réalité de l'emploi lors
+        du renouvellement, de la demande de{' '}
+        <Link to="/blog/carte-sejour-etranger-maroc-dgsn" className="text-indigo-600 hover:underline">carte de séjour</Link>,
+        d'un dossier de regroupement familial ou d'un crédit bancaire. Conservez-les tous.
+      </P>
+      <P>
+        Le salarié doit par ailleurs être déclaré dès le premier jour, avec un salaire déclaré
+        égal au salaire réel, comme expliqué dans notre article sur la{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">déclaration CNSS</Link>.
+        Déclarer moins que le salaire versé réduit les cotisations à court terme mais pénalise la
+        pension et expose l'entreprise à des redressements.
+      </P>
+
+      <H2>Verser le salaire : compte, devise et virements</H2>
+      <P>
+        Le salaire d'un contrat de droit marocain se verse en dirhams, idéalement par virement sur
+        un compte bancaire marocain au nom du salarié. Dès l'arrivée, prévoyez donc l'ouverture
+        d'un compte — voir notre guide pour{' '}
+        <Link to="/blog/ouvrir-compte-bancaire-etranger-maroc" className="text-indigo-600 hover:underline">ouvrir un compte bancaire quand on est étranger</Link>.
+        Si le salarié souhaite envoyer une partie de ses revenus à l'étranger, les transferts sont
+        encadrés par l'Office des Changes ; les modalités sont présentées dans notre article sur le{' '}
+        <Link to="/blog/transfert-argent-maroc-etranger" className="text-indigo-600 hover:underline">transfert d'argent</Link>.
+      </P>
+      <Tip>
+        Pour l'employeur, un versement par virement tracé est le meilleur moyen de prouver le
+        paiement du salaire en cas de litige ou de contrôle. Évitez les versements en espèces,
+        même ponctuels.
+      </Tip>
+
+      <H2>Quand le salaire change en cours de contrat</H2>
+      <P>
+        Une augmentation est sans difficulté administrative particulière, mais elle doit être
+        formalisée (avenant ou mention sur le bulletin) et rester cohérente avec les déclarations
+        CNSS. Une <strong>baisse</strong> de salaire, en revanche, modifie un élément essentiel du
+        contrat : elle suppose l'accord du salarié et mérite d'être anticipée avant un
+        renouvellement, car le dossier présenté devra refléter la situation réelle. Les règles
+        générales de renouvellement sont rappelées dans notre guide sur le{' '}
+        <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">renouvellement du contrat</Link>.
+      </P>
+
+      <H2>Salaire impayé : que faire ?</H2>
+      <P>
+        Un retard de paiement est une faute de l'employeur, quelle que soit la nationalité du
+        salarié. La démarche usuelle est d'abord amiable (mise en demeure écrite), puis le recours
+        à l'inspection du travail et, si besoin, au tribunal. Le salarié étranger doit toutefois
+        garder un œil sur son titre de séjour, lié à l'emploi : consultez notre article sur la{' '}
+        <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">fin de contrat</Link>{' '}
+        pour anticiper les conséquences d'un conflit prolongé.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Une rémunération à calibrer pour un dossier TAECHIR ?"
+        cta="Parlons-en"
+      >
+        <p>
+          Cohérence contrat / ANAPEC / CNSS, simulation brut-net, avantages en nature : décrivez
+          votre situation, nous pouvons vous aider à préparer un dossier sans incohérence.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Existe-t-il un salaire minimum spécifique pour les salariés étrangers au Maroc ?', a: 'Non. Le SMIG et les minima conventionnels sont les mêmes pour tous les salariés. En pratique, un salaire trop proche du minimum pour un poste qualifié peut toutefois susciter des demandes de justification lors de l\'instruction du dossier.' },
+          { q: 'Le salaire doit-il être identique dans le contrat et dans le dossier TAECHIR ?', a: 'Oui, les conditions d\'emploi doivent être cohérentes entre le contrat, l\'attestation ANAPEC et le dossier de visa. Toute modification doit être formalisée et reflétée dans les pièces suivantes.' },
+          { q: 'Peut-on être payé en euros ou en dollars ?', a: 'Pour un contrat de droit marocain, le salaire est contractuellement exprimé et versé en dirhams. Toute particularité (part en devise, détachement) relève de montages spécifiques à faire valider par un conseil.' },
+          { q: 'Le bulletin de paie est-il obligatoire ?', a: 'Oui. L\'employeur doit remettre un bulletin à chaque paiement. Pour un salarié étranger, il sert aussi de justificatif pour la carte de séjour, le renouvellement et les démarches bancaires.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5795,6 +5940,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Un essai raté ne coûte pas que des salaires : attestation ANAPEC, visa TAECHIR et carte de séjour ont été obtenus pour ce salarié précis. Durées, clause écrite et bonnes pratiques pour sécuriser la période d\'essai d\'un recrutement international.',
     Content: Article35Content,
+  },
+  {
+    slug: 'salaire-salarie-etranger-maroc-smig-bulletin-paie',
+    title: 'Salaire d\'un salarié étranger au Maroc : SMIG, bulletin de paie et cohérence avec le dossier TAECHIR',
+    description: 'Salaire minimum, brut et net, avantages, bulletin de paie et versement en dirhams : comment fixer et documenter la rémunération d\'un salarié étranger au Maroc sans bloquer le dossier TAECHIR.',
+    date: '10 novembre 2026',
+    readTime: 6,
+    category: 'Procédure',
+    excerpt: 'Un salaire incohérent entre le contrat, l\'ANAPEC et la CNSS fait perdre des semaines. Minimum légal, brut-net, avantages en nature, bulletin de paie et versement : les points à verrouiller avant de signer.',
+    Content: Article36Content,
   },
 ];
 
