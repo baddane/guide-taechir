@@ -5590,6 +5590,148 @@ function Article36Content() {
   );
 }
 
+function Article37Content() {
+  return (
+    <>
+      <Lead>
+        Congés payés, jours fériés, durée du travail : un salarié étranger a exactement les mêmes
+        droits qu'un salarié marocain. La vraie particularité tient aux déplacements : partir en
+        congé à l'étranger quand on dépend d'un visa, d'un récépissé ou d'une carte de séjour
+        demande quelques précautions. Voici ce qu'il faut savoir, côté salarié comme côté employeur.
+      </Lead>
+
+      <H2>Les mêmes droits que les salariés marocains</H2>
+      <P>
+        Le Code du travail s'applique à tous les salariés employés au Maroc, sans distinction de
+        nationalité. Le contrat TAECHIR ne crée donc aucun régime dérogatoire sur la durée du
+        travail, les congés ou les jours fériés : ce sont les règles du Code et, le cas échéant,
+        de la convention collective ou du règlement intérieur de l'entreprise qui jouent.
+      </P>
+
+      <H2>Durée du travail et heures supplémentaires</H2>
+      <P>
+        Pour les activités non agricoles, la durée normale du travail est fixée à 44 heures par
+        semaine (ou 2 288 heures par an), avec des aménagements possibles par répartition ou
+        annualisation. Au-delà, les heures supplémentaires ouvrent droit à une majoration de
+        salaire. Les horaires doivent figurer dans le contrat ; ils doivent aussi rester cohérents
+        avec le poste décrit dans le dossier, comme pour la rémunération (voir notre article sur le{' '}
+        <Link to="/blog/salaire-salarie-etranger-maroc-smig-bulletin-paie" className="text-indigo-600 hover:underline">salaire d'un salarié étranger</Link>).
+      </P>
+
+      <H2>Congé annuel payé : combien de jours ?</H2>
+      <P>
+        Le salarié acquiert un droit au congé annuel payé à raison d'un jour et demi ouvrable par
+        mois de service effectif, soit 18 jours ouvrables par an pour un adulte, avec une
+        majoration liée à l'ancienneté (un jour et demi supplémentaire tous les cinq ans, dans la
+        limite d'un plafond). Le premier congé est généralement acquis après six mois de service.
+      </P>
+      <Table
+        rows={[
+          ['Situation', 'Ce qu\'il faut retenir'],
+          ['Première année', 'Droit acquis progressivement, congé en principe après 6 mois de service'],
+          ['Dates de départ', 'Fixées par l\'employeur après consultation du salarié et des représentants du personnel'],
+          ['Fractionnement', 'Possible avec l\'accord des parties, selon les règles du Code'],
+          ['Congé non pris', 'Ne se remplace pas par une indemnité tant que le contrat est en cours'],
+          ['Fin de contrat', 'Les congés acquis et non pris donnent lieu à une indemnité compensatrice'],
+        ]}
+      />
+      <Warning>
+        Les modalités précises (acquisition, plafonds, conventions plus favorables) peuvent varier
+        selon le secteur et l'entreprise. Vérifiez votre convention collective et faites valider
+        les clauses du contrat avant signature.
+      </Warning>
+
+      <H2>Jours fériés : civils et religieux</H2>
+      <P>
+        Les jours fériés officiels sont chômés et payés. Ils comprennent des fêtes civiles (fixes)
+        et des fêtes religieuses dont la date dépend du calendrier hégirien et n'est connue que
+        peu de temps à l'avance par annonce officielle. Un salarié étranger de confession non
+        musulmane bénéficie des mêmes jours fériés : ils sont attachés au calendrier du pays, pas à
+        la religion de l'intéressé. Pour planifier un voyage, ne réservez pas à la date « théorique »
+        d'une fête religieuse sans prévoir de marge de quelques jours.
+      </P>
+      <Tip>
+        Pour l'employeur, un calendrier annuel des congés et des ponts, partagé en début d'année,
+        évite les conflits de dates au moment des fêtes religieuses, où une grande partie de
+        l'équipe souhaite s'absenter simultanément.
+      </Tip>
+
+      <H2>Partir à l'étranger en congé : les précautions propres au salarié étranger</H2>
+      <P>
+        Les congés payés sont un droit, mais le voyage dépend de votre statut administratif :
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          <strong>Carte de séjour en cours de validité :</strong> en principe, vous pouvez quitter
+          le territoire et y revenir tant que le titre est valide et que le contrat de travail
+          n'est pas rompu. Voir notre guide de la{' '}
+          <Link to="/blog/carte-sejour-etranger-maroc-dgsn" className="text-indigo-600 hover:underline">carte de séjour</Link>.
+        </li>
+        <li>
+          <strong>Récépissé en attente de carte :</strong> un récépissé n'a pas toujours la même
+          valeur qu'une carte pour les contrôles aux frontières. Renseignez-vous auprès du service
+          des étrangers avant de réserver un billet.
+        </li>
+        <li>
+          <strong>Renouvellement en cours :</strong> évitez de partir pendant l'instruction d'un
+          dossier, au cas où l'administration vous convoquerait ; voir le{' '}
+        <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">renouvellement du contrat</Link>.
+        </li>
+        <li>
+          <strong>Absence prolongée :</strong> de longs séjours hors du Maroc peuvent fragiliser
+          certaines démarches de long terme, par exemple la{' '}
+        <Link to="/blog/carte-resident-maroc-salarie-etranger-longue-duree" className="text-indigo-600 hover:underline">carte de résident</Link>.
+        </li>
+      </ul>
+      <Info>
+        Emportez toujours avec vous le titre de séjour, le contrat et, si possible, vos derniers
+        bulletins de paie : ils permettent de justifier votre situation en cas de question à
+        l'aéroport ou à votre retour.
+      </Info>
+
+      <H2>Congé sans solde, maladie et congés spéciaux</H2>
+      <P>
+        Au-delà du congé annuel, le Code prévoit des congés pour événements familiaux (mariage,
+        naissance, décès d'un proche) et protège la maternité. Un congé sans solde reste possible
+        par accord entre l'employeur et le salarié, mais il doit être formalisé par écrit, car il
+        a des effets sur les cotisations CNSS. En cas d'arrêt maladie ou d'accident, consultez
+        notre article sur l'{' '}
+        <Link to="/blog/accident-travail-arret-maladie-salarie-etranger-maroc" className="text-indigo-600 hover:underline">accident du travail et l'arrêt maladie</Link>.
+      </P>
+
+      <H2>Ce que l'employeur doit tracer</H2>
+      <P>
+        Pour éviter tout litige et pouvoir répondre à un contrôle de l'inspection du travail,
+        conservez un registre des congés pris et des soldes, des bulletins de paie mentionnant les
+        congés, et les accords écrits pour tout fractionnement ou congé sans solde. En fin de
+        contrat, le solde de tout compte inclut les congés acquis non pris ; voir notre article sur{' '}
+        <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">la fin de contrat</Link>.
+      </P>
+
+      <Divider />
+
+      <LeadBox
+        title="Un doute sur les congés ou les déplacements d'un salarié étranger ?"
+        cta="Parlons-en"
+      >
+        <p>
+          Clauses de contrat, calendrier de congés, voyage pendant un renouvellement : décrivez
+          votre situation et nous vous orientons vers la bonne démarche.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un salarié étranger a-t-il droit aux mêmes congés payés qu\'un salarié marocain ?', a: 'Oui. Le Code du travail s\'applique sans distinction de nationalité : 1,5 jour ouvrable acquis par mois de service pour un adulte, avec une majoration liée à l\'ancienneté.' },
+          { q: 'Puis-je quitter le Maroc pendant mon congé avec une carte de séjour valide ?', a: 'En principe oui, tant que le titre est en cours de validité et que le contrat n\'est pas rompu. En cas de récépissé ou de renouvellement en cours, renseignez-vous d\'abord auprès du service des étrangers.' },
+          { q: 'Les jours fériés religieux s\'appliquent-ils aux salariés non musulmans ?', a: 'Oui. Les jours fériés officiels sont chômés et payés pour tous les salariés de l\'entreprise, quelle que soit leur religion.' },
+          { q: 'Les congés non pris sont-ils payés en fin de contrat ?', a: 'Oui, les congés acquis et non pris donnent lieu à une indemnité compensatrice dans le solde de tout compte.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -5950,6 +6092,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Un salaire incohérent entre le contrat, l\'ANAPEC et la CNSS fait perdre des semaines. Minimum légal, brut-net, avantages en nature, bulletin de paie et versement : les points à verrouiller avant de signer.',
     Content: Article36Content,
+  },
+  {
+    slug: 'conges-payes-jours-feries-voyages-salarie-etranger-maroc',
+    title: 'Congés payés, jours fériés et voyages : les droits d\'un salarié étranger au Maroc',
+    description: 'Congé annuel payé, jours fériés, durée du travail et départ à l\'étranger : les droits d\'un salarié étranger au Maroc et les précautions à prendre selon son titre de séjour.',
+    date: '17 novembre 2026',
+    readTime: 6,
+    category: 'Procédure',
+    excerpt: 'Mêmes droits que les salariés marocains, mais des précautions en plus dès qu\'on voyage : carte de séjour, récépissé, renouvellement en cours. Congés, jours fériés et déplacements, expliqués simplement.',
+    Content: Article37Content,
   },
 ];
 
