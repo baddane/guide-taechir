@@ -5732,6 +5732,113 @@ function Article37Content() {
   );
 }
 
+function Article38Content() {
+  return (
+    <>
+      <Lead>
+        Un petit contrat de conseil le soir, une activité de freelance en parallèle, un second
+        employeur à temps partiel : tentant, mais risqué quand on est salarié étranger. Le contrat
+        TAECHIR lie votre séjour à un employeur et à un poste précis. Voici ce qu'implique cette
+        logique pour le cumul d'activités, et comment éviter un problème de séjour ou de CNSS.
+      </Lead>
+
+      <H2>Pourquoi le cumul pose un problème particulier</H2>
+      <P>
+        Pour un salarié marocain, exercer une activité complémentaire dépend surtout du contrat
+        (clause d'exclusivité, obligation de loyauté). Pour un salarié étranger, une dimension
+        s'ajoute : le contrat de travail visé a été examiné pour un employeur, un poste et une
+        rémunération déterminés, et votre titre de séjour s'appuie sur ce même dossier. Une
+        activité professionnelle supplémentaire sort potentiellement du cadre autorisé.
+      </P>
+
+      <H2>Trois situations à distinguer</H2>
+      <Table
+        rows={[
+          ['Situation', 'Niveau de risque', 'Ce qu\'il faut faire'],
+          ['Second emploi salarié chez un autre employeur', 'Élevé', 'Ne pas commencer sans démarche : un contrat distinct doit lui-même être visé et la compatibilité avec le premier vérifiée'],
+          ['Activité indépendante ou freelance (clients marocains)', 'Élevé', 'Un statut d\'indépendant et un titre adapté sont en principe nécessaires ; le contrat TAECHIR ne les couvre pas'],
+          ['Missions pour un client étranger, depuis le Maroc', 'À qualifier', 'Voir notre article sur le télétravail pour un employeur étranger avant tout engagement'],
+        ]}
+      />
+      <Warning>
+        Exercer une activité non couverte par votre titre de séjour peut être assimilé à un travail
+        non autorisé, avec des conséquences pour vous (renouvellement, séjour) comme pour la
+        société qui vous emploierait. En cas de doute, demandez avant de commencer.
+      </Warning>
+
+      <H2>Ce que dit votre contrat actuel</H2>
+      <P>
+        Relisez d'abord votre contrat : beaucoup comportent une clause d'exclusivité ou de
+        non-concurrence, ou imposent d'informer l'employeur de toute activité extérieure. Même sans
+        clause expresse, l'obligation de loyauté interdit de concurrencer son employeur ou
+        d'utiliser son temps de travail pour une autre activité. Une violation peut justifier une
+        sanction, voire une rupture ; voir{' '}
+        <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">la fin de contrat d'un salarié étranger</Link>, car
+        la perte de l'emploi entraîne des conséquences sur le titre de séjour.
+      </P>
+
+      <H2>Revenus complémentaires : fiscalité et CNSS</H2>
+      <P>
+        Même lorsqu'une activité accessoire est tolérée par l'employeur, elle ne reste pas
+        invisible : les revenus doivent être déclarés, et un second salaire ou des honoraires ont
+        des effets fiscaux (voir{' '}
+        <Link to="/blog/fiscalite-expatrie-impot-revenu-maroc" className="text-indigo-600 hover:underline">la fiscalité de l'expatrié</Link>) et, selon le statut, sociaux (voir la{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">déclaration CNSS</Link>). Un revenu
+        non déclaré est un risque en soi, quelle que soit la nationalité.
+      </P>
+
+      <H2>Les alternatives légales</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          <strong>Négocier un avenant :</strong> si l'activité complémentaire est proche du poste,
+          l'employeur peut l'intégrer au contrat, ce qui exige de rester cohérent avec le dossier
+          (voir{' '}
+          <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">le renouvellement du contrat</Link>).
+        </li>
+        <li>
+          <strong>Changer d'employeur :</strong> si le projet dépasse l'accessoire, la voie
+          régulière est un nouveau contrat ; voir{' '}
+          <Link to="/blog/changer-employeur-contrat-taechir-maroc" className="text-indigo-600 hover:underline">comment changer d'employeur avec un contrat TAECHIR</Link>.
+        </li>
+        <li>
+          <strong>Créer une structure :</strong> pour devenir indépendant ou dirigeant, le statut
+          d'investisseur ou d'entrepreneur relève d'un autre parcours que le contrat TAECHIR.
+        </li>
+        <li>
+          <strong>Activités sans lien professionnel :</strong> bénévolat, gestion de son patrimoine
+          privé ou écriture personnelle non rémunérée ne posent en général pas la même question.
+        </li>
+      </ul>
+      <Info>
+        Règle simple : tant qu'une activité n'est pas écrite dans un contrat visé ou couverte par
+        un statut adapté, considérez qu'elle n'est pas autorisée. Obtenir une confirmation écrite
+        de l'administration vaut mieux qu'une assurance verbale.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Un projet d'activité en plus de votre emploi ?"
+        cta="Parlons-en"
+      >
+        <p>
+          Second employeur, freelance, création de société : décrivez votre projet et nous vous
+          indiquons la démarche adaptée avant que vous ne preniez un risque de séjour.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Puis-je faire du freelance en plus de mon emploi avec un contrat TAECHIR ?', a: 'En principe non sans démarche spécifique : le contrat TAECHIR lie votre séjour à un employeur et à un poste. Une activité indépendante nécessite un statut et un titre adaptés. Demandez confirmation avant de commencer.' },
+          { q: 'Mon employeur peut-il m\'interdire une activité complémentaire ?', a: 'Oui, si le contrat contient une clause d\'exclusivité ou de non-concurrence, ou si l\'activité concurrence l\'employeur ou empiète sur le temps de travail (obligation de loyauté).' },
+          { q: 'Que risque-t-on en exerçant une activité non autorisée ?', a: 'Des difficultés lors du renouvellement ou du séjour, une sanction de l\'employeur, et un risque pour la société qui vous ferait travailler. Le risque est réel même pour une petite activité.' },
+          { q: 'Un revenu complémentaire doit-il être déclaré ?', a: 'Oui. Tout revenu perçu au Maroc a des effets fiscaux et, selon son origine, sociaux. Un revenu non déclaré constitue un risque supplémentaire.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6102,6 +6209,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Mêmes droits que les salariés marocains, mais des précautions en plus dès qu\'on voyage : carte de séjour, récépissé, renouvellement en cours. Congés, jours fériés et déplacements, expliqués simplement.',
     Content: Article37Content,
+  },
+  {
+    slug: 'cumul-emploi-activite-complementaire-salarie-etranger-maroc',
+    title: 'Cumul d\'emplois et activité complémentaire d\'un salarié étranger au Maroc : ce qui est permis',
+    description: 'Second emploi, freelance ou activité complémentaire avec un contrat TAECHIR : risques pour le séjour, clause d\'exclusivité, fiscalité et alternatives légales.',
+    date: '24 novembre 2026',
+    readTime: 5,
+    category: 'Procédure',
+    excerpt: 'Le contrat TAECHIR lie votre séjour à un employeur et à un poste. Second emploi, freelance, mission annexe : ce qui pose problème, ce que dit votre contrat et les démarches régulières pour développer une activité en plus.',
+    Content: Article38Content,
   },
 ];
 
