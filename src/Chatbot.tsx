@@ -39,7 +39,7 @@ const KB: { keywords: string[]; response: string }[] = [
   {
     keywords: ['dispense', 'dispensé', 'exempt', 'exemption', 'sans anapec', 'pas besoin anapec', 'exception'],
     response:
-      '✅ **Cas de dispense de l\'attestation ANAPEC**\n\nCes catégories sont exemptées :\n\n👤 Époux(ses) de ressortissants marocains\n🔄 Salariés détachés (marchés publics ou filiales)\n🏙️ Sociétés **CFC** (Casablanca Finance City)\n📋 Propriétaires, gérants, associés, actionnaires\n⭐ Profils **haut niveau (A1)** et **rares (A2)**\n📞 Personnel d\'encadrement en offshoring\n🌍 Ressortissants **Algérie, Tunisie et Sénégal** (convention bilatérale)',
+      '✅ **Catégories dispensées de l\'attestation ANAPEC**\n\nSur TAECHIR, chaque demande commence par le choix d\'une catégorie. Seule la catégorie **Normal** exige l\'attestation ANAPEC. Les autres demandent des pièces justificatives propres à la catégorie :\n\n• Conjoint de marocain\n• Descendant de mère marocaine\n• Natif du Maroc\n• Regroupement familial\n• Associé, Gérant, Fondé de pouvoir\n• Détachement, Mission de courte durée\n• Régularisation exceptionnelle\n• Jeune Professionnel\n• Casa Finance City (CFC)\n• Convention d\'établissement (**Algérie, Tunisie, Sénégal**)\n• Sportifs, Apatride, Réfugiés',
   },
   {
     keywords: ['renouvellement', 'renouveler', 'prolonger', 'reconduire', 'même employeur', 'meme employeur'],
@@ -54,7 +54,7 @@ const KB: { keywords: string[]; response: string }[] = [
   {
     keywords: ['taechir', 'plateforme', 'site', 'portail', 'en ligne', 'application'],
     response:
-      '💻 **La plateforme TAECHIR**\n\nTAECHIR est le système officiel du **Ministère de l\'Emploi** pour les contrats de travail des étrangers au Maroc.\n\n✅ Création de compte employeur\n✅ Saisie des données du salarié\n✅ Génération du contrat de travail type\n✅ Suivi des demandes en ligne\n✅ **Service 100 % gratuit**\n\n🔗 taechir.travail.gov.ma',
+      '💻 **La plateforme TAECHIR**\n\nService en ligne du **Ministère chargé du Travail** dédié aux contrats de travail des étrangers (CTE).\n\n✅ S\'informer sur les procédures\n✅ Créer, modifier et valider les projets de contrats\n✅ Imprimer les contrats à signer et la liste des pièces\n✅ Suivre les demandes déposées\n✅ Notifications en temps réel (visa prêt, demande à compléter…)\n✅ Réponse de l\'Administration en **10 jours maximum**\n\nTapez **"inscription"** ou **"étapes"** pour en savoir plus.\n\n🔗 taechir.travail.gov.ma',
   },
   {
     keywords: ['cfc', 'casablanca finance', 'finance city'],
@@ -84,7 +84,7 @@ const KB: { keywords: string[]; response: string }[] = [
   {
     keywords: ['offshoring', 'centre appel', "centre d'appel", 'call center', 'bpo', 'encadrement'],
     response:
-      '📞 **Secteur Offshoring / BPO**\n\nLe **personnel d\'encadrement** dans les sociétés d\'offshoring est dispensé de l\'attestation ANAPEC.\n\nCela couvre les postes de direction et de management dans les centres d\'appels, BPO et entreprises de services informatiques opérant depuis le Maroc.',
+      '📞 **Secteur Offshoring / BPO**\n\nL\'offshoring ne figure pas parmi les catégories de demande de la brochure TAECHIR : en principe, la catégorie **Normal** (avec attestation ANAPEC) s\'applique, sauf si le salarié relève d\'une autre catégorie (détachement, associé, gérant…).\n\n📞 En cas de doute, appelez l\'assistance TAECHIR : +212 5 30 10 07 05 ou +212 6 74 48 03 68.',
   },
   {
     keywords: ['dgsn', 'police', 'titre sejour', 'titre de sejour', 'carte sejour', 'immatriculation', 'residence', 'résidence', 'sejour'],
@@ -99,17 +99,42 @@ const KB: { keywords: string[]; response: string }[] = [
   {
     keywords: ['ministere', 'ministère', 'travail', 'guichet', 'depot', 'dépôt', 'ou deposer', 'où déposer', 'guichet regional'],
     response:
-      '🏛️ **Ministère de l\'Emploi — Dépôt du dossier**\n\nAprès génération du contrat sur TAECHIR, le dossier **physique complet** doit être déposé au guichet régional.\n\n⏱️ Délai de traitement : **maximum 10 jours**\n\n📌 Le dossier doit être complet dès le dépôt. Tout document manquant peut retarder le traitement ou entraîner un rejet.\n\n🔗 www.travail.gov.ma',
+      '🏛️ **Guichets d\'accueil — Dépôt du dossier**\n\n• **Rabat** — service central, annexe Rue Tameslouht\n• **Casablanca** — Dir. régionale : 0522 25 86 60\n• **Casablanca CFCA** (sociétés CFC uniquement) : 0522 84 90 00\n• **Marrakech** — Dir. régionale : 0524 44 72 71\n• **Tanger** — Dir. régionale : 0539 34 12 00\n• **Agadir** — Dir. régionale, fax : 0528 82 25 12\n\n🕘 Lundi–jeudi 9 h–13 h, vendredi 9 h–12 h\n\n📌 Seul le **mandataire** désigné à l\'étape 5, muni d\'une pièce d\'identité valide, est reçu au guichet pour le dépôt et le retrait des contrats visés.\n\n⏱️ Réponse en **10 jours maximum**',
   },
   {
     keywords: ['nouveau recrutement', 'premier contrat', 'embauche', 'recruter', 'recrute'],
     response:
-      '🆕 **Nouveau recrutement — Vue d\'ensemble**\n\n**Étapes :**\n1️⃣ Obtenir l\'attestation ANAPEC (si non dispensé)\n2️⃣ Créer le contrat sur taechir.travail.gov.ma\n3️⃣ Imprimer 3 exemplaires et les légaliser\n4️⃣ Déposer le dossier au guichet Ministère\n5️⃣ Attendre le visa (max 10 jours)\n\n💡 Lancez notre **Wizard** pour obtenir la liste précise de vos documents !',
+      '🆕 **Nouveau recrutement — Vue d\'ensemble**\n\n**Étapes :**\n1️⃣ Obtenir l\'attestation ANAPEC (catégorie Normal uniquement)\n2️⃣ Créer votre compte employeur sur taechir.travail.gov.ma\n3️⃣ Choisir la catégorie et saisir la demande en 6 étapes\n4️⃣ Imprimer les contrats à signer et la liste des pièces, puis légaliser\n5️⃣ Faire déposer le dossier au guichet par le mandataire\n6️⃣ Réponse en 10 jours max, retrait des contrats visés\n\n💡 Lancez notre **Wizard** pour obtenir la liste précise de vos documents !',
+  },
+  {
+    keywords: ['inscription', 'creer compte', 'créer compte', 'compte employeur', 'login', 'activation', 'mot de passe', 'connexion', 'se connecter'],
+    response:
+      '👤 **Créer votre compte employeur TAECHIR**\n\n1️⃣ Cliquez sur **Inscription** sur l\'écran de connexion de taechir.travail.gov.ma\n2️⃣ Remplissez le formulaire : type d\'identification (CNSS), numéro d\'affiliation employeur, dénomination, e-mail, mot de passe\n3️⃣ Un e-mail vous est envoyé instantanément avec votre **login** et un **lien d\'activation**\n4️⃣ Connectez-vous avec ce login et votre mot de passe\n\nLe menu **Mon compte** permet ensuite de corriger la dénomination, changer d\'e-mail ou de mot de passe.',
+  },
+  {
+    keywords: ['etape', 'étape', 'etapes', 'étapes', 'saisie', 'saisir', 'formulaire', 'remplir', 'categorie', 'catégorie'],
+    response:
+      '🧭 **Saisir une demande sur TAECHIR**\n\nOn commence par choisir la **catégorie** (Normal, Conjoint de marocain, Détachement…), puis 6 étapes :\n\n1️⃣ Données Salarié (état civil)\n2️⃣ Données Salarié (références professionnelles)\n3️⃣ Données Employeur — signataires mémorisés, pièce de pouvoir, e-mail(s) de notification séparés par « ; »\n4️⃣ Données Contrat\n5️⃣ Données Mandataire — la personne reçue au guichet\n6️⃣ Validation et impression\n\n💡 En renouvellement, les données du salarié sont déjà affichées : il suffit de corriger ce qui a changé.',
+  },
+  {
+    keywords: ['mandataire', 'qui depose', 'qui dépose', 'procuration', 'retrait', 'retirer'],
+    response:
+      '🪪 **Le mandataire**\n\nSeul le mandataire désigné par l\'employeur (**étape 5** de la demande en ligne), muni d\'une **pièce d\'identité valide**, est reçu au guichet d\'accueil pour le dépôt des dossiers ou le retrait des contrats visés.',
+  },
+  {
+    keywords: ['horaire', 'horaires', 'heure', 'ouverture', 'ouvert', 'adresse', 'rabat', 'casablanca', 'marrakech', 'tanger', 'agadir'],
+    response:
+      '🕘 **Horaires des guichets d\'accueil**\n\n• Lundi – Jeudi : **9 h – 13 h**\n• Vendredi : **9 h – 12 h**\n\nGuichets : Rabat (service central, annexe Rue Tameslouht), Casablanca (0522 25 86 60), Casablanca CFCA pour les sociétés CFC (0522 84 90 00), Marrakech (0524 44 72 71), Tanger (0539 34 12 00), Agadir (fax 0528 82 25 12).',
+  },
+  {
+    keywords: ['assistance', 'telephone', 'téléphone', 'numero', 'numéro', 'appeler', 'contacter', 'joindre', 'notification', 'notifications'],
+    response:
+      '📞 **Assistance aux usagers TAECHIR**\n\n• **+212 5 30 10 07 05**\n• **+212 6 74 48 03 68**\n\n🔔 Les notifications (contrat visé, complément de dossier, contrat prêt au guichet…) arrivent en temps réel sur l\'e-mail saisi à l\'étape 3 de la demande.',
   },
   {
     keywords: ['aide', 'help', 'quoi', 'question', 'info', 'sujet', 'peut'],
     response:
-      '🤖 **Sujets disponibles — tapez un mot-clé**\n\n💰 **coût** — frais ANAPEC et procédure\n⏱️ **délai** — durée de traitement\n📋 **document** — pièces à fournir\n🏢 **ANAPEC** — rôle et attestation\n✅ **dispense** — cas d\'exemption\n🔄 **renouvellement** — procédure simplifiée\n🔀 **changement employeur** — étapes\n🌍 **nationalité** — conventions bilatérales\n💻 **TAECHIR** — la plateforme officielle\n🏙️ **CFC** — statut Casablanca Finance City\n⭐ **liste A1/A2** — profils rares\n⚠️ **refus** — conséquences\n🏛️ **Ministère** — dépôt du dossier',
+      '🤖 **Sujets disponibles — tapez un mot-clé**\n\n💰 **coût** — frais ANAPEC et procédure\n⏱️ **délai** — durée de traitement\n📋 **document** — pièces à fournir\n🏢 **ANAPEC** — rôle et attestation\n✅ **dispense** — catégories de demande\n🔄 **renouvellement** — procédure simplifiée\n🔀 **changement employeur** — étapes\n🌍 **nationalité** — conventions bilatérales\n💻 **TAECHIR** — la plateforme officielle\n👤 **inscription** — créer le compte employeur\n🧭 **étapes** — saisie de la demande\n🏙️ **CFC** — statut Casablanca Finance City\n⭐ **liste A1/A2** — profils rares\n⚠️ **refus** — conséquences\n🏛️ **guichet** — dépôt du dossier et horaires\n📞 **assistance** — numéros d\'aide',
   },
   {
     keywords: ['merci', 'super', 'parfait', 'excellent', 'bravo', 'top', 'genial', 'génial', 'nickel', 'cool', 'tres bien', 'très bien'],

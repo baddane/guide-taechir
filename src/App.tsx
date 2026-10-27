@@ -1,11 +1,15 @@
 import { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2, Menu, X, BookOpen, ArrowRight } from 'lucide-react';
+import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcase, Globe, Shield, ChevronDown, ChevronUp, Calculator, Wand2, Menu, X, BookOpen, ArrowRight, Phone, Bell, UserPlus } from 'lucide-react';
 import { Wizard } from './Wizard';
 import { Chatbot } from './Chatbot';
 import { Footer } from './components/Footer';
 import { LeadCapture } from './components/LeadCapture';
 import { articles } from './blog/articles';
+import {
+  CATEGORIES_DISPENSEES, CATEGORIE_NORMALE, ETAPES_SAISIE, FONCTIONNALITES, CHAMPS_INSCRIPTION,
+  GUICHETS, HORAIRES, ASSISTANCE, TAECHIR_URL, telHref,
+} from './data/taechir';
 
 function AccordionItem({ title, children, defaultOpen = true }: { title: string, children: ReactNode, defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -78,6 +82,7 @@ export default function App() {
             <a href="#calculateur" className="hover:text-indigo-600 transition-colors">Calculateur</a>
             <a href="#anapec" className="hover:text-indigo-600 transition-colors">Attestation ANAPEC</a>
             <a href="#documents" className="hover:text-indigo-600 transition-colors">Documents Requis</a>
+            <a href="#guichets" className="hover:text-indigo-600 transition-colors">Guichets</a>
             <a href="#faq" className="hover:text-indigo-600 transition-colors">FAQ</a>
             <Link to="/blog" className="hover:text-indigo-600 transition-colors font-semibold">Blog</Link>
             <Link to="/contact" className="hover:text-indigo-600 transition-colors font-semibold">Contact</Link>
@@ -104,6 +109,7 @@ export default function App() {
             <a href="#calculateur" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Calculateur</a>
             <a href="#anapec" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Attestation ANAPEC</a>
             <a href="#documents" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Documents Requis</a>
+            <a href="#guichets" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Guichets & assistance</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">FAQ</a>
             <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 transition-colors text-sm">Blog</Link>
             <div className="border-t border-slate-100 mt-2 pt-2">
@@ -167,20 +173,20 @@ export default function App() {
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 relative">
               <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">2</div>
               <h3 className="text-xl font-bold mb-3">Plateforme TAECHIR</h3>
-              <p className="text-slate-600 mb-4">Création du compte employeur, saisie des données du salarié et génération du contrat de travail type.</p>
+              <p className="text-slate-600 mb-4">Création du compte employeur, choix de la catégorie, saisie de la demande en 6 étapes et impression des contrats à signer.</p>
               <ul className="space-y-2 text-sm text-slate-500">
                 <li className="flex items-center gap-2"><Globe className="w-4 h-4 text-slate-400"/> 100% en ligne</li>
-                <li className="flex items-center gap-2"><FileText className="w-4 h-4 text-slate-400"/> Impression en 3 exemplaires</li>
+                <li className="flex items-center gap-2"><Bell className="w-4 h-4 text-slate-400"/> Notifications par e-mail en temps réel</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 relative">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">3</div>
               <h3 className="text-xl font-bold mb-3">Dépôt & Visa</h3>
-              <p className="text-slate-600 mb-4">Dépôt physique du dossier complet au guichet du Ministère pour vérification et apposition du visa.</p>
+              <p className="text-slate-600 mb-4">Dépôt du dossier complet par le mandataire désigné au guichet d'accueil, puis retrait des contrats visés.</p>
               <ul className="space-y-2 text-sm text-slate-500">
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Guichets régionaux</li>
-                <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-slate-400"/> Délai max : 10 jours</li>
+                <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Rabat, Casablanca, Marrakech, Tanger, Agadir</li>
+                <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-slate-400"/> Réponse en 10 jours maximum</li>
               </ul>
             </div>
           </div>
@@ -194,7 +200,7 @@ export default function App() {
 
               <div className="prose prose-slate max-w-none space-y-5 text-slate-700 leading-relaxed">
                 <p>
-                  <strong>TAECHIR</strong> (Traitement Automatisé de l'Emploi des Citoyens et Habitants Internationaux Résidents) est la plateforme numérique officielle mise en place par le <strong>Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences</strong> pour gérer l'ensemble du processus de visa de contrat de travail des salariés étrangers au Maroc. Ce système a été conçu pour dématérialiser et accélérer une procédure historiquement lente et opaque, tout en maintenant les contrôles nécessaires à la protection du marché de l'emploi national.
+                  <strong>TAECHIR</strong> (تأشير, « visa » en arabe) est le service en ligne dédié aux contrats de travail des étrangers (CTE), accessible sur <a href={TAECHIR_URL} target="_blank" rel="noreferrer" className="text-indigo-600 underline">taechir.travail.gov.ma</a>. Développé par la Direction de l'Emploi du Ministère chargé du Travail (aujourd'hui le <strong>Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences</strong>) pour les employeurs faisant appel à des compétences étrangères, il sert à gérer l'ensemble du processus de visa de contrat de travail des salariés étrangers au Maroc. Ce système a été conçu pour dématérialiser et accélérer une procédure historiquement lente et opaque, tout en maintenant les contrôles nécessaires à la protection du marché de l'emploi national.
                 </p>
 
                 <h3 className="text-xl font-semibold text-slate-900 pt-2">Fondement juridique : l'article 516 du Code du Travail</h3>
@@ -209,7 +215,7 @@ export default function App() {
 
                 <h3 className="text-xl font-semibold text-slate-900 pt-2">Modernisation et évolution de la plateforme</h3>
                 <p>
-                  Depuis son lancement, la plateforme TAECHIR a connu plusieurs évolutions majeures. La digitalisation a permis de réduire considérablement les délais de traitement : le visa du Ministère, autrefois obtenu en plusieurs semaines, est désormais délivré en <strong>10 jours ouvrables maximum</strong>. La plateforme a intégré un système de génération automatique du contrat de travail type, conforme aux exigences réglementaires, et permet un suivi en temps réel de l'état d'avancement de chaque dossier. Le Maroc a enregistré une augmentation significative des demandes de visa de travail ces dernières années, notamment dans les secteurs de la technologie, de l'industrie automobile, de l'offshoring et du BTP, reflétant le dynamisme économique du pays et son attractivité croissante pour les talents internationaux.
+                  Depuis son lancement, la plateforme TAECHIR a connu plusieurs évolutions majeures. La digitalisation a permis de réduire considérablement les délais de traitement : l'Administration répond désormais aux demandes de visa dans un <strong>délai maximum de dix (10) jours</strong>. La plateforme a intégré un système de génération automatique du contrat de travail type, conforme aux exigences réglementaires, et permet un suivi en temps réel de l'état d'avancement de chaque dossier. Le Maroc a enregistré une augmentation significative des demandes de visa de travail ces dernières années, notamment dans les secteurs de la technologie, de l'industrie automobile, de l'offshoring et du BTP, reflétant le dynamisme économique du pays et son attractivité croissante pour les talents internationaux.
                 </p>
 
                 <h3 className="text-xl font-semibold text-slate-900 pt-2">Chiffres clés et contexte économique</h3>
@@ -218,6 +224,62 @@ export default function App() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* La plateforme pas à pas */}
+        <section id="plateforme" className="scroll-mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">La plateforme TAECHIR pas à pas</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">De la création du compte employeur à l'impression des contrats à signer, voici comment se déroule une demande de visa de contrat de travail d'étranger (CTE) en ligne.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                <UserPlus className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Créer le compte employeur</h3>
+              <p className="text-slate-600 text-sm mb-4">Cliquez sur le lien <strong>Inscription</strong> de l'écran de connexion, puis remplissez le formulaire :</p>
+              <ul className="space-y-1.5 text-sm text-slate-600 list-disc pl-5 marker:text-indigo-400 mb-4">
+                {CHAMPS_INSCRIPTION.map(c => <li key={c}>{c}</li>)}
+              </ul>
+              <p className="text-slate-600 text-sm">Un e-mail vous est adressé instantanément avec votre <strong>login</strong> et un <strong>lien d'activation</strong>. Connectez-vous ensuite avec ce login et le mot de passe choisi à l'inscription.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 lg:col-span-2">
+              <h3 className="text-xl font-bold mb-2">Introduire une demande en 6 étapes</h3>
+              <p className="text-slate-600 text-sm mb-5">La demande commence par le choix d'une <strong>catégorie</strong> (voir plus bas) : les données à saisir et les pièces demandées en dépendent.</p>
+              <ol className="grid sm:grid-cols-2 gap-3">
+                {ETAPES_SAISIE.map((etape, i) => (
+                  <li key={etape.titre} className="flex gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span className="w-7 h-7 rounded-full bg-indigo-600 text-white text-sm font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                    <div>
+                      <p className="font-semibold text-slate-800 text-sm">{etape.titre}</p>
+                      <p className="text-xs text-slate-500 mt-1 leading-relaxed">{etape.detail}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <div className="mt-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h3 className="text-xl font-bold mb-5">Les fonctionnalités de TAECHIR</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {FONCTIONNALITES.map(f => (
+                <div key={f.menu}>
+                  <p className="font-semibold text-indigo-700 text-sm mb-2">{f.menu}</p>
+                  <ul className="space-y-1.5 text-sm text-slate-600">
+                    {f.items.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-slate-600 bg-indigo-50 border border-indigo-100 rounded-xl p-4">
+              <Bell className="w-4 h-4 inline mr-1.5 text-indigo-500" />
+              L'adresse e-mail saisie à l'étape 3 (plusieurs adresses possibles, séparées par « ; ») reçoit en temps réel les notifications liées au traitement : contrat visé, complément de dossier à fournir, contrat prêt au guichet, etc.
+            </p>
           </div>
         </section>
 
@@ -262,7 +324,7 @@ export default function App() {
                     >
                       <option value="standard">Profil Standard (nécessite une annonce ANAPEC)</option>
                       <option value="rare">Profil Rare / Haut Niveau (Listes A1/A2)</option>
-                      <option value="exempt">Dispensé (CFC, Époux de marocain, Détachement...)</option>
+                      <option value="exempt">Catégorie dispensée (conjoint de marocain, CFC, détachement, convention…)</option>
                     </select>
                   </div>
 
@@ -361,38 +423,19 @@ export default function App() {
               <div className="bg-slate-800 p-10 lg:p-16 border-l border-slate-700">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <CheckCircle className="w-6 h-6 text-emerald-400" />
-                  Cas de Dispense (Exemptions)
+                  Catégories de demande sur TAECHIR
                 </h3>
-                <p className="text-slate-400 text-sm mb-6">Certaines catégories sont dispensées de l'attestation ANAPEC :</p>
-                <ul className="space-y-4 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Époux(ses) de nationaux marocains.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Détachés pour une période limitée (marchés publics ou filiales).</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Salariés des sociétés ayant le statut <strong>Casablanca Finance City (CFC)</strong>.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Propriétaires, fondés de pouvoirs, gérants, associés et actionnaires.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Profils de haut niveau (Liste A1) et profils pointus rares (Liste A2).</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span>Personnel d'encadrement dans l'offshoring.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
-                    <span><strong>Ressortissants d'Algérie, de Tunisie et du Sénégal</strong> (convention d'établissement).</span>
-                  </li>
+                <p className="text-slate-400 text-sm mb-6">
+                  Chaque demande commence par le choix d'une catégorie. Seule la catégorie <strong className="text-slate-200">{CATEGORIE_NORMALE}</strong> exige l'attestation ANAPEC.
+                  Pour les catégories ci-dessous, des pièces justificatives propres à la catégorie sont demandées à la place :
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-slate-300 text-sm">
+                  {CATEGORIES_DISPENSEES.map(c => (
+                    <li key={c.id} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"></div>
+                      <span>{c.hint ? <><strong>{c.label}</strong> ({c.hint})</> : c.label}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -444,6 +487,69 @@ export default function App() {
           </div>
         </section>
 
+        {/* Guichets d'accueil */}
+        <section id="guichets" className="scroll-mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Guichets d'accueil et assistance</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">Le dossier est déposé, et les contrats visés retirés, au service central de Rabat ou dans l'un des guichets régionaux.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+              <table className="w-full text-sm">
+                <thead className="bg-slate-50 text-slate-500 text-left">
+                  <tr>
+                    <th className="px-5 py-3 font-semibold">Guichet</th>
+                    <th className="px-5 py-3 font-semibold">Contact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {GUICHETS.map(g => (
+                    <tr key={g.id}>
+                      <td className="px-5 py-3">
+                        <p className="font-semibold text-slate-800">{g.ville} — {g.nom}</p>
+                        {g.note && <p className="text-xs text-slate-500">{g.note}</p>}
+                      </td>
+                      <td className="px-5 py-3 whitespace-nowrap text-slate-700">
+                        {g.telephone
+                          ? g.fax
+                            ? <>Fax : {g.telephone}</>
+                            : <a href={telHref(g.telephone)} className="text-indigo-600 hover:underline">{g.telephone}</a>
+                          : '—'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2"><Clock className="w-5 h-5 text-indigo-500" /> Horaires d'ouverture</h3>
+                <ul className="text-sm text-slate-600 space-y-1">
+                  {HORAIRES.map(h => (
+                    <li key={h.jours} className="flex justify-between"><span>{h.jours}</span><strong>{h.heures}</strong></li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2"><Phone className="w-5 h-5 text-indigo-500" /> Assistance aux usagers</h3>
+                <ul className="text-sm space-y-1">
+                  {ASSISTANCE.map(num => (
+                    <li key={num}><a href={telHref(num)} className="font-semibold text-indigo-600 hover:underline">{num}</a></li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex gap-3">
+                <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <p className="text-xs text-amber-800 leading-relaxed">
+                  Seul le <strong>mandataire désigné par l'employeur</strong> (étape 5 de la demande en ligne), muni d'une pièce d'identité valide, est reçu au guichet pour le dépôt des dossiers ou le retrait des contrats visés.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-12">
@@ -453,10 +559,10 @@ export default function App() {
 
           <div className="max-w-4xl mx-auto">
             <AccordionItem title="Qu'est-ce que la plateforme TAECHIR ?">
-              <p>TAECHIR est le système informatique officiel du Ministère de l'Inclusion Économique, de la Petite Entreprise, de l'Emploi et des Compétences. Il permet aux employeurs de formuler et suivre leurs demandes de visa de contrat de travail pour les salariés étrangers de manière dématérialisée.</p>
+              <p>TAECHIR est le service en ligne officiel du Ministère chargé du Travail dédié aux contrats de travail des étrangers (CTE). Il permet aux employeurs de s'informer sur les procédures, de créer et modifier les projets de contrats, d'imprimer les contrats à signer et la liste des pièces du dossier, de suivre le traitement des demandes déposées et de recevoir en temps réel les notifications (visa prêt, demande à compléter…). L'Administration répond aux demandes dans un délai maximum de dix (10) jours.</p>
             </AccordionItem>
             <AccordionItem title="Quelles sont les nationalités dispensées de l'attestation ANAPEC ?">
-              <p>Les ressortissants des pays ayant conclu une convention d'établissement avec le Maroc sont dispensés de l'attestation d'activité ANAPEC. Actuellement, cela concerne explicitement les ressortissants de <strong>l'Algérie, de la Tunisie et du Sénégal</strong>. D'autres catégories (CFC, époux de marocains, profils rares) sont également dispensées.</p>
+              <p>Les ressortissants des pays ayant conclu une convention d'établissement avec le Maroc, à savoir <strong>l'Algérie, la Tunisie et le Sénégal</strong>, relèvent de la catégorie « Convention d'établissement » et sont dispensés de l'attestation d'activité ANAPEC. D'autres catégories sont également dispensées (conjoint de marocain, descendant de mère marocaine, associé, gérant, détachement, Casa Finance City…) : des pièces justificatives propres à la catégorie sont alors demandées.</p>
             </AccordionItem>
             <AccordionItem title="Combien de temps prend la procédure globale ?">
               <p>Le délai dépend de votre situation :</p>
@@ -484,6 +590,12 @@ export default function App() {
             </AccordionItem>
             <AccordionItem title="Un salarié étranger peut-il changer d'employeur au Maroc ?">
               <p>Oui, mais il s'agit d'une nouvelle procédure de demande de visa ("Changement d'employeur"). Le nouvel employeur devra fournir une lettre de résiliation de l'ex-employeur, une lettre de démission légalisée, ou une décision judiciaire en cas de litige, en plus des documents habituels.</p>
+            </AccordionItem>
+            <AccordionItem title="Qui peut déposer le dossier au guichet ?">
+              <p>Seul le <strong>mandataire désigné par l'employeur</strong> à l'étape 5 de la demande en ligne, muni d'une pièce d'identité valide, est reçu au guichet d'accueil pour le dépôt des dossiers ou le retrait des contrats visés. Les guichets (Rabat, Casablanca, Casablanca CFCA pour les sociétés CFC, Marrakech, Tanger, Agadir) sont ouverts du lundi au jeudi de 9 h à 13 h et le vendredi de 9 h à 12 h.</p>
+            </AccordionItem>
+            <AccordionItem title="Comment suis-je informé de l'avancement de ma demande ?">
+              <p>Par e-mail : l'adresse saisie à l'étape 3 (vous pouvez en indiquer plusieurs, séparées par « ; ») reçoit en temps réel les notifications liées au traitement : contrat visé, complément de dossier à fournir, contrat prêt au guichet, etc. Vous pouvez aussi suivre vos demandes et consulter la liste des contrats visés depuis le menu « Suivre sa demande en ligne ». En cas de difficulté, l'assistance aux usagers répond au <strong>+212 5 30 10 07 05</strong> et au <strong>+212 6 74 48 03 68</strong>.</p>
             </AccordionItem>
             <AccordionItem title="Les listes A1 (Haut niveau) et A2 (Profils pointus rares) sont-elles fixes ?">
               <p>Non, ces listes sont mises à jour régulièrement par l'ANAPEC en concertation avec le Ministère chargé du Travail, en fonction de l'évolution et des besoins réels du marché de l'emploi au Maroc.</p>
