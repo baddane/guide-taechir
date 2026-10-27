@@ -5839,6 +5839,115 @@ function Article38Content() {
   );
 }
 
+function Article39Content() {
+  return (
+    <>
+      <Lead>
+        Un contrôle de l'inspection du travail ou un contrôle CNSS se prépare bien avant le jour J.
+        Pour un salarié étranger, le dossier du personnel doit prouver en quelques minutes que
+        l'embauche est régulière : contrat visé, attestation ANAPEC, titre de séjour, déclaration
+        CNSS. Voici comment le constituer et le tenir à jour.
+      </Lead>
+
+      <H2>Pourquoi le dossier d'un salarié étranger est plus exposé</H2>
+      <P>
+        Un salarié marocain se contrôle surtout sur le contrat, la paie et la déclaration sociale.
+        Pour un salarié étranger, s'ajoute une chaîne de pièces administratives qui doivent rester
+        cohérentes entre elles : le contrat de travail visé, l'attestation ANAPEC, le visa ou le
+        titre de séjour, puis l'affiliation CNSS. Une pièce manquante ou périmée suffit à faire
+        douter de la régularité de toute l'embauche.
+      </P>
+
+      <H2>Les pièces à conserver, dossier par dossier</H2>
+      <Table
+        rows={[
+          ['Pièce', 'À vérifier', 'Piège fréquent'],
+          ['Contrat de travail visé', 'Poste, rémunération et durée identiques à la réalité', 'Avenant signé sans mise à jour du visa'],
+          ['Attestation ANAPEC', 'Poste et employeur correspondent au contrat', 'Attestation égarée après le dépôt'],
+          ['Titre de séjour (carte ou récépissé)', 'Date de validité et correspondance avec le contrat', 'Échéance non suivie, renouvellement lancé trop tard'],
+          ['Passeport et pièces d\'état civil', 'Copie lisible, nom orthographié de façon uniforme', 'Variations d\'orthographe entre les documents'],
+          ['Déclaration et bulletins CNSS', 'Affiliation, salaire déclaré, cotisations régulières', 'Salaire déclaré différent de la paie'],
+          ['Bulletins de paie', 'Salaire conforme au contrat et au minimum légal', 'Avantages en nature non mentionnés'],
+        ]}
+      />
+      <Warning>
+        Aucune de ces pièces ne remplace les autres. Un contrat visé ne prouve pas que le titre de
+        séjour est à jour, et une affiliation CNSS ne régularise pas un séjour irrégulier.
+      </Warning>
+
+      <H2>Organiser le dossier pour qu'il soit lisible</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          <strong>Un dossier unique par salarié :</strong> papier ou numérique, mais avec un
+          classement identique pour tous, afin de retrouver une pièce sans chercher.
+        </li>
+        <li>
+          <strong>Un tableau des échéances :</strong> date de fin du contrat, fin de validité du
+          titre de séjour et dates de renouvellement à lancer, avec une alerte plusieurs semaines
+          avant. Voir{' '}
+          <Link to="/blog/carte-sejour-etranger-maroc-dgsn" className="text-indigo-600 hover:underline">le guide de la carte de séjour</Link>.
+        </li>
+        <li>
+          <strong>L'historique des modifications :</strong> chaque avenant, changement de poste ou
+          de salaire doit être daté, signé et rattaché au dossier.
+        </li>
+        <li>
+          <strong>Une copie sécurisée :</strong> ces dossiers contiennent des données personnelles ;
+          l'accès doit être limité aux personnes habilitées.
+        </li>
+      </ul>
+
+      <H2>Tenir le dossier à jour au fil des événements</H2>
+      <P>
+        Le dossier se dégrade surtout lors des changements : renouvellement du contrat, hausse de
+        salaire, changement de poste ou d'employeur. Chaque événement doit déclencher le même
+        réflexe : mettre à jour le contrat, vérifier la cohérence avec l'ANAPEC et la CNSS, puis
+        classer la nouvelle pièce. Voir{' '}
+        <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">le renouvellement du contrat</Link> et{' '}
+        <Link to="/blog/salaire-salarie-etranger-maroc-smig-bulletin-paie" className="text-indigo-600 hover:underline">la cohérence du salaire avec le dossier</Link>.
+      </P>
+
+      <H2>Le jour du contrôle</H2>
+      <P>
+        Restez coopératif et organisé : demandez l'objet du contrôle, désignez un interlocuteur
+        unique, présentez uniquement les pièces demandées et notez celles qui sont emportées en
+        copie. Si une pièce manque, ne la reconstituez pas après coup : expliquez la situation et
+        régularisez par les démarches officielles. Les sanctions et délais précis dépendent de
+        l'infraction relevée ; en cas de doute, faites-vous conseiller avant de répondre par écrit.
+      </P>
+      <Tip>
+        Faites un contrôle interne à blanc une fois par trimestre : prenez un dossier au hasard et
+        vérifiez en dix minutes que les six pièces du tableau sont présentes, valides et cohérentes.
+      </Tip>
+      <Info>
+        Les exigences exactes peuvent évoluer. Vérifiez toujours auprès de l'administration
+        compétente ou de votre conseil avant toute décision engageant votre responsabilité.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Un doute sur la conformité de vos dossiers ?"
+        cta="Demander un audit"
+      >
+        <p>
+          Nous passons en revue le dossier de vos salariés étrangers et signalons les écarts à
+          corriger avant qu'un contrôle ne les révèle.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Quelles pièces garder dans le dossier d\'un salarié étranger ?', a: 'Au minimum : le contrat visé, l\'attestation ANAPEC, le titre de séjour en cours de validité, le passeport, les justificatifs CNSS et les bulletins de paie. Chaque avenant doit aussi y figurer.' },
+          { q: 'Qui peut contrôler le dossier du personnel ?', a: 'Principalement l\'inspection du travail et la CNSS, chacune dans son périmètre. Demandez toujours l\'objet du contrôle et ne communiquez que les pièces concernées.' },
+          { q: 'Un titre de séjour expiré engage-t-il l\'employeur ?', a: 'Employer une personne sans titre valide expose l\'employeur comme le salarié. Suivez les échéances et lancez le renouvellement bien avant la date limite.' },
+          { q: 'Peut-on régulariser une pièce manquante après coup ?', a: 'Oui, par les démarches officielles, mais jamais en reconstituant ou antidatant un document. Faites-vous conseiller pour choisir la bonne procédure.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6219,6 +6328,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Le contrat TAECHIR lie votre séjour à un employeur et à un poste. Second emploi, freelance, mission annexe : ce qui pose problème, ce que dit votre contrat et les démarches régulières pour développer une activité en plus.',
     Content: Article38Content,
+  },
+  {
+    slug: 'dossier-personnel-salarie-etranger-controle-inspection-travail-maroc',
+    title: 'Dossier du personnel d\'un salarié étranger au Maroc : préparer un contrôle de l\'inspection du travail',
+    description: 'Contrat visé, attestation ANAPEC, titre de séjour, CNSS : les pièces à conserver, comment organiser le dossier d\'un salarié étranger et se préparer à un contrôle au Maroc.',
+    date: '1 décembre 2026',
+    readTime: 6,
+    category: 'Obligations',
+    excerpt: 'Un contrôle se gagne avant le jour J. Les six pièces à réunir, un tableau d\'échéances et les bons réflexes pour que le dossier d\'un salarié étranger prouve la régularité de l\'embauche en quelques minutes.',
+    Content: Article39Content,
   },
 ];
 
