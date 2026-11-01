@@ -3,7 +3,7 @@
  *
  * Onglet « Newsletter » du dashboard. Trois actions :
  *  - `status` : état de la liste Brevo (configurée ? combien de contacts ?)
- *  - `sync`   : pousse les leads et contacts Supabase dans la liste Brevo
+ *  - `sync`   : pousse les leads Supabase dans la liste Brevo (pas les messages de contact)
  *  - `send`   : crée puis envoie une campagne à partir des articles choisis
  *
  * On passe par une **campagne** Brevo et non par l'API transactionnelle : la
@@ -143,14 +143,17 @@ async function newsletter(req: ApiRequest, res: ApiResponse) {
       });
       return;
     }
-    const { contacts = [], leads = [] } = (data.data ?? {}) as {
-      contacts?: { email: string; name: string | null }[];
+    const { leads = [] } = (data.data ?? {}) as {
       leads?: { email: string; name: string | null }[];
     };
 
     const seen = new Set<string>();
     const rows: { email: string; attributes: Record<string, string> }[] = [];
-    for (const person of [...leads, ...contacts]) {
+    // Les messages de contact (`contacts`) sont volontairement EXCLUS : écrire
+    // via le formulaire de contact ne vaut pas accord pour recevoir la lettre.
+    // Seuls les leads, dont le formulaire annonce les « mises à jour », sont
+    // synchronisés. Les inscrits newsletter sont ajoutés à Brevo à l'inscription.
+    for (const person of leads) {
       const email = str(person?.email).toLowerCase();
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || seen.has(email)) continue;
       seen.add(email);
