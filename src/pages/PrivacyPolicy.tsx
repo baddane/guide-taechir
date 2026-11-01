@@ -3,10 +3,12 @@ import { Globe, ArrowLeft, Shield, Cookie } from 'lucide-react';
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
 import { openCookiePreferences } from '../lib/consent';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 export function PrivacyPolicy() {
+  useSeo(staticPage('/politique-de-confidentialite'));
   useEffect(() => {
-    document.title = 'Politique de Confidentialité — Guide-Taechir.org';
     window.scrollTo(0, 0);
   }, []);
 

@@ -3,6 +3,8 @@ import { Globe, ArrowLeft, Download, CheckCircle2, AlertTriangle, AtSign, User, 
 import { useEffect, useState, FormEvent } from 'react';
 import { Footer } from '../components/Footer';
 import { supabase } from '../lib/supabase';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 const PDF_URL = '/checklist-taechir-2026.pdf';
 
@@ -16,15 +18,11 @@ const included = [
 ];
 
 export function Checklist() {
+  useSeo(staticPage('/checklist'));
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', company: '' });
 
   useEffect(() => {
-    document.title = 'Checklist gratuite du dossier TAECHIR (PDF) — Guide-Taechir.org';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute('content', 'Téléchargez gratuitement la checklist complète du dossier TAECHIR 2026 : toutes les étapes et pièces pour recruter un salarié étranger au Maroc, en PDF imprimable.');
-    }
     window.scrollTo(0, 0);
   }, []);
 

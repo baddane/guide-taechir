@@ -3,8 +3,11 @@ import { Globe, ArrowLeft, Mail, MessageSquare, Clock, ExternalLink, Send, Check
 import { useEffect, useState, FormEvent } from 'react';
 import { Footer } from '../components/Footer';
 import { supabase } from '../lib/supabase';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 export function Contact() {
+  useSeo(staticPage('/contact'));
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
@@ -14,11 +17,6 @@ export function Contact() {
   });
 
   useEffect(() => {
-    document.title = 'Contact — Guide-Taechir.org';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute('content', 'Contactez l\'équipe Guide-Taechir.org pour toute question sur la procédure TAECHIR, suggestion ou demande.');
-    }
     window.scrollTo(0, 0);
   }, []);
 

@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Users, Target, BookOpen, Shield, CheckCircle, FileText, BarChart3 } from 'lucide-react';
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 export function About() {
+  useSeo(staticPage('/a-propos'));
   useEffect(() => {
-    document.title = 'À propos — Guide-Taechir.org';
     window.scrollTo(0, 0);
   }, []);
 

@@ -12,6 +12,8 @@ import {
 import {
   PIECES_ANAPEC, PIECES_DISPENSES, REGLES_CTE, ACRONYMES, ANAPEC_MODELES_URL, TAECHIR_URL,
 } from '../data/taechir';
+import { useSeo } from '../seo/useSeo';
+import { staticPage, FAQ_DOCUMENTS } from '../seo/meta';
 
 const STORAGE_KEY = 'gt_docs_contrat_v1';
 
@@ -319,17 +321,13 @@ const ONGLETS: { id: Onglet; label: string; icon: typeof FileSignature }[] = [
 ];
 
 export function DocumentsUtiles() {
+  useSeo(staticPage('/documents-utiles'));
   const [onglet, setOnglet] = useState<Onglet>(() => {
     const h = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
     return (ONGLETS.some((o) => o.id === h) ? h : 'contrat') as Onglet;
   });
 
   useEffect(() => {
-    document.title = 'Documents utiles : générateur de contrat CDI / CDD et modèles RH (Maroc) — Guide-Taechir.org';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute('content', 'Générez gratuitement un contrat de travail CDI ou CDD conforme au Code du travail marocain, avec les clauses du contrat d\'étranger (TAECHIR), et des modèles d\'attestation et de certificat de travail.');
-    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -357,7 +355,9 @@ export function DocumentsUtiles() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm font-medium mb-5 border border-indigo-100">
             <FileSignature className="w-4 h-4" /> Gratuit, sans inscription
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Documents utiles</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            Modèle de contrat de travail CDI et CDD au Maroc : générateur gratuit
+          </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Rédigez en quelques minutes un contrat CDI ou CDD conforme au Code du travail marocain, préparez votre
             contrat de salarié étranger, et générez vos attestations et lettres ANAPEC. Vos saisies restent sur votre appareil.
@@ -478,6 +478,27 @@ export function DocumentsUtiles() {
             </dl>
           </div>
         )}
+
+        {/* Questions fréquentes (contenu visible, balisé en FAQPage) */}
+        <section className="mt-16 max-w-4xl print:hidden" aria-labelledby="faq-contrats">
+          <h2 id="faq-contrats" className="text-2xl font-bold mb-2">Contrat de travail au Maroc : les questions fréquentes</h2>
+          <p className="text-slate-600 mb-6">
+            Les règles que le générateur applique, et celles à vérifier avant de signer. Pour aller plus loin sur le recrutement
+            d'un étranger, consultez <Link to="/blog/guide-recruter-salarie-etranger-maroc-2026" className="text-indigo-600 font-semibold hover:underline">notre guide complet</Link>{' '}
+            ou la <Link to="/checklist" className="text-indigo-600 font-semibold hover:underline">checklist du dossier TAECHIR</Link>.
+          </p>
+          <div className="space-y-3">
+            {FAQ_DOCUMENTS.map(([q, a]) => (
+              <details key={q} className="group bg-white border border-slate-200 rounded-xl p-5">
+                <summary className="cursor-pointer list-none font-semibold text-slate-900 flex justify-between gap-4">
+                  <h3 className="text-base">{q}</h3>
+                  <span className="text-indigo-600 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                </summary>
+                <p className="mt-3 text-slate-700 leading-relaxed">{a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
 
         {/* Relais vers un accompagnement */}
         <div className="mt-14 rounded-2xl bg-slate-900 text-white p-8 flex flex-col md:flex-row md:items-center gap-6 justify-between print:hidden">
