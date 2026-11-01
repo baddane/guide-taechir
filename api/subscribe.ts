@@ -86,6 +86,11 @@ async function subscribe(req: ApiRequest, res: ApiResponse) {
   const email = str(payload.email).toLowerCase();
   const source = str(payload.source) || 'site';
   const page = str(payload.page) || null;
+  // `lead` : appel du formulaire checklist / simulateur (table `leads`, déjà
+  // enregistrée côté client). On ne fait alors que l'ajout à la liste Brevo :
+  // l'inscrire aussi dans `newsletter_subscribers` laisserait croire à une case
+  // de consentement cochée, ce que ce formulaire n'a pas.
+  const isLead = str(payload.kind) === 'lead';
 
   if (!email || !EMAIL_RE.test(email) || email.length > 254) {
     res.status(400).json({ ok: false, error: 'invalid_email' });
@@ -99,6 +104,11 @@ async function subscribe(req: ApiRequest, res: ApiResponse) {
   let brevoOk = false;
   if (apiKey && listId && !Number.isNaN(listId)) {
     brevoOk = await addToBrevo(email, listId, apiKey);
+  }
+
+  if (isLead) {
+    res.status(brevoOk ? 200 : 503).json({ ok: brevoOk, brevo: brevoOk });
+    return;
   }
 
   const stored = await rpc('newsletter_subscribe', {

@@ -62,6 +62,18 @@ export function LeadCapture({
       details: details ?? null,
     });
 
+    // 1 bis) Ajout à la liste Brevo de la newsletter. Le formulaire annonce que
+    // l'adresse sert aussi à « nos mises à jour » : sans cet appel, le lead
+    // restait dans Supabase et ne recevait jamais la lettre. Au mieux, jamais
+    // bloquant pour la remise de la checklist.
+    if (!error) {
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email, source, page, kind: 'lead' }),
+      }).catch(() => undefined);
+    }
+
     // 2) Notification e-mail, au mieux : son échec ne bloque pas la remise
     let notified = false;
     try {
