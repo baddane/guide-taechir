@@ -84,6 +84,7 @@ export default function App() {
             <a href="#documents" className="hover:text-indigo-600 transition-colors">Documents Requis</a>
             <a href="#guichets" className="hover:text-indigo-600 transition-colors">Guichets</a>
             <a href="#faq" className="hover:text-indigo-600 transition-colors">FAQ</a>
+            <Link to="/documents-utiles" className="hover:text-indigo-600 transition-colors font-semibold">Documents utiles</Link>
             <Link to="/blog" className="hover:text-indigo-600 transition-colors font-semibold">Blog</Link>
             <Link to="/contact" className="hover:text-indigo-600 transition-colors font-semibold">Contact</Link>
           </div>
@@ -111,6 +112,7 @@ export default function App() {
             <a href="#documents" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Documents Requis</a>
             <a href="#guichets" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">Guichets & assistance</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm">FAQ</a>
+            <Link to="/documents-utiles" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 transition-colors text-sm">Documents utiles (contrats)</Link>
             <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 transition-colors text-sm">Blog</Link>
             <div className="border-t border-slate-100 mt-2 pt-2">
               <Link to="/a-propos" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-lg text-slate-500 hover:bg-slate-50 transition-colors text-sm">À propos</Link>
@@ -450,6 +452,16 @@ export default function App() {
           </div>
 
           <div className="max-w-4xl mx-auto">
+            <Link to="/documents-utiles" className="flex items-center justify-between gap-4 mb-6 rounded-xl border border-indigo-200 bg-indigo-50 p-5 hover:bg-indigo-100 transition-colors">
+              <span className="flex items-center gap-3">
+                <FileText className="w-6 h-6 text-indigo-600 shrink-0" />
+                <span>
+                  <span className="block font-semibold text-slate-900">Nouveau : générateur de contrat CDI / CDD et modèles de lettres</span>
+                  <span className="block text-sm text-slate-600">Préparez le contrat, la demande ANAPEC, l'attestation et le certificat de travail en quelques minutes.</span>
+                </span>
+              </span>
+              <ArrowRight className="w-5 h-5 text-indigo-600 shrink-0" />
+            </Link>
             <AccordionItem title="Premier Établissement (Nouveau Recrutement)" defaultOpen={true}>
               <ul className="space-y-3 list-disc pl-5 marker:text-indigo-400">
                 <li><strong>3 exemplaires originaux</strong> du contrat de travail généré via TAECHIR, signés, cachetés et légalisés.</li>

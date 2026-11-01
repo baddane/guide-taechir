@@ -148,3 +148,86 @@ export function telHref(numero: string): string {
   const digits = numero.replace(/[^\d+]/g, '');
   return `tel:${digits.startsWith('+') ? digits : `+212${digits.slice(1)}`}`;
 }
+
+/* ---------- Brochure « Recrutement des salariés étrangers » (MTIP / ANAPEC) ---------- */
+
+/* Pièces à réunir pour l'attestation d'activité ANAPEC, par cas. */
+export const PIECES_ANAPEC: { id: string; titre: string; delai: string; pieces: string[] }[] = [
+  {
+    id: 'haut-niveau',
+    titre: 'Postes de haut niveau (liste A1) et profils rares (liste A2)',
+    delai: 'Procédure simplifiée en 48 heures, sans publication de l\'offre',
+    pieces: [
+      'Demande adressée à M. le Directeur Général de l\'ANAPEC',
+      'Copie certifiée conforme des références professionnelles (diplômes et/ou certificats de travail)',
+      'CV du salarié étranger',
+      'Fiche d\'identification de l\'employeur (modèle ANAPEC)',
+      'Fiche descriptive du poste (modèle ANAPEC)',
+      'Organigramme de la société (pour un directeur général)',
+      'Procès-verbal de nomination (pour un directeur central)',
+    ],
+  },
+  {
+    id: 'standard',
+    titre: 'Emplois standards',
+    delai: 'Publication de l\'offre, réponse sous 20 jours ouvrables',
+    pieces: [
+      'Demande adressée à M. le Directeur Général de l\'ANAPEC',
+      'Copie certifiée conforme des références professionnelles',
+      'CV du salarié étranger',
+      'Fiche d\'identification de l\'employeur (modèle ANAPEC)',
+      'Fiche descriptive du poste (modèle ANAPEC)',
+      'Modèle d\'annonce ANAPEC',
+    ],
+  },
+  {
+    id: 'renouvellement',
+    titre: 'Renouvellement de l\'attestation',
+    delai: 'Procédure simplifiée en 48 heures, sans publication de l\'offre',
+    pieces: [
+      'Demande de renouvellement adressée à M. le Directeur Général de l\'ANAPEC',
+      'Copie de la dernière attestation délivrée par l\'ANAPEC',
+      'Copie du dernier contrat de travail d\'étranger visé par le Ministère',
+    ],
+  },
+];
+
+/* Modèles officiels téléchargeables sur le site de l'ANAPEC. */
+export const ANAPEC_MODELES_URL = 'https://www.anapec.org/conseils/procedure_etrangers';
+
+/* Pièces propres à certaines catégories dispensées de l'attestation ANAPEC. */
+export const PIECES_DISPENSES: { categorie: string; piece: string }[] = [
+  { categorie: 'Migrants régularisés', piece: 'Titre de séjour délivré par la DGSN portant la mention « TRAVAIL »' },
+  { categorie: 'Réfugiés et apatrides', piece: 'Carte portant la mention « RÉFUGIÉ » délivrée par le Bureau des Réfugiés et Apatrides (ministère des Affaires étrangères)' },
+  { categorie: 'Conjoint(e) de marocain(e)', piece: 'Copie légalisée de l\'acte de mariage et copie récente de la CNI du conjoint marocain' },
+  { categorie: 'Autres (associés, sportifs, artistes, natifs du Maroc…)', piece: 'Pièce justificative correspondant à la catégorie' },
+];
+
+/* Règles du contrat de travail d'étranger rappelées par la brochure. */
+export const REGLES_CTE: string[] = [
+  'Le contrat doit être conforme au modèle fixé par arrêté du Ministère chargé du travail : c\'est celui que vous imprimez depuis TAECHIR.',
+  'La date du visa est la date à laquelle le contrat prend effet : le salarié ne travaille pas avant.',
+  'Toute modification du contrat (poste, salaire, durée…) est elle aussi soumise au visa.',
+  'Si le candidat se trouve déjà au Maroc, l\'employeur doit s\'assurer de la régularité de son séjour.',
+  'Salarié atteint par la limite d\'âge : déposer d\'abord une demande de maintien, avec son consentement (art. 526).',
+  'Salarié détaché par sa société mère : il n\'est pas obligatoirement affilié à la CNSS si un certificat d\'assujettissement du régime du pays d\'origine est produit (conventions de sécurité sociale).',
+  'À l\'échéance du visa, le renouvellement se demande dans les mêmes formes que la demande initiale.',
+];
+
+/* Acronymes rencontrés dans la procédure. */
+export const ACRONYMES: [string, string][] = [
+  ['AMO', 'Assurance Maladie Obligatoire'],
+  ['ANAPEC', 'Agence Nationale de Promotion de l\'Emploi et des Compétences'],
+  ['BRA', 'Bureau des Réfugiés et Apatrides'],
+  ['CDD', 'Contrat à Durée Déterminée'],
+  ['CDI', 'Contrat à Durée Indéterminée'],
+  ['CFC / CFCA', 'Casablanca Finance City / Casablanca Finance City Authority'],
+  ['CNI', 'Carte Nationale d\'Identité'],
+  ['CNSS', 'Caisse Nationale de Sécurité Sociale'],
+  ['CTE', 'Contrat de Travail d\'Étranger'],
+  ['DGSN', 'Direction Générale de la Sûreté Nationale (titres de séjour)'],
+  ['ICE', 'Identifiant Commun de l\'Entreprise'],
+  ['IR', 'Impôt sur le Revenu'],
+  ['SMIG / SMAG', 'Salaire minimum (industrie, commerce, services / agriculture)'],
+  ['TFP', 'Taxe de Formation Professionnelle'],
+];

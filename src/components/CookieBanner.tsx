@@ -61,7 +61,7 @@ export function CookieBanner() {
   // ═══ Vue préférences détaillées ═══
   if (view === 'preferences') {
     return (
-      <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 sm:p-4">
+      <div className="print:hidden fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 sm:p-4">
         <div className="bg-white w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between p-5 border-b border-slate-200 sticky top-0 bg-white">
@@ -166,7 +166,7 @@ export function CookieBanner() {
 
   // ═══ Vue bannière initiale ═══
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] p-0 sm:p-4 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-md">
+    <div className="print:hidden fixed bottom-0 left-0 right-0 z-[100] p-0 sm:p-4 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-md">
       <div
         role="dialog"
         aria-live="polite"

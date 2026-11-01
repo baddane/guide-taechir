@@ -11,6 +11,7 @@ import { Checklist } from './pages/Checklist.tsx';
 import { Admin } from './pages/Admin.tsx';
 import { MentionsLegales } from './pages/MentionsLegales.tsx';
 import { NotFound } from './pages/NotFound.tsx';
+import { DocumentsUtiles } from './pages/DocumentsUtiles.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
 import './index.css';
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/checklist" element={<Checklist />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/documents-utiles" element={<DocumentsUtiles />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
