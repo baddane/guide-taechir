@@ -4,6 +4,8 @@ import { FileText, CheckCircle, Clock, CreditCard, MapPin, AlertCircle, Briefcas
 import { Wizard } from './Wizard';
 import { Chatbot } from './Chatbot';
 import { Footer } from './components/Footer';
+import { useSeo } from './seo/useSeo';
+import { staticPage } from './seo/meta';
 import { LeadCapture } from './components/LeadCapture';
 import { articles } from './blog/articles';
 import {
@@ -32,6 +34,7 @@ function AccordionItem({ title, children, defaultOpen = true }: { title: string,
 }
 
 export default function App() {
+  useSeo(staticPage('/'));
   // Wizard State
   const [showWizard, setShowWizard] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

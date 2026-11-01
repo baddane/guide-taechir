@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { articles } from './articles';
 import { Footer } from '../components/Footer';
 import { LeadCapture } from '../components/LeadCapture';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 const categoryColors: Record<string, string> = {
   'Guide':       'bg-indigo-50 text-indigo-700 border-indigo-100',
@@ -24,9 +25,7 @@ const categoryColors: Record<string, string> = {
 };
 
 export function BlogList() {
-  useEffect(() => {
-    document.title = 'Blog — Recrutement étranger au Maroc | Guide-Taechir.org';
-  }, []);
+  useSeo(staticPage('/blog'));
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">

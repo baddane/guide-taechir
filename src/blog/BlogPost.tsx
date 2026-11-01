@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useMemo } from 'react';
+import { useSeo } from '../seo/useSeo';
+import { articleMeta } from '../seo/meta';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Globe, ArrowLeft, Clock, Tag, ChevronRight, Wand2, User, AlertTriangle } from 'lucide-react';
 import { getArticleBySlug, articles } from './articles';
@@ -28,60 +30,8 @@ export function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
 
-  useEffect(() => {
-    if (article) {
-      document.title = `${article.title} — Guide-Taechir.org`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', article.description);
-      const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', `https://guide-taechir.org/blog/${article.slug}`);
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc) ogDesc.setAttribute('content', article.description);
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute('content', article.title);
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl) ogUrl.setAttribute('content', `https://guide-taechir.org/blog/${article.slug}`);
-
-      const existingLd = document.getElementById('article-jsonld');
-      if (existingLd) existingLd.remove();
-      const script = document.createElement('script');
-      script.id = 'article-jsonld';
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: article.title,
-        description: article.description,
-        datePublished: article.date,
-        dateModified: article.date,
-        author: {
-          '@type': 'Organization',
-          name: 'Guide-Taechir.org',
-          url: 'https://guide-taechir.org/a-propos',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Guide-Taechir.org',
-          url: 'https://guide-taechir.org',
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': `https://guide-taechir.org/blog/${article.slug}`,
-        },
-        inLanguage: 'fr',
-      });
-      document.head.appendChild(script);
-    }
-    return () => {
-      document.title = 'Programme Taechir Maroc – Guide Complet Recrutement Salarié Étranger';
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', 'Guide complet du programme Taechir : procédure pas à pas, délais, frais ANAPEC, documents requis et simulateur pour recruter un salarié étranger au Maroc.');
-      const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', 'https://guide-taechir.org/');
-      const existingLd = document.getElementById('article-jsonld');
-      if (existingLd) existingLd.remove();
-    };
-  }, [article]);
+  const meta = useMemo(() => (article ? articleMeta(article) : null), [article]);
+  useSeo(meta);
 
   if (!article) {
     return <Navigate to="/blog" replace />;

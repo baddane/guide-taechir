@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Globe, Home, BookOpen, ArrowLeft } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { useSeo } from '../seo/useSeo';
+import { NOINDEX_PAGES } from '../seo/meta';
 
 export function NotFound() {
+  useSeo(NOINDEX_PAGES.notFound);
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex flex-col">
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">

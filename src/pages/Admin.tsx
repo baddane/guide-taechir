@@ -13,6 +13,8 @@ import {
   type MessageReply,
   type OutreachRow,
 } from '../lib/supabase';
+import { useSeo } from '../seo/useSeo';
+import { NOINDEX_PAGES } from '../seo/meta';
 
 const STORAGE_KEY = 'gt_admin_pw';
 
@@ -901,9 +903,7 @@ export function Admin() {
   const [replyTarget, setReplyTarget] = useState<ReplyTarget | null>(null);
   const [toast, setToast] = useState('');
 
-  useEffect(() => {
-    document.title = 'Administration — Guide-Taechir.org';
-  }, []);
+  useSeo(NOINDEX_PAGES['/admin']);
 
   // ⚠️ Tous les hooks restent AVANT le `return` conditionnel de l'écran de login.
   const repliesByMessage = useMemo(() => {

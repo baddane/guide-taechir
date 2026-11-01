@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Scale } from 'lucide-react';
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
+import { useSeo } from '../seo/useSeo';
+import { staticPage } from '../seo/meta';
 
 export function MentionsLegales() {
+  useSeo(staticPage('/mentions-legales'));
   useEffect(() => {
-    document.title = 'Mentions Légales — Guide-Taechir.org';
     window.scrollTo(0, 0);
   }, []);
 
