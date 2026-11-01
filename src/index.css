@@ -4,3 +4,9 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Impression des documents générés (page Documents utiles) */
+@media print {
+  @page { margin: 18mm 16mm; }
+  body { background: #fff !important; }
+}

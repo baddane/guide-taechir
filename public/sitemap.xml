@@ -91,6 +91,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Page : Documents utiles (générateur de contrats CDI / CDD, modèles RH) -->
+  <url>
+    <loc>https://guide-taechir.org/documents-utiles</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog — Page listing -->
   <url>
     <loc>https://guide-taechir.org/blog</loc>

@@ -12,6 +12,11 @@ interface Message {
 ────────────────────────────────────────────── */
 const KB: { keywords: string[]; response: string }[] = [
   {
+    keywords: ['contrat type', 'modele contrat', 'modèle contrat', 'modele de contrat', 'modèle de contrat', 'generateur', 'générateur', 'cdi', 'cdd', 'rediger contrat', 'rédiger contrat', 'attestation de travail', 'certificat de travail'],
+    response:
+      '📝 **Documents utiles** : notre générateur gratuit prépare un **contrat CDI ou CDD** conforme aux minima du Code du travail (période d\'essai, préavis, durée du travail), avec en option les clauses du **contrat d\'étranger** (prise d\'effet à la date du visa, frais de retour en cas de refus).\n\nVous y trouverez aussi l\'**attestation** et le **certificat de travail**, et la **lettre de demande ANAPEC**.\n\n👉 Rubrique **Documents utiles** du menu (guide-taechir.org/documents-utiles)\n\n⚠️ Pour un salarié étranger, seul le contrat imprimé depuis TAECHIR est soumis au visa.',
+  },
+  {
     keywords: ['bonjour', 'salut', 'hello', 'bonsoir', 'bjr', 'coucou', 'hey', 'salam'],
     response:
       '👋 Bonjour ! Je suis l\'assistant **Guide-Taechir**.\n\nJe peux répondre à toutes vos questions sur le recrutement de travailleurs étrangers au Maroc via le programme TAECHIR.\n\nPosez votre question ou tapez **"aide"** pour voir les sujets disponibles.',
