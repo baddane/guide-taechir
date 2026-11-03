@@ -5948,6 +5948,113 @@ function Article39Content() {
   );
 }
 
+function Article40Content() {
+  return (
+    <>
+      <Lead>
+        Dans le contrat de travail destiné à un salarié étranger, l'employeur s'engage à prendre en
+        charge les frais de retour du salarié dans certains cas, notamment lorsque le visa est
+        refusé. Cet engagement est souvent lu trop vite à la signature. Voici ce qu'il recouvre, ce
+        qu'il faut anticiper et comment éviter les litiges.
+      </Lead>
+
+      <H2>D'où vient cette obligation ?</H2>
+      <P>
+        Le contrat de travail conforme au modèle fixé par arrêté, visé par le Ministère chargé du
+        travail et imprimé depuis la plateforme TAECHIR, comporte un engagement de l'employeur à
+        payer les frais de retour du salarié en cas de refus de visa. Il ne s'agit donc pas d'une
+        simple courtoisie : c'est une clause du contrat que l'employeur signe en connaissance de cause.
+      </P>
+      <Info>
+        Le périmètre exact de la prise en charge (billet seul, bagages, autres frais) et les autres
+        situations couvertes dépendent du texte du contrat et de la réglementation en vigueur.
+        Relisez toujours la clause de votre propre contrat avant de signer.
+      </Info>
+
+      <H2>Les situations à distinguer</H2>
+      <Table
+        rows={[
+          ['Situation', 'Point d\'attention', 'Réflexe conseillé'],
+          ['Refus de visa', 'L\'engagement de prise en charge du retour joue expressément', 'Prévoir le budget et conserver le refus notifié'],
+          ['Fin de contrat (CDD échu, rupture)', 'La clause du contrat ou de l\'accord entre les parties s\'applique', 'Clarifier par écrit qui paie le retour, avant la signature'],
+          ['Démission du salarié', 'Souvent débattue : le contrat prime, à défaut le Code du travail', 'Ne pas improviser, faire valider la position'],
+          ['Départ avec la famille', 'Les frais des proches ne sont pas automatiquement couverts', 'Négocier explicitement le périmètre'],
+        ]}
+      />
+      <Warning>
+        Ne présumez pas qu'un silence du contrat vaut prise en charge ou non. Ce qui n'est pas écrit
+        se règle devant un tribunal ou dans une négociation tendue : écrivez-le avant le départ du salarié.
+      </Warning>
+
+      <H2>Côté employeur : budgéter et documenter</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          <strong>Provisionner le coût d'un billet retour</strong> dès l'ouverture du dossier : il
+          fait partie du risque du recrutement, comme le détaille notre{' '}
+          <Link to="/blog/cout-total-recrutement-etranger-maroc-2026" className="text-indigo-600 hover:underline">budget complet d'un recrutement étranger</Link>.
+        </li>
+        <li>
+          <strong>Conserver les justificatifs :</strong> notification du refus, billet acheté,
+          échanges avec le salarié. Ils servent en cas de désaccord sur le montant.
+        </li>
+        <li>
+          <strong>Évaluer le recours avant de renoncer :</strong> un refus n'est pas toujours
+          définitif, voir{' '}
+          <Link to="/blog/refus-visa-taechir-recours-maroc" className="text-indigo-600 hover:underline">les motifs fréquents et les voies de recours</Link>.
+        </li>
+      </ul>
+
+      <H2>Côté salarié : ce qu'il faut demander avant de partir</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>Qui paie le retour en cas de refus de visa, et jusqu'à quel montant ?</li>
+        <li>Les frais de déménagement ou de bagages sont-ils inclus ?</li>
+        <li>Que se passe-t-il à la fin du contrat ou en cas de licenciement ? Voir{' '}
+          <Link to="/blog/fin-contrat-salarie-etranger-maroc-rupture-licenciement" className="text-indigo-600 hover:underline">la fin de contrat d'un salarié étranger</Link>.
+        </li>
+        <li>La clause figure-t-elle dans le contrat lui-même et pas seulement dans un échange d'e-mails ?</li>
+      </ul>
+      <Tip>
+        Ajoutez une annexe d'une page au contrat qui récapitule les cas de prise en charge du retour,
+        les plafonds éventuels et le délai de remboursement. Elle évite la plupart des litiges.
+      </Tip>
+
+      <H2>Un départ sans contentieux</H2>
+      <P>
+        Quand le retour est inévitable, la meilleure issue reste un accord écrit : date de départ,
+        billet réservé, solde de tout compte, clôture de l'affiliation sociale. Pensez aussi aux
+        démarches de sortie du salarié, notamment{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">la déclaration CNSS</Link>{' '}
+        et la situation de son titre de séjour.
+      </P>
+      <Info>
+        Cet article est informatif et ne remplace pas un conseil juridique. En cas de différend sur
+        les frais de retour, faites-vous accompagner avant de vous engager par écrit.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Sécuriser les clauses de votre contrat TAECHIR"
+        cta="Faire relire mon contrat"
+      >
+        <p>
+          Nous relisons les clauses sensibles, dont la prise en charge du retour, avant la
+          signature et le dépôt du dossier.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Qui paie le retour du salarié si le visa est refusé ?', a: 'Le contrat conforme au modèle prévoit l\'engagement de l\'employeur de payer les frais de retour du salarié en cas de refus de visa. Vérifiez la rédaction exacte dans votre contrat.' },
+          { q: 'Les frais de retour couvrent-ils la famille ?', a: 'Pas automatiquement. Le périmètre dépend du contrat ; si des proches voyagent avec le salarié, précisez-le par écrit avant le départ.' },
+          { q: 'Que faire si l\'employeur refuse de payer ?', a: 'Rassemblez le contrat, la notification de refus et les justificatifs, tentez une solution amiable écrite, puis demandez conseil sur les recours disponibles.' },
+          { q: 'Peut-on anticiper ce coût ?', a: 'Oui : provisionnez le prix d\'un billet retour dans le budget du recrutement et formalisez les cas de prise en charge dans une annexe au contrat.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6338,6 +6445,16 @@ export const articles: Article[] = [
     category: 'Obligations',
     excerpt: 'Un contrôle se gagne avant le jour J. Les six pièces à réunir, un tableau d\'échéances et les bons réflexes pour que le dossier d\'un salarié étranger prouve la régularité de l\'embauche en quelques minutes.',
     Content: Article39Content,
+  },
+  {
+    slug: 'frais-retour-salarie-etranger-maroc-refus-visa-fin-contrat',
+    title: 'Frais de retour d\'un salarié étranger au Maroc : qui paie en cas de refus de visa ou de fin de contrat ?',
+    description: 'Refus de visa, fin de contrat ou rupture : ce que prévoit le contrat TAECHIR sur les frais de retour du salarié étranger, comment les budgéter et éviter les litiges.',
+    date: '8 décembre 2026',
+    readTime: 5,
+    category: 'Obligations',
+    excerpt: 'L\'employeur s\'engage dans le contrat à payer le retour du salarié en cas de refus de visa. Périmètre, cas douteux, budget à prévoir et annexe à ajouter : comment sécuriser cette clause avant la signature.',
+    Content: Article40Content,
   },
 ];
 
