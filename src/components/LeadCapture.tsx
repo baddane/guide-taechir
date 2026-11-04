@@ -45,7 +45,12 @@ export function LeadCapture({
   ctaLabel = 'Recevoir la checklist',
   variant = 'card',
 }: LeadCaptureProps) {
-  const [form, setForm] = useState({ name: '', email: '', company: '' });
+  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '' });
+  // Consentement explicite à la mise en relation avec un cabinet partenaire.
+  // Jamais pré-coché : c'est la seule base qui autorise à transmettre le
+  // contact à un tiers (loi 09-08, politique de confidentialité § 5). Un lead
+  // sans cette case ne quitte jamais le site.
+  const [relation, setRelation] = useState(false);
   const [state, setState] = useState<State>('idle');
 
   const submit = async (e: FormEvent) => {
@@ -59,7 +64,19 @@ export function LeadCapture({
       company: form.company || null,
       source,
       page,
-      details: details ?? null,
+      details:
+        details || relation
+          ? {
+              ...(details ?? {}),
+              ...(relation
+                ? {
+                    mise_en_relation: true,
+                    mise_en_relation_le: new Date().toISOString(),
+                    telephone: form.phone || null,
+                  }
+                : {}),
+            }
+          : null,
     });
 
     // 1 bis) Ajout à la liste Brevo de la newsletter. Le formulaire annonce que
@@ -85,6 +102,7 @@ export function LeadCapture({
           email: form.email,
           company: form.company,
           origine: `${source} — ${page}`,
+          mise_en_relation: relation ? `OUI — tél. ${form.phone || 'non fourni'}` : 'non',
           _subject: `[Guide-Taechir] Nouveau lead — ${source}`,
           _template: 'table',
         }),
@@ -170,6 +188,28 @@ export function LeadCapture({
           placeholder="Votre e-mail professionnel"
           className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
         />
+        <label className="flex items-start gap-2.5 text-left cursor-pointer">
+          <input
+            type="checkbox"
+            checked={relation}
+            onChange={(e) => setRelation(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+          />
+          <span className="text-sm text-slate-700">
+            Je souhaite être mis en relation avec un cabinet partenaire qui peut monter le dossier
+            pour moi. Facultatif, sans engagement : j'accepte que mes coordonnées et mes réponses
+            lui soient transmises.
+          </span>
+        </label>
+        {relation && (
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            placeholder="Téléphone (facultatif, pour être rappelé par le cabinet)"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+        )}
         <button
           type="submit"
           disabled={state === 'sending'}
