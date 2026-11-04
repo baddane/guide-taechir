@@ -39,7 +39,7 @@ export function PrivacyPolicy() {
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
             Politique de Confidentialité
           </h1>
-          <p className="text-slate-500 text-sm">Dernière mise à jour : 1 janvier 2026</p>
+          <p className="text-slate-500 text-sm">Dernière mise à jour : 4 novembre 2026</p>
         </div>
       </header>
 
@@ -125,7 +125,10 @@ export function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Partage des données</h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Nous ne vendons, n'échangeons ni ne transférons vos données personnelles à des tiers, à l'exception des partenaires publicitaires (Google AdSense) qui sont soumis à leurs propres politiques de confidentialité et aux réglementations en vigueur.
+              Nous ne vendons, n'échangeons ni ne transférons vos données personnelles à des tiers, à l'exception des partenaires publicitaires (Google AdSense) qui sont soumis à leurs propres politiques de confidentialité et aux réglementations en vigueur, et du cas de mise en relation décrit ci-dessous.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              <strong>Mise en relation avec un cabinet partenaire.</strong> Si, et seulement si, vous cochez la case « Je souhaite être mis en relation avec un cabinet partenaire » dans un formulaire du Site, vos nom, e-mail, entreprise, téléphone éventuel et réponses au simulateur sont transmis à un seul cabinet (fiduciaire, cabinet RH ou de mobilité internationale) chargé de vous proposer un accompagnement pour votre dossier. Ce cabinet peut rémunérer le Site pour cette mise en relation. La case n'est jamais pré-cochée, et vous pouvez retirer ce consentement à tout moment en écrivant à l'adresse indiquée dans la section « Contact ». Sans cette case, vos données ne quittent pas le Site.
             </p>
           </section>
 
