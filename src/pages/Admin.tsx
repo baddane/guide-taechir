@@ -12,6 +12,7 @@ import {
   type Lead,
   type MessageReply,
   type OutreachRow,
+  type OutboxRow,
 } from '../lib/supabase';
 import { useSeo } from '../seo/useSeo';
 import { NOINDEX_PAGES } from '../seo/meta';
@@ -401,6 +402,7 @@ function apiError(code: string | undefined, status: number, detail?: string): st
     case 'brevo_error':
     case 'brevo_send_error':
       return `Brevo a refusé la requête${detail ? ` : ${detail}` : ''}.`;
+    case 'already_handled': return 'Ce message a déjà été envoyé ou abandonné.';
     case 'no_valid_recipient': return 'Indiquez au moins un destinataire valide.';
     case 'invalid_recipient': return 'Une adresse destinataire est invalide.';
     case 'too_many_recipients': return 'Trop de destinataires pour un envoi direct — passez par la Newsletter.';
@@ -780,6 +782,86 @@ function NewsletterTab({ password }: { password: string }) {
   );
 }
 
+/* ── Messages préparés (file `outbox`) ───────────────────────────────────
+ * Règle du 05/11/2026 : tout e-mail part d'ici, au gabarit du site et depuis
+ * contact@guide-taechir.org. Les messages rédigés ailleurs (session Claude,
+ * routine) attendent dans cette file ; rien ne part sans le clic « Envoyer ».
+ */
+function OutboxPanel({ password }: { password: string }) {
+  const [rows, setRows] = useState<OutboxRow[]>([]);
+  const [drafts, setDrafts] = useState<Record<string, { subject: string; body: string }>>({});
+  const [busy, setBusy] = useState('');
+  const [error, setError] = useState('');
+  const [done, setDone] = useState('');
+
+  const load = useCallback(async () => {
+    const { data, error: e } = await supabase.rpc('admin_outbox_list', { p_password: password });
+    if (e) return; // table absente ou session expirée : le panneau reste masqué
+    const list = (data as OutboxRow[]) ?? [];
+    setRows(list);
+    setDrafts(Object.fromEntries(list.map((r) => [r.id, { subject: r.subject, body: r.body }])));
+  }, [password]);
+
+  useEffect(() => { load(); }, [load]);
+
+  const act = async (row: OutboxRow, action: 'send' | 'abandon') => {
+    setBusy(row.id); setError(''); setDone('');
+    const d = drafts[row.id] ?? { subject: row.subject, body: row.body };
+    const r = await postJson('/api/admin/outbox', { password, action, id: row.id, subject: d.subject, body: d.body });
+    setBusy('');
+    if (!r.ok) { setError(r.message); return; }
+    setDone(action === 'send' ? `Envoyé à ${row.to_email}.` : 'Message abandonné.');
+    load();
+  };
+
+  const pending = rows.filter((r) => r.statut === 'a_envoyer');
+  const recent = rows.filter((r) => r.statut !== 'a_envoyer');
+  if (rows.length === 0 && !error && !done) return null;
+
+  return (
+    <div className="mb-8">
+      <Panel title={`Messages préparés (${pending.length})`}
+             subtitle="Rédigés pour vous, à relire puis envoyer depuis contact@guide-taechir.org, au gabarit du site.">
+        {error && <Notice kind="error">{error}</Notice>}
+        {done && <Notice kind="ok">{done}</Notice>}
+        <div className="space-y-6">
+          {pending.map((row) => {
+            const d = drafts[row.id] ?? { subject: row.subject, body: row.body };
+            const set = (patch: Partial<typeof d>) => setDrafts((all) => ({ ...all, [row.id]: { ...d, ...patch } }));
+            return (
+              <div key={row.id} className="border border-slate-200 rounded-xl p-4 sm:p-5">
+                <p className="text-sm text-slate-500 mb-1">À <strong className="text-slate-800">{row.to_email}</strong> · préparé le {fmt(row.created_at)}</p>
+                {row.note && <p className="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-3">{row.note}</p>}
+                <input value={d.subject} onChange={(e) => set({ subject: e.target.value })} className={`${inputClass} mb-3 font-semibold`} />
+                <textarea rows={10} value={d.body} onChange={(e) => set({ body: e.target.value })}
+                  className={`${inputClass} resize-y text-sm leading-relaxed`} />
+                <div className="flex items-center gap-3 mt-3">
+                  <button onClick={() => act(row, 'send')} disabled={busy !== ''}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold text-sm hover:bg-indigo-700 disabled:opacity-60">
+                    {busy === row.id ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />} Envoyer
+                  </button>
+                  <button onClick={() => act(row, 'abandon')} disabled={busy !== ''}
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg disabled:opacity-60">
+                    <X className="w-4 h-4" /> Abandonner
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+          {pending.length === 0 && <p className="text-sm text-slate-500">Aucun message en attente.</p>}
+          {recent.length > 0 && (
+            <ul className="text-xs text-slate-500 space-y-1 pt-2 border-t border-slate-100">
+              {recent.map((r) => (
+                <li key={r.id}>{r.statut === 'envoye' ? 'Envoyé' : 'Abandonné'} · {r.to_email} · {r.subject}{r.sent_at ? ` · ${fmt(r.sent_at)}` : ''}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </Panel>
+    </div>
+  );
+}
+
 /* ── Onglet Composer : e-mail libre en Markdown ──────────────────────────── */
 function ComposerTab({ password }: { password: string }) {
   const [to, setTo] = useState('');
@@ -1117,6 +1199,8 @@ export function Admin() {
       </header>
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+        <OutboxPanel password={password} />
+
         {/* Onglets */}
         <div className="flex items-center gap-6 border-b border-slate-200 mb-6 overflow-x-auto">
           {TABS.map(({ key, label }) => {
