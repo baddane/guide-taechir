@@ -34,6 +34,18 @@ export interface Lead {
 }
 
 /** Ligne du pipeline partenaires (onglet Outreach). */
+/** Message préparé hors de l'interface, à relire et envoyer depuis /admin. */
+export interface OutboxRow {
+  id: string;
+  to_email: string;
+  subject: string;
+  body: string;
+  note: string | null;
+  statut: 'a_envoyer' | 'envoye' | 'abandonne';
+  created_at: string;
+  sent_at: string | null;
+}
+
 export interface OutreachRow {
   partner_id: string;
   name: string | null;

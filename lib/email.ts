@@ -168,6 +168,36 @@ export function emailShell(contentHtml: string, options: ShellOptions = {}): str
 </body></html>`;
 }
 
+/**
+ * Gabarit « lettre » du site (bandeau indigo), le même que les newsletters et
+ * que `scripts/rendre-email.mjs` : utilisé pour les messages préparés envoyés
+ * depuis /admin, qui doivent porter l'identité visuelle de Guide-Taechir.
+ */
+export function brandedShell(contentHtml: string, kicker = 'Le guide de la procédure TAECHIR'): string {
+  const font = 'Arial,Helvetica,sans-serif';
+  return `<!doctype html>
+<html lang="fr"><body style="margin:0;padding:0;background:#f1f5f9;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;">
+<tr><td style="background:#312e81;padding:24px 32px;font-family:${font};color:#ffffff;">
+<div style="font-size:20px;font-weight:700;">Guide-Taechir.org</div>
+<div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#c7d2fe;margin-top:6px;">${escapeHtml(kicker)}</div>
+</td></tr>
+<tr><td style="padding:28px 32px 12px;font-family:${font};font-size:16px;line-height:1.65;color:#1e293b;">
+${contentHtml}
+</td></tr>
+<tr><td style="padding:18px 32px 26px;border-top:1px solid #e2e8f0;font-family:${font};font-size:13px;line-height:1.6;color:#64748b;">
+<strong style="color:#0f172a;">Guide-Taechir.org</strong><br />
+Guide indépendant sur le visa des contrats de travail d'étrangers au Maroc —
+<a href="https://www.guide-taechir.org" style="color:#4f46e5;text-decoration:none;">guide-taechir.org</a>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>`;
+}
+
 /* ── Envoi transactionnel Brevo ───────────────────────────────────────────── */
 export interface BrevoAttachment {
   name: string;
