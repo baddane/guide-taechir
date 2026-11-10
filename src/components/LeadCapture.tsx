@@ -50,7 +50,10 @@ export function LeadCapture({
   // Jamais pré-coché : c'est la seule base qui autorise à transmettre le
   // contact à un tiers (loi 09-08, politique de confidentialité § 5). Un lead
   // sans cette case ne quitte jamais le site.
-  const [relation, setRelation] = useState(false);
+  // Question obligatoire Oui / Non, sans réponse par défaut : le visiteur
+  // choisit lui-même, ce qui vaut consentement exprès quand il répond « Oui ».
+  const [relationChoice, setRelationChoice] = useState<'oui' | 'non' | null>(null);
+  const relation = relationChoice === 'oui';
   const [state, setState] = useState<State>('idle');
 
   const submit = async (e: FormEvent) => {
@@ -64,19 +67,16 @@ export function LeadCapture({
       company: form.company || null,
       source,
       page,
-      details:
-        details || relation
+      details: {
+        ...(details ?? {}),
+        ...(relation
           ? {
-              ...(details ?? {}),
-              ...(relation
-                ? {
-                    mise_en_relation: true,
-                    mise_en_relation_le: new Date().toISOString(),
-                    telephone: form.phone || null,
-                  }
-                : {}),
+              mise_en_relation: true,
+              mise_en_relation_le: new Date().toISOString(),
+              telephone: form.phone || null,
             }
-          : null,
+          : { mise_en_relation: false }),
+      },
     });
 
     // 1 bis) Ajout à la liste Brevo de la newsletter. Le formulaire annonce que
@@ -188,19 +188,38 @@ export function LeadCapture({
           placeholder="Votre e-mail professionnel"
           className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
         />
-        <label className="flex items-start gap-2.5 text-left cursor-pointer">
-          <input
-            type="checkbox"
-            checked={relation}
-            onChange={(e) => setRelation(e.target.checked)}
-            className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-          />
-          <span className="text-sm text-slate-700">
-            Je souhaite être mis en relation avec un cabinet partenaire qui peut monter le dossier
-            pour moi. Facultatif, sans engagement : j'accepte que mes coordonnées et mes réponses
-            lui soient transmises.
-          </span>
-        </label>
+        <fieldset className="text-left">
+          <legend className="text-sm font-semibold text-slate-800 mb-2">
+            Souhaitez-vous qu'un cabinet partenaire monte le dossier pour vous ?
+          </legend>
+          <div className="space-y-2">
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="radio"
+                name={`relation-${source}-${page}`}
+                required
+                checked={relationChoice === 'oui'}
+                onChange={() => setRelationChoice('oui')}
+                className="mt-0.5 h-4 w-4 shrink-0 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <span className="text-sm text-slate-700">
+                Oui : j'accepte que mes coordonnées et mes réponses soient transmises à un seul
+                cabinet partenaire, qui me contactera par e-mail. Gratuit et sans engagement.
+              </span>
+            </label>
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="radio"
+                name={`relation-${source}-${page}`}
+                required
+                checked={relationChoice === 'non'}
+                onChange={() => setRelationChoice('non')}
+                className="mt-0.5 h-4 w-4 shrink-0 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <span className="text-sm text-slate-700">Non, je m'en occupe moi-même.</span>
+            </label>
+          </div>
+        </fieldset>
         {relation && (
           <input
             type="tel"
