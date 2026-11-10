@@ -107,7 +107,7 @@ export function Contact() {
             <strong>Une question sur votre propre dossier ?</strong> Nous ne faisons pas d'analyse de dossier individuel par e-mail.
             Deux solutions : le <Link to="/guide-complet" className="font-semibold text-indigo-700 underline">guide pratique complet</Link>, qui couvre
             catégories, pièces, apostille, visas et cas pratiques, ou une <strong>mise en relation gratuite</strong> avec un cabinet partenaire qui monte
-            ces dossiers (précisez-le dans votre message, avec votre ville).
+            ces dossiers (répondez « Oui » à la question de mise en relation du formulaire et indiquez votre ville).
           </div>
         </div>
       </header>
