@@ -768,6 +768,16 @@ function Article4Content() {
         détachement.
       </Warning>
 
+      <H2>Les missions de courte durée</H2>
+      <P>
+        Le guide du ministère dispense aussi de l'attestation ANAPEC « les délégués dans le cadre de
+        coopération ou mission d'une durée ne dépassant pas six (6) mois non renouvelable ». C'est le
+        cas typique du technicien envoyé par un fournisseur étranger pour installer une machine. La
+        plateforme TAECHIR prévoit pour cela la catégorie « Mission de courte durée » : la dispense
+        porte sur l'ANAPEC, pas sur le visa du contrat. Détails dans{' '}
+        <Link to="/blog/technicien-etranger-mission-courte-maroc-visa-taechir" className="text-indigo-600 hover:underline">faire venir un technicien étranger pour une mission courte</Link>.
+      </P>
+
       <H2>Le personnel CFC (Casablanca Finance City)</H2>
       <P>
         Les sociétés avec le statut CFC, c'est le cas le plus simple. Leurs cadres étrangers
@@ -3747,8 +3757,9 @@ function Article26Content() {
       <H2>Le vrai sujet : le titre de séjour, pas le travail</H2>
       <P>
         Le point que la plupart des télétravailleurs sous-estiment, c'est la durée de séjour.
-        Un visa touristique ou une entrée sans visa autorise généralement <strong>90 jours</strong>
-        {' '}sur le territoire. Au-delà, rester au Maroc sans régulariser sa situation devient
+        Une entrée sans visa autorise généralement <strong>90 jours</strong>
+        {' '}sur le territoire ; avec un visa, c'est la durée de ce visa qui compte (30 jours
+        au maximum pour l'e-Visa). Au-delà, rester au Maroc sans régulariser sa situation devient
         un séjour irrégulier — même si le travail effectué se passe entièrement en ligne pour
         une entreprise à l'étranger.
       </P>
@@ -6168,6 +6179,155 @@ function Article41Content() {
   );
 }
 
+/* ─── Article 42 ────────────────────────────────────────────────────────── */
+
+function Article42Content() {
+  return (
+    <>
+      <Lead>
+        Vous avez acheté une machine à l'étranger et le fournisseur envoie un technicien pour la
+        monter, l'installer et la mettre en service. L'intervention durera deux ou trois mois, mais
+        l'e-Visa obtenu n'en couvre qu'un. Deux questions se posent en réalité, et il ne faut pas les
+        confondre : le droit d'entrer et de séjourner au Maroc, et le droit d'y travailler.
+      </Lead>
+
+      <H2>L'e-Visa : 30 jours au maximum</H2>
+      <P>
+        Le visa électronique, demandé sur la plateforme acces-maroc.ma pour les motifs « Tourisme »
+        ou « Affaires », permet selon le communiqué du ministère des Affaires étrangères un séjour de
+        <strong> 30 jours maximum</strong>, et reste valable 180 jours à compter de sa délivrance.
+        Aucun texte officiel ne prévoit de le prolonger une fois sur place. Or rester au-delà de la
+        durée autorisée par son visa est une infraction (loi n° 02-03, art. 42).
+      </P>
+      <P>
+        Pour une mission plus longue, le technicien doit donc demander un <strong>visa consulaire</strong>
+        {' '}auprès des services consulaires du Maroc dans son pays. En Inde par exemple, les demandes
+        sont déposées via le centre VFS Global, qui propose notamment des visas « Affaires » de 4 à
+        90 jours et une catégorie « Travail ». La liste des pièces dépend du consulat : vérifiez-la
+        sur son site avant le dépôt.
+      </P>
+
+      <H2>Un visa d'affaires n'autorise pas à travailler</H2>
+      <P>
+        C'est le piège principal. Monter et mettre en service une machine est une activité
+        professionnelle, pas une réunion ou une visite de salon. Deux textes s'appliquent :
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          le <strong>Code du travail (art. 516 et suivants)</strong> : l'emploi d'un salarié étranger
+          est soumis à une autorisation du ministère chargé de l'emploi, accordée sous forme de visa
+          apposé sur le contrat, aujourd'hui via la plateforme TAECHIR ;
+        </li>
+        <li>
+          la <strong>loi n° 02-03 (art. 40)</strong> : un visa de court séjour peut être annulé si son
+          titulaire exerce une activité rémunérée sans l'autorisation requise.
+        </li>
+      </ul>
+      <Warning>
+        Faire travailler le technicien sous couvert d'un visa d'affaires expose l'entreprise
+        d'accueil comme le technicien : annulation du visa, et chantier arrêté en pleine mise en
+        service.
+      </Warning>
+
+      <H2>La bonne nouvelle : pas de passage par l'ANAPEC</H2>
+      <P>
+        Les missions courtes ne suivent pas le parcours normal. La plateforme TAECHIR propose une
+        catégorie <strong>« Mission de courte durée »</strong>, et le guide du ministère (mise à jour
+        de janvier 2020) dispense de l'attestation d'activité ANAPEC « les délégués dans le cadre de
+        coopération ou mission d'une durée ne dépassant pas six (6) mois non renouvelable ». Vous
+        évitez ainsi l'étape la plus longue du dossier, décrite dans{' '}
+        <Link to="/blog/attestation-anapec-frais-delais-procedure" className="text-indigo-600 hover:underline">notre guide sur l'attestation ANAPEC</Link>.
+      </P>
+      <P>
+        Dispense de l'ANAPEC ne veut pas dire dispense de visa du contrat : le même guide rappelle que
+        « tous les employeurs, personnes morales ou physiques, employant des salariés étrangers sont
+        concernés par la présente procédure ». Le détail des autres catégories est dans{' '}
+        <Link to="/blog/dispense-anapec-categories-exemptees-maroc" className="text-indigo-600 hover:underline">les catégories dispensées de l'ANAPEC</Link>.
+      </P>
+      <Info>
+        Point à faire confirmer avant tout dépôt : le technicien reste salarié du fournisseur
+        étranger. Qui dépose la demande sur TAECHIR (l'entreprise marocaine d'accueil, le plus
+        souvent) et sous quelle forme exacte, les textes ne le disent pas explicitement, et la
+        pratique varie d'un guichet à l'autre. Posez la question au guichet ou à un professionnel.
+      </Info>
+
+      <H2>Au-delà de 90 jours : la carte d'immatriculation</H2>
+      <P>
+        Un étranger muni d'un titre de voyage régulier peut séjourner jusqu'à <strong>90 jours</strong>
+        {' '}sans titre de séjour (loi n° 02-03, art. 9), toujours dans la limite de la durée de son visa.
+        Au-delà, il doit être titulaire d'une carte d'immatriculation délivrée par la DGSN (art. 6 et 8),
+        et la mention d'une activité professionnelle sur cette carte suppose d'avoir obtenu
+        l'autorisation de l'exercer (art. 13). Une mission annoncée à « trois mois » est donc à la
+        limite : prévoyez une marge, les mises en service prennent souvent du retard. Voir{' '}
+        <Link to="/blog/carte-sejour-etranger-maroc-dgsn" className="text-indigo-600 hover:underline">la carte de séjour auprès de la DGSN</Link>.
+      </P>
+
+      <H2>Récapitulatif selon la durée de la mission</H2>
+      <Table
+        rows={[
+          ['Durée sur place', 'Séjour', 'Travail'],
+          ['Jusqu\'à 30 jours', 'e-Visa possible (selon la nationalité)', 'Autorisation TAECHIR à prévoir pour une activité productive'],
+          ['De 30 à 90 jours', 'Visa consulaire couvrant toute la durée', 'Autorisation TAECHIR, catégorie « Mission de courte durée »'],
+          ['Plus de 90 jours', 'Visa consulaire puis carte d\'immatriculation DGSN', 'Autorisation TAECHIR ; dispense ANAPEC limitée à 6 mois non renouvelable'],
+        ]}
+      />
+
+      <H2>Les documents à réunir</H2>
+      <P>À titre indicatif, la liste exacte dépendant de la catégorie retenue et du consulat :</P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>passeport du technicien, valable au-delà de la fin prévue de la mission ;</li>
+        <li>le contrat ou le bon de commande de la machine, prévoyant l'installation et la mise en service ;</li>
+        <li>un ordre de mission du fournisseur : fonction, objet, dates, durée, prise en charge du salaire ;</li>
+        <li>une lettre d'invitation de l'entreprise marocaine (objet, lieu, durée, hébergement) ;</li>
+        <li>CV et diplômes ou attestations de qualification du technicien, légalisés si demandé ;</li>
+        <li>côté TAECHIR : le contrat imprimé depuis la plateforme et les pièces de l'employeur (attestation CNSS, registre de commerce, pouvoir du signataire).</li>
+      </ul>
+      <P>
+        Les pièces étrangères doivent souvent être légalisées ou apostillées : voir{' '}
+        <Link to="/blog/legalisation-documents-etrangers-maroc-apostille" className="text-indigo-600 hover:underline">la légalisation des documents étrangers</Link>.
+      </P>
+
+      <ChecklistBox />
+
+      <H2>Le bon ordre des démarches</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li><strong>Fixer la durée réelle</strong> de l'intervention avec le fournisseur, marge comprise.</li>
+        <li><strong>Lancer la demande TAECHIR</strong> dans la catégorie adaptée : le technicien ne travaille pas avant l'autorisation.</li>
+        <li><strong>Faire demander le visa consulaire</strong> par le technicien, couvrant toute la durée.</li>
+        <li><strong>Au-delà de 90 jours</strong>, déposer la demande de carte d'immatriculation auprès de la DGSN.</li>
+      </ul>
+      <Info>
+        Cet article est informatif et ne remplace pas un conseil juridique. Sources : loi n° 02-03
+        relative à l'entrée et au séjour des étrangers au Maroc (art. 6, 8, 9, 13, 40, 42) ; Code du
+        travail, art. 516 ; guide « Recruter un salarié étranger au Maroc » du ministère du Travail et
+        de l'Insertion professionnelle (mise à jour janvier 2020) ; communiqué du ministère des
+        Affaires étrangères sur l'e-Visa.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Un technicien à faire venir rapidement ?"
+        cta="Être mis en relation avec un cabinet"
+      >
+        <p>
+          Un cabinet partenaire peut monter le dossier TAECHIR et vous dire qui doit le déposer.
+          La mise en relation est gratuite et sans engagement.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Peut-on prolonger un e-Visa marocain sur place ?', a: 'Aucun texte officiel ne prévoit de prolongation de l\'e-Visa, limité à 30 jours de séjour. Pour une mission plus longue, le technicien doit demander un visa consulaire couvrant toute la durée.' },
+          { q: 'Un visa d\'affaires suffit-il pour installer une machine ?', a: 'Non. L\'installation et la mise en service sont une activité professionnelle, soumise à l\'autorisation du ministère chargé de l\'emploi (Code du travail, art. 516). Sans elle, le visa de court séjour peut être annulé (loi n° 02-03, art. 40).' },
+          { q: 'Faut-il une attestation ANAPEC pour une mission de deux ou trois mois ?', a: 'Le guide du ministère dispense de l\'attestation ANAPEC les missions d\'une durée ne dépassant pas six mois, non renouvelable. La demande passe par la catégorie « Mission de courte durée » de TAECHIR.' },
+          { q: 'Le technicien doit-il demander une carte de séjour ?', a: 'Seulement s\'il reste plus de 90 jours : au-delà, la loi n° 02-03 impose une carte d\'immatriculation délivrée par la DGSN.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6578,6 +6738,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Augmentation, nouveau poste, nouveau lieu : le contrat visé sert de référence à tout le dossier. Quels changements exigent un avenant, comment le rédiger et quelles pièces aligner ensuite.',
     Content: Article41Content,
+  },
+  {
+    slug: 'technicien-etranger-mission-courte-maroc-visa-taechir',
+    title: 'Faire venir un technicien étranger au Maroc pour une mission courte : e-Visa, visa et TAECHIR',
+    description: 'Installation de machine, mise en service : l\'e-Visa ne couvre que 30 jours et un visa d\'affaires n\'autorise pas à travailler. Visa, catégorie TAECHIR « Mission de courte durée » et carte de séjour.',
+    date: '10 novembre 2026',
+    readTime: 6,
+    category: 'Procédure',
+    excerpt: 'Un technicien vient monter une machine pour deux ou trois mois ? L\'e-Visa s\'arrête à 30 jours et le visa d\'affaires ne vaut pas autorisation de travail. Les règles officielles et le bon ordre des démarches.',
+    Content: Article42Content,
   },
 ];
 
