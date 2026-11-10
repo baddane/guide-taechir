@@ -7,6 +7,7 @@ import { getArticleBySlug, articles } from './articles';
 import { Footer } from '../components/Footer';
 import { LeadCapture } from '../components/LeadCapture';
 import { NewsletterForm } from '../components/NewsletterForm';
+import { GuideCta } from '../components/GuideCta';
 
 const categoryColors: Record<string, string> = {
   'Guide':      'bg-indigo-50 text-indigo-700',
@@ -112,6 +113,10 @@ export function BlogPost() {
         <article className="prose-custom">
           <article.Content />
         </article>
+
+        <div className="mt-12">
+          <GuideCta page={`blog/${article.slug}`} />
+        </div>
 
         {/* Disclaimer */}
         <div className="mt-12 bg-amber-50 border border-amber-200 rounded-xl p-6 flex gap-4">

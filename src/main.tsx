@@ -12,6 +12,9 @@ import { Admin } from './pages/Admin.tsx';
 import { MentionsLegales } from './pages/MentionsLegales.tsx';
 import { NotFound } from './pages/NotFound.tsx';
 import { DocumentsUtiles } from './pages/DocumentsUtiles.tsx';
+import { GuideComplet } from './pages/GuideComplet.tsx';
+import { GuideMerci } from './pages/GuideMerci.tsx';
+import { ConditionsVente } from './pages/ConditionsVente.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
 import './index.css';
 
@@ -29,6 +32,9 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/admin" element={<Admin />} />
         <Route path="/documents-utiles" element={<DocumentsUtiles />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/guide-complet" element={<GuideComplet />} />
+        <Route path="/guide-complet/merci" element={<GuideMerci />} />
+        <Route path="/conditions-de-vente" element={<ConditionsVente />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />

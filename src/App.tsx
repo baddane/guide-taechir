@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { useSeo } from './seo/useSeo';
 import { staticPage } from './seo/meta';
 import { LeadCapture } from './components/LeadCapture';
+import { GuideCta } from './components/GuideCta';
 import { articles } from './blog/articles';
 import {
   CATEGORIES_DISPENSEES, CATEGORIE_NORMALE, ETAPES_SAISIE, FONCTIONNALITES, CHAMPS_INSCRIPTION,
@@ -687,6 +688,9 @@ export default function App() {
             </p>
           </div>
           <LeadCapture source="checklist" page="accueil" />
+          <div className="mt-10">
+            <GuideCta page="accueil" />
+          </div>
         </div>
       </section>
 

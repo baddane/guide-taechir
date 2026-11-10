@@ -49,6 +49,29 @@ interface ReplyTarget {
 const fmt = (iso: string) =>
   new Date(iso).toLocaleString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
+/* Réponse type à une demande de conseil sur un dossier individuel : une
+   orientation courte et gratuite, puis le guide payant et la mise en relation
+   avec un cabinet partenaire (rémunérée par le cabinet). On ne délivre plus
+   d'analyse de dossier gratuite par e-mail (décision du 10/11/2026). */
+function reponseType(toName: string): string {
+  return [
+    `Bonjour${toName ? ` ${toName}` : ''},`,
+    '',
+    "Merci pour votre message. En bref : [UNE PHRASE D'ORIENTATION — ex. « votre situation relève a priori de la catégorie \"Mission de courte durée\", dispensée de l'attestation ANAPEC, mais le contrat doit être visé avant le premier jour de travail »].",
+    '',
+    "Nous ne faisons pas d'analyse de dossier individuel par e-mail. Pour aller plus loin, deux possibilités :",
+    '',
+    "1. Le Guide pratique TAECHIR 2026 (PDF de 20 pages, 29 €, téléchargement immédiat) : arbre de décision des catégories, les trois listes officielles de pièces, apostille et traduction, visas, cinq cas pratiques (dont la mission de courte durée), rétroplanning, checklists et modèles de lettres. Chaque règle y est sourcée.",
+    'https://www.guide-taechir.org/guide-complet',
+    '',
+    "2. Une mise en relation, gratuite et sans engagement pour vous, avec un cabinet partenaire qui monte ces dossiers chaque semaine. Répondez simplement OUI à cet e-mail en indiquant votre ville : avec votre accord, nous transmettons votre demande à ce seul cabinet, qui vous écrit directement. Sans votre accord, rien n'est transmis.",
+    '',
+    'Bien cordialement,',
+    "L'équipe Guide-Taechir.org",
+    'contact@guide-taechir.org',
+  ].join('\n');
+}
+
 /* ── Fenêtre de réponse (envoi via Brevo) ────────────────────────────────── */
 function ReplyDialog({
   target, password, onClose, onSent,
@@ -173,7 +196,17 @@ function ReplyDialog({
           </div>
 
           <div>
-            <label htmlFor="reply-body" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <label htmlFor="reply-body" className="block text-sm font-semibold text-slate-700">Message</label>
+              <button
+                type="button"
+                onClick={() => setBody(reponseType(target.toName))}
+                className="text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg px-2.5 py-1 hover:bg-indigo-100"
+                title="Orientation courte, puis guide payant et mise en relation avec un cabinet partenaire"
+              >
+                Réponse type : guide + cabinet
+              </button>
+            </div>
             <textarea
               id="reply-body"
               required

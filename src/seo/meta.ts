@@ -91,6 +91,32 @@ export const FAQ_DOCUMENTS: [string, string][] = [
   ],
 ];
 
+/* FAQ de la page de vente du guide payant (affichée ET balisée). */
+export const FAQ_GUIDE: [string, string][] = [
+  [
+    'Qu\'apporte le guide par rapport aux pages gratuites du site ?',
+    'Le site explique chaque étape séparément. Le guide déroule la procédure complète dans l\'ordre, avec l\'arbre de décision des catégories, les 17 catégories dispensées de l\'ANAPEC et leurs justificatifs, les trois listes officielles de pièces, cinq cas pratiques, un rétroplanning, des checklists imprimables et cinq modèles de lettres prêts à compléter.',
+  ],
+  [
+    'Les informations sont-elles à jour ?',
+    'Le guide est daté (édition de novembre 2026) et chaque règle renvoie à sa source officielle : Code du travail (art. 516 à 521), arrêté n° 1356-19, décision 1/Taechir/2019, guide du Ministère, loi n° 02-03, Convention Apostille. Votre lien de téléchargement vous donne toujours la dernière édition.',
+  ],
+  [
+    'Comment se passe le paiement ?',
+    'Par carte bancaire, sur la page sécurisée de Stripe. Le prix est en euros ; une carte marocaine ou étrangère est débitée dans sa devise par sa banque. Une facture est émise au nom indiqué lors du paiement.',
+  ],
+  [
+    'Comment je reçois le guide ?',
+    'Immédiatement : un bouton de téléchargement s\'affiche après le paiement, et le lien vous est aussi envoyé par e-mail.',
+  ],
+  [
+    'Le guide remplace-t-il un conseil juridique ?',
+    'Non. C\'est un document d\'information générale. Pour un montage atypique, un refus ou une urgence, nous pouvons vous mettre en relation, avec votre accord, avec un cabinet partenaire.',
+  ],
+];
+
+const GUIDE_DESC = 'Guide pratique TAECHIR 2026 en PDF (20 pages) : catégories et dispenses ANAPEC, plateforme écran par écran, pièces du dossier, apostille, visas, cas pratiques, checklists et modèles de lettres pour recruter un salarié étranger au Maroc.';
+
 const DOCS_DESC = 'Générateur gratuit de contrat de travail CDI et CDD conforme au Code du travail marocain, avec les clauses du contrat d\'étranger (TAECHIR), plus des modèles d\'attestation et de certificat de travail et de lettre ANAPEC.';
 
 export const STATIC_PAGES: PageMeta[] = [
@@ -128,6 +154,42 @@ export const STATIC_PAGES: PageMeta[] = [
       breadcrumb([['Accueil', '/'], ['Documents utiles', '/documents-utiles']]),
       faq(FAQ_DOCUMENTS),
     ]),
+  },
+  {
+    path: '/guide-complet',
+    title: 'Guide pratique TAECHIR 2026 (PDF) — Recruter un salarié étranger au Maroc',
+    description: GUIDE_DESC,
+    lastmod: '2026-11-10',
+    changefreq: 'monthly',
+    priority: 0.9,
+    h1: 'Le guide pratique TAECHIR complet',
+    jsonLd: webPage('/guide-complet', 'Guide pratique TAECHIR 2026 (PDF)', GUIDE_DESC, [
+      {
+        '@type': 'Product',
+        name: 'Guide pratique TAECHIR 2026',
+        description: GUIDE_DESC,
+        image: `${SITE_URL}/guide/apercu-1.webp`,
+        brand: { '@type': 'Brand', name: SITE_NAME },
+        offers: { '@type': 'Offer', price: '29', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', url: `${SITE_URL}/guide-complet` },
+      },
+      breadcrumb([['Accueil', '/'], ['Guide complet', '/guide-complet']]),
+      faq(FAQ_GUIDE),
+    ]),
+  },
+  {
+    path: '/guide-complet/merci',
+    title: 'Merci — votre guide TAECHIR',
+    description: 'Téléchargement du guide pratique TAECHIR.',
+    noindex: true,
+  },
+  {
+    path: '/conditions-de-vente',
+    title: 'Conditions générales de vente — Guide-Taechir.org',
+    description: 'Conditions générales de vente du guide pratique TAECHIR (PDF) vendu sur Guide-Taechir.org : prix, paiement, livraison, rétractation, licence.',
+    lastmod: '2026-11-10',
+    changefreq: 'yearly',
+    priority: 0.2,
+    h1: 'Conditions générales de vente',
   },
   {
     path: '/blog',
