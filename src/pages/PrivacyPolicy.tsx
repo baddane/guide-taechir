@@ -130,6 +130,9 @@ export function PrivacyPolicy() {
             <p className="text-slate-700 leading-relaxed mb-4">
               <strong>Mise en relation avec un cabinet partenaire.</strong> Si, et seulement si, vous répondez « Oui » à la question « Souhaitez-vous qu'un cabinet partenaire monte votre dossier ? » dans un formulaire du Site, vos nom, e-mail, entreprise, téléphone éventuel, votre message et vos réponses au simulateur sont transmis à un seul cabinet (fiduciaire, cabinet RH ou de mobilité internationale) chargé de vous proposer un accompagnement pour votre dossier. Ce cabinet peut rémunérer le Site pour cette mise en relation. Aucune réponse n'est sélectionnée par défaut, et vous pouvez retirer ce consentement à tout moment en écrivant à l'adresse indiquée dans la section « Contact ». Si vous répondez « Non », vos données ne quittent pas le Site.
             </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              <strong>Achat du guide pratique.</strong> Le paiement est traité par <strong>Stripe</strong>, qui collecte vos données de carte (jamais communiquées au Site), votre adresse e-mail et vos nom et adresse de facturation. Nous conservons votre e-mail et la référence de la commande pour vous livrer le guide, vous en adresser les mises à jour et tenir la comptabilité. Le lien de téléchargement est envoyé par notre prestataire d'e-mail transactionnel, Brevo.
+            </p>
           </section>
 
           <section>

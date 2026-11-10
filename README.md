@@ -122,3 +122,18 @@ du message).
    `https://www.guide-taechir.org/api/brevo/inbound?token=<SECRET>`
 3. Sur Vercel : `BREVO_INBOUND_SECRET` (le même secret) et
    `BREVO_INBOUND_DOMAIN` (le sous-domaine), puis redéployer.
+
+## Guide payant (PDF, 29 €)
+
+| Élément | Rôle |
+|---|---|
+| Source (hors dépôt) | `taechir/guide-payant/guide.html` dans les fichiers du projet : **le dépôt est public**, ni la source ni le PDF en clair n'y vont. |
+| `scripts/build-guide.mjs` | Produit le PDF en clair (à côté de la source), `private/guide-taechir-2026.pdf.enc` (chiffré AES-256-GCM, seul versionné) et `public/extrait-guide-taechir-2026.pdf`. À relancer avec `GUIDE_PDF_KEY` puis committer ; régénérer les aperçus `public/guide/*.webp` si la pagination change. |
+| `src/pages/GuideComplet.tsx` | Page de vente `/guide-complet` (formulaire → Stripe). |
+| `api/guide/checkout.ts` | Crée la session Stripe Checkout (facture activée). |
+| `api/guide/acces.ts` | Page de remerciement : relit le paiement, enregistre la vente dans `leads` (source `guide-paiement`), envoie le lien par e-mail (une seule fois, marqué dans le PaymentIntent). |
+| `api/guide/telecharger.ts` | Déchiffre et sert le PDF après vérification du paiement (`private/` embarqué via `vercel.json`). |
+
+**Variables Vercel requises : `STRIPE_SECRET_KEY`** (clé du compte Stripe de la LLC, la même que leconseillerfiscal.com) **et `GUIDE_PDF_KEY`** (clé de déchiffrement du PDF, type « Sensitive »). Sans l'une ou l'autre, la page de vente affiche « paiement momentanément indisponible ». Aucun webhook à déclarer. `GUIDE_PRIX_CENTIMES` (facultatif) change le prix facturé ; changer aussi `src/data/guidePayant.ts` pour l'affichage.
+
+**Réponse type** : dans /admin, bouton « Réponse type : guide + cabinet » de la fenêtre Répondre. On ne fait plus d'analyse de dossier gratuite par e-mail.

@@ -41,6 +41,7 @@ export function Footer() {
               <li><Link to="/blog" className="hover:text-indigo-400 transition-colors">Blog</Link></li>
               <li><Link to="/documents-utiles" className="hover:text-indigo-400 transition-colors">Documents utiles (contrats CDI / CDD)</Link></li>
               <li><Link to="/checklist" className="hover:text-indigo-400 transition-colors">Checklist gratuite (PDF)</Link></li>
+              <li><Link to="/guide-complet" className="hover:text-indigo-400 transition-colors font-semibold text-slate-300">Guide pratique complet (PDF, 29 €)</Link></li>
               <li><Link to="/a-propos" className="hover:text-indigo-400 transition-colors">À propos</Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link></li>
             </ul>
@@ -52,6 +53,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link to="/mentions-legales" className="hover:text-indigo-400 transition-colors">Mentions légales</Link></li>
               <li><Link to="/politique-de-confidentialite" className="hover:text-indigo-400 transition-colors">Politique de confidentialité</Link></li>
+              <li><Link to="/conditions-de-vente" className="hover:text-indigo-400 transition-colors">Conditions de vente</Link></li>
               <li>
                 <button
                   type="button"

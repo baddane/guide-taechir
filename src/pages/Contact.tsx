@@ -101,8 +101,14 @@ export function Contact() {
             Contactez-nous
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Une question sur le contenu du site, une suggestion d'amélioration ou une demande particulière ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais.
+            Une question sur le contenu du site, une suggestion ou une demande de mise en relation ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais.
           </p>
+          <div className="mt-6 text-left bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-sm text-indigo-950 max-w-2xl mx-auto">
+            <strong>Une question sur votre propre dossier ?</strong> Nous ne faisons pas d'analyse de dossier individuel par e-mail.
+            Deux solutions : le <Link to="/guide-complet" className="font-semibold text-indigo-700 underline">guide pratique complet</Link>, qui couvre
+            catégories, pièces, apostille, visas et cas pratiques, ou une <strong>mise en relation gratuite</strong> avec un cabinet partenaire qui monte
+            ces dossiers (précisez-le dans votre message, avec votre ville).
+          </div>
         </div>
       </header>
 
