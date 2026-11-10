@@ -15,6 +15,9 @@ export function Contact() {
     subject: '',
     message: '',
   });
+  // Question obligatoire, sans réponse par défaut (consentement exprès à la
+  // transmission à un cabinet partenaire : loi 09-08, politique § 5).
+  const [relation, setRelation] = useState<'oui' | 'non' | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,13 +26,17 @@ export function Contact() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormState('sending');
+    const relationLine =
+      relation === 'oui'
+        ? `[Mise en relation avec un cabinet : OUI, accord donné le ${new Date().toISOString()}]`
+        : '[Mise en relation avec un cabinet : non]';
 
     // 1) Stockage durable dans Supabase (consultable depuis /admin)
     const { error: dbError } = await supabase.from('contact_messages').insert({
       name: formData.name,
       email: formData.email,
       subject: formData.subject,
-      message: formData.message,
+      message: `${relationLine}\n\n${formData.message}`,
     });
 
     // 2) Notification e-mail (best-effort, ne bloque pas si elle échoue)
@@ -46,7 +53,8 @@ export function Contact() {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          _subject: `[Guide-Taechir] ${formData.subject}`,
+          mise_en_relation: relation === 'oui' ? 'OUI' : 'non',
+          _subject: `[Guide-Taechir]${relation === 'oui' ? ' [Mise en relation OUI]' : ''} ${formData.subject}`,
           _template: 'table',
         }),
       });
@@ -59,6 +67,7 @@ export function Contact() {
     if (!dbError || mailOk) {
       setFormState('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      setRelation(null);
     } else {
       setFormState('error');
     }
@@ -222,6 +231,41 @@ export function Contact() {
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-y"
                     />
                   </div>
+
+                  {/* Mise en relation (question obligatoire) */}
+                  <fieldset className="bg-indigo-50 border border-indigo-100 rounded-lg p-4">
+                    <legend className="sr-only">Mise en relation avec un cabinet</legend>
+                    <p className="text-sm font-semibold text-slate-800 mb-3">
+                      Souhaitez-vous qu'un cabinet partenaire monte votre dossier ? <span className="text-red-500">*</span>
+                    </p>
+                    <div className="space-y-2.5">
+                      <label className="flex items-start gap-2.5 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="relation"
+                          required
+                          checked={relation === 'oui'}
+                          onChange={() => setRelation('oui')}
+                          className="mt-0.5 h-4 w-4 shrink-0 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                        />
+                        <span className="text-sm text-slate-700">
+                          Oui : j'accepte que mes coordonnées et ma demande soient transmises à un seul
+                          cabinet partenaire, qui me contactera par e-mail. Gratuit et sans engagement.
+                        </span>
+                      </label>
+                      <label className="flex items-start gap-2.5 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="relation"
+                          required
+                          checked={relation === 'non'}
+                          onChange={() => setRelation('non')}
+                          className="mt-0.5 h-4 w-4 shrink-0 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                        />
+                        <span className="text-sm text-slate-700">Non, je souhaite seulement une information.</span>
+                      </label>
+                    </div>
+                  </fieldset>
 
                   {/* Submit */}
                   <button
