@@ -6055,6 +6055,119 @@ function Article40Content() {
   );
 }
 
+function Article41Content() {
+  return (
+    <>
+      <Lead>
+        Une augmentation, un changement de poste ou de lieu de travail : en cours de contrat, la
+        situation d'un salarié étranger évolue souvent. Mais son visa, son attestation ANAPEC et sa
+        carte de séjour reposent sur un contrat précis. Modifier ce contrat sans méthode, c'est
+        risquer de fragiliser tout le dossier. Voici comment procéder avec un avenant.
+      </Lead>
+
+      <H2>Pourquoi un simple accord oral ne suffit pas</H2>
+      <P>
+        Le contrat de travail d'un salarié étranger a été visé par l'administration et sert de base
+        à l'attestation ANAPEC, à la déclaration CNSS et au titre de séjour. Si la rémunération, la
+        fonction ou le lieu de travail réels s'écartent de ce qui est écrit, les pièces du dossier
+        ne racontent plus la même histoire. C'est exactement ce qu'un contrôle ou un renouvellement
+        va comparer.
+      </P>
+      <Warning>
+        Une modification « de fait » (nouvelle fonction, nouveau salaire) sans document écrit crée
+        un écart entre la réalité et le dossier. Écrivez toujours le changement avant de l'appliquer.
+      </Warning>
+
+      <H2>Quels changements nécessitent un avenant ?</H2>
+      <Table
+        rows={[
+          ['Changement', 'Impact sur le dossier', 'Réflexe conseillé'],
+          ['Hausse de salaire', 'Doit rester cohérente avec le contrat, la paie et la CNSS', 'Avenant daté et signé, bulletins alignés'],
+          ['Changement de fonction', 'Peut sortir du poste pour lequel l\'attestation ANAPEC a été délivrée', 'Vérifier avant de modifier si une nouvelle formalité s\'impose'],
+          ['Changement de lieu de travail', 'Peut concerner l\'adresse déclarée et le rattachement administratif', 'Informer les organismes concernés et conserver la trace'],
+          ['Changement de durée ou d\'horaires', 'Doit rester conforme au Code du travail', 'Avenant précisant la nouvelle organisation'],
+          ['Changement d\'employeur', 'Ce n\'est pas un avenant : c\'est un nouveau recrutement', 'Voir le guide dédié ci-dessous'],
+        ]}
+      />
+      <Info>
+        Les formalités exactes dépendent de la nature du changement et de la réglementation en
+        vigueur. En cas de doute sur un changement de fonction, demandez conseil avant de signer.
+      </Info>
+
+      <H2>Rédiger un avenant solide</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>
+          <strong>Identifier le contrat d'origine :</strong> parties, date de signature, référence
+          du visa du contrat si elle figure dans votre dossier.
+        </li>
+        <li>
+          <strong>Décrire précisément ce qui change :</strong> l'ancienne et la nouvelle clause,
+          avec la date d'effet.
+        </li>
+        <li>
+          <strong>Préciser ce qui ne change pas :</strong> toutes les autres clauses restent
+          applicables, ce qui évite toute ambiguïté.
+        </li>
+        <li>
+          <strong>Faire signer les deux parties :</strong> avec la date et, si possible, la
+          mention « lu et approuvé » sur chaque exemplaire.
+        </li>
+      </ul>
+
+      <H2>Aligner les autres pièces du dossier</H2>
+      <P>
+        Un avenant ne suffit pas s'il reste isolé. Après signature, vérifiez que la paie, la
+        déclaration à la CNSS et le dossier du personnel reflètent le changement. Les règles de
+        rémunération sont détaillées dans notre guide sur{' '}
+        <Link to="/blog/salaire-salarie-etranger-maroc-smig-bulletin-paie" className="text-indigo-600 hover:underline">le salaire et le bulletin de paie</Link>,
+        et l'organisation des pièces dans{' '}
+        <Link to="/blog/dossier-personnel-salarie-etranger-controle-inspection-travail-maroc" className="text-indigo-600 hover:underline">le dossier du personnel</Link>.
+        Pour la déclaration sociale, voir{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">la CNSS pour un salarié étranger</Link>.
+      </P>
+
+      <H2>Avenant ou renouvellement ?</H2>
+      <P>
+        L'avenant modifie un contrat qui continue ; le renouvellement prolonge un contrat arrivé à
+        son terme. Les deux peuvent se combiner : par exemple, profiter d'un renouvellement pour
+        mettre à jour la rémunération. Voir{' '}
+        <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">le renouvellement du contrat</Link>.
+        Si le salarié change réellement d'employeur, ce n'est plus un avenant :{' '}
+        <Link to="/blog/changer-employeur-contrat-taechir-maroc" className="text-indigo-600 hover:underline">changer d'employeur avec un contrat TAECHIR</Link>.
+      </P>
+      <Tip>
+        Tenez un petit registre des avenants : date, objet, signataires, pièces mises à jour. Au
+        moment du renouvellement de la carte de séjour, vous aurez l'historique complet en un coup d'œil.
+      </Tip>
+      <Info>
+        Cet article est informatif et ne remplace pas un conseil juridique. Vérifiez les
+        formalités applicables auprès de l'administration compétente ou de votre conseil.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Un changement en cours de contrat ?"
+        cta="Faire vérifier mon avenant"
+      >
+        <p>
+          Nous relisons votre projet d'avenant et vérifions qu'il reste cohérent avec l'ANAPEC, la
+          CNSS et le titre de séjour avant signature.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un employeur peut-il augmenter le salaire sans avenant ?', a: 'C\'est déconseillé : sans écrit, le contrat, la paie et la CNSS ne concordent plus. Formalisez la hausse par un avenant daté et signé, puis alignez les bulletins de paie.' },
+          { q: 'Un changement de poste impose-t-il de nouvelles démarches ?', a: 'Cela dépend de l\'ampleur du changement. Un poste très différent de celui prévu au dossier peut nécessiter des formalités ; vérifiez-le avant de modifier la fonction.' },
+          { q: 'L\'avenant doit-il être visé par l\'administration ?', a: 'Les exigences varient selon la nature de la modification. Renseignez-vous auprès de l\'administration compétente ou de votre conseil avant de signer.' },
+          { q: 'Que conserver après la signature ?', a: 'Un exemplaire signé par les deux parties, classé dans le dossier du personnel, avec les bulletins de paie et déclarations CNSS mis à jour.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6455,6 +6568,16 @@ export const articles: Article[] = [
     category: 'Obligations',
     excerpt: 'L\'employeur s\'engage dans le contrat à payer le retour du salarié en cas de refus de visa. Périmètre, cas douteux, budget à prévoir et annexe à ajouter : comment sécuriser cette clause avant la signature.',
     Content: Article40Content,
+  },
+  {
+    slug: 'avenant-contrat-salarie-etranger-maroc-changement-poste-salaire',
+    title: 'Avenant au contrat d\'un salarié étranger au Maroc : modifier salaire, poste ou lieu de travail',
+    description: 'Hausse de salaire, changement de poste ou de lieu : comment modifier le contrat d\'un salarié étranger au Maroc par avenant sans fragiliser le dossier TAECHIR, ANAPEC et CNSS.',
+    date: '15 décembre 2026',
+    readTime: 5,
+    category: 'Procédure',
+    excerpt: 'Augmentation, nouveau poste, nouveau lieu : le contrat visé sert de référence à tout le dossier. Quels changements exigent un avenant, comment le rédiger et quelles pièces aligner ensuite.',
+    Content: Article41Content,
   },
 ];
 
