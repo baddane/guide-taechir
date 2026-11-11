@@ -323,6 +323,21 @@ function QualificationDetails({ details }: { details: Record<string, unknown> | 
 }
 
 /* ── Pastilles d'état du fil ─────────────────────────────────────────────── */
+/**
+ * Faut-il mettre le bouton « Répondre » en avant ? (11/11/2026, demande de
+ * l'exploitant.) Non si notre dernière réponse est déjà partie et que le
+ * contact n'a rien écrit depuis : le bouton invitait à renvoyer un message à
+ * quelqu'un qui l'a déjà reçu. Oui dès qu'un message entrant est plus récent
+ * que notre dernier envoi. Sinon, simple lien discret « Relancer… ».
+ */
+function attendNotreReponse(replies: MessageReply[]): boolean {
+  const t = (r: MessageReply) => new Date(r.created_at).getTime();
+  const dernierEnvoi = Math.max(0, ...replies.filter((r) => r.direction !== 'in').map(t));
+  if (dernierEnvoi === 0) return true;
+  const dernierRecu = Math.max(0, ...replies.filter((r) => r.direction === 'in').map(t));
+  return dernierRecu > dernierEnvoi;
+}
+
 function ThreadBadges({ replies }: { replies: MessageReply[] }) {
   const sent = replies.filter((r) => r.direction !== 'in').length;
   const received = replies.filter((r) => r.direction === 'in').length;
@@ -1316,12 +1331,21 @@ export function Admin() {
                         {c.subject && <p className="text-sm font-medium text-slate-700 mb-1">{c.subject}</p>}
                         {c.message && <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-wrap">{c.message}</p>}
                         <p className="text-xs text-slate-400 mt-2">{fmt(c.created_at)}</p>
-                        <button
-                          onClick={() => openReply(c)}
-                          className="mt-3 inline-flex items-center gap-1.5 px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors"
-                        >
-                          <Reply className="w-4 h-4" /> Répondre
-                        </button>
+                        {attendNotreReponse(thread) ? (
+                          <button
+                            onClick={() => openReply(c)}
+                            className="mt-3 inline-flex items-center gap-1.5 px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors"
+                          >
+                            <Reply className="w-4 h-4" /> Répondre
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => openReply(c)}
+                            className="mt-3 text-xs text-slate-400 hover:text-slate-700 hover:underline"
+                          >
+                            Relancer…
+                          </button>
+                        )}
                         <ReplyThread replies={thread} />
                       </div>
                       <div className="flex flex-col gap-1.5 shrink-0">
@@ -1364,12 +1388,21 @@ export function Admin() {
                         </div>
                         <QualificationDetails details={l.details} />
                         <p className="text-xs text-slate-400 mt-2">{fmt(l.created_at)}</p>
-                        <button
-                          onClick={() => openReplyLead(l)}
-                          className="mt-3 inline-flex items-center gap-1.5 px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors"
-                        >
-                          <Reply className="w-4 h-4" /> Répondre
-                        </button>
+                        {attendNotreReponse(thread) ? (
+                          <button
+                            onClick={() => openReplyLead(l)}
+                            className="mt-3 inline-flex items-center gap-1.5 px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors"
+                          >
+                            <Reply className="w-4 h-4" /> Répondre
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => openReplyLead(l)}
+                            className="mt-3 text-xs text-slate-400 hover:text-slate-700 hover:underline"
+                          >
+                            Relancer…
+                          </button>
+                        )}
                         <ReplyThread replies={thread} />
                       </div>
                       <div className="flex flex-col gap-1.5 shrink-0">
