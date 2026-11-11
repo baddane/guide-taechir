@@ -5,7 +5,7 @@
  * Variables Vercel :
  *   STRIPE_SECRET_KEY   sk_live_… (la même clé que leconseillerfiscal.com
  *                       convient : c'est le même compte Stripe de la LLC)
- *   GUIDE_PRIX_CENTIMES facultatif, prix en centimes d'euro (défaut : 2900)
+ *   GUIDE_PRIX_CENTIMES facultatif, prix en centimes de dirham (défaut : 15000 = 150 DH)
  *
  * Pas de webhook : le paiement est relu auprès de Stripe à chaque accès
  * (page de remerciement, téléchargement). L'identifiant de session `cs_…`
@@ -84,7 +84,7 @@ export async function guidePaye(sessionId: unknown): Promise<SessionPayee | null
   const pi = typeof s.payment_intent === 'object' && s.payment_intent ? s.payment_intent : null;
   const montant =
     s.amount_total != null
-      ? (s.amount_total / 100).toLocaleString('fr-FR', { style: 'currency', currency: (s.currency ?? 'eur').toUpperCase() })
+      ? `${(s.amount_total / 100).toLocaleString('fr-FR')} ${(s.currency ?? 'mad') === 'mad' ? 'DH' : (s.currency ?? '').toUpperCase()}`
       : '';
   return {
     id: s.id,

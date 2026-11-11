@@ -123,7 +123,7 @@ du message).
 3. Sur Vercel : `BREVO_INBOUND_SECRET` (le même secret) et
    `BREVO_INBOUND_DOMAIN` (le sous-domaine), puis redéployer.
 
-## Guide payant (PDF, 29 €)
+## Guide payant (PDF, 150 DH)
 
 | Élément | Rôle |
 |---|---|

@@ -176,7 +176,7 @@ export function GuideComplet() {
             </form>
 
             <ul className="mt-6 grid sm:grid-cols-3 gap-3 text-xs text-slate-600">
-              <li className="flex gap-2"><ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />Paiement par carte sécurisé par Stripe, toutes devises</li>
+              <li className="flex gap-2"><ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />Paiement par carte marocaine ou étrangère, sécurisé par Stripe</li>
               <li className="flex gap-2"><Receipt className="w-4 h-4 text-emerald-600 shrink-0" />Facture au nom de votre entreprise</li>
               <li className="flex gap-2"><RefreshCw className="w-4 h-4 text-emerald-600 shrink-0" />Lien valable pour les éditions suivantes</li>
             </ul>
