@@ -51,7 +51,7 @@ async function handler(req: ApiRequest, res: ApiResponse) {
         0: {
           quantity: 1,
           price_data: {
-            currency: 'eur',
+            currency: GUIDE.devise,
             unit_amount: prix,
             product_data: {
               name: GUIDE.nom,

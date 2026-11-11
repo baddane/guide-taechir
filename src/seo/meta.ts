@@ -103,7 +103,7 @@ export const FAQ_GUIDE: [string, string][] = [
   ],
   [
     'Comment se passe le paiement ?',
-    'Par carte bancaire, sur la page sécurisée de Stripe. Le prix est en euros ; une carte marocaine ou étrangère est débitée dans sa devise par sa banque. Une facture est émise au nom indiqué lors du paiement.',
+    'Par carte bancaire, sur la page sécurisée de Stripe. Le prix est de 150 dirhams. Une carte marocaine est débitée en dirhams ; une carte étrangère est débitée dans sa devise, au taux de sa banque. Une facture est émise au nom indiqué lors du paiement.',
   ],
   [
     'Comment je reçois le guide ?',
@@ -170,7 +170,7 @@ export const STATIC_PAGES: PageMeta[] = [
         description: GUIDE_DESC,
         image: `${SITE_URL}/guide/apercu-1.webp`,
         brand: { '@type': 'Brand', name: SITE_NAME },
-        offers: { '@type': 'Offer', price: '29', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', url: `${SITE_URL}/guide-complet` },
+        offers: { '@type': 'Offer', price: '150', priceCurrency: 'MAD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/guide-complet` },
       },
       breadcrumb([['Accueil', '/'], ['Guide complet', '/guide-complet']]),
       faq(FAQ_GUIDE),

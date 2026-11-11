@@ -41,7 +41,7 @@ export function Footer() {
               <li><Link to="/blog" className="hover:text-indigo-400 transition-colors">Blog</Link></li>
               <li><Link to="/documents-utiles" className="hover:text-indigo-400 transition-colors">Documents utiles (contrats CDI / CDD)</Link></li>
               <li><Link to="/checklist" className="hover:text-indigo-400 transition-colors">Checklist gratuite (PDF)</Link></li>
-              <li><Link to="/guide-complet" className="hover:text-indigo-400 transition-colors font-semibold text-slate-300">Guide pratique complet (PDF, 29 €)</Link></li>
+              <li><Link to="/guide-complet" className="hover:text-indigo-400 transition-colors font-semibold text-slate-300">Guide pratique complet (PDF, 150 DH)</Link></li>
               <li><Link to="/a-propos" className="hover:text-indigo-400 transition-colors">À propos</Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link></li>
             </ul>

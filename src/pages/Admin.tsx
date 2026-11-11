@@ -61,7 +61,7 @@ function reponseType(toName: string): string {
     '',
     "Nous ne faisons pas d'analyse de dossier individuel par e-mail. Pour aller plus loin, deux possibilités :",
     '',
-    "1. Le Guide pratique TAECHIR 2026 (PDF de 20 pages, 29 €, téléchargement immédiat) : arbre de décision des catégories, les trois listes officielles de pièces, apostille et traduction, visas, cinq cas pratiques (dont la mission de courte durée), rétroplanning, checklists et modèles de lettres. Chaque règle y est sourcée.",
+    "1. Le Guide pratique TAECHIR 2026 (PDF de 20 pages, 150 DH, téléchargement immédiat) : arbre de décision des catégories, les trois listes officielles de pièces, apostille et traduction, visas, cinq cas pratiques (dont la mission de courte durée), rétroplanning, checklists et modèles de lettres. Chaque règle y est sourcée.",
     'https://www.guide-taechir.org/guide-complet',
     '',
     "2. Une mise en relation, gratuite et sans engagement pour vous, avec un cabinet partenaire qui monte ces dossiers chaque semaine. Répondez simplement OUI à cet e-mail en indiquant votre ville : avec votre accord, nous transmettons votre demande à ce seul cabinet, qui vous écrit directement. Sans votre accord, rien n'est transmis.",

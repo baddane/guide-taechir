@@ -8,8 +8,10 @@ export const GUIDE = {
   titre: 'Recruter un salarié étranger au Maroc avec TAECHIR',
   edition: 'novembre 2026',
   pages: 20,
-  prixCentimes: 2900,
-  prixAffiche: '29 €',
+  /* Montant en centimes de la devise (MAD : 150 DH = 15000). */
+  prixCentimes: 15000,
+  devise: 'mad',
+  prixAffiche: '150 DH',
   nomFichier: 'guide-pratique-taechir-2026.pdf',
   extrait: '/extrait-guide-taechir-2026.pdf',
   path: '/guide-complet',
