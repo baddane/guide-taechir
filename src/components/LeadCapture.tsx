@@ -10,6 +10,7 @@
  */
 
 import { FormEvent, useState } from 'react';
+import { trackEvent } from '../lib/track';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, CheckCircle2, Download, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
@@ -84,6 +85,7 @@ export function LeadCapture({
     // restait dans Supabase et ne recevait jamais la lettre. Au mieux, jamais
     // bloquant pour la remise de la checklist.
     if (!error) {
+      trackEvent('lead', { source: String(source) });
       fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

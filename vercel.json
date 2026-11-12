@@ -9,5 +9,11 @@
     "api/guide/telecharger.ts": {
       "includeFiles": "private/**"
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/sequence-guide",
+      "schedule": "0 8 * * *"
+    }
+  ]
 }

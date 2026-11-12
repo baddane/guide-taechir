@@ -113,6 +113,8 @@ export interface ApiResponse {
   json(payload: unknown): void;
   setHeader(name: string, value: string): void;
   end(): void;
+  /** Corps brut (HTML) : fourni par le runtime Node de Vercel. */
+  send(body: string): void;
 }
 
 export function readBody(body: unknown): Record<string, unknown> {

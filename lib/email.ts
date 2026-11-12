@@ -214,6 +214,8 @@ export interface SendOptions {
   textContent?: string;
   attachment?: BrevoAttachment[];
   tags?: string[];
+  /** En-têtes SMTP supplémentaires (ex. List-Unsubscribe). */
+  headers?: Record<string, string>;
 }
 
 export interface SendResult {
