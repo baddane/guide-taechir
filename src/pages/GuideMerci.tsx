@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { useSeo } from '../seo/useSeo';
 import { staticPage } from '../seo/meta';
 import { GUIDE } from '../data/guidePayant';
+import { trackEvent } from '../lib/track';
 
 type Etat =
   | { statut: 'chargement' }
@@ -27,7 +28,19 @@ export function GuideMerci() {
         const r = await fetch(`/api/guide/acces?session_id=${encodeURIComponent(sessionId)}`);
         const data = await r.json();
         if (annule) return;
-        if (r.ok && data.ok) return setEtat({ statut: 'ok', email: data.email, lien: data.telechargement });
+        if (r.ok && data.ok) {
+          // Conversion « achat », une fois par session Stripe (un rechargement ne compte pas une 2e vente).
+          try {
+            const cle = `gt_achat_${sessionId}`;
+            if (!sessionStorage.getItem(cle)) {
+              sessionStorage.setItem(cle, '1');
+              trackEvent('purchase', { produit: GUIDE.id, valeur: GUIDE.prixCentimes / 100, currency: 'MAD', transaction_id: sessionId });
+            }
+          } catch {
+            /* noop */
+          }
+          return setEtat({ statut: 'ok', email: data.email, lien: data.telechargement });
+        }
       } catch {
         /* nouvel essai ci-dessous */
       }

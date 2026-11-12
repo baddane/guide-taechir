@@ -28,6 +28,17 @@ function redirect(res: ApiResponse, url: string) {
   res.status(303).end();
 }
 
+const CHAMPS_ORIGINE = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'landing_page'] as const;
+
+function origine(form: Record<string, unknown>): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const f of CHAMPS_ORIGINE) {
+    const v = str(form[f]).trim();
+    if (v) out[f] = v.slice(0, 300);
+  }
+  return out;
+}
+
 async function handler(req: ApiRequest, res: ApiResponse) {
   const retour = `${SITE_URL}${GUIDE.path}`;
   if (req.method !== 'POST') return redirect(res, retour);
@@ -74,7 +85,9 @@ async function handler(req: ApiRequest, res: ApiResponse) {
           message: 'Téléchargement immédiat après paiement. Vous avez demandé l\'accès immédiat au PDF et renoncé à votre droit de rétractation.',
         },
       },
-      metadata: { produit: GUIDE.id, acces_immediat: new Date().toISOString() },
+      // Origine de la visite (champs cachés de la page de vente) : recopiée
+      // sur le lead « guide-paiement » pour savoir quel e-mail a vendu.
+      metadata: { produit: GUIDE.id, acces_immediat: new Date().toISOString(), ...origine(form) },
       payment_intent_data: { metadata: { produit: GUIDE.id } },
     });
     if (!session.url) throw new Error(`session sans URL ${session.id}`);

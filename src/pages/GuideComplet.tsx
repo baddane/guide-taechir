@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer';
 import { useSeo } from '../seo/useSeo';
 import { staticPage, FAQ_GUIDE } from '../seo/meta';
 import { GUIDE, GUIDE_CONTENU } from '../data/guidePayant';
+import { CHAMPS_ORIGINE, origine, trackEvent, type Origine } from '../lib/track';
 
 const MESSAGES: Record<string, { ton: 'warn' | 'info'; texte: string }> = {
   consentement: { ton: 'warn', texte: 'Cochez la case de demande d\'accès immédiat pour poursuivre vers le paiement.' },
@@ -26,6 +27,8 @@ export function GuideComplet() {
   useSeo(staticPage(GUIDE.path));
   const [params] = useSearchParams();
   const [accord, setAccord] = useState(false);
+  const [provenance, setProvenance] = useState<Origine>({});
+  useEffect(() => setProvenance(origine()), []);
   const message = MESSAGES[params.get('paiement') ?? ''];
 
   useEffect(() => {
@@ -150,7 +153,14 @@ export function GuideComplet() {
               </div>
             )}
 
-            <form method="POST" action="/api/guide/checkout" className="mt-6 space-y-5">
+            <form
+              method="POST"
+              action="/api/guide/checkout"
+              className="mt-6 space-y-5"
+              onSubmit={() => trackEvent('guide_checkout', { produit: GUIDE.id })}
+            >
+              {/* Origine de la visite : transmise à Stripe pour savoir quel e-mail ou quelle page a vendu. */}
+              {CHAMPS_ORIGINE.map((f) => (provenance[f] ? <input key={f} type="hidden" name={f} value={provenance[f]} /> : null))}
               <label className="flex gap-3 items-start text-sm text-slate-700 cursor-pointer">
                 <input
                   type="checkbox"

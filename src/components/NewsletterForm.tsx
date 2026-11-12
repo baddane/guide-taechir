@@ -10,6 +10,7 @@
  */
 
 import { FormEvent, useState } from 'react';
+import { trackEvent } from '../lib/track';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, CheckCircle2, Loader2, Mail } from 'lucide-react';
 
@@ -74,6 +75,7 @@ export function NewsletterForm({
       setError(label(data?.error, res.status));
       return;
     }
+    trackEvent('lead', { source: source ?? 'newsletter' });
     setState('success');
   };
 

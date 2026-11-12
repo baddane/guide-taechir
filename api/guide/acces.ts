@@ -15,6 +15,13 @@ import { type ApiRequest, type ApiResponse, SUPABASE_KEY, SUPABASE_URL, withGuar
 import { brandedShell, markdownToHtml, markdownToText, sendTransactional } from '../../lib/email.js';
 import { guidePaye, stripe } from '../../lib/stripe.js';
 import { GUIDE } from '../../src/data/guidePayant.js';
+import { majContact } from '../../lib/brevoContacts.js';
+import { ATTR_SEQ_GUIDE, SEQ_SORTIE } from '../../lib/sequence.js';
+
+/** Champs d'origine seulement (utm_*, landing_page) parmi les métadonnées Stripe. */
+function origineSeule(m: Record<string, string>): Record<string, string> {
+  return Object.fromEntries(Object.entries(m).filter(([k]) => k.startsWith('utm_') || k === 'landing_page'));
+}
 
 const SITE_URL = process.env.SITE_URL || 'https://www.guide-taechir.org';
 const SENDER = { email: process.env.BREVO_SENDER || 'contact@guide-taechir.org', name: process.env.BREVO_SENDER_NAME || 'Guide-Taechir.org' };
@@ -25,7 +32,7 @@ function sessionDe(req: ApiRequest): string {
   return url.searchParams.get('session_id') ?? '';
 }
 
-async function livrer(email: string, sessionId: string, montant: string, livemode: boolean) {
+async function livrer(email: string, sessionId: string, montant: string, livemode: boolean, origine: Record<string, string>) {
   const lien = `${SITE_URL}/api/guide/telecharger?session_id=${sessionId}`;
 
   // 1. Trace en base (best effort : la vente est déjà chez Stripe).
@@ -37,7 +44,7 @@ async function livrer(email: string, sessionId: string, montant: string, livemod
         email,
         source: 'guide-paiement',
         page: GUIDE.path,
-        details: { produit: GUIDE.id, montant, stripe_session: sessionId, livemode },
+        details: { produit: GUIDE.id, montant, stripe_session: sessionId, livemode, ...origineSeule(origine) },
       }),
     });
     if (!r.ok) console.error('[guide/acces] insertion lead :', r.status, await r.text());
@@ -47,6 +54,9 @@ async function livrer(email: string, sessionId: string, montant: string, livemod
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) return console.error('[guide/acces] BREVO_API_KEY absente : e-mail de livraison non envoyé');
+
+  // 2. L'acheteur sort de la séquence de vente (404 : pas inscrit, rien à arrêter).
+  await majContact(apiKey, email, { attributes: { [ATTR_SEQ_GUIDE]: SEQ_SORTIE } });
 
   const corps = [
     'Bonjour,',
@@ -102,7 +112,7 @@ async function handler(req: ApiRequest, res: ApiResponse) {
     // pas produire un second e-mail.
     try {
       await stripe('POST', `/payment_intents/${vente.paymentIntentId}`, { metadata: { livre_le: new Date().toISOString() } });
-      if (vente.email) await livrer(vente.email, vente.id, vente.montant, vente.livemode);
+      if (vente.email) await livrer(vente.email, vente.id, vente.montant, vente.livemode, vente.metadata);
     } catch (e) {
       console.error('[guide/acces] marquage / livraison :', e instanceof Error ? e.message : e);
     }

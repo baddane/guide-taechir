@@ -55,6 +55,8 @@ export interface SessionPayee {
   montant: string;
   paymentIntentId: string | null;
   dejaLivre: boolean;
+  /** Métadonnées de la session (origine de la visite : utm_*, landing_page). */
+  metadata: Record<string, string>;
 }
 
 export const SESSION_RE = /^cs_(test|live)_[A-Za-z0-9]{10,250}$/;
@@ -93,5 +95,6 @@ export async function guidePaye(sessionId: unknown): Promise<SessionPayee | null
     montant,
     paymentIntentId: pi?.id ?? (typeof s.payment_intent === 'string' ? s.payment_intent : null),
     dejaLivre: Boolean(pi?.metadata?.livre_le),
+    metadata: s.metadata ?? {},
   };
 }

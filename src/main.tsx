@@ -17,6 +17,9 @@ import { GuideMerci } from './pages/GuideMerci.tsx';
 import { ConditionsVente } from './pages/ConditionsVente.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
 import './index.css';
+import { demarrerMesure } from './lib/track.ts';
+
+demarrerMesure();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
