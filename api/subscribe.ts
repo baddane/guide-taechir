@@ -21,6 +21,8 @@ import {
   str,
   withGuard,
 } from '../lib/adminApi.js';
+import { sendTransactional } from '../lib/email.js';
+import { bienvenueHtml, bienvenueSujet, bienvenueTexte } from '../lib/bienvenue.js';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -37,8 +39,17 @@ function rateLimited(ip: string): boolean {
   return recent.length > MAX_PER_WINDOW;
 }
 
-/** Ajoute le contact à la liste Brevo. Ne lance jamais. */
-async function addToBrevo(email: string, listId: number, apiKey: string): Promise<boolean> {
+/**
+ * Ajoute le contact à la liste Brevo. Ne lance jamais.
+ * `nouveau` : Brevo vient de CRÉER le contact (201), seul cas où l'e-mail de
+ * bienvenue part. Une mise à jour (204) ou un « already exist » n'en déclenche
+ * aucun.
+ */
+async function addToBrevo(
+  email: string,
+  listId: number,
+  apiKey: string,
+): Promise<{ ok: boolean; nouveau: boolean }> {
   try {
     const res = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
@@ -53,18 +64,37 @@ async function addToBrevo(email: string, listId: number, apiKey: string): Promis
         updateEnabled: true,
       }),
     });
-    if (res.ok) return true;
+    if (res.ok) return { ok: true, nouveau: res.status === 201 };
     // 400 « Contact already exist » n'est pas une erreur pour nous : la mise à
     // jour avec updateEnabled le rattache déjà à la liste.
     const detail = await res.text().catch(() => '');
-    if (res.status === 400 && detail.includes('already exist')) return true;
+    if (res.status === 400 && detail.includes('already exist')) return { ok: true, nouveau: false };
     console.error(`[subscribe] Brevo a refusé l'inscription (${res.status}) — ${detail.slice(0, 200)}`);
-    return false;
+    return { ok: false, nouveau: false };
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
     console.error(`[subscribe] API Brevo injoignable — ${detail}`);
-    return false;
+    return { ok: false, nouveau: false };
   }
+}
+
+/** E-mail de bienvenue (ressources + guide payant). Au mieux, ne lance jamais. */
+async function envoyerBienvenue(email: string, apiKey: string): Promise<void> {
+  const sender = {
+    email: process.env.BREVO_SENDER || 'contact@guide-taechir.org',
+    name: process.env.BREVO_SENDER_NAME || 'Guide-Taechir.org',
+  };
+  const r = await sendTransactional({
+    apiKey,
+    sender,
+    replyTo: sender,
+    to: [{ email }],
+    subject: bienvenueSujet(),
+    htmlContent: bienvenueHtml(),
+    textContent: bienvenueTexte(),
+    tags: ['bienvenue'],
+  });
+  if (!r.ok) console.error(`[subscribe] bienvenue non envoyée (${r.status}) — ${r.detail.slice(0, 200)}`);
 }
 
 async function subscribe(req: ApiRequest, res: ApiResponse) {
@@ -103,7 +133,11 @@ async function subscribe(req: ApiRequest, res: ApiResponse) {
   const listId = Number(process.env.BREVO_NEWSLETTER_LIST_ID);
   let brevoOk = false;
   if (apiKey && listId && !Number.isNaN(listId)) {
-    brevoOk = await addToBrevo(email, listId, apiKey);
+    const brevo = await addToBrevo(email, listId, apiKey);
+    brevoOk = brevo.ok;
+    // Bienvenue : seulement pour un contact que Brevo vient de créer. Attendu
+    // (la fonction serverless s'arrête à la réponse), mais jamais bloquant.
+    if (brevo.nouveau) await envoyerBienvenue(email, apiKey);
   }
 
   if (isLead) {
