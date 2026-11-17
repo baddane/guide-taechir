@@ -6328,6 +6328,215 @@ function Article42Content() {
   );
 }
 
+function Article43Content() {
+  return (
+    <>
+      <Lead>
+        Une nounou philippine, une aide à domicile sénégalaise pour un parent âgé, un chauffeur
+        étranger : de nombreuses familles au Maroc emploient du personnel de maison d'une autre
+        nationalité, souvent sans savoir que la procédure des salariés étrangers s'applique aussi à
+        elles. La loi n° 19-12 sur les travailleurs domestiques renvoie en effet expressément au Code
+        du travail : attestation ANAPEC, contrat visé par le ministère, CNSS, carte de séjour. Voici
+        comment régulariser la situation dans le bon ordre.
+      </Lead>
+
+      <H2>Qui est concerné ?</H2>
+      <P>
+        La loi n° 19-12, en vigueur depuis le 2 octobre 2018, vise la personne qui effectue « de
+        façon permanente et habituelle, moyennant un salaire » des travaux liés à la maison ou à la
+        famille. Son article 2 en donne la liste : tâches ménagères, garde des enfants, soin d'un
+        membre de la famille âgé, malade ou handicapé, conduite, jardinage et gardiennage de la
+        maison. Le travail ponctuel ou occasionnel n'entre pas dans son champ.
+      </P>
+      <P>
+        Le dernier alinéa de son article 3 est sans ambiguïté : <strong>« En cas de travailleuses ou
+        travailleurs domestiques étrangers, sont appliquées les dispositions des chapitres V et VI du
+        livre IV »</strong> du Code du travail, c'est-à-dire les articles 516 et suivants sur l'emploi
+        des salariés étrangers. La note du ministère sur la procédure d'emploi des étrangers le
+        confirme : les employeurs « personnes physiques » qui recrutent du personnel domestique de
+        nationalité étrangère « sont également concernés ».
+      </P>
+      <Warning>
+        Le fait d'être un particulier et non une entreprise ne dispense de rien. Un employé de maison
+        étranger sans contrat visé travaille sans autorisation, et il ne pourra pas obtenir ni
+        renouveler sa carte de séjour sur la base de cet emploi.
+      </Warning>
+
+      <H2>Étape 1 : l'attestation ANAPEC « employé de maison »</H2>
+      <P>
+        L'ANAPEC prévoit une procédure spécifique d'attestation d'activité « en faveur des employés de
+        maison étrangers », dont l'objectif est le même que pour une entreprise : justifier l'absence
+        de candidat marocain correspondant au profil. Une annonce est publiée, puis l'attestation est
+        délivrée dans un délai annoncé de <strong>20 jours</strong> une fois le dossier complet. Les
+        pièces demandées sont adaptées aux particuliers :
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>une demande signée et légalisée, adressée au directeur général de l'ANAPEC ;</li>
+        <li>une copie certifiée conforme de la CNIE de l'employeur (ou de sa carte de séjour s'il est lui-même étranger) ;</li>
+        <li>un justificatif de résidence : contrat de bail ou factures d'eau et d'électricité ;</li>
+        <li>si l'employé travaille déjà chez vous, une déclaration sur l'honneur légalisée précisant la période d'embauche ;</li>
+        <li>la page « identité » du passeport de l'employé, son CV et ses références professionnelles (attestations de travail, diplômes) en copies certifiées conformes ;</li>
+        <li>la fiche d'identification de l'employeur et la fiche descriptive du poste, sur les modèles ANAPEC.</li>
+      </ul>
+      <P>
+        Côté coût, la grille publiée par l'ANAPEC prévoit <strong>5 000 DH HT par dossier</strong>
+        {' '}soumis à annonce, puis 1 500 DH par dossier supplémentaire pour le même emploi. Ces montants
+        peuvent évoluer : vérifiez la grille en vigueur avant le dépôt. Le détail de la procédure
+        générale est dans{' '}
+        <Link to="/blog/attestation-anapec-frais-delais-procedure" className="text-indigo-600 hover:underline">notre guide sur l'attestation ANAPEC</Link>.
+      </P>
+      <Info>
+        Les employés de maison ne figurent pas parmi les profils rares des listes A1 et A2 : la
+        procédure simplifiée sans annonce ne s'applique donc pas à eux. En revanche, certaines
+        nationalités ou situations peuvent être dispensées de l'attestation : voir{' '}
+        <Link to="/blog/dispense-anapec-categories-exemptees-maroc" className="text-indigo-600 hover:underline">les catégories dispensées de l'ANAPEC</Link>.
+      </Info>
+
+      <H2>Étape 2 : deux contrats à ne pas confondre</H2>
+      <P>
+        C'est la particularité du personnel de maison étranger : il relève à la fois de deux régimes,
+        et chacun a son propre contrat type.
+      </P>
+      <Table
+        rows={[
+          ['', 'Contrat « loi 19-12 »', 'Contrat de travail d\'étranger'],
+          ['Base légale', 'Loi 19-12, art. 3 ; décret n° 2-17-355', 'Code du travail, art. 516 et 517'],
+          ['Formalité', 'Trois exemplaires, signatures légalisées', 'Visa du ministère chargé de l\'emploi'],
+          ['Dépôt', 'Inspection du travail du domicile, contre reçu', 'Plateforme TAECHIR'],
+          ['Effet', 'Preuve de la relation de travail, requise par la CNSS', 'Autorisation de travail ; prend effet à la date du visa'],
+        ]}
+      />
+      <P>
+        Le contrat type de la loi 19-12 est téléchargeable sur le site de la CNSS. Il fixe la nature des
+        tâches, la durée hebdomadaire, le salaire en espèces, le jour de repos et la période d'essai,
+        limitée à <strong>15 jours au maximum</strong>. Le contrat de travail d'étranger reprend les
+        mêmes éléments et doit en plus prévoir, en cas de refus de l'autorisation, la prise en charge
+        par l'employeur des frais de retour du salarié (art. 518) : voir{' '}
+        <Link to="/blog/frais-retour-salarie-etranger-maroc-refus-visa-fin-contrat" className="text-indigo-600 hover:underline">les frais de retour du salarié étranger</Link>.
+      </P>
+      <Tip>
+        Rédigez les deux documents avec des données strictement identiques : mêmes tâches, même
+        salaire, même durée de travail, même date de début. Une incohérence entre le contrat déposé à
+        l'inspection et le contrat visé est le genre de détail qui bloque ensuite la carte de séjour.
+      </Tip>
+
+      <H2>Les règles de fond de la loi 19-12</H2>
+      <H3>Âge, durée du travail et repos</H3>
+      <P>
+        L'âge minimum est de <strong>18 ans</strong> : la période transitoire de cinq ans qui
+        permettait d'employer des jeunes de 16 à 18 ans a pris fin en 2023. La durée du travail est
+        fixée à <strong>48 heures par semaine</strong> (art. 13), réparties d'un commun accord. Le
+        salarié a droit à un repos hebdomadaire d'au moins 24 heures continues (art. 14), à un congé
+        annuel payé d'un jour et demi par mois après six mois de service, aux jours fériés et aux
+        permissions d'absence pour événements familiaux.
+      </P>
+      <H3>Le salaire minimum</H3>
+      <P>
+        Le salaire en espèces ne peut être inférieur à <strong>60 % du SMIG</strong> (art. 19), et le
+        logement et la nourriture ne peuvent « en aucun cas » être comptés dedans. Avec le SMIG à
+        17,92 DH de l'heure depuis le 1er janvier 2026, le plancher horaire est d'environ 10,75 DH.
+        Rapporté au mois, cela donne environ <strong>2 054 DH</strong> sur la base mensuelle usuelle de
+        191 heures, et environ <strong>2 236 DH</strong> si l'on calcule sur 48 heures hebdomadaires.
+        La loi ne tranche pas la base de calcul : retenez la plus favorable au salarié.
+      </P>
+      <Warning>
+        Un salaire au plancher légal passera difficilement l'examen du contrat de travail d'étranger.
+        En pratique, la rémunération d'un employé de maison étranger est souvent nettement supérieure,
+        et elle doit être cohérente avec ce qui est inscrit dans les deux contrats et déclaré à la
+        CNSS. Voir{' '}
+        <Link to="/blog/salaire-salarie-etranger-maroc-smig-bulletin-paie" className="text-indigo-600 hover:underline">le salaire d'un salarié étranger au Maroc</Link>.
+      </Warning>
+
+      <ChecklistBox />
+
+      <H2>Étape 3 : l'affiliation à la CNSS</H2>
+      <P>
+        Depuis le décret n° 2-18-686, les travailleurs domestiques sont couverts par la CNSS. Selon le
+        guide de la CNSS pour les employeurs de maison, l'employeur doit déposer son dossier
+        d'affiliation et d'immatriculation à l'agence dont relève son domicile <strong>dans un délai
+        d'un mois</strong> à compter de la signature du contrat. Le dossier comprend notamment :
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li>une copie certifiée conforme du contrat loi 19-12 et l'<strong>accusé de dépôt</strong> à l'inspection du travail ;</li>
+        <li>la demande d'affiliation (formulaire 325-1-12) et la demande d'immatriculation de l'employé (321-1-12), avec deux photos et une pièce d'identité, la carte de séjour pour un étranger ;</li>
+        <li>la copie de la pièce d'identité de l'employeur et un RIB ;</li>
+        <li>l'autorisation de prélèvement automatique des cotisations (212-1-12).</li>
+      </ul>
+      <P>
+        Les cotisations sont ensuite prélevées sur le compte de l'employeur. Les règles générales sont
+        détaillées dans{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">la déclaration CNSS d'un salarié étranger</Link>.
+      </P>
+
+      <H2>Étape 4 : la carte de séjour de l'employé</H2>
+      <P>
+        Au-delà de 90 jours, l'employé doit détenir une carte d'immatriculation délivrée par la DGSN
+        (loi n° 02-03). Pour une carte portant une activité salariée, le contrat visé est la pièce
+        centrale du dossier. Le calendrier est donc serré pour un employé déjà présent au Maroc :
+        attestation ANAPEC, puis visa du contrat, puis dépôt à la DGSN. Voir{' '}
+        <Link to="/blog/carte-sejour-etranger-maroc-dgsn" className="text-indigo-600 hover:underline">la carte de séjour auprès de la DGSN</Link>.
+      </P>
+
+      <H2>Passer par une agence : attention à l'intermédiaire</H2>
+      <P>
+        L'article 4 de la loi 19-12 permet de recruter un travailleur domestique, marocain ou étranger,
+        par une <strong>agence de recrutement privée autorisée</strong>. Il interdit en revanche à toute
+        personne physique de servir d'intermédiaire contre rémunération. Le « placeur » qui facture la
+        mise en relation avec une employée venue de l'étranger exerce donc une activité illégale, et ce
+        circuit est aussi celui où se rencontrent les abus les plus graves : passeports confisqués,
+        dettes de recrutement, salaires retenus.
+      </P>
+      <Info>
+        Confisquer le passeport de son employé, même « pour le garder en sécurité », est à proscrire :
+        le document lui appartient, il en a besoin pour toutes ses démarches et cette pratique est
+        l'un des indicateurs de travail forcé retenus par l'OIT.
+      </Info>
+
+      <H2>Récapitulatif : le bon ordre des démarches</H2>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li><strong>Constituer le dossier ANAPEC</strong> « employé de maison étranger » et attendre l'attestation.</li>
+        <li><strong>Rédiger les deux contrats</strong> avec des données identiques ; faire légaliser les signatures du contrat loi 19-12.</li>
+        <li><strong>Déposer le contrat loi 19-12</strong> à l'inspection du travail et conserver le reçu.</li>
+        <li><strong>Demander le visa du contrat d'étranger</strong> sur TAECHIR ; le travail commence à la date du visa.</li>
+        <li><strong>Affilier l'employeur et immatriculer l'employé à la CNSS</strong> dans le mois.</li>
+        <li><strong>Accompagner l'employé à la DGSN</strong> pour la carte de séjour, puis anticiper chaque renouvellement.</li>
+      </ul>
+      <Info>
+        Cet article est informatif et ne remplace pas un conseil juridique. Les pratiques des guichets
+        (inspection du travail, ANAPEC, DGSN) varient d'une ville à l'autre : faites confirmer la liste
+        des pièces avant tout dépôt. Sources : loi n° 19-12 fixant les conditions de travail et
+        d'emploi des travailleuses et travailleurs domestiques (art. 1 à 4, 13, 14, 19) ; décret
+        n° 2-17-355 fixant le modèle de contrat ; Code du travail, art. 516 à 518 ; note du ministère
+        sur la procédure d'emploi des salariés étrangers ; page de l'ANAPEC sur l'attestation
+        d'activité des employés de maison étrangers ; guide CNSS de l'employeur de maison ; décret
+        n° 2.25.983 relatif au SMIG.
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Régulariser votre employé de maison étranger ?"
+        cta="Être mis en relation avec un cabinet"
+      >
+        <p>
+          Un cabinet partenaire peut préparer le dossier ANAPEC, les deux contrats et la demande de
+          visa, et vous indiquer l'ordre exact des dépôts dans votre ville. La mise en relation est
+          gratuite et sans engagement.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un particulier doit-il vraiment passer par l\'ANAPEC pour une nounou étrangère ?', a: 'Oui, sauf dispense. La loi 19-12 renvoie aux règles du Code du travail sur l\'emploi des étrangers, et l\'ANAPEC a une procédure d\'attestation dédiée aux employés de maison étrangers, avec publication d\'une annonce et un délai annoncé de 20 jours.' },
+          { q: 'Le logement et la nourriture peuvent-ils compter dans le salaire ?', a: 'Non. L\'article 19 de la loi 19-12 fixe un salaire en espèces d\'au moins 60 % du SMIG, et précise que la nourriture et le logement ne peuvent en aucun cas en être des composantes.' },
+          { q: 'Combien d\'heures un employé de maison peut-il travailler ?', a: '48 heures par semaine au maximum, avec au moins 24 heures de repos continu par semaine. Le repos peut être reporté d\'un commun accord, mais doit être pris dans les trois mois.' },
+          { q: 'Peut-on faire appel à une personne qui « place » des employées étrangères ?', a: 'Non si c\'est une personne physique rémunérée : l\'article 4 de la loi 19-12 l\'interdit. Seules les agences de recrutement privées autorisées peuvent jouer ce rôle.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6748,6 +6957,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Un technicien vient monter une machine pour deux ou trois mois ? L\'e-Visa s\'arrête à 30 jours et le visa d\'affaires ne vaut pas autorisation de travail. Les règles officielles et le bon ordre des démarches.',
     Content: Article42Content,
+  },
+  {
+    slug: 'employe-maison-etranger-maroc-loi-19-12-contrat-anapec',
+    title: 'Employé de maison étranger au Maroc : loi 19-12, ANAPEC, contrat et CNSS',
+    description: 'Nounou, aide à domicile ou chauffeur étranger : la loi 19-12 impose aussi la procédure des salariés étrangers. Attestation ANAPEC, double contrat, salaire minimum, CNSS et carte de séjour.',
+    date: '17 novembre 2026',
+    readTime: 7,
+    category: 'Procédure',
+    excerpt: 'Un particulier qui emploie une nounou ou un chauffeur étranger est soumis aux mêmes règles qu\'une entreprise : attestation ANAPEC, contrat visé, contrat loi 19-12 déposé à l\'inspection, CNSS. Les étapes dans le bon ordre.',
+    Content: Article43Content,
   },
 ];
 
