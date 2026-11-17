@@ -16,6 +16,7 @@ import { GuideComplet } from './pages/GuideComplet.tsx';
 import { GuideMerci } from './pages/GuideMerci.tsx';
 import { ConditionsVente } from './pages/ConditionsVente.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
+import { PanneTaechirBanner } from './components/PanneTaechirBanner.tsx';
 import './index.css';
 import { demarrerMesure } from './lib/track.ts';
 
@@ -24,6 +25,7 @@ demarrerMesure();
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <PanneTaechirBanner />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/blog" element={<BlogList />} />
