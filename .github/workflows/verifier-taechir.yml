@@ -1,0 +1,67 @@
+# Vérification quotidienne de la plateforme officielle TAECHIR.
+# Tant qu'elle est hors service, le bandeau de src/data/panneTaechir.ts reste
+# affiché. Dès qu'elle répond normalement, ce workflow repasse
+# PANNE_TAECHIR_ACTIVE à false sur main (Vercel redéploie), puis se désactive.
+name: Vérifier la plateforme TAECHIR
+
+on:
+  schedule:
+    - cron: '17 7 * * *'   # tous les jours, 07:17 UTC (08:17 au Maroc)
+  workflow_dispatch:
+    inputs:
+      essai:
+        description: 'Essai : vérifier sans rien modifier'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: verifier-taechir
+  cancel-in-progress: false
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Interroger taechir.travail.gov.ma
+        id: test
+        run: |
+          set +e
+          OK=0
+          for URL in https://taechir.travail.gov.ma/ https://taechir.travail.gov.ma/Taechir/; do
+            CODE=$(curl -sS -L --max-time 40 -A 'Mozilla/5.0 (verification guide-taechir.org)' \
+              -o page.html -w '%{http_code}' "$URL")
+            TAILLE=$(wc -c < page.html 2>/dev/null || echo 0)
+            echo "$URL -> HTTP $CODE, $TAILLE octets"
+            head -c 1500 page.html | tr -s '[:space:]' ' '; echo
+            if [ "$CODE" = "200" ] && [ "$TAILLE" -gt 1500 ] \
+               && grep -qi 'taechir\|تأشير' page.html \
+               && grep -qi '<input\|<form\|connexion\|login\|identifiant' page.html \
+               && ! grep -qi 'maintenance\|indisponible\|hors service\|service unavailable\|bad gateway\|gateway time-out\|en cours de maintenance\|صيانة' page.html; then
+              OK=1; break
+            fi
+          done
+          echo "ok=$OK" >> "$GITHUB_OUTPUT"
+          if [ "$OK" = "1" ]; then echo "::notice::Plateforme TAECHIR fonctionnelle"; else echo "::notice::Plateforme TAECHIR toujours hors service"; fi
+
+      - name: Retirer le bandeau et désactiver la vérification
+        if: steps.test.outputs.ok == '1' && !(github.event_name == 'workflow_dispatch' && inputs.essai)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FICHIER=src/data/panneTaechir.ts
+          if grep -q 'PANNE_TAECHIR_ACTIVE = true;' "$FICHIER"; then
+            sed -i 's/PANNE_TAECHIR_ACTIVE = true;/PANNE_TAECHIR_ACTIVE = false;/' "$FICHIER"
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898299+github-actions[bot]@users.noreply.github.com'
+            git commit -am "Plateforme TAECHIR de nouveau en service : retrait du bandeau de panne"
+            git push origin HEAD:main
+          fi
+          gh workflow disable "$GITHUB_WORKFLOW" --repo "$GITHUB_REPOSITORY"
