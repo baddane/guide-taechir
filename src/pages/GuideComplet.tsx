@@ -27,8 +27,15 @@ export function GuideComplet() {
   useSeo(staticPage(GUIDE.path));
   const [params] = useSearchParams();
   const [accord, setAccord] = useState(false);
+  const [envoi, setEnvoi] = useState(false);
   const [provenance, setProvenance] = useState<Origine>({});
   useEffect(() => setProvenance(origine()), []);
+  // Retour arrière depuis Stripe (cache de page) : réactiver le bouton.
+  useEffect(() => {
+    const reactiver = () => setEnvoi(false);
+    window.addEventListener('pageshow', reactiver);
+    return () => window.removeEventListener('pageshow', reactiver);
+  }, []);
   const message = MESSAGES[params.get('paiement') ?? ''];
 
   useEffect(() => {
@@ -157,7 +164,12 @@ export function GuideComplet() {
               method="POST"
               action="/api/guide/checkout"
               className="mt-6 space-y-5"
-              onSubmit={() => trackEvent('guide_checkout', { produit: GUIDE.id })}
+              onSubmit={() => {
+                trackEvent('guide_checkout', { produit: GUIDE.id });
+                // Désactiver après le départ de l'envoi : un double clic créait
+                // deux sessions Stripe (constaté sur les kits LCF le 14/11).
+                setTimeout(() => setEnvoi(true), 0);
+              }}
             >
               {/* Origine de la visite : transmise à Stripe pour savoir quel e-mail ou quelle page a vendu. */}
               {CHAMPS_ORIGINE.map((f) => (provenance[f] ? <input key={f} type="hidden" name={f} value={provenance[f]} /> : null))}
@@ -176,20 +188,29 @@ export function GuideComplet() {
                   pour ce contenu numérique. J'accepte les <Link to="/conditions-de-vente" className="text-indigo-600 underline">conditions de vente</Link>.
                 </span>
               </label>
+              <p className="text-xs text-slate-500 -mt-3 ps-7">
+                Case imposée par la loi pour un contenu numérique remis dès le paiement : sans elle, le PDF ne pourrait pas vous être livré tout de suite.
+              </p>
               <button
                 type="submit"
-                disabled={!accord}
+                disabled={!accord || envoi}
                 className="w-full py-4 rounded-xl bg-indigo-600 text-white text-lg font-bold hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors inline-flex items-center justify-center gap-2"
               >
-                <Lock className="w-5 h-5" /> Payer {GUIDE.prixAffiche} et télécharger
+                <Lock className="w-5 h-5" /> {envoi ? 'Ouverture du paiement sécurisé…' : `Payer ${GUIDE.prixAffiche} et télécharger`}
               </button>
             </form>
 
             <ul className="mt-6 grid sm:grid-cols-3 gap-3 text-xs text-slate-600">
               <li className="flex gap-2"><ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />Paiement par carte marocaine ou étrangère, sécurisé par Stripe</li>
               <li className="flex gap-2"><Receipt className="w-4 h-4 text-emerald-600 shrink-0" />Facture au nom de votre entreprise</li>
-              <li className="flex gap-2"><RefreshCw className="w-4 h-4 text-emerald-600 shrink-0" />Lien valable pour les éditions suivantes</li>
+              <li className="flex gap-2"><RefreshCw className="w-4 h-4 text-emerald-600 shrink-0" />Lien à l'écran et par e-mail, valable pour les éditions suivantes</li>
             </ul>
+            <p className="mt-4 text-xs text-slate-500 leading-relaxed">
+              Paiement en une seule fois : vos coordonnées bancaires sont saisies chez Stripe et ne transitent jamais par notre site.
+              Vendu par Atlas Digital Solutions LLC, société éditrice de guide-taechir.org : c'est ce nom qui figure sur votre reçu et
+              votre relevé bancaire. Une question avant d'acheter ? Écrivez à{' '}
+              <a href="mailto:contact@guide-taechir.org?subject=Guide%20TAECHIR" className="text-indigo-600 underline">contact@guide-taechir.org</a>.
+            </p>
           </div>
         </section>
 
