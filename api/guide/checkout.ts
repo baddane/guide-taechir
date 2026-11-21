@@ -66,7 +66,10 @@ async function handler(req: ApiRequest, res: ApiResponse) {
             unit_amount: prix,
             product_data: {
               name: GUIDE.nom,
-              description: `PDF de ${GUIDE.pages} pages · édition ${GUIDE.edition} · mises à jour incluses`,
+              description: `PDF de ${GUIDE.pages} pages · édition ${GUIDE.edition} · téléchargement immédiat, mises à jour incluses`,
+              // Couverture du guide : rappelle sur la page de paiement ce que
+              // le visiteur achète (constat LCF : produit sans image = abandons).
+              images: { 0: `${SITE_URL}/guide/couverture.png` },
             },
           },
         },
@@ -80,9 +83,22 @@ async function handler(req: ApiRequest, res: ApiResponse) {
       },
       success_url: `${SITE_URL}${GUIDE.path}/merci?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${retour}?paiement=annule#acheter`,
+      // L'en-tête porte le nom du site, pas celui de la société éditrice
+      // (ATLAS DIGITAL SOLUTIONS, inconnue du visiteur), qui reste sur le reçu
+      // et le relevé, comme annoncé sur la page de vente. Couleurs du site.
+      branding_settings: {
+        display_name: 'Guide TAECHIR',
+        icon: { type: 'url', url: `${SITE_URL}/icon-512.png` },
+        button_color: '#4f46e5',
+        border_style: 'rounded',
+        font_family: 'inter',
+      },
+      // Le consentement est recueilli et horodaté sur la page de vente. Le
+      // rappeler sous le bouton faisait lire « vous avez renoncé à vos
+      // droits » au moment de payer : on dit plutôt ce que l'acheteur obtient.
       custom_text: {
         submit: {
-          message: 'Téléchargement immédiat après paiement. Vous avez demandé l\'accès immédiat au PDF et renoncé à votre droit de rétractation.',
+          message: 'Le lien de téléchargement s\'affiche dès le paiement validé et vous est aussi envoyé par e-mail. Il donne toujours accès à l\'édition la plus récente du guide.',
         },
       },
       // Origine de la visite (champs cachés de la page de vente) : recopiée
