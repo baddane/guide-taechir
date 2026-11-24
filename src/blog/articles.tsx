@@ -6537,6 +6537,175 @@ function Article43Content() {
   );
 }
 
+/* ─── Article 44 ────────────────────────────────────────────────────────── */
+
+function Article44Content() {
+  return (
+    <>
+      <Lead>
+        Vous voulez embaucher un jeune Français de 26 ans pour un an, et l'attestation ANAPEC vous
+        fait peur : annonce, délai, risque qu'un candidat marocain soit jugé équivalent. Il existe un
+        dispositif peu connu, prévu par un accord franco-marocain de 2001, qui lève précisément cet
+        obstacle. Il ne dispense pas pour autant du contrat visé ni de la carte de séjour.
+      </Lead>
+
+      <H2>Un accord bilatéral signé à Rabat le 24 mai 2001</H2>
+      <P>
+        L'accord entre la France et le Maroc « relatif aux échanges de jeunes professionnels » a été
+        signé à Rabat le 24 mai 2001 et est entré en vigueur le jour même (publié en France par le
+        décret n° 2001-970 du 19 octobre 2001). Il est réciproque : il permet à de jeunes Marocains
+        de travailler en France, et à de jeunes <strong>Français</strong> de travailler au Maroc,
+        pour acquérir une expérience professionnelle avant de rentrer.
+      </P>
+      <P>
+        Son article 1er contient la phrase qui intéresse l'employeur : les jeunes professionnels
+        « sont autorisés à occuper un emploi […] sans que la situation du marché du travail de l'Etat
+        d'accueil, dans la profession dont il s'agit, puisse être prise en considération ». C'est
+        exactement ce que vérifie l'attestation ANAPEC dans la procédure normale.
+      </P>
+
+      <H2>Les conditions à remplir</H2>
+      <Table
+        rows={[
+          ['Condition', 'Ce que dit l\'accord'],
+          ['Nationalité', 'Ressortissant français (pour un emploi au Maroc)'],
+          ['Âge', 'Plus de 18 ans et moins de 35 ans (art. 2)'],
+          ['Qualification', 'Diplôme correspondant à l\'emploi offert, ou expérience professionnelle dans le domaine (art. 2)'],
+          ['Durée de l\'emploi', '3 à 12 mois, prolongeable une fois de 6 mois, soit 18 mois au maximum (art. 3)'],
+          ['Employeur', 'Établissement éducatif, sanitaire ou social, entreprise agricole, artisanale, industrielle ou commerciale (art. 1er)'],
+          ['Rémunération', 'Suffisante pour couvrir les frais de séjour et au moins égale à celle d\'un national dans les mêmes conditions (art. 5)'],
+          ['Contingent', '100 par an et par pays dans le texte de 2001, modifiable par échange de lettres ; la France indique aujourd\'hui 300'],
+        ]}
+      />
+      <Info>
+        Le contingent est rarement atteint : selon un rapport du Sénat français de février 2025, il
+        a été très loin d'être consommé ces dernières années côté marocain. En pratique, le quota
+        n'est donc pas le principal obstacle.
+      </Info>
+
+      <H2>Ce que le dispositif change dans le dossier TAECHIR</H2>
+      <P>
+        Le guide officiel « Recruter un salarié étranger au Maroc » du ministère range explicitement
+        parmi les catégories <strong>dispensées de l'attestation d'activité ANAPEC</strong> « les
+        jeunes professionnels français qui viennent travailler au Maroc en application de l'accord
+        franco-marocain du 24 mai 2001 ». La plateforme TAECHIR prévoit d'ailleurs une catégorie
+        dédiée, <strong>« Jeune Professionnel »</strong>, à choisir dès le début de la demande.
+        Vous évitez ainsi l'étape décrite dans{' '}
+        <Link to="/blog/attestation-anapec-frais-delais-procedure" className="text-indigo-600 hover:underline">notre guide sur l'attestation ANAPEC</Link>.
+      </P>
+      <P>
+        En revanche, tout le reste demeure : contrat au modèle officiel, visa du ministère (la date du
+        visa reste la date d'effet du contrat), affiliation à la CNSS et titre de séjour. Une dispense
+        d'ANAPEC n'est jamais une dispense de visa, comme le rappelle{' '}
+        <Link to="/blog/dispense-anapec-categories-exemptees-maroc" className="text-indigo-600 hover:underline">notre article sur les catégories dispensées</Link>.
+      </P>
+      <Warning>
+        La pièce justificative attendue pour cette catégorie est une <strong>notification de
+        l'ANAPEC</strong> confirmant que le jeune entre dans le cadre de l'accord. Autrement dit,
+        l'ANAPEC intervient quand même, mais pour valider l'éligibilité, pas pour tester le marché du
+        travail. Sans cette notification, le guichet traitera la demande comme un dossier normal.
+      </Warning>
+
+      <H2>Qui fait la demande, et dans quel ordre</H2>
+      <P>
+        L'accord (art. 7) prévoit que le jeune dépose sa demande auprès de l'organisme désigné
+        <strong> dans son propre pays</strong>, en indiquant ses diplômes ou son métier et
+        l'établissement qui l'embauche. Côté français, l'organisme désigné en 2001 était l'Office des
+        migrations internationales, dont les missions ont été reprises par l'OFII ; côté marocain,
+        l'ANAPEC et le département de la formation professionnelle. L'organisme du pays d'origine
+        vérifie les conditions puis transmet le dossier à son homologue, dans la limite du contingent.
+      </P>
+      <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+        <li><strong>Fixer l'offre</strong> : poste, durée (3 à 12 mois), salaire aligné sur celui d'un salarié marocain équivalent.</li>
+        <li><strong>Le candidat dépose sa demande</strong> « jeune professionnel » auprès de l'organisme français compétent, avec la promesse d'embauche.</li>
+        <li><strong>Obtenir la notification de l'ANAPEC</strong> une fois le dossier transmis et validé.</li>
+        <li><strong>Saisir la demande sur TAECHIR</strong> dans la catégorie « Jeune Professionnel », imprimer et faire signer le contrat, déposer le dossier au guichet.</li>
+        <li><strong>Après le visa</strong> : affiliation CNSS, puis carte d'immatriculation auprès de la DGSN si le séjour dépasse 90 jours.</li>
+      </ul>
+      <Info>
+        Les délais et le circuit exact de transmission entre les deux organismes ne sont pas publiés
+        de façon détaillée et peuvent varier. Interrogez l'ANAPEC et l'OFII avant de fixer une date
+        d'arrivée au candidat.
+      </Info>
+
+      <ChecklistBox />
+
+      <H2>Les engagements et les limites</H2>
+      <H3>Retour obligatoire et emploi unique</H3>
+      <P>
+        Avant de partir, le jeune s'engage (art. 3) à ne pas prolonger son séjour au-delà de la période
+        autorisée et à ne pas occuper un autre emploi que celui prévu. Le statut n'est donc pas une
+        porte d'entrée vers un emploi durable : si vous souhaitez le garder au-delà de 18 mois, il
+        faudra basculer vers la procédure normale, avec attestation ANAPEC, comme pour
+        un{' '}
+        <Link to="/blog/renouvellement-contrat-travail-etranger-maroc" className="text-indigo-600 hover:underline">renouvellement de contrat classique</Link>
+        {' '}— et sans garantie de résultat.
+      </P>
+      <H3>Pas de regroupement familial</H3>
+      <P>
+        L'article 6 est clair : le conjoint et les enfants du jeune professionnel ne peuvent ni
+        bénéficier du regroupement familial ni être autorisés à travailler pendant son séjour. Pour un
+        candidat en couple, c'est un point à aborder dès l'entretien.
+      </P>
+      <H3>Même salaire, même protection</H3>
+      <P>
+        Le jeune professionnel bénéficie de l'égalité de traitement en matière de conditions de
+        travail, et employeur comme salarié doivent respecter la législation marocaine de sécurité
+        sociale (art. 5) : il est donc déclaré à la CNSS comme tout salarié. Voir{' '}
+        <Link to="/blog/cnss-salarie-etranger-maroc-declaration" className="text-indigo-600 hover:underline">la déclaration CNSS d'un salarié étranger</Link>.
+        Les frais de voyage sont à sa charge, sauf accord contraire avec l'employeur.
+      </P>
+
+      <H2>Jeune professionnel, stagiaire ou salarié classique ?</H2>
+      <Table
+        rows={[
+          ['Situation', 'Attestation ANAPEC', 'Contrat visé TAECHIR', 'Durée'],
+          ['Jeune professionnel français (accord 2001)', 'Non, notification ANAPEC', 'Oui, catégorie « Jeune Professionnel »', '3 à 18 mois'],
+          ['Salarié étranger, procédure normale', 'Oui', 'Oui, catégorie « Normal »', 'Selon le contrat, renouvelable'],
+          ['Étudiant en stage pédagogique (convention avec son école)', 'Pas de texte spécifique', 'À vérifier selon la réalité des missions', 'Durée du stage'],
+        ]}
+      />
+      <P>
+        Le stage pédagogique n'a pas de régime propre aux étrangers dans les textes publiés : une
+        convention de stage ne suffit pas, à elle seule, à écarter la qualification de contrat de
+        travail si le stagiaire occupe en réalité un poste productif. Pour un jeune diplômé français
+        qui vient travailler, l'accord de 2001 est la voie la plus sûre.
+      </P>
+
+      <Info>
+        Cet article est informatif et ne remplace pas un conseil juridique. Sources : accord entre la
+        France et le Maroc relatif aux échanges de jeunes professionnels, Rabat, 24 mai 2001 (décret
+        n° 2001-970 du 19 octobre 2001), art. 1 à 10 ; Code du travail, art. 516 ; guide « Recruter un
+        salarié étranger au Maroc » du ministère du Travail et de l'Insertion professionnelle ;
+        Direction générale des étrangers en France, page « Accords bilatéraux en matière de mobilité
+        professionnelle » ; Sénat, rapport d'information n° 304 (2024-2025).
+      </Info>
+
+      <Divider />
+
+      <LeadBox
+        title="Vous hésitez entre la catégorie « Jeune Professionnel » et la procédure normale ?"
+        cta="Être mis en relation avec un cabinet"
+      >
+        <p>
+          Un cabinet partenaire vérifie l'éligibilité de votre candidat, coordonne la notification
+          ANAPEC et monte le dossier TAECHIR. La mise en relation est gratuite et sans engagement.
+        </p>
+      </LeadBox>
+
+      <FAQ
+        items={[
+          { q: 'Un jeune Français peut-il travailler au Maroc sans attestation ANAPEC ?', a: 'Oui, s\'il relève de l\'accord franco-marocain du 24 mai 2001 sur les jeunes professionnels : 18 à 35 ans, diplôme ou expérience dans le domaine, emploi de 3 à 12 mois prolongeable de 6 mois. Le guide du ministère le dispense de l\'attestation ANAPEC, sur présentation d\'une notification de l\'ANAPEC.' },
+          { q: 'Le contrat doit-il quand même être visé sur TAECHIR ?', a: 'Oui. La plateforme TAECHIR prévoit une catégorie « Jeune Professionnel ». Le contrat au modèle officiel doit être visé par le ministère, et il ne prend effet qu\'à la date du visa.' },
+          { q: 'Quelle est la durée maximale d\'un contrat de jeune professionnel au Maroc ?', a: 'L\'accord fixe une durée de 3 à 12 mois, avec une prolongation possible de 6 mois, soit 18 mois au total. Le jeune s\'engage à ne pas prolonger son séjour au-delà.' },
+          { q: 'Le conjoint d\'un jeune professionnel peut-il le rejoindre et travailler ?', a: 'Non dans le cadre de l\'accord : son article 6 exclut le regroupement familial et l\'autorisation de travail pour le conjoint et les enfants pendant le séjour du jeune professionnel.' },
+          { q: 'L\'accord s\'applique-t-il à d\'autres nationalités ?', a: 'Non, il ne concerne que les Français au Maroc (et les Marocains en France). Les Algériens, Tunisiens et Sénégalais relèvent d\'autres conventions, qui ouvrent aussi une dispense d\'ANAPEC.' },
+        ]}
+      />
+    </>
+  );
+}
+
 export const articles: Article[] = [
   {
     slug: 'guide-recruter-salarie-etranger-maroc-2026',
@@ -6967,6 +7136,16 @@ export const articles: Article[] = [
     category: 'Procédure',
     excerpt: 'Un particulier qui emploie une nounou ou un chauffeur étranger est soumis aux mêmes règles qu\'une entreprise : attestation ANAPEC, contrat visé, contrat loi 19-12 déposé à l\'inspection, CNSS. Les étapes dans le bon ordre.',
     Content: Article43Content,
+  },
+  {
+    slug: 'jeune-professionnel-francais-maroc-accord-2001-sans-anapec',
+    title: 'Jeune professionnel français au Maroc : l\'accord de 2001 qui dispense de l\'attestation ANAPEC',
+    description: 'Embaucher un Français de 18 à 35 ans pour 3 à 18 mois sans test du marché de l\'emploi : conditions de l\'accord franco-marocain de 2001, catégorie TAECHIR « Jeune Professionnel », démarches et limites.',
+    date: '24 novembre 2026',
+    readTime: 6,
+    category: 'Procédure',
+    excerpt: 'Un accord franco-marocain de 2001 permet d\'embaucher un jeune Français sans attestation ANAPEC. Âge, durée, notification ANAPEC, contrat visé, regroupement familial : ce que l\'employeur doit savoir.',
+    Content: Article44Content,
   },
 ];
 
